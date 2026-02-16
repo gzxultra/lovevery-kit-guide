@@ -2,10 +2,11 @@
  * Design: Montessori Naturalism / Scandinavian Minimalism
  * - Individual kit detail page simulating a physical play guide booklet
  * - Warm cream background with kit-specific accent color
- * - Card-based layout for each toy with sections for usage, goals, reviews
+ * - Card-based layout for each toy with official product images
  */
 
 import { getKitById, kits, stages } from "@/data/kits";
+import { getToyImage, getKitHeroImage } from "@/data/toyImages";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
@@ -26,30 +27,53 @@ function ToyCard({
   toy,
   index,
   kitColor,
+  kitId,
 }: {
   toy: { name: string; englishName: string; category: string; howToUse: string; developmentGoal: string; parentReview: string };
   index: number;
   kitColor: string;
+  kitId: string;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const toyImage = getToyImage(kitId, index);
 
   return (
     <div
       className="bg-white rounded-2xl border border-[#E8DFD3] overflow-hidden hover:shadow-lg hover:shadow-[#3D3229]/5 transition-shadow"
     >
-      {/* Toy Header */}
+      {/* Toy Header with Image */}
       <div className="p-6 pb-4">
-        <div className="flex items-start gap-4">
-          <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-lg font-['DM_Serif_Display'] text-white"
-            style={{ backgroundColor: kitColor }}
-          >
-            {index + 1}
-          </div>
+        <div className="flex items-start gap-5">
+          {/* Toy Image or Number */}
+          {toyImage ? (
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden shrink-0 bg-[#FAF7F2] border border-[#F0EBE3] flex items-center justify-center p-2">
+              <img
+                src={toyImage}
+                alt={toy.englishName}
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          ) : (
+            <div
+              className="w-16 h-16 rounded-xl flex items-center justify-center shrink-0 text-xl font-['DM_Serif_Display'] text-white"
+              style={{ backgroundColor: kitColor }}
+            >
+              {index + 1}
+            </div>
+          )}
           <div className="flex-1 min-w-0">
-            <h3 className="font-['DM_Serif_Display'] text-xl text-[#3D3229] mb-1">
-              {toy.name}
-            </h3>
+            <div className="flex items-center gap-2 mb-1">
+              <span
+                className="inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold text-white shrink-0"
+                style={{ backgroundColor: kitColor }}
+              >
+                {index + 1}
+              </span>
+              <h3 className="font-['DM_Serif_Display'] text-xl text-[#3D3229]">
+                {toy.name}
+              </h3>
+            </div>
             <p className="text-sm text-[#9B8E7E] mb-2">{toy.englishName}</p>
             <span
               className="inline-block px-2.5 py-1 rounded-full text-xs font-medium"
@@ -161,6 +185,9 @@ export default function KitDetail() {
   const prevKit = currentIndex > 0 ? kits[currentIndex - 1] : null;
   const nextKit = currentIndex < kits.length - 1 ? kits[currentIndex + 1] : null;
 
+  // Get kit hero image from Lovevery
+  const heroImage = getKitHeroImage(kit.id);
+
   // Get all categories
   const categories = Array.from(new Set(kit.toys.flatMap((t) => t.category.split("/"))));
 
@@ -185,7 +212,7 @@ export default function KitDetail() {
         </div>
       </nav>
 
-      {/* Kit Header - Enhanced with colored banner */}
+      {/* Kit Header with Hero Image */}
       <section className="relative overflow-hidden">
         {/* Colored top band */}
         <div
@@ -200,73 +227,89 @@ export default function KitDetail() {
           }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
-          <div>
-            {/* Stage badge */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
-              style={{ backgroundColor: kit.color + "20", color: kit.color }}
-            >
-              <BookOpen className="w-4 h-4" />
-              {kit.stageLabel} · {kit.ageRange}
+          <div className="grid md:grid-cols-[1fr_auto] gap-8 items-start">
+            <div>
+              {/* Stage badge */}
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
+                style={{ backgroundColor: kit.color + "20", color: kit.color }}
+              >
+                <BookOpen className="w-4 h-4" />
+                {kit.stageLabel} · {kit.ageRange}
+              </div>
+
+              {/* Kit name */}
+              <h1 className="font-['DM_Serif_Display'] text-4xl md:text-5xl lg:text-6xl text-[#1a1108] mb-6 leading-tight">
+                {kit.name}
+              </h1>
+
+              {/* Description */}
+              <p className="text-lg md:text-xl text-[#3D3229] leading-relaxed max-w-3xl">
+                {kit.description}
+              </p>
+
+              {/* Stats bar */}
+              <div className="flex flex-wrap items-center gap-6 md:gap-10 mt-10 pt-8 border-t border-[#E8DFD3]/80">
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: kit.color + "15" }}
+                  >
+                    <Puzzle className="w-6 h-6" style={{ color: kit.color }} />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-['DM_Serif_Display'] text-[#3D3229]">
+                      {kit.toys.length}
+                    </p>
+                    <p className="text-xs text-[#9B8E7E]">个玩具</p>
+                  </div>
+                </div>
+                <div className="w-px h-10 bg-[#E8DFD3] hidden sm:block" />
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: kit.color + "15" }}
+                  >
+                    <Star className="w-6 h-6" style={{ color: kit.color }} />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-['DM_Serif_Display'] text-[#3D3229]">
+                      {kit.ageRange}
+                    </p>
+                    <p className="text-xs text-[#9B8E7E]">适用月龄</p>
+                  </div>
+                </div>
+                <div className="w-px h-10 bg-[#E8DFD3] hidden sm:block" />
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    {categories.map((cat) => (
+                      <span
+                        key={cat}
+                        className="px-3 py-1.5 rounded-full text-xs font-medium"
+                        style={{ backgroundColor: kit.color + "12", color: kit.color }}
+                      >
+                        {cat}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-xs text-[#9B8E7E] mt-2">发展领域</p>
+                </div>
+              </div>
             </div>
 
-            {/* Kit name */}
-            <h1 className="font-['DM_Serif_Display'] text-4xl md:text-5xl lg:text-6xl text-[#1a1108] mb-6 leading-tight">
-              {kit.name}
-            </h1>
-
-            {/* Description */}
-            <p className="text-lg md:text-xl text-[#3D3229] leading-relaxed max-w-3xl">
-              {kit.description}
-            </p>
-
-            {/* Stats bar */}
-            <div className="flex flex-wrap items-center gap-6 md:gap-10 mt-10 pt-8 border-t border-[#E8DFD3]/80">
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: kit.color + "15" }}
-                >
-                  <Puzzle className="w-6 h-6" style={{ color: kit.color }} />
-                </div>
-                <div>
-                  <p className="text-2xl font-['DM_Serif_Display'] text-[#3D3229]">
-                    {kit.toys.length}
-                  </p>
-                  <p className="text-xs text-[#9B8E7E]">个玩具</p>
+            {/* Kit Hero Image from Lovevery */}
+            {heroImage && (
+              <div className="hidden md:block w-64 lg:w-80 shrink-0">
+                <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-4">
+                  <img
+                    src={heroImage}
+                    alt={`${kit.name} Play Kit`}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
               </div>
-              <div className="w-px h-10 bg-[#E8DFD3] hidden sm:block" />
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: kit.color + "15" }}
-                >
-                  <Star className="w-6 h-6" style={{ color: kit.color }} />
-                </div>
-                <div>
-                  <p className="text-2xl font-['DM_Serif_Display'] text-[#3D3229]">
-                    {kit.ageRange}
-                  </p>
-                  <p className="text-xs text-[#9B8E7E]">适用月龄</p>
-                </div>
-              </div>
-              <div className="w-px h-10 bg-[#E8DFD3] hidden sm:block" />
-              <div>
-                <div className="flex flex-wrap gap-2">
-                  {categories.map((cat) => (
-                    <span
-                      key={cat}
-                      className="px-3 py-1.5 rounded-full text-xs font-medium"
-                      style={{ backgroundColor: kit.color + "12", color: kit.color }}
-                    >
-                      {cat}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-xs text-[#9B8E7E] mt-2">发展领域</p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -298,6 +341,7 @@ export default function KitDetail() {
                 toy={toy}
                 index={idx}
                 kitColor={kit.color}
+                kitId={kit.id}
               />
             ))}
           </div>
@@ -306,7 +350,7 @@ export default function KitDetail() {
 
       {/* Navigation between kits */}
       <section className="border-t border-[#E8DFD3] bg-white/80">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <p className="text-center text-sm text-[#9B8E7E] mb-6">继续探索其他 Kit</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {prevKit ? (

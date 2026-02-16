@@ -10,7 +10,7 @@ import { kits, stages } from "@/data/kits";
 import { ArrowRight, BookOpen, Baby, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 
-const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/pDLfTHjmxRpphsqt.jpg";
+const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/MNPxTRzCbxWVkhFf.jpg";
 const BABY_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/JIqrZUgAwKJrNkNQ.jpg";
 const TODDLER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/QaBJZNnndfVVkEaM.jpg";
 const PRESCHOOL_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/xHcGyRqYHpgCaEyO.jpg";
