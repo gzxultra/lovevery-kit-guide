@@ -22,6 +22,13 @@ const stageImages: Record<string, string> = {
   preschool: PRESCHOOL_IMG,
 };
 
+function scrollToStage(stageId: string) {
+  const el = document.getElementById(`stage-${stageId}`);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
@@ -36,13 +43,13 @@ export default function Home() {
             </Link>
             <div className="hidden md:flex items-center gap-8">
               {stages.map((s) => (
-                <a
+                <button
                   key={s.id}
-                  href={`#${s.id}`}
+                  onClick={() => scrollToStage(s.id)}
                   className="text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors"
                 >
                   {s.label}
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -66,13 +73,13 @@ export default function Home() {
               <p className="text-lg text-[#4A3F35] leading-relaxed mb-8 max-w-lg">
                 基于蒙特梭利教育理念，按月龄段精心设计的 22 个 Play Kit 完整指南。了解每个玩具的使用方法、发展目标和家长真实评价。
               </p>
-              <a
-                href="#baby"
+              <button
+                onClick={() => scrollToStage("baby")}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full font-medium hover:bg-[#2A231C] transition-colors"
               >
                 开始探索
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
             </div>
             <div className="relative animate-[fadeIn_1s_ease-out_0.2s_both]">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-[#3D3229]/10">
@@ -102,7 +109,7 @@ export default function Home() {
       {stages.map((stage) => {
         const stageKits = kits.filter((k) => k.stage === stage.id);
         return (
-          <section key={stage.id} id={stage.id} className="py-16 md:py-24">
+          <section key={stage.id} id={`stage-${stage.id}`} className="py-16 md:py-24 scroll-mt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Stage Header */}
               <div className="mb-12">
@@ -200,12 +207,12 @@ export default function Home() {
               <ul className="space-y-2">
                 {stages.map((s) => (
                   <li key={s.id}>
-                    <a
-                      href={`#${s.id}`}
+                    <button
+                      onClick={() => scrollToStage(s.id)}
                       className="text-sm text-[#B8AFA3] hover:text-white transition-colors"
                     >
                       {s.label} ({s.range})
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
