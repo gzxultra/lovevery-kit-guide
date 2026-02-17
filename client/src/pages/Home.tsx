@@ -11,7 +11,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
 import FeedbackForm from "@/components/FeedbackForm";
-import RewardSection from "@/components/RewardSection";
+import { RewardSection } from "@/components/RewardSection";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
