@@ -15,12 +15,12 @@ export const i18n = {
 
   // Hero section
   hero: {
-    badge: { cn: "0-60 个月完整指南", en: "Complete Guide for 0-60 Months" },
-    title1: { cn: "Play Kit", en: "Play Kit" },
-    title2: { cn: "使用说明书", en: "User Guide" },
+    badge: { cn: "Lovevery 爱好者社区", en: "Lovevery Fans Community" },
+    title1: { cn: "Lovevery Fans", en: "Lovevery Fans" },
+    title2: { cn: "爱好者社区", en: "Community Guide" },
     subtitle: {
-      cn: "基于蒙特梭利教育理念，按月龄段精心设计的 22 个 Play Kit 完整指南。了解每个玩具的使用方法、发展目标和家长真实评价。",
-      en: "A comprehensive guide to all 22 Play Kits designed by age, based on Montessori principles. Learn how to use each toy, its developmental goals, and real parent reviews.",
+      cn: "由热爱 Lovevery 的家长们共同打造的中文指南。这里有真实的家长评价、玩具清洗指南、高性价比平替推荐，帮你更好地陪伴宝宝成长。",
+      en: "A warm community guide built by parents who love Lovevery. Discover real reviews, cleaning tips, and high-quality Amazon alternatives to help your little one thrive.",
     },
     cta: { cn: "开始探索", en: "Start Exploring" },
     kitCount: { cn: "22 个 Play Kit", en: "22 Play Kits" },
@@ -61,7 +61,7 @@ export const i18n = {
     prosConsTitle: { cn: "家长评价 · 优缺点", en: "Parent Reviews · Pros & Cons" },
     cleaningTitle: { cn: "清洗指南", en: "Cleaning Guide" },
     materialLabel: { cn: "材质", en: "Material" },
-    expand: { cn: "查看发展目标和家长评价", en: "View Goals & Reviews" },
+    expand: { cn: "查看详情", en: "View Details" },
     collapse: { cn: "收起详情", en: "Collapse" },
     discontinued: { cn: "旧版", en: "Legacy" },
     newOnSite: { cn: "官网新增", en: "New" },
@@ -73,6 +73,23 @@ export const i18n = {
     prevKit: { cn: "上一个 Kit", en: "Previous Kit" },
     nextKit: { cn: "下一个 Kit", en: "Next Kit" },
     exploreMore: { cn: "继续探索其他 Kit", en: "Explore More Kits" },
+  },
+
+  // Alternatives
+  alternatives: {
+    viewBtn: { cn: "💡 查看 Amazon 平替", en: "💡 See Alternatives" },
+    hideBtn: { cn: "收起平替", en: "Hide Alternatives" },
+    title: { cn: "高性价比 Amazon 平替推荐", en: "Recommended Amazon Alternatives" },
+    subtitle: {
+      cn: "我们为你精选了评分高、材质安全且功能相似的替代品",
+      en: "Curated high-quality alternatives with similar developmental benefits",
+    },
+    buyBtn: { cn: "去 Amazon 购买", en: "Buy on Amazon" },
+    priceLabel: { cn: "参考价格", en: "Price" },
+    ratingLabel: { cn: "评分", en: "Rating" },
+    reviewsLabel: { cn: "评价数", en: "Reviews" },
+    reasonLabel: { cn: "推荐理由", en: "Why we love it" },
+    savingsNote: { cn: "更具性价比的选择", en: "Better value for money" },
   },
 
   // Referral
@@ -155,8 +172,8 @@ export const i18n = {
       en: "Lovevery Fans — Complete Play Kit Guide",
     },
     disclaimer: {
-      cn: "本网站由 Lovevery 爱好者自发创建，非官方网站，非盈利导向。",
-      en: "This site is independently created by Lovevery enthusiasts. It is not affiliated with Lovevery and is non-commercial.",
+      cn: "本网站由 Lovevery 爱好者自发创建，非官方网站。本站部分链接为 Amazon 联盟营销链接，通过这些链接购买不会增加您的费用，但我们会获得少量佣金以支持网站运营。",
+      en: "This site is independently created by Lovevery enthusiasts. Some links on this site are Amazon affiliate links. Purchasing through these links costs you nothing extra but helps support this site.",
     },
   },
 } as const;

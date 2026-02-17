@@ -12,6 +12,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
 import FeedbackForm from "@/components/FeedbackForm";
 import { RewardSection } from "@/components/RewardSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -414,6 +415,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Stage Sections */}
       {stages.map((stage) => {

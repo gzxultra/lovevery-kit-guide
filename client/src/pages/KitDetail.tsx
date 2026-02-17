@@ -37,6 +37,8 @@ import { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "wouter";
 import Lightbox from "@/components/Lightbox";
 import { RewardBanner } from "@/components/RewardBanner";
+import { AlternativesSection } from "@/components/AlternativesSection";
+import { getToyAlternatives } from "@/data/alternatives";
 
 const REFERRAL_CODE = "REF-6AA44A5A";
 
@@ -69,6 +71,7 @@ function ToyCard({
   const hasDetails = !!(toy.developmentGoal && toy.parentReview);
   const toyReview = getToyReview(kitId, toy.name);
   const cleaningInfo = getCleaningInfo(kitId, toy.name);
+  const toyAlternatives = getToyAlternatives(kitId, toy.englishName);
 
   const toyName = lang === "cn" ? toy.name : toy.englishName;
   const toySubName = lang === "cn" ? toy.englishName : toy.name;
@@ -239,6 +242,15 @@ function ToyCard({
                         </div>
                       </div>
                     </div>
+                  )}
+
+                  {/* Amazon Alternatives */}
+                  {toyAlternatives && toyAlternatives.length > 0 && (
+                    <AlternativesSection
+                      alternatives={toyAlternatives}
+                      toyName={toy.englishName}
+                      toyNameCn={toy.name}
+                    />
                   )}
 
                   {/* Cleaning Guide */}
