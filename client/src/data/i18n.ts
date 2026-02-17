@@ -124,12 +124,18 @@ export const i18n = {
 
   // Reward section
   reward: {
-    title: { cn: "请我喝杯咖啡 ☕", en: "Buy me a coffee ☕" },
+    title: { cn: "☕ 请我喝杯咖啡", en: "☕ Buy Me a Coffee" },
     subtitle: {
-      cn: "如果这份指南对你有帮助，请我喝杯咖啡吧 ☕",
-      en: "If you find this guide helpful, buy me a coffee ☕",
+      cn: "如果这份指南对你有帮助，你的支持是我继续更新的动力",
+      en: "If you find this guide helpful, your support keeps it going",
     },
-    kofiButton: { cn: "请我喝咖啡", en: "Buy Me a Coffee" },
+    kofiButton: { cn: "支持我的创作", en: "Support My Work" },
+    thankYou: { cn: "感谢你的支持", en: "Thank you for your support" },
+    bannerTitle: { cn: "觉得有帮助？请我喝杯咖啡 ☕", en: "Found this helpful? Buy me a coffee ☕" },
+    bannerSubtitle: {
+      cn: "你的支持是我持续维护本指南的动力",
+      en: "Your support keeps this guide updated and maintained",
+    },
   },
 
   // Footer

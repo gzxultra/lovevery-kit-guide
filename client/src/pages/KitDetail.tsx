@@ -36,6 +36,7 @@ import {
 import { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "wouter";
 import Lightbox from "@/components/Lightbox";
+import { RewardBanner } from "@/components/RewardBanner";
 
 const REFERRAL_CODE = "REF-6AA44A5A";
 
@@ -621,6 +622,7 @@ export default function KitDetail() {
       <section className="pb-10 sm:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <ReferralCard kitId={kit.id} kitColor={kit.color} />
+          <RewardBanner />
         </div>
       </section>
 
