@@ -135,8 +135,8 @@ export const i18n = {
       en: "A Montessori-based subscription toy brand offering age-appropriate play kits designed by child development experts.",
     },
     tagline: {
-      cn: "Play Kit 使用说明书 — 非官方指南",
-      en: "Play Kit User Guide — Unofficial",
+      cn: "Lovevery Fans — Play Kit 完整指南",
+      en: "Lovevery Fans — Complete Play Kit Guide",
     },
     disclaimer: {
       cn: "本网站由 Lovevery 爱好者自发创建，非官方网站，非盈利导向。",

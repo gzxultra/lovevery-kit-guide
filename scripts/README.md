@@ -1,6 +1,6 @@
 # Lovevery Kit Guide — Data Collection Scripts
 
-This directory contains a set of reusable Python scripts for collecting, processing, and transforming data used by the [Lovevery Kit Guide](https://gzxultra.github.io/lovevery-kit-guide/) website.
+This directory contains a set of reusable Python scripts for collecting, processing, and transforming data used by the [Lovevery Fans](https://loveveryfans.com/) website.
 
 ## Overview
 

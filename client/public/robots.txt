@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gzxultra.github.io/lovevery-kit-guide/sitemap.xml
+Sitemap: https://loveveryfans.com/sitemap.xml
