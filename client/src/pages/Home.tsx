@@ -14,7 +14,7 @@ import FeedbackForm from "@/components/FeedbackForm";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
-const HERO_IMG = "/hero.jpg";
+const HERO_IMG = `${import.meta.env.BASE_URL}hero.jpg`;
 
 function scrollToStage(stageId: string) {
   const el = document.getElementById(`stage-${stageId}`);
