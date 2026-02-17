@@ -1,15 +1,13 @@
 /*
  * Design: Montessori Naturalism / Scandinavian Minimalism
- * Mobile-first responsive design:
- * - Hamburger menu for mobile navigation
- * - Stacked hero layout on small screens
- * - Adaptive card grid (1 col → 2 col → 3 col)
- * - Touch-friendly tap targets (min 44px)
- * - Proper text sizing for readability
+ * Mobile-first responsive design with CN/EN language toggle
  */
 
 import { kits, stages } from "@/data/kits";
+import { i18n } from "@/data/i18n";
 import { getKitHeroImage } from "@/data/toyImages";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -25,6 +23,16 @@ function scrollToStage(stageId: string) {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { lang, t } = useLanguage();
+
+  const stageLabel = (id: string) => {
+    const key = id as keyof typeof i18n.stages;
+    return i18n.stages[key]?.[lang] ?? id;
+  };
+  const stageRange = (id: string) => {
+    const key = id as keyof typeof i18n.stageRanges;
+    return i18n.stageRanges[key]?.[lang] ?? "";
+  };
 
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
@@ -45,18 +53,22 @@ export default function Home() {
                   onClick={() => scrollToStage(s.id)}
                   className="text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors"
                 >
-                  {s.label}
+                  {stageLabel(s.id)}
                 </button>
               ))}
+              <LanguageToggle />
             </div>
-            {/* Mobile hamburger */}
-            <button
-              className="md:hidden p-2 -mr-2 text-[#3D3229]"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile: language toggle + hamburger */}
+            <div className="flex md:hidden items-center gap-2">
+              <LanguageToggle />
+              <button
+                className="p-2 -mr-2 text-[#3D3229]"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -74,8 +86,8 @@ export default function Home() {
                   className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors"
                 >
                   <span className="flex items-center justify-between">
-                    {s.label}
-                    <span className="text-xs text-[#9B8E7E]">{s.range}</span>
+                    {stageLabel(s.id)}
+                    <span className="text-xs text-[#9B8E7E]">{stageRange(s.id)}</span>
                   </span>
                 </button>
               ))}
@@ -92,21 +104,21 @@ export default function Home() {
             <div className="animate-[fadeInUp_0.8s_ease-out_both] order-2 md:order-1">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                 <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                0-60 个月完整指南
+                {i18n.hero.badge[lang]}
               </div>
               <h1 className="font-['DM_Serif_Display'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] leading-tight mb-4 sm:mb-6">
-                Play Kit
+                {i18n.hero.title1[lang]}
                 <br />
-                <span className="text-[#5a9e65]">使用说明书</span>
+                <span className="text-[#5a9e65]">{i18n.hero.title2[lang]}</span>
               </h1>
               <p className="text-base sm:text-lg text-[#4A3F35] leading-relaxed mb-6 sm:mb-8 max-w-lg">
-                基于蒙特梭利教育理念，按月龄段精心设计的 22 个 Play Kit 完整指南。了解每个玩具的使用方法、发展目标和家长真实评价。
+                {i18n.hero.subtitle[lang]}
               </p>
               <button
                 onClick={() => scrollToStage("baby")}
                 className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#3D3229] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#2A231C] transition-colors active:scale-95"
               >
-                开始探索
+                {i18n.hero.cta[lang]}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -125,8 +137,8 @@ export default function Home() {
                     <Baby className="w-4 h-4 sm:w-5 sm:h-5 text-[#7FB685]" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-semibold text-[#3D3229]">22 个 Play Kit</p>
-                    <p className="text-[10px] sm:text-xs text-[#6B5E50]">覆盖 0-60 个月</p>
+                    <p className="text-xs sm:text-sm font-semibold text-[#3D3229]">{i18n.hero.kitCount[lang]}</p>
+                    <p className="text-[10px] sm:text-xs text-[#6B5E50]">{i18n.hero.coverRange[lang]}</p>
                   </div>
                 </div>
               </div>
@@ -152,36 +164,36 @@ export default function Home() {
                         color: stage.color,
                       }}
                     >
-                      {stage.range}
+                      {stageRange(stage.id)}
                     </div>
                     <h2 className="font-['DM_Serif_Display'] text-2xl sm:text-3xl md:text-4xl text-[#1a1108]">
-                      {stage.label}
+                      {stageLabel(stage.id)}
                     </h2>
                   </div>
                   <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-[#E8DFD3] to-transparent" />
                 </div>
               </div>
 
-              {/* Kit Cards Grid - 1 col on mobile, 2 on sm, 3 on lg */}
+              {/* Kit Cards Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {stageKits.map((kit) => {
                   const kitHero = getKitHeroImage(kit.id);
                   return (
                     <Link key={kit.id} href={`/kit/${kit.id}`}>
                       <div className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:shadow-xl hover:shadow-[#3D3229]/8 transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full active:scale-[0.98]">
-                        {/* Color accent bar */}
                         <div
                           className="h-1 sm:h-1.5 w-full"
                           style={{ backgroundColor: kit.color }}
                         />
                         <div className="p-4 sm:p-6">
-                          {/* Kit name, age, and hero image */}
                           <div className="flex items-start justify-between gap-3 mb-3 sm:mb-4">
                             <div className="min-w-0 flex-1">
                               <h3 className="font-['DM_Serif_Display'] text-lg sm:text-xl text-[#1a1108] mb-1 truncate">
                                 {kit.name}
                               </h3>
-                              <p className="text-xs sm:text-sm text-[#5A4E42]">{kit.ageRange}</p>
+                              <p className="text-xs sm:text-sm text-[#5A4E42]">
+                                {lang === "cn" ? kit.ageRange : kit.ageRange.replace("个月", " months").replace("周", " weeks")}
+                              </p>
                             </div>
                             {kitHero ? (
                               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 bg-[#FAF7F2] border border-[#F0EBE3] p-1">
@@ -202,21 +214,19 @@ export default function Home() {
                             )}
                           </div>
 
-                          {/* Description preview */}
                           <p className="text-xs sm:text-sm text-[#5A4E42] leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
-                            {kit.description}
+                            {lang === "cn" ? kit.description : (kit.descriptionEn || kit.description)}
                           </p>
 
-                          {/* Toy count */}
                           <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F0EBE3]">
                             <span className="text-xs text-[#8B7E70]">
-                              {kit.toys.length} 个玩具
+                              {kit.toys.length} {i18n.kitCard.toys[lang]}
                             </span>
                             <span
                               className="text-xs sm:text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
                               style={{ color: kit.color }}
                             >
-                              查看详情
+                              {i18n.kitCard.viewDetails[lang]}
                               <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                             </span>
                           </div>
@@ -238,11 +248,11 @@ export default function Home() {
             <div>
               <h3 className="font-['DM_Serif_Display'] text-xl sm:text-2xl mb-3 sm:mb-4">Lovevery</h3>
               <p className="text-[#B8AFA3] text-sm leading-relaxed">
-                基于蒙特梭利教育理念的订阅制玩具品牌，按月龄段提供经过儿童发展专家设计的玩具套装。
+                {i18n.footer.brandDesc[lang]}
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-3 sm:mb-4 text-[#E8DFD3]">发展阶段</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-[#E8DFD3]">{i18n.footer.devStages[lang]}</h4>
               <ul className="space-y-2">
                 {stages.map((s) => (
                   <li key={s.id}>
@@ -250,21 +260,21 @@ export default function Home() {
                       onClick={() => scrollToStage(s.id)}
                       className="text-sm text-[#B8AFA3] hover:text-white transition-colors"
                     >
-                      {s.label} ({s.range})
+                      {stageLabel(s.id)} ({stageRange(s.id)})
                     </button>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="sm:col-span-2 md:col-span-1">
-              <h4 className="font-semibold mb-3 sm:mb-4 text-[#E8DFD3]">关于本指南</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-[#E8DFD3]">{i18n.footer.aboutGuide[lang]}</h4>
               <p className="text-sm text-[#B8AFA3] leading-relaxed">
-                本指南整理了 Lovevery 全部 22 个 Play Kit 的详细信息，包括每个玩具的使用方法、发展目标和家长真实评价，帮助您更好地使用这些精心设计的教育玩具。
+                {i18n.footer.aboutDesc[lang]}
               </p>
             </div>
           </div>
           <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#4D4439] text-center text-xs sm:text-sm text-[#8B7E70]">
-            Play Kit 使用说明书 — 非官方指南
+            {i18n.footer.tagline[lang]}
           </div>
         </div>
       </footer>

@@ -2,10 +2,14 @@
  * Design: Montessori Naturalism / Scandinavian Minimalism
  * Mobile-first responsive design with referral module
  * Supports discontinued and new toy badges
+ * Full CN/EN language toggle support
  */
 
 import { getKitById, kits, type Toy } from "@/data/kits";
+import { i18n } from "@/data/i18n";
 import { getToyImage, getKitHeroImage } from "@/data/toyImages";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
@@ -49,10 +53,18 @@ function ToyCard({
   kitId: string;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const { lang } = useLanguage();
   const toyImage = getToyImage(kitId, index);
   const isDiscontinued = (toy as any).discontinued;
   const isNew = (toy as any).isNew;
   const hasDetails = !!(toy.developmentGoal && toy.parentReview);
+
+  const toyName = lang === "cn" ? toy.name : toy.englishName;
+  const toySubName = lang === "cn" ? toy.englishName : toy.name;
+  const howToUse = lang === "en" && toy.howToUseEn ? toy.howToUseEn : toy.howToUse;
+  const devGoal = lang === "en" && toy.developmentGoalEn ? toy.developmentGoalEn : toy.developmentGoal;
+  const parentRev = lang === "en" && toy.parentReviewEn ? toy.parentReviewEn : toy.parentReview;
+  const category = lang === "en" && toy.categoryEn ? toy.categoryEn : toy.category;
 
   return (
     <div
@@ -90,27 +102,27 @@ function ToyCard({
                 {index + 1}
               </span>
               <h3 className="font-['DM_Serif_Display'] text-base sm:text-xl text-[#3D3229] leading-snug">
-                {toy.name}
+                {toyName}
               </h3>
               {isDiscontinued && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-medium bg-[#F5E6D8] text-[#A0845C] border border-[#E8D5BF]">
                   <AlertCircle className="w-2.5 h-2.5" />
-                  旧版
+                  {i18n.kitDetail.discontinued[lang]}
                 </span>
               )}
               {isNew && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-medium bg-[#E8F5E9] text-[#4CAF50] border border-[#C8E6C9]">
                   <Sparkles className="w-2.5 h-2.5" />
-                  官网新增
+                  {i18n.kitDetail.newOnSite[lang]}
                 </span>
               )}
             </div>
-            <p className="text-xs sm:text-sm text-[#9B8E7E] mb-1.5 sm:mb-2">{toy.englishName}</p>
+            <p className="text-xs sm:text-sm text-[#9B8E7E] mb-1.5 sm:mb-2">{toySubName}</p>
             <span
               className="inline-block px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium"
               style={{ backgroundColor: kitColor + "15", color: kitColor }}
             >
-              {toy.category}
+              {category}
             </span>
           </div>
         </div>
@@ -122,14 +134,14 @@ function ToyCard({
           <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 text-[#D4A574]" />
           <div>
             <p className="text-[10px] sm:text-xs font-semibold text-[#D4A574] uppercase tracking-wider mb-1 sm:mb-1.5">
-              使用方法
+              {i18n.kitDetail.howToUse[lang]}
             </p>
-            <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">{toy.howToUse}</p>
+            <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">{howToUse}</p>
           </div>
         </div>
       </div>
 
-      {/* Expandable sections - only show if there are real details */}
+      {/* Expandable sections */}
       {hasDetails && (
         <>
           <div className="px-4 sm:px-6 pb-2">
@@ -137,7 +149,7 @@ function ToyCard({
               onClick={() => setExpanded(!expanded)}
               className="w-full flex items-center justify-between py-3 text-xs sm:text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors border-t border-[#F0EBE3] min-h-[44px]"
             >
-              <span>{expanded ? "收起详情" : "查看发展目标和家长评价"}</span>
+              <span>{expanded ? i18n.kitDetail.collapse[lang] : i18n.kitDetail.expand[lang]}</span>
               {expanded ? (
                 <ChevronUp className="w-4 h-4 shrink-0 ml-2" />
               ) : (
@@ -157,30 +169,30 @@ function ToyCard({
               >
                 <div className="px-4 sm:px-6 pb-4 sm:pb-6 space-y-3 sm:space-y-4">
                   {/* Development Goal */}
-                  {toy.developmentGoal && (
+                  {devGoal && (
                     <div className="flex items-start gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-[#F0F7F1]">
                       <Target className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 text-[#7FB685]" />
                       <div>
                         <p className="text-[10px] sm:text-xs font-semibold text-[#7FB685] uppercase tracking-wider mb-1 sm:mb-1.5">
-                          发展目标
+                          {i18n.kitDetail.devGoal[lang]}
                         </p>
                         <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">
-                          {toy.developmentGoal}
+                          {devGoal}
                         </p>
                       </div>
                     </div>
                   )}
 
                   {/* Parent Review */}
-                  {toy.parentReview && (
+                  {parentRev && (
                     <div className="flex items-start gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-[#F5F0F8]">
                       <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 text-[#9B7DB8]" />
                       <div>
                         <p className="text-[10px] sm:text-xs font-semibold text-[#9B7DB8] uppercase tracking-wider mb-1 sm:mb-1.5">
-                          家长评价
+                          {i18n.kitDetail.parentReview[lang]}
                         </p>
                         <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed italic">
-                          &ldquo;{toy.parentReview}&rdquo;
+                          &ldquo;{parentRev}&rdquo;
                         </p>
                       </div>
                     </div>
@@ -195,14 +207,14 @@ function ToyCard({
   );
 }
 
-/* Referral Module - warm, gentle presentation */
+/* Referral Module */
 function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) {
+  const { lang } = useLanguage();
   const purchaseUrl = getKitPurchaseUrl(kitId);
   const referralUrl = getReferralUrl();
 
   return (
     <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#E8DFD3] bg-gradient-to-br from-white via-[#FFFCF8] to-[#FFF8F0]">
-      {/* Subtle decorative elements */}
       <div
         className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 rounded-full opacity-[0.04] -translate-y-1/2 translate-x-1/4"
         style={{ backgroundColor: kitColor }}
@@ -214,7 +226,6 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
 
       <div className="relative p-5 sm:p-8 md:p-10">
         <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-          {/* Icon */}
           <div
             className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0"
             style={{ backgroundColor: kitColor + "12" }}
@@ -224,10 +235,10 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
 
           <div className="flex-1">
             <h3 className="font-['DM_Serif_Display'] text-lg sm:text-xl md:text-2xl text-[#3D3229] mb-2 sm:mb-3">
-              觉得不错？分享给朋友一起买
+              {i18n.referral.title[lang]}
             </h3>
             <p className="text-sm sm:text-base text-[#6B5E50] leading-relaxed mb-4 sm:mb-6">
-              如果这份指南对你有帮助，欢迎通过下面的链接下单购买。使用我的推荐链接，你和我都可以获得 Lovevery 的优惠。每一份支持都是对这个项目最好的鼓励 ❤️
+              {i18n.referral.desc[lang]}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -239,7 +250,7 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
                 style={{ backgroundColor: kitColor }}
               >
                 <Heart className="w-4 h-4" />
-                购买这个 Play Kit
+                {i18n.referral.buyKit[lang]}
                 <ExternalLink className="w-3.5 h-3.5 opacity-70" />
               </a>
               <a
@@ -249,13 +260,14 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-medium border transition-all hover:shadow-sm active:scale-[0.98]"
                 style={{ borderColor: kitColor + "40", color: kitColor }}
               >
-                了解推荐计划
+                {i18n.referral.learnReferral[lang]}
                 <ExternalLink className="w-3.5 h-3.5 opacity-70" />
               </a>
             </div>
 
             <p className="text-[10px] sm:text-xs text-[#B0A89E] mt-3 sm:mt-4">
-              推荐码：{REFERRAL_CODE} · 本站为非官方指南，与 Lovevery 无隶属关系
+              {lang === "cn" ? `推荐码：${REFERRAL_CODE} · ` : `Referral code: ${REFERRAL_CODE} · `}
+              {i18n.referral.disclaimer[lang]}
             </p>
           </div>
         </div>
@@ -267,8 +279,8 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
 export default function KitDetail() {
   const params = useParams<{ id: string }>();
   const kit = getKitById(params.id || "");
+  const { lang } = useLanguage();
 
-  // Scroll to top on kit change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [params.id]);
@@ -278,37 +290,39 @@ export default function KitDetail() {
       <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center p-4">
         <div className="text-center">
           <h1 className="font-['DM_Serif_Display'] text-2xl sm:text-3xl text-[#3D3229] mb-4">
-            未找到该 Kit
+            {i18n.kitDetail.notFound[lang]}
           </h1>
           <Link href="/">
-            <span className="text-[#7FB685] hover:underline">返回首页</span>
+            <span className="text-[#7FB685] hover:underline">{i18n.kitDetail.backHome[lang]}</span>
           </Link>
         </div>
       </div>
     );
   }
 
-  // Find prev and next kits
   const currentIndex = kits.findIndex((k) => k.id === kit.id);
   const prevKit = currentIndex > 0 ? kits[currentIndex - 1] : null;
   const nextKit = currentIndex < kits.length - 1 ? kits[currentIndex + 1] : null;
-
-  // Get kit hero image from Lovevery
   const heroImage = getKitHeroImage(kit.id);
 
-  // Get all categories (excluding placeholder categories)
   const categories = Array.from(
     new Set(
       kit.toys
         .filter((t) => !(t as any).discontinued)
-        .flatMap((t) => t.category.split("/"))
-        .filter((c) => c !== "官网新增")
+        .flatMap((t) => {
+          const cat = lang === "en" && t.categoryEn ? t.categoryEn : t.category;
+          return cat.split("/");
+        })
+        .filter((c) => c !== "官网新增" && c !== "New")
     )
   );
 
-  // Count active vs discontinued
   const activeToys = kit.toys.filter((t) => !(t as any).discontinued);
   const discontinuedToys = kit.toys.filter((t) => (t as any).discontinued);
+
+  const kitDescription = lang === "en" && kit.descriptionEn ? kit.descriptionEn : kit.description;
+  const kitAgeRange = lang === "en" && kit.ageRangeEn ? kit.ageRangeEn : kit.ageRange;
+  const kitStageLabel = lang === "en" && kit.stageLabelEn ? kit.stageLabelEn : kit.stageLabel;
 
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
@@ -319,14 +333,17 @@ export default function KitDetail() {
             <Link href="/">
               <span className="flex items-center gap-1.5 sm:gap-2 text-[#6B5E50] hover:text-[#3D3229] transition-colors min-h-[44px] items-center">
                 <ArrowLeft className="w-4 h-4" />
-                <span className="text-xs sm:text-sm font-medium">返回全部 Kit</span>
+                <span className="text-xs sm:text-sm font-medium">{i18n.kitDetail.backToAll[lang]}</span>
               </span>
             </Link>
-            <Link href="/">
-              <span className="font-['DM_Serif_Display'] text-base sm:text-lg text-[#3D3229]">
-                Lovevery
-              </span>
-            </Link>
+            <div className="flex items-center gap-3">
+              <LanguageToggle />
+              <Link href="/">
+                <span className="font-['DM_Serif_Display'] text-base sm:text-lg text-[#3D3229]">
+                  Lovevery
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
@@ -344,7 +361,6 @@ export default function KitDetail() {
           }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 relative z-10">
-          {/* Mobile: Hero image on top */}
           {heroImage && (
             <div className="md:hidden mb-6 flex justify-center">
               <div className="w-48 sm:w-56 aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-3">
@@ -364,7 +380,7 @@ export default function KitDetail() {
                 style={{ backgroundColor: kit.color + "20", color: kit.color }}
               >
                 <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                {kit.stageLabel} · {kit.ageRange}
+                {kitStageLabel} · {kitAgeRange}
               </div>
 
               <h1 className="font-['DM_Serif_Display'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] mb-4 sm:mb-6 leading-tight">
@@ -372,7 +388,7 @@ export default function KitDetail() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-[#3D3229] leading-relaxed max-w-3xl">
-                {kit.description}
+                {kitDescription}
               </p>
 
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-10 mt-6 sm:mt-10 pt-6 sm:pt-8 border-t border-[#E8DFD3]/80">
@@ -387,7 +403,7 @@ export default function KitDetail() {
                     <p className="text-xl sm:text-2xl font-['DM_Serif_Display'] text-[#3D3229]">
                       {activeToys.length}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-[#9B8E7E]">个玩具</p>
+                    <p className="text-[10px] sm:text-xs text-[#9B8E7E]">{i18n.kitDetail.toyCount[lang]}</p>
                   </div>
                 </div>
                 <div className="w-px h-8 sm:h-10 bg-[#E8DFD3] hidden sm:block" />
@@ -400,9 +416,9 @@ export default function KitDetail() {
                   </div>
                   <div>
                     <p className="text-xl sm:text-2xl font-['DM_Serif_Display'] text-[#3D3229]">
-                      {kit.ageRange}
+                      {kitAgeRange}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-[#9B8E7E]">适用月龄</p>
+                    <p className="text-[10px] sm:text-xs text-[#9B8E7E]">{i18n.kitDetail.ageLabel[lang]}</p>
                   </div>
                 </div>
                 <div className="w-px h-8 sm:h-10 bg-[#E8DFD3] hidden sm:block" />
@@ -418,12 +434,11 @@ export default function KitDetail() {
                       </span>
                     ))}
                   </div>
-                  <p className="text-[10px] sm:text-xs text-[#9B8E7E] mt-1.5 sm:mt-2">发展领域</p>
+                  <p className="text-[10px] sm:text-xs text-[#9B8E7E] mt-1.5 sm:mt-2">{i18n.kitDetail.devAreas[lang]}</p>
                 </div>
               </div>
             </div>
 
-            {/* Kit Hero Image - desktop */}
             {heroImage && (
               <div className="hidden md:block w-56 lg:w-72 shrink-0">
                 <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-4">
@@ -452,15 +467,14 @@ export default function KitDetail() {
                 <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" style={{ color: kit.color }} />
               </div>
               <h2 className="font-['DM_Serif_Display'] text-xl sm:text-2xl md:text-3xl text-[#3D3229]">
-                玩具清单
+                {i18n.kitDetail.toyList[lang]}
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-[#9B8E7E] ml-9 sm:ml-11">
-              点击每个玩具卡片查看详细的发展目标和家长评价
+              {i18n.kitDetail.toyListDesc[lang]}
             </p>
           </div>
 
-          {/* Active toys */}
           <div className="space-y-3 sm:space-y-5">
             {kit.toys
               .filter((t) => !(t as any).discontinued)
@@ -478,7 +492,6 @@ export default function KitDetail() {
               })}
           </div>
 
-          {/* Discontinued toys section */}
           {discontinuedToys.length > 0 && (
             <div className="mt-8 sm:mt-12">
               <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
@@ -487,10 +500,10 @@ export default function KitDetail() {
                 </div>
                 <div>
                   <h3 className="font-['DM_Serif_Display'] text-base sm:text-lg text-[#6B5E50]">
-                    旧版玩具
+                    {i18n.kitDetail.oldToys[lang]}
                   </h3>
                   <p className="text-[10px] sm:text-xs text-[#B0A89E]">
-                    以下玩具在当前版本的 Kit 中已不再包含，仅供参考
+                    {i18n.kitDetail.oldToysDesc[lang]}
                   </p>
                 </div>
               </div>
@@ -523,19 +536,21 @@ export default function KitDetail() {
       {/* Navigation between kits */}
       <section className="border-t border-[#E8DFD3] bg-white/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <p className="text-center text-xs sm:text-sm text-[#9B8E7E] mb-4 sm:mb-6">继续探索其他 Kit</p>
+          <p className="text-center text-xs sm:text-sm text-[#9B8E7E] mb-4 sm:mb-6">{i18n.kitDetail.exploreMore[lang]}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {prevKit ? (
               <Link href={`/kit/${prevKit.id}`}>
                 <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-md transition-all cursor-pointer active:scale-[0.98] min-h-[44px]">
                   <p className="text-[10px] sm:text-xs text-[#9B8E7E] mb-1.5 sm:mb-2 flex items-center gap-1">
                     <ArrowLeft className="w-3 h-3" />
-                    上一个 Kit
+                    {i18n.kitDetail.prevKit[lang]}
                   </p>
                   <p className="font-['DM_Serif_Display'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#6B5E50] transition-colors">
                     {prevKit.name}
                   </p>
-                  <p className="text-xs sm:text-sm text-[#9B8E7E] mt-0.5 sm:mt-1">{prevKit.ageRange}</p>
+                  <p className="text-xs sm:text-sm text-[#9B8E7E] mt-0.5 sm:mt-1">
+                    {lang === "en" && prevKit.ageRangeEn ? prevKit.ageRangeEn : prevKit.ageRange}
+                  </p>
                 </div>
               </Link>
             ) : (
@@ -545,13 +560,15 @@ export default function KitDetail() {
               <Link href={`/kit/${nextKit.id}`}>
                 <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-md transition-all text-right cursor-pointer active:scale-[0.98] min-h-[44px]">
                   <p className="text-[10px] sm:text-xs text-[#9B8E7E] mb-1.5 sm:mb-2 flex items-center justify-end gap-1">
-                    下一个 Kit
+                    {i18n.kitDetail.nextKit[lang]}
                     <ArrowRight className="w-3 h-3" />
                   </p>
                   <p className="font-['DM_Serif_Display'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#6B5E50] transition-colors">
                     {nextKit.name}
                   </p>
-                  <p className="text-xs sm:text-sm text-[#9B8E7E] mt-0.5 sm:mt-1">{nextKit.ageRange}</p>
+                  <p className="text-xs sm:text-sm text-[#9B8E7E] mt-0.5 sm:mt-1">
+                    {lang === "en" && nextKit.ageRangeEn ? nextKit.ageRangeEn : nextKit.ageRange}
+                  </p>
                 </div>
               </Link>
             ) : (
@@ -566,7 +583,7 @@ export default function KitDetail() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="font-['DM_Serif_Display'] text-lg sm:text-xl mb-2 sm:mb-3">Lovevery</h3>
           <p className="text-xs sm:text-sm text-[#8B7E70]">
-            Play Kit 使用说明书 — 非官方指南
+            {i18n.footer.tagline[lang]}
           </p>
         </div>
       </footer>
