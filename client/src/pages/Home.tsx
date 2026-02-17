@@ -137,6 +137,12 @@ export default function Home() {
                 </button>
               ))}
 
+              <Link href="/about">
+                <span className="text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors">
+                  {i18n.nav.aboutUs[lang]}
+                </span>
+              </Link>
+
               {/* Search bar - Desktop */}
               <div ref={searchContainerRef} className="relative">
                 <div className="flex items-center bg-[#F0EBE3] rounded-full px-3 py-1.5 gap-2 focus-within:ring-2 focus-within:ring-[#7FB685]/40 transition-all">
@@ -360,6 +366,14 @@ export default function Home() {
                   </span>
                 </button>
               ))}
+              <Link href="/about">
+                <span
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors"
+                >
+                  {i18n.nav.aboutUs[lang]}
+                </span>
+              </Link>
             </div>
           </div>
         )}
@@ -546,9 +560,14 @@ export default function Home() {
             </div>
             <div className="sm:col-span-2 md:col-span-1">
               <h4 className="font-semibold mb-3 sm:mb-4 text-[#E8DFD3]">{i18n.footer.aboutGuide[lang]}</h4>
-              <p className="text-sm text-[#B8AFA3] leading-relaxed">
+              <p className="text-sm text-[#B8AFA3] leading-relaxed mb-4">
                 {i18n.footer.aboutDesc[lang]}
               </p>
+              <Link href="/about">
+                <span className="text-sm text-[#B8AFA3] hover:text-white transition-colors underline underline-offset-2">
+                  {i18n.nav.aboutUs[lang]}
+                </span>
+              </Link>
             </div>
           </div>
           <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#4D4439] text-center">

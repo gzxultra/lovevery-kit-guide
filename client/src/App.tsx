@@ -8,12 +8,14 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import KitDetail from "./pages/KitDetail";
+import AboutUs from "./pages/AboutUs";
 
 function AppRouter() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/kit/:id"} component={KitDetail} />
+      <Route path={"/about"} component={AboutUs} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -155,6 +155,11 @@ export const i18n = {
     },
   },
 
+  // Navigation
+  nav: {
+    aboutUs: { cn: "关于我们", en: "About Us" },
+  },
+
   // Footer
   footer: {
     devStages: { cn: "发展阶段", en: "Development Stages" },
