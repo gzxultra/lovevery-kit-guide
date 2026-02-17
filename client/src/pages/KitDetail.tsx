@@ -52,7 +52,7 @@ function ToyCard({
   const toyImage = getToyImage(kitId, index);
   const isDiscontinued = (toy as any).discontinued;
   const isNew = (toy as any).isNew;
-  const hasDetails = toy.developmentGoal && toy.developmentGoal !== "请参考 Lovevery 官网了解发展目标。";
+  const hasDetails = !!(toy.developmentGoal && toy.parentReview);
 
   return (
     <div
