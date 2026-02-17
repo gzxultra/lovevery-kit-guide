@@ -61,7 +61,7 @@ function ToyCard({
   index: number;
   kitColor: string;
   kitId: string;
-  onImageClick?: () => void;
+  onImageClick?: (index: number) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -119,7 +119,7 @@ function ToyCard({
           {toyImage ? (
             <div
               className="w-full sm:w-24 md:w-28 aspect-square sm:aspect-square rounded-lg sm:rounded-xl overflow-hidden shrink-0 bg-[#FAF7F2] border border-[#F0EBE3] flex items-center justify-center p-3 sm:p-2 max-w-[200px] mx-auto sm:mx-0 sm:max-w-none cursor-zoom-in hover:border-[#C8BFB3] hover:shadow-md transition-all"
-              onClick={onImageClick}
+              onClick={() => onImageClick?.(index)}
             >
               <img
                 src={toyImage}

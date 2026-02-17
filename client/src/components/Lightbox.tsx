@@ -17,6 +17,7 @@ export default function Lightbox({
   onNext,
 }: LightboxProps) {
   const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -38,6 +39,7 @@ export default function Lightbox({
 
   useEffect(() => {
     setLoaded(false);
+    setError(false);
   }, [currentIndex]);
 
   if (!images.length) return null;
@@ -94,20 +96,38 @@ export default function Lightbox({
         className="relative max-w-[90vw] max-h-[85vh] flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
-        {!loaded && (
+        {!loaded && !error && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-10 h-10 border-3 border-white/30 border-t-white rounded-full animate-spin" />
           </div>
         )}
-        <img
-          src={images[currentIndex]}
-          alt={`Image ${currentIndex + 1}`}
-          className={`max-w-full max-h-[85vh] object-contain rounded-lg transition-opacity duration-300 ${
-            loaded ? "opacity-100" : "opacity-0"
-          }`}
-          onLoad={() => setLoaded(true)}
-          draggable={false}
-        />
+        {error ? (
+          <div className="flex flex-col items-center justify-center text-white p-8 text-center">
+            <div className="text-4xl mb-4">📷</div>
+            <p className="text-lg font-medium mb-2">Image failed to load</p>
+            <p className="text-sm text-white/70">This may be due to network issues or slow connection</p>
+            <button
+              onClick={() => {
+                setError(false);
+                setLoaded(false);
+              }}
+              className="mt-4 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+            >
+              Retry
+            </button>
+          </div>
+        ) : (
+          <img
+            src={images[currentIndex]}
+            alt={`Image ${currentIndex + 1}`}
+            className={`max-w-full max-h-[85vh] object-contain rounded-lg transition-opacity duration-300 ${
+              loaded ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={() => setLoaded(true)}
+            onError={() => setError(true)}
+            draggable={false}
+          />
+        )}
       </div>
     </div>
   );
