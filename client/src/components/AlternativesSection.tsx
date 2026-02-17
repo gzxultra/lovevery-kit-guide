@@ -123,6 +123,16 @@ export function AlternativesSection({
           </div>
         ))}
       </div>
+
+      {/* Price Disclaimer */}
+      <div className="px-3 sm:px-4 py-2.5 sm:py-3 bg-[#F8FAFB] border-t border-[#E8F0F4]">
+        <p className="text-[10px] sm:text-xs text-[#9B8E7E] flex items-center gap-1.5">
+          <span>💡</span>
+          {lang === "cn"
+            ? "价格仅供参考，以 Amazon 实际价格为准"
+            : "Prices are approximate. Check Amazon for current pricing."}
+        </p>
+      </div>
     </div>
   );
 }
