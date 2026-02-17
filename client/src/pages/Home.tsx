@@ -555,7 +555,7 @@ export default function Home() {
             <p className="text-xs sm:text-sm text-[#8B7E70] mb-2">
               {i18n.footer.tagline[lang]}
             </p>
-            <p className="text-[10px] sm:text-xs text-[#6B5E50] italic">
+            <p className="text-xs sm:text-sm text-[#8B7E70] leading-relaxed max-w-4xl mx-auto">
               {i18n.footer.disclaimer[lang]}
             </p>
           </div>

@@ -1,7 +1,7 @@
 export interface Alternative {
   name: string;
   asin: string;
-  price: string;
+  price: string | null;
   rating: number;
   reviewCount: number;
   amazonUrl: string;

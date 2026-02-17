@@ -1,9 +1,12 @@
 import { ArrowLeft, Home, Sparkles } from "lucide-react";
 import { useEffect } from "react";
 import { Link, useLocation } from "wouter";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
+  const { lang } = useLanguage();
 
   useEffect(() => {
     document.title = "404 - Page Not Found | Lovevery Fans";
@@ -23,6 +26,7 @@ export default function NotFound() {
                 Lovevery
               </span>
             </Link>
+            <LanguageToggle />
           </div>
         </div>
       </nav>
@@ -43,20 +47,20 @@ export default function NotFound() {
           </h1>
 
           <h2 className="font-['Manrope'] text-xl sm:text-2xl font-bold text-[#3D3229] mb-4">
-            页面未找到
+            {lang === "cn" ? "页面未找到" : "Page Not Found"}
           </h2>
 
           <p className="text-[#6B5E50] text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto">
-            抱歉，您访问的页面不存在。可能已被移动或删除。
-            <br />
-            让我们回到首页，继续探索 Lovevery Play Kit 的精彩世界吧！
+            {lang === "cn"
+              ? "抱歉，您访问的页面不存在。可能已被移动或删除。让我们回到首页，继续探索 Lovevery Play Kit 的精彩世界吧！"
+              : "Sorry, the page you're looking for doesn't exist. It may have been moved or deleted. Let's head back to the homepage and continue exploring the wonderful world of Lovevery Play Kits!"}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/">
               <span className="inline-flex items-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] transition-colors active:scale-95 cursor-pointer">
                 <Home className="w-4 h-4" />
-                返回首页
+                {lang === "cn" ? "返回首页" : "Back to Home"}
               </span>
             </Link>
             <button
@@ -64,7 +68,7 @@ export default function NotFound() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#3D3229] rounded-full text-sm font-medium border border-[#E8DFD3] hover:bg-[#F5F0E8] transition-colors active:scale-95"
             >
               <ArrowLeft className="w-4 h-4" />
-              返回上一页
+              {lang === "cn" ? "返回上一页" : "Go Back"}
             </button>
           </div>
         </div>

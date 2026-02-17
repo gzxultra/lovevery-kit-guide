@@ -55,12 +55,14 @@ function ToyCard({
   index,
   kitColor,
   kitId,
+  kitName,
   onImageClick,
 }: {
   toy: Toy;
   index: number;
   kitColor: string;
   kitId: string;
+  kitName: string;
   onImageClick?: (index: number) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -86,6 +88,16 @@ function ToyCard({
     if (!hasDetails) return;
     const timeout = setTimeout(() => {
       setExpanded(true);
+      
+      // Send GA event when expanding to view alternatives
+      if (toyAlternatives && toyAlternatives.length > 0) {
+        if (typeof window !== "undefined" && window.gtag) {
+          window.gtag("event", "view_alternatives", {
+            toy_name: toy.englishName,
+            kit_name: kitName,
+          });
+        }
+      }
     }, 250); // 250ms debounce
     setHoverTimeout(timeout);
   };
@@ -101,7 +113,18 @@ function ToyCard({
   // Handle click for mobile
   const handleClick = () => {
     if (!hasDetails) return;
-    setExpanded(!expanded);
+    const willExpand = !expanded;
+    setExpanded(willExpand);
+    
+    // Send GA event when expanding to view alternatives
+    if (willExpand && toyAlternatives && toyAlternatives.length > 0) {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "view_alternatives", {
+          toy_name: toy.englishName,
+          kit_name: kitName,
+        });
+      }
+    }
   };
 
   return (
@@ -276,6 +299,7 @@ function ToyCard({
                       alternatives={toyAlternatives}
                       toyName={toy.englishName}
                       toyNameCn={toy.name}
+                      kitName={kitName}
                     />
                   )}
 
@@ -390,6 +414,14 @@ export default function KitDetail() {
     window.scrollTo(0, 0);
     if (kit) {
       document.title = `${kit.name} | Lovevery Fans`;
+      
+      // Send Google Analytics event for kit view
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "view_kit", {
+          kit_name: kit.name,
+          kit_age_range: kit.ageRange,
+        });
+      }
     }
     return () => {
       document.title = "Lovevery Fans";
@@ -615,6 +647,7 @@ export default function KitDetail() {
                     index={originalIndex}
                     kitColor={kit.color}
                     kitId={kit.id}
+                    kitName={kit.name}
                     onImageClick={openLightbox}
                   />
                 );
@@ -646,6 +679,7 @@ export default function KitDetail() {
                       index={originalIndex}
                       kitColor={kit.color}
                       kitId={kit.id}
+                      kitName={kit.name}
                       onImageClick={openLightbox}
                     />
                   );

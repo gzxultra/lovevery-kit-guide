@@ -7,6 +7,7 @@ interface AlternativesSectionProps {
   alternatives: Alternative[];
   toyName: string;
   toyNameCn: string;
+  kitName?: string;
 }
 
 const AFFILIATE_TAG = "loveveryfans-20";
@@ -56,6 +57,7 @@ export function AlternativesSection({
   alternatives,
   toyName,
   toyNameCn,
+  kitName,
 }: AlternativesSectionProps) {
   const { lang } = useLanguage();
   const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
@@ -145,6 +147,17 @@ export function AlternativesSection({
                   href={ensureAffiliateTag(alt.amazonUrl)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    // Send Google Analytics event
+                    if (typeof window !== "undefined" && window.gtag) {
+                      window.gtag("event", "click_amazon_link", {
+                        product_name: alt.name,
+                        asin: alt.asin,
+                        price: alt.price || "N/A",
+                        kit_name: kitName || "Unknown",
+                      });
+                    }
+                  }}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#FF9900] hover:bg-[#E88B00] text-white text-[11px] sm:text-xs font-medium transition-all hover:shadow-md active:scale-[0.98]"
                 >
                   {lang === "cn" ? "去 Amazon 购买" : "Buy on Amazon"}
