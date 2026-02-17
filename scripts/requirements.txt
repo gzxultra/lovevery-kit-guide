@@ -1,0 +1,14 @@
+# Requirements for Lovevery Kit Guide data collection scripts
+#
+# Install with:
+#   pip install -r requirements.txt
+
+# HTTP requests
+requests>=2.28.0
+
+# HTML parsing
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# OpenAI API (optional, only needed for --summarise / --enrich flags)
+openai>=1.0.0
