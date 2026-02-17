@@ -1,199 +1,240 @@
-# Lovevery Fans 🧸
+<div align="center">
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Floveveryfans.com&label=loveveryfans.com)](https://loveveryfans.com)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite)](https://vitejs.dev/)
+# 🧸 Lovevery Fans
 
-> **Lovevery Fans** 是一个由 Lovevery 爱好者自发创建的非官方、非盈利社区指南，为中文家长提供完整的 Play Kit 使用说明和玩具详情。
+### The Complete Guide to Lovevery Play Kits & Affordable Amazon Alternatives
 
-**🌐 在线访问：** [loveveryfans.com](https://loveveryfans.com)
+[![Website](https://img.shields.io/badge/🌐_Visit-loveveryfans.com-7FB685?style=for-the-badge)](https://loveveryfans.com)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 
----
+**A bilingual (English/中文) guide to all 22 Lovevery Play Kits — with detailed toy breakdowns, real parent reviews, cleaning guides, and curated affordable Amazon alternatives.**
 
-## ✨ 功能特性
+[Visit Website →](https://loveveryfans.com) · [Report Bug](https://github.com/gzxultra/loveveryfans/issues) · [Request Feature](https://github.com/gzxultra/loveveryfans/issues)
 
-### 📚 完整的 Kit 指南
-- **22 个 Play Kit** 完整中英文双语指南
-- **164 个玩具** 详细使用说明和发展目标
-- 每个 Kit 的适龄范围、发展领域和玩具分类
-
-### 👨‍👩‍👧‍👦 家长评价与实用建议
-- **家长评价（优缺点）**：真实用户反馈，帮助您更好地了解每个玩具
-- **清洗指南**：142 个玩具的材质标签和清洗建议
-- **推荐码集成**：支持 Lovevery 官方推荐计划
-
-### 🔍 强大的搜索与浏览
-- **实时搜索**：按 Kit 名称或玩具名称快速查找
-- **灯箱预览**：点击玩具图片放大查看细节，支持键盘导航
-- **中英文切换**：一键切换语言，满足不同用户需求
-
-### 🎨 优雅的用户体验
-- **响应式设计**：完美适配桌面端和移动端
-- **温暖的视觉风格**：蒙特梭利自然主义 + 斯堪的纳维亚极简主义
-- **流畅的动画**：Framer Motion 驱动的交互动画
-
-### 🛠 技术与 SEO
-- **SEO 优化**：完整的 meta 标签、Open Graph、JSON-LD 结构化数据
-- **Google Analytics**：GA4 集成，数据分析支持
-- **Sitemap & Robots.txt**：搜索引擎友好
-- **自定义域名**：loveveryfans.com（GitHub Pages 部署）
-
-### 💬 社区互动
-- **Formspree 留言反馈**：用户可以提交反馈和建议
-- **打赏支持**：微信赞赏码 + Ko-fi 打赏
+</div>
 
 ---
 
-## 🚀 技术栈
+## ✨ What is Lovevery Fans?
 
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| **React** | 19.2 | 前端框架 |
-| **TypeScript** | 5.6 | 类型安全 |
-| **Vite** | 7.1 | 构建工具 |
-| **Tailwind CSS** | 4.1 | 样式框架 |
-| **Framer Motion** | 12.23 | 动画库 |
-| **Wouter** | 3.7 | 轻量级路由 |
-| **Lucide React** | 0.453 | 图标库 |
+[Lovevery](https://lovevery.com) makes beautifully designed, Montessori-inspired play kits for children aged 0–5 years. While the kits are excellent, they can be pricey. **[Lovevery Fans](https://loveveryfans.com)** is an independent, ad-free community guide that helps parents:
+
+- 📖 **Understand each kit** — detailed breakdowns of every toy, how to use it, and what developmental milestones it targets
+- 💬 **Read real parent reviews** — honest feedback from parents who've actually used the toys
+- 🧹 **Learn how to clean** — toy-specific cleaning guides to keep everything safe and hygienic
+- 💰 **Find affordable alternatives** — curated Amazon alternatives (Lovevery dupes) with real prices and ratings
+- 🌍 **Browse in your language** — full bilingual support in English and Chinese
+
+> **Disclaimer:** We are not affiliated with Lovevery Inc. This is an independent fan project built by parents, for parents. Some Amazon links use affiliate tag `loveveryfans-20`.
 
 ---
 
-## 📂 项目结构
+## 🎯 Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **22 Play Kits Covered** | Every kit from [The Looker](https://loveveryfans.com/#/kit/looker) (0-12 weeks) to [The Planner](https://loveveryfans.com/#/kit/planner) (58-60 months) |
+| **164+ Toys Detailed** | Every toy with usage guides, developmental goals, and parent reviews |
+| **Bilingual CN/EN** | Full Chinese and English support with automatic language detection |
+| **Amazon Alternatives** | Curated affordable Lovevery play kit dupes with real prices and ratings |
+| **Parent Reviews** | Honest pros and cons from real parents for every toy |
+| **Cleaning Guides** | 142+ toy-specific cleaning instructions with material info |
+| **SEO Optimized** | Schema.org JSON-LD, dynamic meta tags, sitemap, hreflang for discoverability |
+| **Mobile Responsive** | Beautiful experience on phones, tablets, and desktops |
+| **Ad-Free** | Clean, distraction-free browsing experience |
+| **Fast & Lightweight** | Built with Vite for instant page loads |
+
+---
+
+## 🗂️ All 22 Play Kits
+
+### 👶 Baby Stage (0–12 months)
+| Kit | Age | Highlights | Link |
+|-----|-----|-----------|------|
+| The Looker | 0-12 weeks | High-contrast toys for newborns | [View →](https://loveveryfans.com/#/kit/looker) |
+| The Charmer | 3-4 months | Social smile development | [View →](https://loveveryfans.com/#/kit/charmer) |
+| The Senser | 5-6 months | Sensory exploration | [View →](https://loveveryfans.com/#/kit/senser) |
+| The Inspector | 7-8 months | Object permanence discovery | [View →](https://loveveryfans.com/#/kit/inspector) |
+| The Explorer | 9-10 months | Crawling and exploring | [View →](https://loveveryfans.com/#/kit/explorer) |
+| The Thinker | 11-12 months | Problem-solving skills | [View →](https://loveveryfans.com/#/kit/thinker) |
+
+### 🧒 Toddler Stage (13–30 months)
+| Kit | Age | Highlights | Link |
+|-----|-----|-----------|------|
+| The Babbler | 13-15 months | Early language development | [View →](https://loveveryfans.com/#/kit/babbler) |
+| The Adventurer | 16-18 months | Walking and pretend play | [View →](https://loveveryfans.com/#/kit/adventurer) |
+| The Realist | 19-21 months | Real-world imitation | [View →](https://loveveryfans.com/#/kit/realist) |
+| The Companion | 22-24 months | Social skills and empathy | [View →](https://loveveryfans.com/#/kit/companion) |
+| The Helper | 25-27 months | Practical life skills | [View →](https://loveveryfans.com/#/kit/helper) |
+| The Enthusiast | 28-30 months | Creative and energetic play | [View →](https://loveveryfans.com/#/kit/enthusiast) |
+
+### 🧒 Big Kid Stage (31–36 months)
+| Kit | Age | Highlights | Link |
+|-----|-----|-----------|------|
+| The Investigator | 31-33 months | STEM exploration | [View →](https://loveveryfans.com/#/kit/investigator) |
+| The Free Spirit | 34-36 months | Imaginative play | [View →](https://loveveryfans.com/#/kit/freeSpirit) |
+
+### 🎓 Preschool Stage (37–60 months)
+| Kit | Age | Highlights | Link |
+|-----|-----|-----------|------|
+| The Observer | 37-39 months | Keen observation skills | [View →](https://loveveryfans.com/#/kit/observer) |
+| The Storyteller | 40-42 months | Language and storytelling | [View →](https://loveveryfans.com/#/kit/storyteller) |
+| The Problem Solver | 43-45 months | Critical thinking | [View →](https://loveveryfans.com/#/kit/problemSolver) |
+| The Analyst | 46-48 months | Categorizing and sorting | [View →](https://loveveryfans.com/#/kit/analyst) |
+| The Connector | 49-51 months | Making connections | [View →](https://loveveryfans.com/#/kit/connector) |
+| The Examiner | 52-54 months | Detail-oriented observation | [View →](https://loveveryfans.com/#/kit/examiner) |
+| The Persister | 55-57 months | Persistence and focus | [View →](https://loveveryfans.com/#/kit/persister) |
+| The Planner | 58-60 months | School readiness | [View →](https://loveveryfans.com/#/kit/planner) |
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| [React](https://react.dev) | 19.2 | UI framework |
+| [TypeScript](https://www.typescriptlang.org) | 5.6 | Type safety |
+| [Vite](https://vitejs.dev) | 7.1 | Build tool & dev server |
+| [Tailwind CSS](https://tailwindcss.com) | 4.1 | Utility-first styling |
+| [Framer Motion](https://www.framer.com/motion/) | 12.23 | Animations |
+| [Wouter](https://github.com/molefrog/wouter) | 3.7 | Lightweight routing |
+| [Lucide React](https://lucide.dev) | 0.453 | Icon library |
+| [GitHub Pages](https://pages.github.com) | — | Hosting |
+
+---
+
+## 📂 Project Structure
 
 ```
-lovevery-kit-guide/
-├── client/                  # 前端源代码
+loveveryfans/
+├── client/                  # Frontend source code
 │   ├── src/
-│   │   ├── components/      # React 组件
-│   │   ├── contexts/        # React Context（语言切换）
-│   │   ├── data/            # 数据文件（kits, toys, reviews, cleaning）
-│   │   ├── pages/           # 页面组件（Home, KitDetail, NotFound）
-│   │   └── index.css        # 全局样式
-│   ├── public/              # 静态资源（图片、favicon、CNAME）
-│   └── index.html           # HTML 模板
-├── scripts/                 # 数据收集和处理脚本
-│   ├── scrape_lovevery_official.py   # 爬取 Lovevery 官网数据
-│   ├── scrape_reviews.py             # 收集家长评价
-│   ├── scrape_cleaning_guide.py      # 收集清洗指南
-│   ├── generate_toy_data.py          # JSON → TypeScript 转换
-│   ├── requirements.txt              # Python 依赖
-│   └── README.md                     # 脚本使用说明
-├── dist/                    # 构建输出目录
-├── vite.config.ts           # Vite 配置
-├── package.json             # 项目依赖
-└── README.md                # 项目说明（本文件）
+│   │   ├── components/      # React components
+│   │   ├── contexts/        # React Context (language toggle)
+│   │   ├── data/            # Data files (kits, toys, reviews, cleaning, SEO)
+│   │   ├── lib/             # Utility libraries (SEO helpers)
+│   │   ├── pages/           # Page components (Home, KitDetail, AboutUs)
+│   │   └── index.css        # Global styles
+│   ├── public/              # Static assets (images, favicon, CNAME, sitemap)
+│   └── index.html           # HTML template with structured data
+├── scripts/                 # Data collection and processing scripts
+│   ├── scrape_lovevery_official.py
+│   ├── scrape_reviews.py
+│   ├── scrape_cleaning_guide.py
+│   ├── scrape_alternatives.py
+│   ├── generate_toy_data.py
+│   └── README.md
+├── vite.config.ts           # Vite configuration
+├── package.json             # Project dependencies
+└── README.md                # This file
 ```
 
 ---
 
-## 🛠 本地开发
+## 🚀 Getting Started
 
-### 1. 克隆仓库
+### Prerequisites
+- Node.js 18+
+- pnpm (recommended) or npm
 
-```bash
-git clone https://github.com/gzxultra/lovevery-kit-guide.git
-cd lovevery-kit-guide
-```
-
-### 2. 安装依赖
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/gzxultra/loveveryfans.git
+cd loveveryfans
+
+# Install dependencies
 pnpm install
-```
 
-### 3. 启动开发服务器
-
-```bash
+# Start development server
 pnpm dev
 ```
 
-访问 `http://localhost:5173` 查看网站。
+Visit `http://localhost:5173` to view the site.
 
-### 4. 构建生产版本
+### Build for Production
 
 ```bash
 pnpm build
 ```
 
-构建产物将输出到 `dist/` 目录。
+Build output goes to `dist/` directory.
 
 ---
 
-## 📊 数据收集脚本
+## 🔍 SEO & Discoverability
 
-`scripts/` 目录包含了一套完整的数据收集和处理脚本，用于从 Lovevery 官网、Reddit、Amazon 等平台收集数据并转换为网站可用的 TypeScript 格式。
+This project is optimized for search engines with:
 
-详细使用方法请参考 [scripts/README.md](scripts/README.md)。
+- **Schema.org JSON-LD** structured data for each kit page (Product, ItemList, BreadcrumbList)
+- **Dynamic meta tags** — unique title and description for every page
+- **Sitemap.xml** with all 22 kit pages and hreflang annotations
+- **Canonical URLs** and **hreflang tags** for bilingual content
+- **Open Graph** and **Twitter Card** meta tags for social sharing
+- **Semantic HTML** with proper heading hierarchy and alt attributes
+- **Image lazy loading** for optimal page performance
 
 ---
 
-## 🚢 部署
+## 🚢 Deployment
 
-本项目使用 **GitHub Pages** 部署，构建产物推送到 `gh-pages` 分支。
-
-### 部署流程
+The site is deployed to **GitHub Pages** at [loveveryfans.com](https://loveveryfans.com).
 
 ```bash
-# 1. 构建项目
+# Build and deploy
 pnpm build
-
-# 2. 复制构建产物到临时目录
-rm -rf /tmp/gh-pages-deploy && mkdir -p /tmp/gh-pages-deploy
-cp -r dist/* /tmp/gh-pages-deploy/
-cp client/public/CNAME /tmp/gh-pages-deploy/CNAME
-
-# 3. 切换到 gh-pages 分支并清空
-git checkout gh-pages
-find . -maxdepth 1 -not -name '.git' -not -name '.' -not -name '..' -exec rm -rf {} +
-
-# 4. 复制新构建产物并提交
-cp -r /tmp/gh-pages-deploy/* .
-echo "" > .nojekyll
-git add -A
-git commit -m "deploy: update site"
-git push origin gh-pages
-
-# 5. 切换回 main 分支
-git checkout main
+# Push dist/ to gh-pages branch with CNAME file
 ```
 
-**⚠️ 重要提示：** 每次部署时，务必确保 `CNAME` 文件存在于 `gh-pages` 分支的根目录，否则自定义域名配置会丢失。
+> **Important:** Always ensure the `CNAME` file (containing `loveveryfans.com`) exists in the `gh-pages` branch root.
 
 ---
 
-## 🤝 贡献
+## 📊 Data Collection Scripts
 
-欢迎提交 Issue 和 Pull Request！
-
-如果您有任何建议或发现了问题，请通过以下方式联系我们：
-- 在网站上使用 [Formspree 留言反馈表单](https://loveveryfans.com)
-- 提交 [GitHub Issue](https://github.com/gzxultra/lovevery-kit-guide/issues)
+The `scripts/` directory contains a complete suite of data collection and processing scripts for gathering information from Lovevery's official site, Reddit, Amazon, and more. See [scripts/README.md](scripts/README.md) for details.
 
 ---
 
-## 💖 支持我们
+## 🤝 Contributing
 
-如果这份指南对您有帮助，欢迎通过以下方式支持我们：
-
-- ☕ **微信赞赏码**：访问网站底部查看
-- ☕ **Ko-fi**：[ko-fi.com/ernie92368](https://ko-fi.com/ernie92368)
-
----
-
-## 📄 免责声明
-
-本网站由 Lovevery 爱好者自发创建，**非官方网站，非盈利导向**。所有 Lovevery 商标、产品名称和图片版权归 [Lovevery](https://lovevery.com) 所有。
-
-This site is independently created by Lovevery enthusiasts. It is not affiliated with Lovevery and is non-commercial.
+Contributions are welcome! Please feel free to:
+- Submit [Issues](https://github.com/gzxultra/loveveryfans/issues) for bugs or feature requests
+- Open [Pull Requests](https://github.com/gzxultra/loveveryfans/pulls) for improvements
+- Use the [feedback form](https://loveveryfans.com) on the website
 
 ---
 
-## 📜 许可证
+## 💖 Support
 
-MIT License
+If this guide helps you, consider supporting us:
+- ☕ **Ko-fi**: [ko-fi.com/ernie92368](https://ko-fi.com/ernie92368)
+- 🌟 **Star this repo** to help others find it
 
 ---
 
-**Made with ❤️ by Lovevery Fans Community**
+## 📄 Disclaimer
+
+This website is an **independent fan project** and is **not affiliated with, endorsed by, or sponsored by Lovevery Inc.** All product names, logos, and brands are property of their respective owners. The information provided is for educational and informational purposes only.
+
+Some links on this site are Amazon affiliate links (tag: `loveveryfans-20`). If you purchase through these links, we earn a small commission at no extra cost to you, which helps keep this site running.
+
+---
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+**Made with ❤️ by parents, for parents**
+
+[Visit loveveryfans.com →](https://loveveryfans.com)
+
+</div>

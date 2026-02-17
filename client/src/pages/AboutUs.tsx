@@ -21,6 +21,7 @@ import {
   Star,
 } from "lucide-react";
 import { useEffect } from "react";
+import { applyAboutPageSeo } from "@/lib/seoHelpers";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
@@ -35,10 +36,7 @@ export default function AboutUs() {
   const { lang, t } = useLanguage();
 
   useEffect(() => {
-    document.title =
-      lang === "cn"
-        ? "关于我们 | Lovevery Fans"
-        : "About Us | Lovevery Fans";
+    applyAboutPageSeo(lang);
     window.scrollTo(0, 0);
   }, [lang]);
 

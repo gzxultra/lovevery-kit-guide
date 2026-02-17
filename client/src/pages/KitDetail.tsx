@@ -10,6 +10,8 @@ import { i18n } from "@/data/i18n";
 import { getToyImage, getKitHeroImage, getKitToyImages } from "@/data/toyImages";
 import { getToyReview } from "@/data/toyReviews";
 import { getCleaningInfo } from "@/data/toyCleaningGuide";
+import { getKitSeoData } from "@/data/seoData";
+import { applyKitPageSeo, cleanupKitPageSeo } from "@/lib/seoHelpers";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { motion, AnimatePresence } from "framer-motion";
@@ -33,12 +35,12 @@ import {
   ThumbsDown,
   Droplets,
 } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Link, useParams } from "wouter";
 import Lightbox from "@/components/Lightbox";
 import { RewardBanner } from "@/components/RewardBanner";
 import { AlternativesSection } from "@/components/AlternativesSection";
-import { getToyAlternatives } from "@/data/alternatives";
+import { getToyAlternatives, alternatives as allAlternatives } from "@/data/alternatives";
 
 const REFERRAL_CODE = "REF-6AA44A5A";
 
@@ -410,11 +412,56 @@ export default function KitDetail() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  // SEO data for this kit
+  const seoData = kit ? getKitSeoData(kit.id) : undefined;
+
+  // Get alternatives data for structured data
+  const kitAlternatives = useMemo(() => {
+    if (!kit) return [];
+    const kitAlt = allAlternatives.find((k) => k.kitId === kit.id);
+    return kitAlt?.toys || [];
+  }, [kit]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     if (kit) {
-      document.title = `${kit.name} | Lovevery Fans`;
-      
+      // Apply comprehensive SEO tags
+      const metaTitle = lang === "cn" && seoData?.metaTitleCn
+        ? seoData.metaTitleCn
+        : seoData?.metaTitleEn || `${kit.name} | Lovevery Fans`;
+      const metaDesc = lang === "cn" && seoData?.metaDescriptionCn
+        ? seoData.metaDescriptionCn
+        : seoData?.metaDescriptionEn || `${kit.name} Play Kit guide with parent reviews and affordable Amazon alternatives.`;
+
+      applyKitPageSeo({
+        kitId: kit.id,
+        kitName: kit.name,
+        ageRange: kit.ageRange,
+        ageRangeEn: kit.ageRangeEn || kit.ageRange,
+        description: kit.description,
+        descriptionEn: kit.descriptionEn || kit.description,
+        metaTitle: metaTitle,
+        metaDescription: metaDesc,
+        toyCount: kit.toys.filter((t) => !(t as any).discontinued).length,
+        stage: kit.stage,
+        color: kit.color,
+        toys: kit.toys.filter((t) => !(t as any).discontinued).map((t) => ({
+          name: t.name,
+          englishName: t.englishName,
+          category: t.categoryEn || t.category,
+        })),
+        alternatives: kitAlternatives.map((ta) => ({
+          toyName: ta.toyName,
+          alternatives: ta.alternatives.map((a) => ({
+            name: a.name,
+            price: a.price,
+            rating: a.rating,
+            reviewCount: a.reviewCount,
+            amazonUrl: a.amazonUrl,
+          })),
+        })),
+      });
+
       // Send Google Analytics event for kit view
       if (typeof window !== "undefined" && window.gtag) {
         window.gtag("event", "view_kit", {
@@ -424,9 +471,9 @@ export default function KitDetail() {
       }
     }
     return () => {
-      document.title = "Lovevery Fans";
+      cleanupKitPageSeo();
     };
-  }, [params.id, kit]);
+  }, [params.id, kit, lang, seoData, kitAlternatives]);
 
   if (!kit) {
     return (
@@ -526,7 +573,7 @@ export default function KitDetail() {
               <div className="w-48 sm:w-56 aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-3">
                 <img
                   src={heroImage}
-                  alt={`${kit.name} Play Kit`}
+                  alt={`${kit.name} Play Kit - Lovevery alternatives and affordable dupes for ${kit.ageRangeEn || kit.ageRange}`}
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -550,6 +597,13 @@ export default function KitDetail() {
               <p className="text-base sm:text-lg md:text-xl text-[#3D3229] leading-relaxed max-w-3xl">
                 {kitDescription}
               </p>
+
+              {/* SEO Description - Natural language text for search engines */}
+              {seoData && (
+                <p className="text-sm sm:text-base text-[#6B5E50] leading-relaxed max-w-3xl mt-3 sm:mt-4 opacity-90">
+                  {lang === "cn" ? seoData.seoDescriptionCn : seoData.seoDescriptionEn}
+                </p>
+              )}
 
               {/* View on Lovevery Official Site Button */}
               {(kit.officialUrl || true) && (
@@ -632,7 +686,7 @@ export default function KitDetail() {
                 <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-4">
                   <img
                     src={heroImage}
-                    alt={`${kit.name} Play Kit`}
+                    alt={`${kit.name} Play Kit overview - toys and Amazon alternatives for ${kit.ageRangeEn || kit.ageRange}`}
                     className="w-full h-full object-contain"
                     loading="lazy"
                   />

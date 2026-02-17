@@ -1,4 +1,19 @@
+# Robots.txt for loveveryfans.com
+# Allow all search engines to crawl all content
+
 User-agent: *
 Allow: /
+Disallow: /api/
 
+# Sitemap location
 Sitemap: https://loveveryfans.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+# Host directive
+Host: https://loveveryfans.com

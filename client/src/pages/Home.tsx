@@ -15,6 +15,7 @@ import { RewardSection } from "@/components/RewardSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
+import { applyHomePageSeo } from "@/lib/seoHelpers";
 
 const HERO_IMG = `${import.meta.env.BASE_URL}hero.jpg`;
 
@@ -111,7 +112,7 @@ export default function Home() {
   }, [searchOpen]);
 
   useEffect(() => {
-    document.title = "Lovevery Fans";
+    applyHomePageSeo();
   }, []);
 
   return (
@@ -410,7 +411,7 @@ export default function Home() {
               <div className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-[#3D3229]/10">
                 <img
                   src={HERO_IMG}
-                  alt="Lovevery Play Kit Collection"
+                  alt="Lovevery Play Kit Collection - Complete guide to all 22 Lovevery Play Kits with affordable Amazon alternatives"
                   className="w-full h-full object-cover"
                 />
               </div>
