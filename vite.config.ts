@@ -18,6 +18,30 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunks - split heavy libraries
+          'vendor-react': ['react', 'react-dom', 'react-dom/client'],
+          'vendor-framer': ['framer-motion'],
+          'vendor-radix': [
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+          ],
+          'vendor-sonner': ['sonner', 'next-themes'],
+          // Data chunks - large data files
+          'data-kits': ['./client/src/data/kits.ts'],
+          'data-alternatives': ['./client/src/data/alternatives.ts'],
+          'data-images': ['./client/src/data/toyImages.ts'],
+          'data-reviews': [
+            './client/src/data/toyCleaningGuide.ts',
+            './client/src/data/toyReviews.ts',
+          ],
+        },
+      },
+    },
   },
   server: {
     port: 3000,

@@ -35,7 +35,7 @@ import {
   ThumbsDown,
   Droplets,
 } from "lucide-react";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, memo, useMemo } from "react";
 import { Link, useParams } from "wouter";
 import Lightbox from "@/components/Lightbox";
 import { RewardBanner } from "@/components/RewardBanner";
@@ -52,7 +52,7 @@ function getReferralUrl() {
   return `https://lovevery.com/pages/refer-a-friend?discount_code=${REFERRAL_CODE}`;
 }
 
-function ToyCard({
+const ToyCard = memo(function ToyCard({
   toy,
   index,
   kitColor,
@@ -332,7 +332,7 @@ function ToyCard({
       )}
     </div>
   );
-}
+});
 
 /* Referral Module */
 function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) {

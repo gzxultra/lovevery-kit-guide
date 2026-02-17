@@ -17,7 +17,8 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { applyHomePageSeo } from "@/lib/seoHelpers";
 
-const HERO_IMG = `${import.meta.env.BASE_URL}hero.jpg`;
+const HERO_IMG = `${import.meta.env.BASE_URL}hero.webp`;
+const HERO_IMG_FALLBACK = `${import.meta.env.BASE_URL}hero.jpg`;
 
 function scrollToStage(stageId: string) {
   const el = document.getElementById(`stage-${stageId}`);
@@ -409,11 +410,18 @@ export default function Home() {
             {/* Hero image */}
             <div className="relative animate-[fadeIn_1s_ease-out_0.2s_both] order-1 md:order-2">
               <div className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-[#3D3229]/10">
-                <img
-                  src={HERO_IMG}
-                  alt="Lovevery Play Kit Collection - Complete guide to all 22 Lovevery Play Kits with affordable Amazon alternatives"
-                  className="w-full h-full object-cover"
-                />
+                <picture>
+                  <source srcSet={HERO_IMG} type="image/webp" />
+                  <img
+                    src={HERO_IMG_FALLBACK}
+                    alt="Lovevery Play Kit Collection - Complete guide to all 22 Lovevery Play Kits with affordable Amazon alternatives"
+                    className="w-full h-full object-cover"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={1012}
+                    height={576}
+                  />
+                </picture>
               </div>
               <div className="absolute -bottom-3 -left-2 sm:-bottom-4 sm:-left-4 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg shadow-[#3D3229]/10">
                 <div className="flex items-center gap-2 sm:gap-3">

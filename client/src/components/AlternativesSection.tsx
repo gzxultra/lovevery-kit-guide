@@ -21,7 +21,8 @@ function ensureAffiliateTag(url: string): string {
   return `${cleanUrl}${separator}tag=${AFFILIATE_TAG}`;
 }
 
-function renderStars(rating: number) {
+function renderStars(rating: number | null) {
+  if (rating == null) return [];
   const fullStars = Math.floor(rating);
   const hasHalf = rating % 1 >= 0.5;
   const stars = [];
@@ -120,7 +121,7 @@ export function AlternativesSection({
                 </div>
 
                 {/* Rating row */}
-                {alt.rating != null && (
+                {alt.rating != null && alt.rating > 0 && (
                   <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
                     <div className="flex items-center gap-1">
                       <div className="flex gap-0.5">{renderStars(alt.rating)}</div>
@@ -128,7 +129,7 @@ export function AlternativesSection({
                         {alt.rating.toFixed(1)}
                       </span>
                     </div>
-                    {alt.reviewCount != null && (
+                    {alt.reviewCount != null && alt.reviewCount > 0 && (
                       <span className="text-[10px] sm:text-xs text-[#9B8E7E]">
                         ({alt.reviewCount.toLocaleString()}{" "}
                         {lang === "cn" ? "条评价" : "reviews"})

@@ -108,19 +108,40 @@
     }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - optimized loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Preload critical font CSS -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
-    <!-- Google Analytics GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCV2N7Q89L"></script>
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" type="image/webp" href="/hero.webp" />
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://images.ctfassets.net" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <!-- Google Analytics GA4 - deferred -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-ZCV2N7Q89L');
+      // Defer GA loading until after page is interactive
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCV2N7Q89L';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCV2N7Q89L');
+      });
     </script>
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#FAF7F2;color:#1a1108}
+      #root{min-height:100vh}
+      .min-h-screen{min-height:100vh}
+    </style>
   </head>
   <body>
     <div id="root"></div>

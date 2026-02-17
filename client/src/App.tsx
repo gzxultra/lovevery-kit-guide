@@ -1,40 +1,46 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch, Router } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
-import Home from "./pages/Home";
-import KitDetail from "./pages/KitDetail";
-import AboutUs from "./pages/AboutUs";
+import { lazy, Suspense } from "react";
+
+// Lazy load route components for code splitting
+const Home = lazy(() => import("./pages/Home"));
+const KitDetail = lazy(() => import("./pages/KitDetail"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Minimal loading fallback
+function PageLoader() {
+  return (
+    <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center">
+      <div className="w-8 h-8 border-3 border-[#E8DFD3] border-t-[#7FB685] rounded-full animate-spin" />
+    </div>
+  );
+}
 
 function AppRouter() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/kit/:id"} component={KitDetail} />
-      <Route path={"/about"} component={AboutUs} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<PageLoader />}>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/kit/:id"} component={KitDetail} />
+        <Route path={"/about"} component={AboutUs} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
-        <LanguageProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Router hook={useHashLocation}>
-              <AppRouter />
-            </Router>
-          </TooltipProvider>
-        </LanguageProvider>
-      </ThemeProvider>
+      <LanguageProvider>
+        <Router hook={useHashLocation}>
+          <AppRouter />
+        </Router>
+      </LanguageProvider>
     </ErrorBoundary>
   );
 }
