@@ -122,6 +122,17 @@ export const i18n = {
     retry: { cn: "重试", en: "Retry" },
   },
 
+  // Reward section
+  reward: {
+    title: { cn: "请我喝杯咖啡 ☕", en: "Buy me a coffee ☕" },
+    subtitle: {
+      cn: "如果这份指南对你有帮助，感谢你的支持",
+      en: "If you find this guide helpful, your support means a lot",
+    },
+    wechat: { cn: "微信赞赏", en: "WeChat Reward" },
+    kofi: { cn: "Ko-fi 打赏", en: "Support on Ko-fi" },
+  },
+
   // Footer
   footer: {
     devStages: { cn: "发展阶段", en: "Development Stages" },

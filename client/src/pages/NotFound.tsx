@@ -1,8 +1,16 @@
 import { ArrowLeft, Home, Sparkles } from "lucide-react";
+import { useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
+
+  useEffect(() => {
+    document.title = "404 - Page Not Found | Lovevery Fans";
+    return () => {
+      document.title = "Lovevery Fans";
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FAF7F2] flex flex-col">

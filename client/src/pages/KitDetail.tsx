@@ -349,7 +349,13 @@ export default function KitDetail() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [params.id]);
+    if (kit) {
+      document.title = `${kit.name} | Lovevery Fans`;
+    }
+    return () => {
+      document.title = "Lovevery Fans";
+    };
+  }, [params.id, kit]);
 
   if (!kit) {
     return (

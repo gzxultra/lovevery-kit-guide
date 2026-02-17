@@ -11,6 +11,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
 import FeedbackForm from "@/components/FeedbackForm";
+import RewardSection from "@/components/RewardSection";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -107,6 +108,10 @@ export default function Home() {
       searchInputRef.current.focus();
     }
   }, [searchOpen]);
+
+  useEffect(() => {
+    document.title = "Lovevery Fans";
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
@@ -503,6 +508,9 @@ export default function Home() {
           </section>
         );
       })}
+
+      {/* Reward Section */}
+      <RewardSection />
 
       {/* Feedback Form */}
       <FeedbackForm />
