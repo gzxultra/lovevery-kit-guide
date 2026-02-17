@@ -113,23 +113,27 @@ export function AlternativesSection({
                     {alt.name}
                   </h4>
                   <span className="text-sm sm:text-base font-bold text-[#D4A574] whitespace-nowrap">
-                    {alt.price}
+                    {alt.price || (lang === "cn" ? "查看价格" : "Check Price")}
                   </span>
                 </div>
 
                 {/* Rating row */}
-                <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
-                  <div className="flex items-center gap-1">
-                    <div className="flex gap-0.5">{renderStars(alt.rating)}</div>
-                    <span className="text-[11px] sm:text-xs font-medium text-[#3D3229]">
-                      {alt.rating.toFixed(1)}
-                    </span>
+                {alt.rating != null && (
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
+                    <div className="flex items-center gap-1">
+                      <div className="flex gap-0.5">{renderStars(alt.rating)}</div>
+                      <span className="text-[11px] sm:text-xs font-medium text-[#3D3229]">
+                        {alt.rating.toFixed(1)}
+                      </span>
+                    </div>
+                    {alt.reviewCount != null && (
+                      <span className="text-[10px] sm:text-xs text-[#9B8E7E]">
+                        ({alt.reviewCount.toLocaleString()}{" "}
+                        {lang === "cn" ? "条评价" : "reviews"})
+                      </span>
+                    )}
                   </div>
-                  <span className="text-[10px] sm:text-xs text-[#9B8E7E]">
-                    ({alt.reviewCount.toLocaleString()}{" "}
-                    {lang === "cn" ? "条评价" : "reviews"})
-                  </span>
-                </div>
+                )}
 
                 {/* Reason */}
                 <p className="text-[11px] sm:text-xs text-[#6B5E50] leading-relaxed mb-2.5">
