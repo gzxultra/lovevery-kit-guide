@@ -136,5 +136,9 @@ export const i18n = {
       cn: "Play Kit 使用说明书 — 非官方指南",
       en: "Play Kit User Guide — Unofficial",
     },
+    disclaimer: {
+      cn: "本网站由 Lovevery 爱好者自发创建，非官方网站，非盈利导向。",
+      en: "This site is independently created by Lovevery enthusiasts. It is not affiliated with Lovevery and is non-commercial.",
+    },
   },
 } as const;

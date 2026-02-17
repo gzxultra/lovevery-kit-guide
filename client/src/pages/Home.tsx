@@ -14,7 +14,7 @@ import FeedbackForm from "@/components/FeedbackForm";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
-const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/MNPxTRzCbxWVkhFf.jpg";
+const HERO_IMG = "/hero.jpg";
 
 function scrollToStage(stageId: string) {
   const el = document.getElementById(`stage-${stageId}`);
@@ -539,8 +539,13 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#4D4439] text-center text-xs sm:text-sm text-[#8B7E70]">
-            {i18n.footer.tagline[lang]}
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#4D4439] text-center">
+            <p className="text-xs sm:text-sm text-[#8B7E70] mb-2">
+              {i18n.footer.tagline[lang]}
+            </p>
+            <p className="text-[10px] sm:text-xs text-[#6B5E50] italic">
+              {i18n.footer.disclaimer[lang]}
+            </p>
           </div>
         </div>
       </footer>
