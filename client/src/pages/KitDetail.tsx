@@ -193,21 +193,6 @@ function ToyCard({
                     </div>
                   )}
 
-                  {/* Parent Review */}
-                  {parentRev && (
-                    <div className="flex items-start gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-[#F5F0F8]">
-                      <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 text-[#9B7DB8]" />
-                      <div>
-                        <p className="text-[10px] sm:text-xs font-semibold text-[#9B7DB8] uppercase tracking-wider mb-1 sm:mb-1.5">
-                          {i18n.kitDetail.parentReview[lang]}
-                        </p>
-                        <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed italic">
-                          &ldquo;{parentRev}&rdquo;
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
                   {/* Pros & Cons Review */}
                   {toyReview && (
                     <div className="rounded-lg sm:rounded-xl border border-[#E8DFD3] overflow-hidden">
