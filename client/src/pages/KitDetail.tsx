@@ -287,6 +287,10 @@ export default function KitDetail() {
   const kit = getKitById(params.id || "");
   const { lang } = useLanguage();
 
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [params.id]);
@@ -329,6 +333,22 @@ export default function KitDetail() {
   const kitDescription = lang === "en" && kit.descriptionEn ? kit.descriptionEn : kit.description;
   const kitAgeRange = lang === "en" && kit.ageRangeEn ? kit.ageRangeEn : kit.ageRange;
   const kitStageLabel = lang === "en" && kit.stageLabelEn ? kit.stageLabelEn : kit.stageLabel;
+
+  // Lightbox handlers
+  const allToyImages = getKitToyImages(kit.id);
+  const openLightbox = useCallback((index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  }, []);
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false);
+  }, []);
+  const nextImage = useCallback(() => {
+    setLightboxIndex((prev) => (prev + 1) % allToyImages.length);
+  }, [allToyImages.length]);
+  const prevImage = useCallback(() => {
+    setLightboxIndex((prev) => (prev - 1 + allToyImages.length) % allToyImages.length);
+  }, [allToyImages.length]);
 
   return (
     <>
@@ -494,6 +514,7 @@ export default function KitDetail() {
                     index={originalIndex}
                     kitColor={kit.color}
                     kitId={kit.id}
+                    onImageClick={openLightbox}
                   />
                 );
               })}
@@ -524,6 +545,7 @@ export default function KitDetail() {
                       index={originalIndex}
                       kitColor={kit.color}
                       kitId={kit.id}
+                      onImageClick={openLightbox}
                     />
                   );
                 })}
