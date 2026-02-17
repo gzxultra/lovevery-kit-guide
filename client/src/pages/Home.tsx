@@ -486,7 +486,7 @@ export default function Home() {
                               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 bg-[#FAF7F2] border border-[#F0EBE3] p-1">
                                 <img
                                   src={kitHero}
-                                  alt={kit.name}
+                                  alt={`${kit.name} Play Kit - Lovevery educational toys for ${kit.ageRangeEn || kit.ageRange}`}
                                   className="w-full h-full object-contain"
                                   loading="lazy"
                                 />

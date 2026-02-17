@@ -148,7 +148,7 @@ function ToyCard({
             >
               <img
                 src={toyImage}
-                alt={toy.englishName}
+                alt={`${toy.englishName} - Lovevery ${kitName} Play Kit educational toy`}
                 className="w-full h-full object-contain"
                 loading="lazy"
               />

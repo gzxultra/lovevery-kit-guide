@@ -95,7 +95,7 @@ export function AlternativesSection({
                 <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden bg-white border border-[#E8DFD3] flex items-center justify-center p-1.5">
                   <img
                     src={alt.imageUrl}
-                    alt={alt.name}
+                    alt={`${alt.name} - affordable alternative to ${toyName}`}
                     className="w-full h-full object-contain"
                     loading="lazy"
                     onError={() => handleImageError(idx)}
@@ -146,7 +146,7 @@ export function AlternativesSection({
                 <a
                   href={ensureAffiliateTag(alt.amazonUrl)}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer sponsored"
                   onClick={() => {
                     // Send Google Analytics event
                     if (typeof window !== "undefined" && window.gtag) {

@@ -79,8 +79,8 @@ export interface KitSeoParams {
     alternatives: Array<{
       name: string;
       price: string | null;
-      rating: number;
-      reviewCount: number;
+      rating: number | null;
+      reviewCount: number | null;
       amazonUrl: string;
     }>;
   }>;

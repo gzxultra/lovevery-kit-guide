@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lovevery Fans</title>
+  <script>
+    // GitHub Pages SPA redirect
+    // Converts /kit/looker -> /#/kit/looker so the SPA router can handle it
+    var path = window.location.pathname;
+    var search = window.location.search;
+    if (path !== '/' && path !== '/index.html') {
+      window.location.replace(
+        window.location.origin + '/#' + path + search
+      );
+    }
+  </script>
+</head>
+<body>
+  <noscript>
+    <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:system-ui,sans-serif;">
+      <h1>Lovevery Fans</h1>
+      <p>The page you're looking for might have moved. Please visit our <a href="/">homepage</a> to explore all 22 Lovevery Play Kits.</p>
+      <p><a href="/">← Back to Lovevery Fans Homepage</a></p>
+    </div>
+  </noscript>
+</body>
+</html>
