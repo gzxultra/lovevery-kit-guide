@@ -59,6 +59,8 @@ export const i18n = {
     prosTitle: { cn: "优点", en: "Pros" },
     consTitle: { cn: "缺点", en: "Cons" },
     prosConsTitle: { cn: "家长评价 · 优缺点", en: "Parent Reviews · Pros & Cons" },
+    cleaningTitle: { cn: "清洗指南", en: "Cleaning Guide" },
+    materialLabel: { cn: "材质", en: "Material" },
     expand: { cn: "查看发展目标和家长评价", en: "View Goals & Reviews" },
     collapse: { cn: "收起详情", en: "Collapse" },
     discontinued: { cn: "旧版", en: "Legacy" },

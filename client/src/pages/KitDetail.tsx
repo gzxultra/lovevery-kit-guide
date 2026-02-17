@@ -9,6 +9,7 @@ import { getKitById, kits, type Toy } from "@/data/kits";
 import { i18n } from "@/data/i18n";
 import { getToyImage, getKitHeroImage, getKitToyImages } from "@/data/toyImages";
 import { getToyReview } from "@/data/toyReviews";
+import { getCleaningInfo } from "@/data/toyCleaningGuide";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { motion, AnimatePresence } from "framer-motion";
@@ -30,6 +31,7 @@ import {
   Sparkles,
   ThumbsUp,
   ThumbsDown,
+  Droplets,
 } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "wouter";
@@ -65,6 +67,7 @@ function ToyCard({
   const isNew = (toy as any).isNew;
   const hasDetails = !!(toy.developmentGoal && toy.parentReview);
   const toyReview = getToyReview(kitId, toy.name);
+  const cleaningInfo = getCleaningInfo(kitId, toy.name);
 
   const toyName = lang === "cn" ? toy.name : toy.englishName;
   const toySubName = lang === "cn" ? toy.englishName : toy.name;
@@ -233,6 +236,26 @@ function ToyCard({
                             {toyReview.cons}
                           </p>
                         </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Cleaning Guide */}
+                  {cleaningInfo && (
+                    <div className="flex items-start gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-[#F0F4F8]">
+                      <Droplets className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 text-[#5B9BD5]" />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap mb-1.5 sm:mb-2">
+                          <p className="text-[10px] sm:text-xs font-semibold text-[#5B9BD5] uppercase tracking-wider">
+                            {i18n.kitDetail.cleaningTitle[lang]}
+                          </p>
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium bg-[#E3EDF7] text-[#3D6B99] border border-[#C5D9ED]">
+                            {lang === "cn" ? cleaningInfo.materialCn : cleaningInfo.materialEn}
+                          </span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">
+                          {lang === "cn" ? cleaningInfo.cleaningCn : cleaningInfo.cleaningEn}
+                        </p>
                       </div>
                     </div>
                   )}
