@@ -64,6 +64,7 @@ function ToyCard({
   onImageClick?: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const { lang } = useLanguage();
   const toyImage = getToyImage(kitId, index);
   const isDiscontinued = (toy as any).discontinued;
@@ -80,11 +81,36 @@ function ToyCard({
   const parentRev = lang === "en" && toy.parentReviewEn ? toy.parentReviewEn : toy.parentReview;
   const category = lang === "en" && toy.categoryEn ? toy.categoryEn : toy.category;
 
+  // Handle hover with debounce for desktop
+  const handleMouseEnter = () => {
+    if (!hasDetails) return;
+    const timeout = setTimeout(() => {
+      setExpanded(true);
+    }, 250); // 250ms debounce
+    setHoverTimeout(timeout);
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setExpanded(false);
+  };
+
+  // Handle click for mobile
+  const handleClick = () => {
+    if (!hasDetails) return;
+    setExpanded(!expanded);
+  };
+
   return (
     <div
-      className={`bg-white rounded-xl sm:rounded-2xl border overflow-hidden hover:shadow-lg hover:shadow-[#3D3229]/5 transition-shadow ${
+      className={`bg-white rounded-xl sm:rounded-2xl border overflow-hidden hover:shadow-lg hover:shadow-[#3D3229]/5 transition-all duration-300 ${
         isDiscontinued ? "border-[#E8DFD3] opacity-70" : "border-[#E8DFD3]"
-      }`}
+      } hover-expand-card`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Toy Header with Image */}
       <div className="p-4 sm:p-6 pb-3 sm:pb-4">
@@ -163,8 +189,8 @@ function ToyCard({
         <>
           <div className="px-4 sm:px-6 pb-2">
             <button
-              onClick={() => setExpanded(!expanded)}
-              className="w-full flex items-center justify-between py-3 text-xs sm:text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors border-t border-[#F0EBE3] min-h-[44px]"
+              onClick={handleClick}
+              className="w-full flex items-center justify-between py-3 text-xs sm:text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors border-t border-[#F0EBE3] min-h-[44px] mobile-expand-trigger"
             >
               <span>{expanded ? i18n.kitDetail.collapse[lang] : i18n.kitDetail.expand[lang]}</span>
               {expanded ? (

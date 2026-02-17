@@ -1,6 +1,7 @@
 import { Star, ExternalLink, ShoppingCart } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { Alternative } from "@/data/alternatives";
+import { useState } from "react";
 
 interface AlternativesSectionProps {
   alternatives: Alternative[];
@@ -57,10 +58,15 @@ export function AlternativesSection({
   toyNameCn,
 }: AlternativesSectionProps) {
   const { lang } = useLanguage();
+  const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
 
   if (!alternatives || alternatives.length === 0) {
     return null;
   }
+
+  const handleImageError = (idx: number) => {
+    setImageErrors(prev => new Set(prev).add(idx));
+  };
 
   return (
     <div className="rounded-lg sm:rounded-xl border border-[#D0E4F0] overflow-hidden">
@@ -81,45 +87,67 @@ export function AlternativesSection({
             key={idx}
             className="p-3 sm:p-4 bg-gradient-to-br from-[#FAFCFD] to-[#F8F5FC] hover:from-[#F0F6FA] hover:to-[#F0EBFA] transition-colors"
           >
-            {/* Top row: Name + Price */}
-            <div className="flex items-start justify-between gap-2 mb-2">
-              <h4 className="text-xs sm:text-sm font-semibold text-[#3D3229] line-clamp-2 flex-1">
-                {alt.name}
-              </h4>
-              <span className="text-sm sm:text-base font-bold text-[#D4A574] whitespace-nowrap">
-                {alt.price}
-              </span>
-            </div>
+            <div className="flex gap-3 sm:gap-4">
+              {/* Product Image */}
+              {alt.imageUrl && !imageErrors.has(idx) ? (
+                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden bg-white border border-[#E8DFD3] flex items-center justify-center p-1.5">
+                  <img
+                    src={alt.imageUrl}
+                    alt={alt.name}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    onError={() => handleImageError(idx)}
+                  />
+                </div>
+              ) : (
+                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg bg-gradient-to-br from-[#FAF7F2] to-[#F0EBE3] border border-[#E8DFD3] flex items-center justify-center">
+                  <ShoppingCart className="w-6 h-6 sm:w-8 sm:h-8 text-[#C8BFB3]" />
+                </div>
+              )}
 
-            {/* Rating row */}
-            <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
-              <div className="flex items-center gap-1">
-                <div className="flex gap-0.5">{renderStars(alt.rating)}</div>
-                <span className="text-[11px] sm:text-xs font-medium text-[#3D3229]">
-                  {alt.rating.toFixed(1)}
-                </span>
+              {/* Product Info */}
+              <div className="flex-1 min-w-0">
+                {/* Top row: Name + Price */}
+                <div className="flex items-start justify-between gap-2 mb-1.5 sm:mb-2">
+                  <h4 className="text-xs sm:text-sm font-semibold text-[#3D3229] line-clamp-2 flex-1">
+                    {alt.name}
+                  </h4>
+                  <span className="text-sm sm:text-base font-bold text-[#D4A574] whitespace-nowrap">
+                    {alt.price}
+                  </span>
+                </div>
+
+                {/* Rating row */}
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
+                  <div className="flex items-center gap-1">
+                    <div className="flex gap-0.5">{renderStars(alt.rating)}</div>
+                    <span className="text-[11px] sm:text-xs font-medium text-[#3D3229]">
+                      {alt.rating.toFixed(1)}
+                    </span>
+                  </div>
+                  <span className="text-[10px] sm:text-xs text-[#9B8E7E]">
+                    ({alt.reviewCount.toLocaleString()}{" "}
+                    {lang === "cn" ? "条评价" : "reviews"})
+                  </span>
+                </div>
+
+                {/* Reason */}
+                <p className="text-[11px] sm:text-xs text-[#6B5E50] leading-relaxed mb-2.5">
+                  {lang === "cn" ? alt.reasonCn : alt.reasonEn}
+                </p>
+
+                {/* Buy Button */}
+                <a
+                  href={ensureAffiliateTag(alt.amazonUrl)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#FF9900] hover:bg-[#E88B00] text-white text-[11px] sm:text-xs font-medium transition-all hover:shadow-md active:scale-[0.98]"
+                >
+                  {lang === "cn" ? "去 Amazon 购买" : "Buy on Amazon"}
+                  <ExternalLink className="w-3 h-3 opacity-80" />
+                </a>
               </div>
-              <span className="text-[10px] sm:text-xs text-[#9B8E7E]">
-                ({alt.reviewCount.toLocaleString()}{" "}
-                {lang === "cn" ? "条评价" : "reviews"})
-              </span>
             </div>
-
-            {/* Reason */}
-            <p className="text-[11px] sm:text-xs text-[#6B5E50] leading-relaxed mb-2.5">
-              {lang === "cn" ? alt.reasonCn : alt.reasonEn}
-            </p>
-
-            {/* Buy Button */}
-            <a
-              href={ensureAffiliateTag(alt.amazonUrl)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#FF9900] hover:bg-[#E88B00] text-white text-[11px] sm:text-xs font-medium transition-all hover:shadow-md active:scale-[0.98]"
-            >
-              {lang === "cn" ? "去 Amazon 购买" : "Buy on Amazon"}
-              <ExternalLink className="w-3 h-3 opacity-80" />
-            </a>
           </div>
         ))}
       </div>

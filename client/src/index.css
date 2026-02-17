@@ -177,3 +177,28 @@ html {
     opacity: 1;
   }
 }
+
+/* Hover-based card expansion - desktop only */
+@media (hover: hover) and (pointer: fine) {
+  /* Enable hover expansion on desktop */
+  .hover-expand-card {
+    transition: all 0.3s ease;
+  }
+  
+  /* Hide the expand/collapse button on desktop since hover handles it */
+  .hover-expand-card .mobile-expand-trigger {
+    display: none;
+  }
+}
+
+@media (hover: none) or (pointer: coarse) {
+  /* On mobile/touch devices, disable hover effects */
+  .hover-expand-card {
+    pointer-events: auto;
+  }
+  
+  /* Prevent hover from triggering on touch devices */
+  .hover-expand-card:hover {
+    /* Reset any hover styles */
+  }
+}

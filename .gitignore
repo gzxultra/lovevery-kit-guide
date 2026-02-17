@@ -111,4 +111,10 @@ temp/
 # Manus-specific
 .manus-logs/
 ideas.md
-.github/workflows/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python

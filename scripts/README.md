@@ -7,6 +7,7 @@ This directory contains a set of reusable Python scripts for collecting, process
 | Script | Purpose | Output |
 |--------|---------|--------|
 | `scrape_lovevery_official.py` | Scrape Kit & Toy data from lovevery.com | `lovevery_kits.json` |
+| `scrape_alternatives.py` | Find and update Amazon alternative products | `lovevery_alternatives.json` |
 | `scrape_reviews.py` | Collect parent reviews from Reddit, Amazon, Xiaohongshu | `lovevery_reviews.json` |
 | `scrape_cleaning_guide.py` | Collect cleaning instructions by material type | `lovevery_cleaning_guide.json` |
 | `generate_toy_data.py` | Convert JSON → TypeScript data files for the website | `*.ts` files |
@@ -117,7 +118,98 @@ python scrape_lovevery_official.py -v
 
 ---
 
-### 2. `scrape_reviews.py`
+### 2. `scrape_alternatives.py`
+
+Finds affordable Amazon alternatives for Lovevery toys using AI-powered search, then scrapes real product data (prices, ratings, reviews, images) from Amazon.
+
+#### Features
+
+- 🤖 **AI-Powered Discovery**: Uses OpenAI GPT-4 to find relevant Amazon products
+- 🌐 **Real Data Scraping**: Fetches actual prices, ratings, reviews, and images from Amazon
+- 🔄 **Incremental Updates**: Refresh existing products without AI search
+- 🛡️ **Anti-Blocking**: Random delays, retries, proper headers to avoid detection
+- 📊 **Progress Tracking**: Detailed verbose output for monitoring
+
+#### Usage
+
+```bash
+# Refresh prices/ratings/images for all existing products (no AI needed)
+python scrape_alternatives.py --refresh-prices --verbose
+
+# Update a specific kit only
+python scrape_alternatives.py --refresh-prices --kit looker --verbose
+
+# Find new alternatives with AI (requires OPENAI_API_KEY)
+python scrape_alternatives.py --verbose
+
+# Update mode (merge with existing data)
+python scrape_alternatives.py --update --verbose
+```
+
+#### Arguments
+
+| Argument | Default | Description |
+|----------|---------|-------------|
+| `--refresh-prices` | off | Refresh prices/ratings for existing ASINs (no AI search) |
+| `--kit KIT_ID` | all kits | Process only a specific kit (e.g., `looker`, `charmer`) |
+| `--update` | off | Update mode - merge with existing data |
+| `-o, --output PATH` | `lovevery_alternatives.json` | Output JSON file path |
+| `-v, --verbose` | off | Enable detailed progress logging |
+
+#### Output Format
+
+```json
+[
+  {
+    "kitId": "looker",
+    "kitName": "The Looker",
+    "toys": [
+      {
+        "toyName": "The Mobile",
+        "toyNameCn": "床铃",
+        "alternatives": [
+          {
+            "name": "Montessori Mobile Baby for Crib",
+            "asin": "B088TCNZ52",
+            "price": "$25.99",
+            "rating": 4.4,
+            "reviewCount": 1580,
+            "imageUrl": "https://m.media-amazon.com/images/I/...",
+            "amazonUrl": "https://www.amazon.com/dp/B088TCNZ52?tag=loveveryfans-20",
+            "reasonEn": "High-contrast mobile designed for newborns...",
+            "reasonCn": "高对比度床铃，专为新生儿设计..."
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+#### Anti-Blocking Strategy
+
+- **Realistic Headers**: Full browser-like headers including Sec-Fetch-*
+- **Random Delays**: 2-4 seconds between requests
+- **Retry Logic**: Up to 3 attempts with exponential backoff
+- **Rate Limiting**: Special handling for 503 errors (10s wait)
+
+#### Automation
+
+Runs automatically via GitHub Actions:
+- **Schedule**: Daily at 6:00 AM UTC (10:00 PM PST)
+- **Workflow**: `.github/workflows/update-alternatives.yml`
+- **Action**: Refreshes all product data and auto-deploys if changed
+
+#### Notes
+
+- Price refresh does NOT require OpenAI API key (only for finding new products)
+- Some ASINs may return 404 (discontinued products)
+- Full update takes approximately 10-15 minutes for all 174 products
+- Affiliate tag `loveveryfans-20` is automatically added to all Amazon URLs
+
+---
+
+### 3. `scrape_reviews.py`
 
 Collects parent reviews from multiple platforms (Reddit, Amazon, Xiaohongshu) and optionally uses an LLM to summarise pros and cons.
 

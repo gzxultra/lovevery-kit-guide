@@ -5,6 +5,7 @@ export interface Alternative {
   rating: number;
   reviewCount: number;
   amazonUrl: string;
+  imageUrl?: string;
   reasonEn: string;
   reasonCn: string;
 }
