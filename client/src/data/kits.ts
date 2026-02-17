@@ -27,6 +27,7 @@ export interface Kit {
   lightColor: string;
   description: string;
   descriptionEn?: string;
+  officialUrl?: string;
   toys: Toy[];
 }
 
@@ -41,6 +42,7 @@ export const kits: Kit[] = [
   {
     id: "looker",
     name: "The Looker",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-looker",
     ageRange: "0-12 周", ageRangeEn: "0-12  weeks",
     ageMonths: "0-3m",
     stage: "baby",
@@ -64,6 +66,7 @@ export const kits: Kit[] = [
   {
     id: "charmer",
     name: "The Charmer",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-charmer",
     ageRange: "3-4 个月", ageRangeEn: "3-4  months",
     ageMonths: "3-4m",
     stage: "baby",
@@ -90,6 +93,7 @@ export const kits: Kit[] = [
   {
     id: "senser",
     name: "The Senser",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-senser",
     ageRange: "5-6 个月", ageRangeEn: "5-6  months",
     ageMonths: "5-6m",
     stage: "baby",
@@ -112,6 +116,7 @@ export const kits: Kit[] = [
   {
     id: "inspector",
     name: "The Inspector",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-inspector",
     ageRange: "7-8 个月", ageRangeEn: "7-8  months",
     ageMonths: "7-8m",
     stage: "baby",
@@ -136,6 +141,7 @@ export const kits: Kit[] = [
   {
     id: "explorer",
     name: "The Explorer",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-explorer",
     ageRange: "9-10 个月", ageRangeEn: "9-10  months",
     ageMonths: "9-10m",
     stage: "baby",
@@ -159,6 +165,7 @@ export const kits: Kit[] = [
   {
     id: "thinker",
     name: "The Thinker",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-thinker",
     ageRange: "11-12 个月", ageRangeEn: "11-12  months",
     ageMonths: "11-12m",
     stage: "baby",
@@ -181,6 +188,7 @@ export const kits: Kit[] = [
   {
     id: "babbler",
     name: "The Babbler",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-babbler",
     ageRange: "13-15 个月", ageRangeEn: "13-15  months",
     ageMonths: "13-15m",
     stage: "toddler",
@@ -205,6 +213,7 @@ export const kits: Kit[] = [
   {
     id: "adventurer",
     name: "The Adventurer",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-adventurer",
     ageRange: "16-18 个月", ageRangeEn: "16-18  months",
     ageMonths: "16-18m",
     stage: "toddler",
@@ -228,6 +237,7 @@ export const kits: Kit[] = [
   {
     id: "realist",
     name: "The Realist",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-realist",
     ageRange: "19-21 个月", ageRangeEn: "19-21  months",
     ageMonths: "19-21m",
     stage: "toddler",
@@ -250,6 +260,7 @@ export const kits: Kit[] = [
   {
     id: "companion",
     name: "The Companion",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-companion",
     ageRange: "22-24 个月", ageRangeEn: "22-24  months",
     ageMonths: "22-24m",
     stage: "toddler",
@@ -273,6 +284,7 @@ export const kits: Kit[] = [
   {
     id: "helper",
     name: "The Helper",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-helper",
     ageRange: "25-27 个月", ageRangeEn: "25-27  months",
     ageMonths: "25-27m",
     stage: "bigToddler",
@@ -295,6 +307,7 @@ export const kits: Kit[] = [
   {
     id: "enthusiast",
     name: "The Enthusiast",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-enthusiast",
     ageRange: "28-30 个月", ageRangeEn: "28-30  months",
     ageMonths: "28-30m",
     stage: "bigToddler",
@@ -317,6 +330,7 @@ export const kits: Kit[] = [
   {
     id: "investigator",
     name: "The Investigator",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-researcher",
     ageRange: "31-33 个月", ageRangeEn: "31-33  months",
     ageMonths: "31-33m",
     stage: "bigToddler",
@@ -339,6 +353,7 @@ export const kits: Kit[] = [
   {
     id: "freeSpirit",
     name: "The Free Spirit",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-free-spirit",
     ageRange: "34-36 个月", ageRangeEn: "34-36  months",
     ageMonths: "34-36m",
     stage: "bigToddler",
@@ -361,6 +376,7 @@ export const kits: Kit[] = [
   {
     id: "observer",
     name: "The Observer",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-observer",
     ageRange: "37-39 个月", ageRangeEn: "37-39  months",
     ageMonths: "37-39m",
     stage: "preschool",
@@ -383,6 +399,7 @@ export const kits: Kit[] = [
   {
     id: "storyteller",
     name: "The Storyteller",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-storyteller",
     ageRange: "40-42 个月", ageRangeEn: "40-42  months",
     ageMonths: "40-42m",
     stage: "preschool",
@@ -404,6 +421,7 @@ export const kits: Kit[] = [
   {
     id: "problemSolver",
     name: "The Problem Solver",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-problem-solver",
     ageRange: "43-45 个月", ageRangeEn: "43-45  months",
     ageMonths: "43-45m",
     stage: "preschool",
@@ -426,6 +444,7 @@ export const kits: Kit[] = [
   {
     id: "analyst",
     name: "The Analyst",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-analyst",
     ageRange: "46-48 个月", ageRangeEn: "46-48  months",
     ageMonths: "46-48m",
     stage: "preschool",
@@ -448,6 +467,7 @@ export const kits: Kit[] = [
   {
     id: "connector",
     name: "The Connector",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-connector",
     ageRange: "49-51 个月", ageRangeEn: "49-51  months",
     ageMonths: "49-51m",
     stage: "preschool",
@@ -470,6 +490,7 @@ export const kits: Kit[] = [
   {
     id: "examiner",
     name: "The Examiner",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-examiner",
     ageRange: "52-54 个月", ageRangeEn: "52-54  months",
     ageMonths: "52-54m",
     stage: "preschool",
@@ -492,6 +513,7 @@ export const kits: Kit[] = [
   {
     id: "persister",
     name: "The Persister",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-persister",
     ageRange: "55-57 个月", ageRangeEn: "55-57  months",
     ageMonths: "55-57m",
     stage: "preschool",
@@ -514,6 +536,7 @@ export const kits: Kit[] = [
   {
     id: "planner",
     name: "The Planner",
+    officialUrl: "https://lovevery.com/products/the-play-kits-the-planner",
     ageRange: "58-60 个月", ageRangeEn: "58-60  months",
     ageMonths: "58-60m",
     stage: "preschool",

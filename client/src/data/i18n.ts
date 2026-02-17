@@ -73,6 +73,7 @@ export const i18n = {
     prevKit: { cn: "上一个 Kit", en: "Previous Kit" },
     nextKit: { cn: "下一个 Kit", en: "Next Kit" },
     exploreMore: { cn: "继续探索其他 Kit", en: "Explore More Kits" },
+    viewOnLovevery: { cn: "在 Lovevery 官网查看", en: "View on Lovevery" },
   },
 
   // Alternatives

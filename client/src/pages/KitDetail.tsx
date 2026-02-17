@@ -551,6 +551,34 @@ export default function KitDetail() {
                 {kitDescription}
               </p>
 
+              {/* View on Lovevery Official Site Button */}
+              {(kit.officialUrl || true) && (
+                <div className="mt-5 sm:mt-6">
+                  <a
+                    href={kit.officialUrl || "https://lovevery.com/products/the-play-kits"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl text-sm font-medium border-2 transition-all hover:shadow-md active:scale-[0.98] group"
+                    style={{
+                      borderColor: kit.color,
+                      color: kit.color,
+                      backgroundColor: kit.color + "08",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = kit.color;
+                      e.currentTarget.style.color = "#FFFFFF";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = kit.color + "08";
+                      e.currentTarget.style.color = kit.color;
+                    }}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    {i18n.kitDetail.viewOnLovevery[lang]}
+                  </a>
+                </div>
+              )}
+
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-10 mt-6 sm:mt-10 pt-6 sm:pt-8 border-t border-[#E8DFD3]/80">
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div
