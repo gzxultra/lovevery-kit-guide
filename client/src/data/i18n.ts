@@ -85,6 +85,38 @@ export const i18n = {
     },
   },
 
+  // Feedback form
+  feedback: {
+    title: { cn: "留言反馈", en: "Feedback" },
+    subtitle: {
+      cn: "有任何建议、问题或想法？欢迎留言，我们非常重视您的反馈！",
+      en: "Have suggestions, questions, or ideas? We'd love to hear from you!",
+    },
+    nameLabel: { cn: "您的称呼", en: "Your Name" },
+    namePlaceholder: { cn: "请输入您的称呼", en: "Enter your name" },
+    emailLabel: { cn: "邮箱（可选）", en: "Email (optional)" },
+    emailPlaceholder: { cn: "your@email.com", en: "your@email.com" },
+    messageLabel: { cn: "留言内容", en: "Your Message" },
+    messagePlaceholder: {
+      cn: "请分享您的建议、使用体验或任何想法...",
+      en: "Share your suggestions, experience, or any thoughts...",
+    },
+    submit: { cn: "发送留言", en: "Send Feedback" },
+    sending: { cn: "发送中...", en: "Sending..." },
+    successTitle: { cn: "感谢您的反馈！", en: "Thank you for your feedback!" },
+    successDesc: {
+      cn: "我们已收到您的留言，会尽快查看。",
+      en: "We've received your message and will review it soon.",
+    },
+    sendAnother: { cn: "再写一条", en: "Send Another" },
+    errorTitle: { cn: "发送失败", en: "Failed to Send" },
+    errorDesc: {
+      cn: "请稍后再试，或直接发送邮件联系我们。",
+      en: "Please try again later or contact us directly via email.",
+    },
+    retry: { cn: "重试", en: "Retry" },
+  },
+
   // Footer
   footer: {
     devStages: { cn: "发展阶段", en: "Development Stages" },

@@ -10,6 +10,7 @@ import { getKitHeroImage } from "@/data/toyImages";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
+import FeedbackForm from "@/components/FeedbackForm";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -502,6 +503,9 @@ export default function Home() {
           </section>
         );
       })}
+
+      {/* Feedback Form */}
+      <FeedbackForm />
 
       {/* Footer */}
       <footer className="bg-[#3D3229] text-white py-10 sm:py-16">
