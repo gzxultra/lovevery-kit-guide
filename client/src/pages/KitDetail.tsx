@@ -8,6 +8,7 @@
 import { getKitById, kits, type Toy } from "@/data/kits";
 import { i18n } from "@/data/i18n";
 import { getToyImage, getKitHeroImage, getKitToyImages } from "@/data/toyImages";
+import { getToyReview } from "@/data/toyReviews";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,6 +28,8 @@ import {
   ExternalLink,
   AlertCircle,
   Sparkles,
+  ThumbsUp,
+  ThumbsDown,
 } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "wouter";
@@ -61,6 +64,7 @@ function ToyCard({
   const isDiscontinued = (toy as any).discontinued;
   const isNew = (toy as any).isNew;
   const hasDetails = !!(toy.developmentGoal && toy.parentReview);
+  const toyReview = getToyReview(kitId, toy.name);
 
   const toyName = lang === "cn" ? toy.name : toy.englishName;
   const toySubName = lang === "cn" ? toy.englishName : toy.name;
@@ -200,6 +204,50 @@ function ToyCard({
                         <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed italic">
                           &ldquo;{parentRev}&rdquo;
                         </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Pros & Cons Review */}
+                  {toyReview && (
+                    <div className="rounded-lg sm:rounded-xl border border-[#E8DFD3] overflow-hidden">
+                      {/* Section Header */}
+                      <div className="px-3 sm:px-4 py-2.5 sm:py-3 bg-gradient-to-r from-[#FAF7F2] to-[#F5F0EB] border-b border-[#E8DFD3]">
+                        <p className="text-[10px] sm:text-xs font-semibold text-[#6B5E50] uppercase tracking-wider flex items-center gap-1.5">
+                          <Star className="w-3.5 h-3.5 text-[#D4A574]" />
+                          {i18n.kitDetail.prosConsTitle[lang]}
+                        </p>
+                      </div>
+                      {/* Pros & Cons Grid */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-[#E8DFD3]">
+                        {/* Pros */}
+                        <div className="p-3 sm:p-4 bg-[#F6FBF6]">
+                          <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
+                            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#E8F5E9] flex items-center justify-center">
+                              <ThumbsUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#4CAF50]" />
+                            </div>
+                            <span className="text-xs sm:text-sm font-semibold text-[#2E7D32]">
+                              {i18n.kitDetail.prosTitle[lang]}
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed pl-8 sm:pl-9">
+                            {toyReview.pros}
+                          </p>
+                        </div>
+                        {/* Cons */}
+                        <div className="p-3 sm:p-4 bg-[#FFFBF5]">
+                          <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
+                            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#FFF3E0] flex items-center justify-center">
+                              <ThumbsDown className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F57C00]" />
+                            </div>
+                            <span className="text-xs sm:text-sm font-semibold text-[#E65100]">
+                              {i18n.kitDetail.consTitle[lang]}
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed pl-8 sm:pl-9">
+                            {toyReview.cons}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   )}
