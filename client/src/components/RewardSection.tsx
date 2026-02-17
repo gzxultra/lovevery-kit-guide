@@ -3,7 +3,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../data/i18n";
 
 export function RewardSection() {
-  const { language } = useLanguage();
+  const { lang } = useLanguage();
   const t = i18n.reward;
 
   return (
@@ -24,13 +24,13 @@ export function RewardSection() {
                 className="text-2xl md:text-3xl font-bold text-[#6B5E50]" 
                 style={{ fontFamily: "Manrope, sans-serif" }}
               >
-                {t.title[language]}
+                {t.title[lang]}
               </h2>
             </div>
 
             {/* Subtitle */}
             <p className="text-base md:text-lg text-[#8B7355] mb-8 leading-relaxed max-w-xl mx-auto">
-              {t.subtitle[language]}
+              {t.subtitle[lang]}
             </p>
 
             {/* Ko-fi Button - Clear CTA */}
@@ -42,11 +42,11 @@ export function RewardSection() {
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF5E5B] text-white text-lg font-bold rounded-2xl shadow-lg shadow-[#FF5E5B]/20 hover:bg-[#FF4D4A] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
                 <Coffee className="w-6 h-6" strokeWidth={2.5} />
-                <span>{t.kofiButton[language]}</span>
+                <span>{t.kofiButton[lang]}</span>
               </a>
               
               <p className="text-xs text-[#A89080] flex items-center gap-1.5">
-                <span>{t.thankYou[language]}</span>
+                <span>{t.thankYou[lang]}</span>
                 <Heart className="w-3 h-3 text-[#FF5E5B]" fill="currentColor" />
               </p>
             </div>

@@ -3,7 +3,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { i18n } from "../data/i18n";
 
 export function RewardBanner() {
-  const { language } = useLanguage();
+  const { lang } = useLanguage();
   const t = i18n.reward;
 
   return (
@@ -15,10 +15,10 @@ export function RewardBanner() {
           </div>
           <div>
             <p className="text-[#6B5E50] font-bold text-lg leading-tight">
-              {t.bannerTitle[language]}
+              {t.bannerTitle[lang]}
             </p>
             <p className="text-[#8B7355] text-sm mt-1">
-              {t.bannerSubtitle[language]}
+              {t.bannerSubtitle[lang]}
             </p>
           </div>
         </div>
@@ -30,7 +30,7 @@ export function RewardBanner() {
           className="whitespace-nowrap inline-flex items-center gap-2 px-6 py-3 bg-[#FF5E5B] text-white text-sm font-bold rounded-xl shadow-md hover:bg-[#FF4D4A] transition-all duration-300"
         >
           <Coffee className="w-4 h-4" strokeWidth={2.5} />
-          <span>{t.kofiButton[language]}</span>
+          <span>{t.kofiButton[lang]}</span>
         </a>
       </div>
     </div>
