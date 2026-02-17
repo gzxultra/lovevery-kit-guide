@@ -1,6 +1,7 @@
 /*
  * Design: Montessori Naturalism / Scandinavian Minimalism
  * Mobile-first responsive design with CN/EN language toggle
+ * Search functionality for kits and toys
  */
 
 import { kits, stages } from "@/data/kits";
@@ -8,9 +9,9 @@ import { i18n } from "@/data/i18n";
 import { getKitHeroImage } from "@/data/toyImages";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
-import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X } from "lucide-react";
-import { useState } from "react";
-import { Link } from "wouter";
+import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
+import { useState, useMemo, useRef, useEffect } from "react";
+import { Link, useLocation } from "wouter";
 
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/MNPxTRzCbxWVkhFf.jpg";
 
@@ -23,7 +24,12 @@ function scrollToStage(stageId: string) {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { lang, t } = useLanguage();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+  const { lang } = useLanguage();
+  const [, setLocation] = useLocation();
 
   const stageLabel = (id: string) => {
     const key = id as keyof typeof i18n.stages;
@@ -34,6 +40,73 @@ export default function Home() {
     return i18n.stageRanges[key]?.[lang] ?? "";
   };
 
+  // Search results
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase().trim();
+    const results: Array<{
+      kitId: string;
+      kitName: string;
+      matchType: "kit" | "toy";
+      toyName?: string;
+      toyEnglishName?: string;
+      kitColor: string;
+    }> = [];
+
+    for (const kit of kits) {
+      // Match kit name
+      if (
+        kit.name.toLowerCase().includes(q) ||
+        kit.id.toLowerCase().includes(q)
+      ) {
+        results.push({
+          kitId: kit.id,
+          kitName: kit.name,
+          matchType: "kit",
+          kitColor: kit.color,
+        });
+      }
+      // Match toy names
+      for (const toy of kit.toys) {
+        if (
+          toy.name.toLowerCase().includes(q) ||
+          toy.englishName.toLowerCase().includes(q)
+        ) {
+          results.push({
+            kitId: kit.id,
+            kitName: kit.name,
+            matchType: "toy",
+            toyName: toy.name,
+            toyEnglishName: toy.englishName,
+            kitColor: kit.color,
+          });
+        }
+      }
+    }
+    return results.slice(0, 15); // Limit results
+  }, [searchQuery]);
+
+  // Close search dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(e.target as Node)
+      ) {
+        setSearchOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Focus input when search opens
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
       {/* Navigation */}
@@ -41,12 +114,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span className="font-['DM_Serif_Display'] text-xl sm:text-2xl text-[#3D3229] tracking-tight">
+              <span className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold">
                 Lovevery
               </span>
             </Link>
             {/* Desktop nav */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <div className="hidden md:flex items-center gap-4 lg:gap-6">
               {stages.map((s) => (
                 <button
                   key={s.id}
@@ -56,14 +129,118 @@ export default function Home() {
                   {stageLabel(s.id)}
                 </button>
               ))}
+
+              {/* Search bar - Desktop */}
+              <div ref={searchContainerRef} className="relative">
+                <div className="flex items-center bg-[#F0EBE3] rounded-full px-3 py-1.5 gap-2 focus-within:ring-2 focus-within:ring-[#7FB685]/40 transition-all">
+                  <Search className="w-4 h-4 text-[#9B8E7E] shrink-0" />
+                  <input
+                    ref={searchInputRef}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setSearchOpen(true);
+                    }}
+                    onFocus={() => setSearchOpen(true)}
+                    placeholder={i18n.search.placeholder[lang]}
+                    className="bg-transparent text-sm text-[#3D3229] placeholder-[#9B8E7E] outline-none w-40 lg:w-52"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => {
+                        setSearchQuery("");
+                        setSearchOpen(false);
+                      }}
+                      className="text-[#9B8E7E] hover:text-[#3D3229]"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                </div>
+
+                {/* Search Results Dropdown */}
+                {searchOpen && searchQuery.trim() && (
+                  <div className="absolute top-full right-0 mt-2 w-80 bg-white rounded-xl border border-[#E8DFD3] shadow-xl shadow-[#3D3229]/10 overflow-hidden max-h-[70vh] overflow-y-auto">
+                    {searchResults.length > 0 ? (
+                      <>
+                        <div className="px-4 py-2.5 border-b border-[#F0EBE3] text-xs text-[#9B8E7E]">
+                          {searchResults.length} {i18n.search.resultCount[lang]}
+                        </div>
+                        {searchResults.map((result, idx) => (
+                          <button
+                            key={`${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
+                            onClick={() => {
+                              setLocation(`/kit/${result.kitId}`);
+                              setSearchQuery("");
+                              setSearchOpen(false);
+                            }}
+                            className="w-full text-left px-4 py-3 hover:bg-[#FAF7F2] transition-colors border-b border-[#F0EBE3] last:border-b-0"
+                          >
+                            {result.matchType === "kit" ? (
+                              <div className="flex items-center gap-3">
+                                <div
+                                  className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                                  style={{ backgroundColor: result.kitColor + "15" }}
+                                >
+                                  <BookOpen className="w-4 h-4" style={{ color: result.kitColor }} />
+                                </div>
+                                <div>
+                                  <p className="text-sm font-medium text-[#3D3229]">{result.kitName}</p>
+                                  <p className="text-xs text-[#9B8E7E]">Play Kit</p>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="flex items-center gap-3">
+                                <div
+                                  className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                                  style={{ backgroundColor: result.kitColor + "10" }}
+                                >
+                                  <Sparkles className="w-4 h-4" style={{ color: result.kitColor }} />
+                                </div>
+                                <div className="min-w-0">
+                                  <p className="text-sm font-medium text-[#3D3229] truncate">
+                                    {lang === "cn" ? result.toyName : result.toyEnglishName}
+                                  </p>
+                                  <p className="text-xs text-[#9B8E7E] truncate">
+                                    {lang === "cn" ? result.toyEnglishName : result.toyName} · {result.kitName}
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </button>
+                        ))}
+                      </>
+                    ) : (
+                      <div className="px-4 py-8 text-center text-sm text-[#9B8E7E]">
+                        {i18n.search.noResults[lang]}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
               <LanguageToggle />
             </div>
-            {/* Mobile: language toggle + hamburger */}
-            <div className="flex md:hidden items-center gap-2">
+            {/* Mobile: search + language toggle + hamburger */}
+            <div className="flex md:hidden items-center gap-1">
+              <button
+                className="p-2 text-[#6B5E50] hover:text-[#3D3229]"
+                onClick={() => {
+                  setSearchOpen(!searchOpen);
+                  setMobileMenuOpen(false);
+                }}
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5" />
+              </button>
               <LanguageToggle />
               <button
                 className="p-2 -mr-2 text-[#3D3229]"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() => {
+                  setMobileMenuOpen(!mobileMenuOpen);
+                  setSearchOpen(false);
+                }}
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -71,6 +248,91 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Mobile search bar */}
+        {searchOpen && (
+          <div className="md:hidden bg-[#FAF7F2] border-t border-[#E8DFD3] px-4 py-3">
+            <div className="flex items-center bg-[#F0EBE3] rounded-full px-3 py-2 gap-2 focus-within:ring-2 focus-within:ring-[#7FB685]/40">
+              <Search className="w-4 h-4 text-[#9B8E7E] shrink-0" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={i18n.search.placeholder[lang]}
+                className="bg-transparent text-sm text-[#3D3229] placeholder-[#9B8E7E] outline-none flex-1"
+                autoFocus
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="text-[#9B8E7E] hover:text-[#3D3229]"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+
+            {/* Mobile search results */}
+            {searchQuery.trim() && (
+              <div className="mt-2 bg-white rounded-xl border border-[#E8DFD3] shadow-lg overflow-hidden max-h-[60vh] overflow-y-auto">
+                {searchResults.length > 0 ? (
+                  <>
+                    <div className="px-4 py-2 border-b border-[#F0EBE3] text-xs text-[#9B8E7E]">
+                      {searchResults.length} {i18n.search.resultCount[lang]}
+                    </div>
+                    {searchResults.map((result, idx) => (
+                      <button
+                        key={`m-${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
+                        onClick={() => {
+                          setLocation(`/kit/${result.kitId}`);
+                          setSearchQuery("");
+                          setSearchOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-3 hover:bg-[#FAF7F2] transition-colors border-b border-[#F0EBE3] last:border-b-0"
+                      >
+                        {result.matchType === "kit" ? (
+                          <div className="flex items-center gap-3">
+                            <div
+                              className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                              style={{ backgroundColor: result.kitColor + "15" }}
+                            >
+                              <BookOpen className="w-4 h-4" style={{ color: result.kitColor }} />
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-[#3D3229]">{result.kitName}</p>
+                              <p className="text-xs text-[#9B8E7E]">Play Kit</p>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-3">
+                            <div
+                              className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                              style={{ backgroundColor: result.kitColor + "10" }}
+                            >
+                              <Sparkles className="w-4 h-4" style={{ color: result.kitColor }} />
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-sm font-medium text-[#3D3229] truncate">
+                                {lang === "cn" ? result.toyName : result.toyEnglishName}
+                              </p>
+                              <p className="text-xs text-[#9B8E7E] truncate">
+                                {lang === "cn" ? result.toyEnglishName : result.toyName} · {result.kitName}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </>
+                ) : (
+                  <div className="px-4 py-6 text-center text-sm text-[#9B8E7E]">
+                    {i18n.search.noResults[lang]}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
@@ -106,7 +368,7 @@ export default function Home() {
                 <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 {i18n.hero.badge[lang]}
               </div>
-              <h1 className="font-['DM_Serif_Display'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] leading-tight mb-4 sm:mb-6">
+              <h1 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] leading-tight mb-4 sm:mb-6">
                 {i18n.hero.title1[lang]}
                 <br />
                 <span className="text-[#5a9e65]">{i18n.hero.title2[lang]}</span>
@@ -166,7 +428,7 @@ export default function Home() {
                     >
                       {stageRange(stage.id)}
                     </div>
-                    <h2 className="font-['DM_Serif_Display'] text-2xl sm:text-3xl md:text-4xl text-[#1a1108]">
+                    <h2 className="font-['Manrope'] text-2xl sm:text-3xl md:text-4xl text-[#1a1108]">
                       {stageLabel(stage.id)}
                     </h2>
                   </div>
@@ -180,7 +442,7 @@ export default function Home() {
                   const kitHero = getKitHeroImage(kit.id);
                   return (
                     <Link key={kit.id} href={`/kit/${kit.id}`}>
-                      <div className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:shadow-xl hover:shadow-[#3D3229]/8 transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full active:scale-[0.98]">
+                      <div className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer h-full active:scale-[0.98]">
                         <div
                           className="h-1 sm:h-1.5 w-full"
                           style={{ backgroundColor: kit.color }}
@@ -188,7 +450,7 @@ export default function Home() {
                         <div className="p-4 sm:p-6">
                           <div className="flex items-start justify-between gap-3 mb-3 sm:mb-4">
                             <div className="min-w-0 flex-1">
-                              <h3 className="font-['DM_Serif_Display'] text-lg sm:text-xl text-[#1a1108] mb-1 truncate">
+                              <h3 className="font-['Manrope'] text-lg sm:text-xl text-[#1a1108] mb-1 truncate">
                                 {kit.name}
                               </h3>
                               <p className="text-xs sm:text-sm text-[#5A4E42]">
@@ -246,7 +508,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
             <div>
-              <h3 className="font-['DM_Serif_Display'] text-xl sm:text-2xl mb-3 sm:mb-4">Lovevery</h3>
+              <h3 className="font-['Manrope'] text-xl sm:text-2xl mb-3 sm:mb-4">Lovevery</h3>
               <p className="text-[#B8AFA3] text-sm leading-relaxed">
                 {i18n.footer.brandDesc[lang]}
               </p>

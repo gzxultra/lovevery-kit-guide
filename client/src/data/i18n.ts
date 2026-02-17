@@ -27,6 +27,13 @@ export const i18n = {
     coverRange: { cn: "覆盖 0-60 个月", en: "Covering 0-60 months" },
   },
 
+  // Search
+  search: {
+    placeholder: { cn: "搜索 Kit 或玩具名称...", en: "Search kits or toys..." },
+    noResults: { cn: "未找到匹配结果", en: "No results found" },
+    resultCount: { cn: "个匹配结果", en: "results" },
+  },
+
   // Kit cards
   kitCard: {
     toys: { cn: "个玩具", en: "toys" },

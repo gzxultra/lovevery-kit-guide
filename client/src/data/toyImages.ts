@@ -1,6 +1,6 @@
 export const kitImages: Record<string, { heroImage: string; toyImages: string[] }> = {
   "looker": {
-    heroImage: "https://lovevery-images.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2F0sea1vycfyqy%2F5g4R2tA0VUC4a4w2u8g2cw%2F3a1b3b3e3b3e3b3e3b3e3b3e3b3e3b3e%2FThe_Looker_Hero_Desktop-1.jpg?w=1920&q=75",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2Eqfc2kd6LH83SQiitGn2p/6e597b994ec9bf15103ca166db3b228a/Looker_Image_1_Neutral_BG.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/5XbH0CxXu560qHdwH75qWd/0fa7e77c21dfd19f723981df5ef76e2b/SubscriptionBox1_Products_Overhead_23385_Hero_VS_R1_CL_v3.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5O7INa0JlqbbRbof4pX6Df/251b7bda8a174bb73b0c8da1b3b9ec3c/Lovevery-VKS-Studio-StrollerToy-364-Sep2020_WEB_616e4d0b-1dbd-445d-895a-a1b0cc13e2e6.png",
@@ -29,7 +29,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "senser": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/4h2sYCFE53sB4bO3aVvO1h/933c8733d80b6b6eb7a998593c9a3341/Senser_Hero_Desktop-1_US.jpg",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2Jf5z8fpkIDYmACHPD7qQX/cca0ca1a91f5c4f9a7e570c6bb5cc2e4/Senser_Image_1_Neutral_BG.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/4aZhB4bZ78jdfPCunmI6fv/03428d490498932e6f07965aecb6650a/SubscriptionBox3_LoveveryProduct4_25344_SideView_R1_CL.png",
       "https://images.ctfassets.net/0sea1vycfyqy/2hgxiFEQrszDrEFCFeiWa9/fd5f48a18a6dbe2f7aa0989436a4c3f5/K3.Magic.Tissue.Box.png",
@@ -68,7 +68,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "thinker": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/5g3n5sVBzC4uU4w0yA8U2i/8b5c9d9e3c0d9f0d3e5c9d9e3c0d9f0d/The_Thinker_Play_Kit_Hero_1.jpg?w=1920&q=75",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2It8qP0otpkcqOycEZrw07/6a80e32a75a196aaf428e1ac8ef011f2/Lovevery-VKS-Playkit-TheThinker-ISO-226-Dec2021-Gray.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/26PUb3pwZzGRLpVs06BCqa/3f37c67f993428fa1044b03e78eaa070/organic-baby-doll_0001_Layer-3_d50b685d-f9f3-45f7-ae81-149c89503040.png",
       "https://images.ctfassets.net/0sea1vycfyqy/50DEawHwuGzrwzyiA2tnPO/7c8f7a2c45c7d61b73dd0f9ec343271a/Lovevery-VKS-PegToy-0273-June2020-Edit-_1_.png",
@@ -107,7 +107,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "realist": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/46I3m5n921M5gL6nv3d3e/a2e3b2b0c6a0b8a7e4d7e8e7e4a0e4a0/The_Realist_Kit_Hero_Desktop-2.jpg?w=1920&q=80&fm=webp",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/69xRjtUrGeOh7r9TjY0kbk/ddca12125ddaeb0f39205ca64fd5f24c/US_AU_Lovevery-VKS-Playkit-TheRealist-ISO-130-April2021_web_hex__1_.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/4oiaF9oH31TEZ0g603sZEd/e5a1cc52fdf2df52613b5636b031eca7/Lovevery-LockBox-ISO-1814-Feb2020-Edit.png",
       "https://images.ctfassets.net/0sea1vycfyqy/34xHdvuso0M0fgX0pwyBzg/0e1390edfdbc07d6862b871d41955e58/WheelAroundTownBus_Pegs.webp",
@@ -119,7 +119,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "companion": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/1LhFjZ3jZ6Y2W4s4W2qg4q/e5b5b5b5b5b5b5b5b5b5b5b5b5b5b5b5/The-Companion-Play-Kit-PDP-Hero-1.jpg",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2tbAWpk47etVGnGoJIRNjv/4a5088277ab27a96ee30a3727da3cd35/AU_Lovevery-VKS-Playkit-TheCompanion-ISO-154-April2021_v2_gray.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/1uLnoeTps8XejQrd4BJA6a/360bc6aee2a9ce95dba08cc9c1c7af2f/Lovevery_Play-Kit_Group_Drop-and-Match-Tile-Catcher_Composite_0116.png",
       "https://images.ctfassets.net/0sea1vycfyqy/1DDuCdeAaXAb5h49ifzZRE/05b4b8e659eb169f0365d18827a2b6ca/image_1.png",
@@ -132,7 +132,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "helper": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/53r2A03Iq5Z2Rz0eC3PzW1/6a3fca3f0c27e543e103d79e50d13d2a/pdp-hero-the-helper.jpg",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/1784oiurLWdIPvJuO7qnWq/60961f628de0aed787d6dd5dabc4cd21/Lovevery-VKS-Playkit-TheHelper-ISO-30nov20212021_web_185e3390-50b6-43d5-9db4-5541e8dedf26.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/1djkg0ageftK9tb6nCrsMB/96e06ed35cad1fd30ef785bb5d0d32ec/Year_2_Playkit_10542_VS_R3_CL.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5wSYuHwtrFP1CUgeEpjJYe/8f1d00cba00ec0e670e7e5d7280db1a8/k11-2-dot-catcher.png",
@@ -144,7 +144,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "enthusiast": {
-    heroImage: "https://cdn.shopify.com/s/files/1/0006/2694/4024/products/pdp-hero-the-enthusiast.jpg?v=1642730354",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Lovevery-VKS-Playkit-TheEnthusiast-ISO-184-hex-US.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/7pQYLVYOVRX1KesredJDPk/03c7c0264f9aed3dada1c2ab2726bd2f/Year_2_Playkit_10746_VS_R1_CL_v2.png",
       "https://images.ctfassets.net/0sea1vycfyqy/3J1rcTMywufAhdzKNqcZbB/d331c684731b28660972a38a75626da8/2022_08_12_SEL-Emotions_ISO_0147_v3-EN_2e939bf7-2331-4e1e-8222-b67402866a93.webp",
@@ -215,7 +215,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "analyst": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/35728Vn2Y6aI3mHkI1m58a/0593f030a58b29a2469a315050519942/The_Analyst_Play_Kit.jpg",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/7rjUtdrmjQIGid4dIquAkO/4bf0296a27712ff4ce8293952bf97903/Lovevery-VKS-Playkit-3YO-TheAnalyst-ISO-347-April2021_gray_f159763e-a471-4c76-a316-f9ffe8d0c105.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/1ocW2mY5qyhsxFwg49IFvE/277ff1a9ae598aab170e77208f57d220/Kit18_MontessoriSensoryBox-ISO.20230612173818392.png",
       "https://images.ctfassets.net/0sea1vycfyqy/2Bg3mIGKIqlgBw47fQq11s/216eb5de4f07095e2635e294af662683/2022_03_28_ECO_S_2192-2_BH_EDIT_278b5042-e2c8-4861-bf6a-fe64ad42d7c6.png",
@@ -239,7 +239,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "examiner": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2i3i3dC621sBOUi3aLAv0s/92d52b6187023c52085383501787293e/pdp-examiner-hero-1-desktop-us.jpg",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2deShKmiwUEQR5B6PUc94J/323426e1be55bb2cf3a95b6945f100a5/2023_04_13_4YO_Group_ISO_11181_gray_68ef6c33-dfe2-420c-9f6b-a515110d78e6.webp",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/4Z7sKwhcIN7OmiirrMab4p/ae9ef2687faf8fac712dbd7b9e6a6214/2023_04_13_4YO_Group_ISO_11286_v1.png",
       "https://images.ctfassets.net/0sea1vycfyqy/1midbqhW8AZUyO2KKNeqXz/a9bfb07fa0e21f7b091a800344a6ac8d/2022_08_15_4-yr-old_ISO_S_0259_v2_a408c35f-85fa-4a22-a2fa-b866b945b74e.webp",
@@ -251,7 +251,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "persister": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/5w7G3n3B4g8E4c8Y4g0E2Y/8f4e9d9c8b3a3e5c6d7b8a9f0e3e1b2a/The_Persister_Kit_Hero_Desktop_2x.png?w=1920&q=75&fm=webp",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/32l5fuwCxEQ312e45k1qdE/f94e3777e3567809a41888b3f46e3bbf/2023_04_13_4YO_Group_ISO_ThePersister_11241_gray_fa795731-b691-4929-b944-08467c7640c4.webp",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/41C347poGejE1AlFpR879p/a522cb5f065d7287cb8ebe60786c977b/2022_08_18_4-yr-old_S_1099_v6.webp",
       "https://images.ctfassets.net/0sea1vycfyqy/5P0Bv0DFkrOsjxXOROYFlo/61a5234511373e2d3fe020e029ba144b/2023_04_13_4YO_Group_ISO_11290_v1.png",
@@ -285,4 +285,10 @@ export function getKitHeroImage(kitId: string): string {
   const kit = kitImages[kitId];
   if (!kit) return "";
   return kit.heroImage || "";
+}
+
+export function getKitToyImages(kitId: string): string[] {
+  const kit = kitImages[kitId];
+  if (!kit) return [];
+  return kit.toyImages;
 }

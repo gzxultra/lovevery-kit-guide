@@ -1,49 +1,76 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+import { ArrowLeft, Home, Sparkles } from "lucide-react";
+import { Link, useLocation } from "wouter";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
 
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
+    <div className="min-h-screen bg-[#FAF7F2] flex flex-col">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            <Link href="/">
+              <span className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold">
+                Lovevery
+              </span>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* 404 Content */}
+      <div className="flex-1 flex items-center justify-center px-4 py-16">
+        <div className="text-center max-w-lg">
+          {/* Decorative element */}
+          <div className="relative inline-flex items-center justify-center mb-8">
+            <div className="absolute w-32 h-32 rounded-full bg-[#7FB685]/10 animate-pulse" />
+            <div className="relative w-24 h-24 rounded-full bg-[#E8DFD3]/60 flex items-center justify-center">
+              <Sparkles className="w-10 h-10 text-[#7FB685]" />
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
+          <h1 className="font-['Manrope'] text-6xl sm:text-7xl font-bold text-[#3D3229] mb-4">
+            404
+          </h1>
 
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
+          <h2 className="font-['Manrope'] text-xl sm:text-2xl font-bold text-[#3D3229] mb-4">
+            页面未找到
           </h2>
 
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
+          <p className="text-[#6B5E50] text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto">
+            抱歉，您访问的页面不存在。可能已被移动或删除。
             <br />
-            It may have been moved or deleted.
+            让我们回到首页，继续探索 Lovevery Play Kit 的精彩世界吧！
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+            <Link href="/">
+              <span className="inline-flex items-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] transition-colors active:scale-95 cursor-pointer">
+                <Home className="w-4 h-4" />
+                返回首页
+              </span>
+            </Link>
+            <button
+              onClick={() => window.history.back()}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#3D3229] rounded-full text-sm font-medium border border-[#E8DFD3] hover:bg-[#F5F0E8] transition-colors active:scale-95"
             >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
+              <ArrowLeft className="w-4 h-4" />
+              返回上一页
+            </button>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-[#3D3229] text-white py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h3 className="font-['Manrope'] text-lg font-bold mb-2">Lovevery</h3>
+          <p className="text-xs text-[#8B7E70]">
+            Stage-based play essentials, designed by child development experts.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
