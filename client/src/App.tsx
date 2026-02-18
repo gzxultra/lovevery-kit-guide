@@ -1,8 +1,8 @@
-import { Route, Switch, Router } from "wouter";
-import { useHashLocation } from "wouter/use-hash-location";
+import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { LanguageProvider } from "./contexts/LanguageContext";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useLocation } from "wouter";
 
 // Lazy load route components for code splitting
 const Home = lazy(() => import("./pages/Home"));
@@ -19,9 +19,23 @@ function PageLoader() {
   );
 }
 
+// Redirect from old hash URLs to clean URLs for backward compatibility
+function HashRedirect() {
+  const [, setLocation] = useLocation();
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith("#/")) {
+      const cleanPath = hash.slice(1); // Remove the '#'
+      setLocation(cleanPath, { replace: true });
+    }
+  }, [setLocation]);
+  return null;
+}
+
 function AppRouter() {
   return (
     <Suspense fallback={<PageLoader />}>
+      <HashRedirect />
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/kit/:id"} component={KitDetail} />
@@ -37,9 +51,7 @@ function App() {
   return (
     <ErrorBoundary>
       <LanguageProvider>
-        <Router hook={useHashLocation}>
-          <AppRouter />
-        </Router>
+        <AppRouter />
       </LanguageProvider>
     </ErrorBoundary>
   );

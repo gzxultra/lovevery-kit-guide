@@ -90,7 +90,7 @@ export interface KitSeoParams {
  * Apply all SEO tags for a Kit detail page
  */
 export function applyKitPageSeo(params: KitSeoParams) {
-  const pageUrl = `${SITE_URL}/#/kit/${params.kitId}`;
+  const pageUrl = `${SITE_URL}/kit/${params.kitId}`;
 
   // 1. Set document title
   document.title = params.metaTitle;
@@ -237,7 +237,7 @@ export function applyHomePageSeo() {
  * Apply SEO for the About page
  */
 export function applyAboutPageSeo(lang: "cn" | "en") {
-  const pageUrl = `${SITE_URL}/#/about`;
+  const pageUrl = `${SITE_URL}/about`;
   const title = lang === "cn"
     ? "关于我们 | Lovevery Fans"
     : "About Us | Lovevery Fans";

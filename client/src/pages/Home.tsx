@@ -7,6 +7,7 @@
 import { kits, stages } from "@/data/kits";
 import { i18n } from "@/data/i18n";
 import { getKitHeroImage } from "@/data/toyImages";
+import { getKitCardThumbnailUrl } from "@/lib/imageUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
@@ -493,10 +494,13 @@ export default function Home() {
                             {kitHero ? (
                               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 bg-[#FAF7F2] border border-[#F0EBE3] p-1">
                                 <img
-                                  src={kitHero}
+                                  src={getKitCardThumbnailUrl(kitHero)}
                                   alt={`${kit.name} Play Kit - Lovevery educational toys for ${kit.ageRangeEn || kit.ageRange}`}
                                   className="w-full h-full object-contain"
                                   loading="lazy"
+                                  width={128}
+                                  height={128}
+                                  decoding="async"
                                 />
                               </div>
                             ) : (

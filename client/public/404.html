@@ -4,14 +4,16 @@
   <meta charset="utf-8" />
   <title>Lovevery Fans</title>
   <script>
-    // GitHub Pages SPA redirect
-    // Converts /kit/looker -> /#/kit/looker so the SPA router can handle it
+    // GitHub Pages SPA redirect for clean URLs (BrowserRouter)
+    // When GitHub Pages serves a 404, this script stores the path
+    // and redirects to index.html which will restore the route.
+    // Uses sessionStorage to pass the path to the SPA.
     var path = window.location.pathname;
     var search = window.location.search;
+    var hash = window.location.hash;
     if (path !== '/' && path !== '/index.html') {
-      window.location.replace(
-        window.location.origin + '/#' + path + search
-      );
+      sessionStorage.setItem('spa-redirect', path + search + hash);
+      window.location.replace('/');
     }
   </script>
 </head>

@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { getLightboxImageUrl } from "@/lib/imageUtils";
 
 interface LightboxProps {
   images: string[];
@@ -118,7 +119,7 @@ export default function Lightbox({
           </div>
         ) : (
           <img
-            src={images[currentIndex]}
+            src={getLightboxImageUrl(images[currentIndex])}
             alt={`Image ${currentIndex + 1}`}
             className={`max-w-full max-h-[85vh] object-contain rounded-lg transition-opacity duration-300 ${
               loaded ? "opacity-100" : "opacity-0"

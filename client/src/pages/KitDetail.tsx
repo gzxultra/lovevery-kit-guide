@@ -8,6 +8,7 @@
 import { getKitById, kits, type Toy } from "@/data/kits";
 import { i18n } from "@/data/i18n";
 import { getToyImage, getKitHeroImage, getKitToyImages } from "@/data/toyImages";
+import { getToyThumbnailUrl, getKitHeroOptimizedUrl, getLightboxImageUrl } from "@/lib/imageUtils";
 import { getToyReview } from "@/data/toyReviews";
 import { getCleaningInfo } from "@/data/toyCleaningGuide";
 import { getKitSeoData } from "@/data/seoData";
@@ -147,10 +148,13 @@ const ToyCard = memo(function ToyCard({
               onClick={() => onImageClick?.(index)}
             >
               <img
-                src={toyImage}
+                src={getToyThumbnailUrl(toyImage)}
                 alt={`${toy.englishName} - Lovevery ${kitName} Play Kit educational toy`}
                 className="w-full h-full object-contain"
                 loading="lazy"
+                width={224}
+                height={224}
+                decoding="async"
               />
             </div>
           ) : (
@@ -572,9 +576,13 @@ export default function KitDetail() {
             <div className="md:hidden mb-6 flex justify-center">
               <div className="w-48 sm:w-56 aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-3">
                 <img
-                  src={heroImage}
+                  src={getKitHeroOptimizedUrl(heroImage)}
                   alt={`${kit.name} Play Kit - Lovevery alternatives and affordable dupes for ${kit.ageRangeEn || kit.ageRange}`}
                   className="w-full h-full object-contain"
+                  width={576}
+                  height={576}
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -685,10 +693,13 @@ export default function KitDetail() {
               <div className="hidden md:block w-56 lg:w-72 shrink-0">
                 <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-4">
                   <img
-                    src={heroImage}
+                    src={getKitHeroOptimizedUrl(heroImage)}
                     alt={`${kit.name} Play Kit overview - toys and Amazon alternatives for ${kit.ageRangeEn || kit.ageRange}`}
                     className="w-full h-full object-contain"
                     loading="lazy"
+                    width={576}
+                    height={576}
+                    decoding="async"
                   />
                 </div>
               </div>

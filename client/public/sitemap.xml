@@ -14,195 +14,218 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://loveveryfans.com/#/about</loc>
+    <loc>https://loveveryfans.com/about</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/about"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/about"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/about"/>
   </url>
 
   <!-- Baby Stage Kits -->
   <url>
-    <loc>https://loveveryfans.com/#/kit/looker</loc>
+    <loc>https://loveveryfans.com/kit/looker</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/looker"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/looker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/looker"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/looker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/looker"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/charmer</loc>
+    <loc>https://loveveryfans.com/kit/charmer</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/charmer"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/charmer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/charmer"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/charmer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/charmer"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/senser</loc>
+    <loc>https://loveveryfans.com/kit/senser</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/senser"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/senser"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/senser"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/senser"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/senser"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/inspector</loc>
+    <loc>https://loveveryfans.com/kit/inspector</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/inspector"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/inspector"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/inspector"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/inspector"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/inspector"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/explorer</loc>
+    <loc>https://loveveryfans.com/kit/explorer</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/explorer"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/explorer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/explorer"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/explorer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/explorer"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/thinker</loc>
+    <loc>https://loveveryfans.com/kit/thinker</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/thinker"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/thinker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/thinker"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/thinker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/thinker"/>
   </url>
 
   <!-- Toddler Stage Kits -->
   <url>
-    <loc>https://loveveryfans.com/#/kit/babbler</loc>
+    <loc>https://loveveryfans.com/kit/babbler</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/babbler"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/babbler"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/babbler"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/babbler"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/babbler"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/adventurer</loc>
+    <loc>https://loveveryfans.com/kit/adventurer</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/adventurer"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/adventurer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/adventurer"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/realist</loc>
+    <loc>https://loveveryfans.com/kit/realist</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/realist"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/realist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/realist"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/realist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/realist"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/companion</loc>
+    <loc>https://loveveryfans.com/kit/companion</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/companion"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/companion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/companion"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/companion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/companion"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/helper</loc>
+    <loc>https://loveveryfans.com/kit/helper</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/helper"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/helper"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/helper"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/helper"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/helper"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/enthusiast</loc>
+    <loc>https://loveveryfans.com/kit/enthusiast</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/enthusiast"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/enthusiast"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/enthusiast"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/enthusiast"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/enthusiast"/>
   </url>
 
   <!-- Big Kid Stage Kits -->
   <url>
-    <loc>https://loveveryfans.com/#/kit/investigator</loc>
+    <loc>https://loveveryfans.com/kit/investigator</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/investigator"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/investigator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/investigator"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/investigator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/investigator"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/freeSpirit</loc>
+    <loc>https://loveveryfans.com/kit/freeSpirit</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/freeSpirit"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/freeSpirit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/freeSpirit"/>
   </url>
 
   <!-- Preschool Stage Kits -->
   <url>
-    <loc>https://loveveryfans.com/#/kit/observer</loc>
+    <loc>https://loveveryfans.com/kit/observer</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/observer"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/observer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/observer"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/observer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/observer"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/storyteller</loc>
+    <loc>https://loveveryfans.com/kit/storyteller</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/storyteller"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/storyteller"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/storyteller"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/storyteller"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/storyteller"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/problemSolver</loc>
+    <loc>https://loveveryfans.com/kit/problemSolver</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/problemSolver"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/problemSolver"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/problemSolver"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/problemSolver"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/problemSolver"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/analyst</loc>
+    <loc>https://loveveryfans.com/kit/analyst</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/analyst"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/analyst"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/analyst"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/analyst"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/analyst"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/connector</loc>
+    <loc>https://loveveryfans.com/kit/connector</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/connector"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/connector"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/connector"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/connector"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/connector"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/examiner</loc>
+    <loc>https://loveveryfans.com/kit/examiner</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/examiner"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/examiner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/examiner"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/examiner"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/examiner"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/persister</loc>
+    <loc>https://loveveryfans.com/kit/persister</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/persister"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/persister"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/persister"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/persister"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/persister"/>
   </url>
   <url>
-    <loc>https://loveveryfans.com/#/kit/planner</loc>
+    <loc>https://loveveryfans.com/kit/planner</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/#/kit/planner"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/#/kit/planner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/kit/planner"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/planner"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/planner"/>
   </url>
 </urlset>
