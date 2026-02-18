@@ -3,6 +3,12 @@
  * Shake your phone to discover a random toy with a beautiful 3D card flip animation.
  * Only works on mobile devices with motion sensors.
  * Includes haptic feedback if supported.
+ * 
+ * FIXED: Reduced sensitivity to prevent accidental triggers
+ * - Higher threshold (30 instead of 15)
+ * - Initial delay of 8 seconds after page load
+ * - Requires 3 consecutive shakes within 1.5 seconds
+ * - Longer cooldown (30 seconds instead of 3)
  */
 import { useEffect, useState, useRef, useCallback } from "react";
 import { kits } from "@/data/kits";
@@ -10,8 +16,11 @@ import { getToyImage } from "@/data/toyImages";
 import { getToyThumbnailUrl } from "@/lib/imageUtils";
 import { Sparkles } from "lucide-react";
 
-const SHAKE_THRESHOLD = 15;
-const SHAKE_COOLDOWN = 3000; // 3 seconds between shakes
+const SHAKE_THRESHOLD = 30; // Increased from 15 to 30 for less sensitivity
+const SHAKE_COOLDOWN = 30000; // Increased from 3s to 30s
+const INITIAL_DELAY = 8000; // 8 second delay after page load
+const CONSECUTIVE_SHAKES_REQUIRED = 3; // Need 3 shakes to trigger
+const CONSECUTIVE_SHAKE_WINDOW = 1500; // Within 1.5 seconds
 
 export default function ShakeToDiscover() {
   const [triggered, setTriggered] = useState(false);
@@ -26,6 +35,9 @@ export default function ShakeToDiscover() {
   const [closing, setClosing] = useState(false);
   const lastShakeRef = useRef(0);
   const lastAccelerationRef = useRef({ x: 0, y: 0, z: 0 });
+  const shakeCountRef = useRef(0);
+  const shakeTimestampsRef = useRef<number[]>([]);
+  const isReadyRef = useRef(false);
 
   // Check if device is mobile
   const isMobile = useCallback(() => {
@@ -73,11 +85,21 @@ export default function ShakeToDiscover() {
   useEffect(() => {
     if (!isMobile()) return;
 
+    // Initial delay before starting to listen
+    const initialTimer = setTimeout(() => {
+      isReadyRef.current = true;
+    }, INITIAL_DELAY);
+
     const handleMotion = (event: DeviceMotionEvent) => {
+      // Don't listen until initial delay has passed
+      if (!isReadyRef.current) return;
+
       const acc = event.accelerationIncludingGravity;
       if (!acc || !acc.x || !acc.y || !acc.z) return;
 
       const now = Date.now();
+      
+      // Check cooldown period
       if (now - lastShakeRef.current < SHAKE_COOLDOWN) return;
 
       const deltaX = Math.abs(acc.x - lastAccelerationRef.current.x);
@@ -86,15 +108,33 @@ export default function ShakeToDiscover() {
 
       lastAccelerationRef.current = { x: acc.x, y: acc.y, z: acc.z };
 
+      // Check if shake exceeds threshold
       if (deltaX + deltaY + deltaZ > SHAKE_THRESHOLD) {
-        lastShakeRef.current = now;
-        const toy = pickRandomToy();
-        if (toy) {
-          setRandomToy(toy);
-          setTriggered(true);
-          setFlipping(true);
-          vibrate([50, 50, 100]); // Short vibration pattern
-          setTimeout(() => setFlipping(false), 600);
+        // Add shake timestamp
+        shakeTimestampsRef.current.push(now);
+
+        // Clean up old timestamps outside the window
+        shakeTimestampsRef.current = shakeTimestampsRef.current.filter(
+          (timestamp) => now - timestamp < CONSECUTIVE_SHAKE_WINDOW
+        );
+
+        // Check if we have enough consecutive shakes
+        if (shakeTimestampsRef.current.length >= CONSECUTIVE_SHAKES_REQUIRED) {
+          // Trigger the Easter egg!
+          lastShakeRef.current = now;
+          shakeTimestampsRef.current = []; // Reset shake count
+          
+          const toy = pickRandomToy();
+          if (toy) {
+            setRandomToy(toy);
+            setTriggered(true);
+            setFlipping(true);
+            vibrate([50, 50, 100]); // Short vibration pattern
+            setTimeout(() => setFlipping(false), 600);
+          }
+        } else {
+          // Give subtle feedback for each shake in the sequence
+          vibrate(20);
         }
       }
     };
@@ -110,7 +150,10 @@ export default function ShakeToDiscover() {
       window.addEventListener("devicemotion", handleMotion);
     }
 
-    return () => window.removeEventListener("devicemotion", handleMotion);
+    return () => {
+      clearTimeout(initialTimer);
+      window.removeEventListener("devicemotion", handleMotion);
+    };
   }, [isMobile, pickRandomToy, vibrate]);
 
   const handleClose = useCallback(() => {
