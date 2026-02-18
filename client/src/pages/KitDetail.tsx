@@ -617,7 +617,11 @@ export default function KitDetail() {
               {(kit.officialUrl || true) && (
                 <div className="mt-5 sm:mt-6">
                   <a
-                    href={kit.officialUrl || "https://lovevery.com/products/the-play-kits"}
+                    href={(() => {
+                      const url = kit.officialUrl || "https://lovevery.com/products/the-play-kits";
+                      const separator = url.includes("?") ? "&" : "?";
+                      return `${url}${separator}discount_code=${REFERRAL_CODE}`;
+                    })()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl text-sm font-medium border-2 transition-all hover:shadow-md active:scale-[0.98] group"
@@ -638,6 +642,15 @@ export default function KitDetail() {
                     <ExternalLink className="w-4 h-4" />
                     {i18n.kitDetail.viewOnLovevery[lang]}
                   </a>
+                  {/* Subtle referral hint */}
+                  <p className="mt-2 flex items-center justify-start gap-1.5 text-[10px] sm:text-xs text-[#9B8E7E]/60 opacity-70">
+                    <Heart className="w-3 h-3 text-[#D4A574]/50" />
+                    <span>
+                      {lang === "cn"
+                        ? "通过此链接购买可享折扣，同时支持本站运营"
+                        : "Using this link supports our site & gives you a discount"}
+                    </span>
+                  </p>
                 </div>
               )}
 
