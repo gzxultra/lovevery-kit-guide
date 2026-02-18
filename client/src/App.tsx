@@ -2,6 +2,9 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { lazy, Suspense, useEffect } from "react";
+
+// Lazy load easter eggs so they don't affect initial bundle
+const EasterEggs = lazy(() => import("./components/easter-eggs"));
 import { useLocation } from "wouter";
 
 // Lazy load route components for code splitting
@@ -52,6 +55,9 @@ function App() {
     <ErrorBoundary>
       <LanguageProvider>
         <AppRouter />
+        <Suspense fallback={null}>
+          <EasterEggs />
+        </Suspense>
       </LanguageProvider>
     </ErrorBoundary>
   );

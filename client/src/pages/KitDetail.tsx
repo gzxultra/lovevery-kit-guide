@@ -550,7 +550,7 @@ export default function KitDetail() {
             <div className="flex items-center gap-3">
               <LanguageToggle />
               <Link href="/">
-                <span className="font-['Manrope'] text-base sm:text-lg text-[#3D3229]">
+                <span data-logo-target className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] select-none">
                   Lovevery
                 </span>
               </Link>
@@ -839,10 +839,11 @@ export default function KitDetail() {
       {/* Footer */}
       <footer className="bg-[#3D3229] text-white py-8 sm:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="font-['Manrope'] text-lg sm:text-xl mb-2 sm:mb-3">Lovevery</h3>
+          <h3 data-logo-target className="font-['Manrope'] text-lg sm:text-xl mb-2 sm:mb-3 select-none">Lovevery</h3>
           <p className="text-xs sm:text-sm text-[#8B7E70]">
             {i18n.footer.tagline[lang]}
           </p>
+          <div data-rainbow-portal className="mt-3 flex justify-center" />
         </div>
       </footer>
     </div>

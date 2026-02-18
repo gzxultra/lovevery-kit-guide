@@ -118,7 +118,7 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold">
+              <span data-logo-target className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none">
                 Lovevery
               </span>
             </Link>
@@ -326,6 +326,7 @@ export default function AboutUs() {
           <p className="text-xs sm:text-sm text-[#8B7E70] leading-relaxed max-w-4xl mx-auto">
             {i18n.footer.disclaimer[lang]}
           </p>
+          <div data-rainbow-portal className="mt-3 flex justify-center" />
         </div>
       </footer>
     </div>

@@ -124,7 +124,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold">
+              <span data-logo-target className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none">
                 Lovevery
               </span>
             </Link>
@@ -410,7 +410,7 @@ export default function Home() {
             </div>
             {/* Hero image */}
             <div className="relative animate-[fadeIn_1s_ease-out_0.2s_both] order-1 md:order-2">
-              <div className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-[#3D3229]/10">
+              <div data-hero-image className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-[#3D3229]/10">
                 <picture>
                   <source srcSet={HERO_IMG} type="image/webp" />
                   <img
@@ -551,7 +551,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
             <div>
-              <h3 className="font-['Manrope'] text-xl sm:text-2xl mb-3 sm:mb-4">Lovevery</h3>
+              <h3 data-logo-target className="font-['Manrope'] text-xl sm:text-2xl mb-3 sm:mb-4 select-none">Lovevery</h3>
               <p className="text-[#B8AFA3] text-sm leading-relaxed">
                 {i18n.footer.brandDesc[lang]}
               </p>
@@ -590,6 +590,7 @@ export default function Home() {
             <p className="text-xs sm:text-sm text-[#8B7E70] leading-relaxed max-w-4xl mx-auto">
               {i18n.footer.disclaimer[lang]}
             </p>
+            <div data-rainbow-portal className="mt-3 flex justify-center" />
           </div>
         </div>
       </footer>
