@@ -1,0 +1,99 @@
+# .github/workflows/scrape-and-deploy.yml
+#
+# Full Scrape + Build + Deploy — a BACKUP workflow.
+#
+# ⚠️  WARNING: Amazon will very likely block requests coming from
+# GitHub-hosted runner IP ranges. This workflow is provided as a
+# convenience / fallback option. The recommended approach is to run
+# the scraper on your local machine and push the updated JSON, which
+# will trigger the regular "Build and Deploy" workflow automatically.
+#
+# Manual trigger only (workflow_dispatch).
+# Requires the OPENAI_API_KEY repository secret.
+
+name: Scrape, Build, and Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      scraper_flags:
+        description: >
+          Extra flags passed to scrape_alternatives.py
+          (e.g. "--kit looker" or "--refresh-prices")
+        required: false
+        default: "--update --verbose"
+
+# Allow only one concurrent deployment at a time
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-build-deploy:
+    runs-on: ubuntu-latest
+    # The scraper makes many sequential HTTP requests with built-in
+    # delays (2-4 s each) so it can take a very long time to finish.
+    timeout-minutes: 180
+
+    steps:
+      # ── 1. Checkout ───────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Python + scraper ───────────────────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Run scraper
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd scripts
+          python3 scrape_alternatives.py ${{ github.event.inputs.scraper_flags }}
+
+      # ── 3. Commit updated JSON back to main ───────────────────────
+      - name: Commit updated data (if changed)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/lovevery_alternatives.json
+          if git diff --cached --quiet; then
+            echo "No data changes detected — skipping commit."
+          else
+            git commit -m "chore: auto-update alternatives data [skip ci]"
+            git push
+          fi
+
+      # ── 4. Node.js + build ────────────────────────────────────────
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build static site
+        run: pnpm build:static
+
+      # ── 5. Deploy ─────────────────────────────────────────────────
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: loveveryfans.com
