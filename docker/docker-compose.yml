@@ -1,0 +1,67 @@
+# =============================================================================
+# Lovevery Alternatives Scraper — Docker Compose
+#
+# Usage:
+#   docker-compose up -d          # Start the container
+#   docker-compose logs -f        # View logs
+#   docker-compose down           # Stop the container
+#   docker-compose up -d --build  # Rebuild and restart
+# =============================================================================
+version: "3.8"
+
+services:
+  lovevery-scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lovevery-scraper
+    restart: unless-stopped
+
+    environment:
+      # ── Required ──────────────────────────────────────────────────
+      - OPENAI_API_KEY=${OPENAI_API_KEY}          # OpenAI API key for AI search
+      - GITHUB_TOKEN=${GITHUB_TOKEN}              # GitHub PAT for pushing updates
+      - GITHUB_REPO=gzxultra/loveveryfans         # GitHub repository (owner/repo)
+
+      # ── Scheduling ────────────────────────────────────────────────
+      - CRON_SCHEDULE=0 3 * * 1                   # Default: every Monday at 3:00 AM
+      - RUN_ON_STARTUP=true                       # Run scraper immediately on start
+      - TZ=America/Los_Angeles                    # Timezone for cron
+
+      # ── Scraper Options ───────────────────────────────────────────
+      - SCRAPER_FLAGS=--update --verbose           # Flags passed to scraper script
+      # Common flag combinations:
+      #   --update --verbose           → Update existing data, add new kits
+      #   --refresh-prices --verbose   → Only refresh prices (no AI, no API key needed)
+      #   --kit looker --verbose       → Only scrape a specific kit
+
+      # ── Git Config ────────────────────────────────────────────────
+      - GIT_USER_NAME=loveveryfans-bot
+      - GIT_USER_EMAIL=bot@loveveryfans.com
+      - GIT_BRANCH=main
+
+    volumes:
+      # Persist the cloned repo across container restarts
+      - scraper-data:/app/repo
+      # Persist logs
+      - scraper-logs:/var/log
+
+    # Resource limits (suitable for Unraid home server)
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 128M
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  scraper-data:
+    driver: local
+  scraper-logs:
+    driver: local
