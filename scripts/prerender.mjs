@@ -68,7 +68,7 @@ const scriptTagsStr = [...scriptTags, ...moduleScript].join('\n    ');
 
 function generateKitHtml(kitId) {
   const seo = kitSeoData[kitId];
-  const pageUrl = `${SITE_URL}/kit/${kitId}`;
+  const pageUrl = `${SITE_URL}/kit/${kitId}/`;
   const kitName = kitId.charAt(0).toUpperCase() + kitId.slice(1);
   
   return `<!DOCTYPE html>
@@ -124,7 +124,7 @@ function generateKitHtml(kitId) {
 }
 
 function generateAboutHtml() {
-  const pageUrl = `${SITE_URL}/about`;
+  const pageUrl = `${SITE_URL}/about/`;
   const title = "About Us | Lovevery Fans";
   const desc = "Learn about the story behind Lovevery Fans — an independent, ad-free community guide built by parents for parents. Not affiliated with Lovevery Inc.";
   

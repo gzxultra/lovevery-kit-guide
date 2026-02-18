@@ -2,28 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Lovevery Fans</title>
-  <script>
-    // GitHub Pages SPA redirect for clean URLs (BrowserRouter)
-    // When GitHub Pages serves a 404, this script stores the path
-    // and redirects to index.html which will restore the route.
-    // Uses sessionStorage to pass the path to the SPA.
-    var path = window.location.pathname;
-    var search = window.location.search;
-    var hash = window.location.hash;
-    if (path !== '/' && path !== '/index.html') {
-      sessionStorage.setItem('spa-redirect', path + search + hash);
-      window.location.replace('/');
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+  <title>Page Not Found | Lovevery Fans</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#FAF7F2" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background-color: #FAF7F2;
+      color: #5C4B3A;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  </script>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: #3D2E1F;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      color: #7A6B5A;
+    }
+    a {
+      display: inline-block;
+      padding: 12px 32px;
+      background-color: #7FB685;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    a:hover { background-color: #6BA073; }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <noscript>
-    <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:system-ui,sans-serif;">
-      <h1>Lovevery Fans</h1>
-      <p>The page you're looking for might have moved. Please visit our <a href="/">homepage</a> to explore all 22 Lovevery Play Kits.</p>
-      <p><a href="/">← Back to Lovevery Fans Homepage</a></p>
-    </div>
-  </noscript>
+  <div class="container">
+    <h1>Page Not Found</h1>
+    <p>Sorry, the page you are looking for does not exist or may have been moved. Explore our complete guide to all 22 Lovevery Play Kits on the homepage.</p>
+    <a href="/">← Back to Homepage</a>
+  </div>
 </body>
 </html>
