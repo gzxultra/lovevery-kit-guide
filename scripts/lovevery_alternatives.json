@@ -913,12 +913,36 @@
       {
         "toyName": "'How I Feel' Board Book",
         "toyNameCn": "《我的感觉》纸板书",
-        "alternatives": []
+        "alternatives": [
+          {
+            "name": "First 100 Words Board Book",
+            "asin": "B00000J0JF",
+            "price": "$28.",
+            "rating": 4.8,
+            "reviewCount": 11099,
+            "imageUrl": "https://m.media-amazon.com/images/I/81nzjQQ7c0L.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B00000J0JF?tag=loveveryfans-20",
+            "reasonEn": "A sturdy board book that introduces basic words and images, encouraging language development and fine motor skills with non-toxic materials.",
+            "reasonCn": "这本坚固的硬页书介绍基础词汇和图像，促进语言发展和精细运动技能，材料无毒。"
+          }
+        ]
       },
       {
         "toyName": "Roll & Build Cone Set",
         "toyNameCn": "滚动和构建锥体套装",
-        "alternatives": []
+        "alternatives": [
+          {
+            "name": "Melissa & Doug Wooden Building Blocks Set - 100-Piece",
+            "asin": "B000GKATU0",
+            "price": "$15.",
+            "rating": 4.7,
+            "reviewCount": 723,
+            "imageUrl": "https://m.media-amazon.com/images/I/81CJric2d0L.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B000GKATU0?tag=loveveryfans-20",
+            "reasonEn": "This wooden block set promotes fine motor skills and cognitive development with safe, non-toxic materials and offers great value with 100 pieces.",
+            "reasonCn": "这款木制积木套装促进精细运动技能和认知发展，采用安全无毒材料，且包含100块积木，性价比高。"
+          }
+        ]
       },
       {
         "toyName": "Bright & Light Play Scarf",
@@ -1135,7 +1159,19 @@
       {
         "toyName": "Coin Lid & Coins",
         "toyNameCn": "硬币盖和硬币",
-        "alternatives": []
+        "alternatives": [
+          {
+            "name": "Hape Pound & Tap Bench with Slide Out Xylophone",
+            "asin": "B000FQ9QVI",
+            "price": "$54.",
+            "rating": 4.3,
+            "reviewCount": 2399,
+            "imageUrl": "https://m.media-amazon.com/images/I/61bPXw4uvxL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B000FQ9QVI?tag=loveveryfans-20",
+            "reasonEn": "Features wooden coins and a coin lid for fine motor skills and cognitive development, made from BPA-free, non-toxic materials.",
+            "reasonCn": "配有木制硬币和硬币盖，促进精细运动技能和认知发展，采用无BPA无毒材料。"
+          }
+        ]
       },
       {
         "toyName": "Carrot Lid & Carrots",
@@ -1145,7 +1181,19 @@
       {
         "toyName": "Posting Lid & Trees",
         "toyNameCn": "插入盖和小树",
-        "alternatives": []
+        "alternatives": [
+          {
+            "name": "Fisher-Price Baby's First Blocks",
+            "asin": "B00000IZQP",
+            "price": "$9.",
+            "rating": 4.7,
+            "reviewCount": 15008,
+            "imageUrl": "https://m.media-amazon.com/images/I/61oXr6XVSEL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B00000IZQP?tag=loveveryfans-20",
+            "reasonEn": "Classic block set designed to develop hand-eye coordination and problem-solving skills using safe, BPA-free plastic, making it a great affordable alternative.",
+            "reasonCn": "经典积木套装，旨在通过安全无BPA塑料发展手眼协调和解决问题能力，是一个实惠的好替代品。"
+          }
+        ]
       },
       {
         "toyName": "'Bedtime for Zoe' Board Book",
@@ -1404,7 +1452,19 @@
       {
         "toyName": "Quilted Critter Pockets",
         "toyNameCn": "棉布动物口袋",
-        "alternatives": []
+        "alternatives": [
+          {
+            "name": "Fisher-Price Baby's First Blocks",
+            "asin": "B00000IZQP",
+            "price": "$9.",
+            "rating": 4.7,
+            "reviewCount": 15008,
+            "imageUrl": "https://m.media-amazon.com/images/I/61oXr6XVSEL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B00000IZQP?tag=loveveryfans-20",
+            "reasonEn": "Classic block set that encourages hand-eye coordination and problem-solving, made from BPA-free, child-safe materials.",
+            "reasonCn": "经典积木套装，促进手眼协调和解决问题能力，采用无BPA安全材料。"
+          }
+        ]
       },
       {
         "toyName": "Really Real Flashlight",
