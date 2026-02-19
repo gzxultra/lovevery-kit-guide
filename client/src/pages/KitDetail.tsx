@@ -40,6 +40,7 @@ import { useState, useEffect, useCallback, memo, useMemo } from "react";
 import { Link, useParams } from "wouter";
 import Lightbox from "@/components/Lightbox";
 import { RewardBanner } from "@/components/RewardBanner";
+import { RecommendedReading } from "@/components/RecommendedReading";
 import { AlternativesSection } from "@/components/AlternativesSection";
 import { getToyAlternatives, alternatives as allAlternatives } from "@/data/alternatives";
 
@@ -795,6 +796,9 @@ export default function KitDetail() {
           )}
         </div>
       </section>
+
+      {/* Recommended Reading */}
+      <RecommendedReading kitId={kit.id} kitColor={kit.color} />
 
       {/* Referral Module */}
       <section className="pb-10 sm:pb-16">
