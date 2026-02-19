@@ -124,21 +124,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
-    <!-- Google Analytics GA4 - deferred until after load -->
+    <!-- Google Analytics GA4 - deferred until user interaction -->
     <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCV2N7Q89L';
+      (function(){
+        var loaded=false;
+        function loadGA(){
+          if(loaded)return;loaded=true;
+          var s=document.createElement('script');
+          s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZCV2N7Q89L';
           document.head.appendChild(s);
-          window.dataLayer = window.dataLayer || [];
+          window.dataLayer=window.dataLayer||[];
           function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', 'G-ZCV2N7Q89L');
-        }, 5000);
-      });
+          window.gtag=gtag;gtag('js',new Date());gtag('config','G-ZCV2N7Q89L');
+        }
+        ['scroll','click','touchstart','keydown'].forEach(function(e){
+          window.addEventListener(e,loadGA,{once:true,passive:true});
+        });
+        // Fallback: load after 8s if no interaction
+        setTimeout(loadGA,8000);
+      })();
     </script>
 
     <!-- Critical CSS inlined for above-the-fold content -->

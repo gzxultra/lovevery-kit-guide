@@ -10,7 +10,7 @@ export function RewardSection() {
     <section className="w-full py-16 px-4 bg-gradient-to-b from-white to-[#FFFBF5]">
       <div className="max-w-3xl mx-auto">
         {/* Main Card - Elegant & Prominent but Refined */}
-        <div className="relative bg-white rounded-3xl shadow-sm border border-[#F5E6D3] overflow-hidden group hover:shadow-md transition-shadow duration-500">
+        <div className="relative bg-white rounded-3xl shadow-sm border border-[#F5E6D3] overflow-hidden group hover:shadow-lg hover:shadow-[#3D3229]/5 transition-all duration-500">
           {/* Subtle Background Accent */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF5E5B]/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
           
@@ -39,7 +39,7 @@ export function RewardSection() {
                 href="https://ko-fi.com/ernie92368"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#C43B38] text-white text-lg font-bold rounded-2xl shadow-lg shadow-[#C43B38]/20 hover:bg-[#A83230] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#C43B38] text-white text-lg font-bold rounded-2xl shadow-lg shadow-[#C43B38]/20 hover:bg-[#A83230] hover:scale-[1.02] hover:shadow-xl hover:shadow-[#C43B38]/30 active:scale-[0.98] transition-all duration-300 min-h-[48px]"
               >
                 <Coffee className="w-6 h-6" strokeWidth={2.5} />
                 <span>{t.kofiButton[lang]}</span>

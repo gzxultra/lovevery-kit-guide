@@ -133,8 +133,8 @@ const ToyCard = memo(function ToyCard({
 
   return (
     <div
-      className={`bg-white rounded-xl sm:rounded-2xl border overflow-hidden hover:shadow-lg hover:shadow-[#3D3229]/5 transition-all duration-300 ${
-        isDiscontinued ? "border-[#E8DFD3] opacity-70" : "border-[#E8DFD3]"
+      className={`bg-white rounded-xl sm:rounded-2xl border overflow-hidden hover:shadow-xl hover:shadow-[#3D3229]/8 transition-all duration-300 ${
+        isDiscontinued ? "border-[#E8DFD3] opacity-70" : "border-[#E8DFD3] hover:border-[#D0C8BC]"
       } hover-expand-card`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -539,19 +539,19 @@ export default function KitDetail() {
     <>
     <div className="min-h-screen bg-[#FAF7F2]">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3]">
+      <nav className="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-lg border-b border-[#E8DFD3]/70 shadow-sm shadow-[#3D3229]/3">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span className="flex items-center gap-1.5 sm:gap-2 text-[#6B5E50] hover:text-[#3D3229] transition-colors min-h-[44px] items-center">
-                <ArrowLeft className="w-4 h-4" />
+              <span className="group flex items-center gap-1.5 sm:gap-2 text-[#6B5E50] hover:text-[#3D3229] transition-colors min-h-[44px] items-center">
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
                 <span className="text-xs sm:text-sm font-medium">{i18n.kitDetail.backToAll[lang]}</span>
               </span>
             </Link>
             <div className="flex items-center gap-3">
               <LanguageToggle />
               <Link href="/">
-                <span data-logo-target className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] select-none">
+                <span data-logo-target className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] select-none hover:opacity-80 transition-opacity">
                   Lovevery
                 </span>
               </Link>
@@ -563,13 +563,13 @@ export default function KitDetail() {
       {/* Kit Header with Hero Image */}
       <section className="relative overflow-hidden">
         <div
-          className="h-1.5 sm:h-2 w-full"
-          style={{ backgroundColor: kit.color }}
+          className="h-1 sm:h-1.5 w-full"
+          style={{ background: `linear-gradient(90deg, ${kit.color}, ${kit.color}88, ${kit.color}44)` }}
         />
         <div
-          className="absolute inset-0 opacity-[0.08] pointer-events-none z-0"
+          className="absolute inset-0 opacity-[0.06] pointer-events-none z-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 20% 30%, ${kit.color} 0%, transparent 40%), radial-gradient(circle at 80% 70%, ${kit.color} 0%, transparent 40%)`,
+            backgroundImage: `radial-gradient(circle at 15% 25%, ${kit.color} 0%, transparent 35%), radial-gradient(circle at 85% 75%, ${kit.color} 0%, transparent 35%), radial-gradient(circle at 50% 50%, ${kit.color} 0%, transparent 50%)`,
           }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 relative z-10">
@@ -592,14 +592,14 @@ export default function KitDetail() {
           <div className="grid md:grid-cols-[1fr_auto] gap-6 sm:gap-8 items-start">
             <div>
               <div
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6"
-                style={{ backgroundColor: kit.color + "20", color: kit.color }}
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 border"
+                style={{ backgroundColor: kit.color + "12", color: kit.color, borderColor: kit.color + "25" }}
               >
                 <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 {kitStageLabel} · {kitAgeRange}
               </div>
 
-              <h1 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] mb-4 sm:mb-6 leading-tight">
+              <h1 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] mb-4 sm:mb-6 leading-[1.1] tracking-tight">
                 {kit.name}
               </h1>
 
@@ -705,7 +705,7 @@ export default function KitDetail() {
 
             {heroImage && (
               <div className="hidden md:block w-56 lg:w-72 shrink-0">
-                <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 p-4">
+                <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD3] shadow-xl shadow-[#3D3229]/8 ring-1 ring-black/5 p-4 hover:shadow-2xl transition-shadow duration-500">
                   <img
                     src={getKitHeroOptimizedUrl(heroImage)}
                     alt={`${kit.name} Play Kit overview - toys and Amazon alternatives for ${kit.ageRangeEn || kit.ageRange}`}
@@ -809,18 +809,18 @@ export default function KitDetail() {
       </section>
 
       {/* Navigation between kits */}
-      <section className="border-t border-[#E8DFD3] bg-white/80">
+      <section className="border-t border-[#E8DFD3] bg-gradient-to-b from-white to-[#FAF7F2]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <p className="text-center text-xs sm:text-sm text-[#756A5C] mb-4 sm:mb-6">{i18n.kitDetail.exploreMore[lang]}</p>
+          <p className="text-center text-xs sm:text-sm text-[#756A5C] mb-4 sm:mb-6 font-medium">{i18n.kitDetail.exploreMore[lang]}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {prevKit ? (
               <Link href={`/kit/${prevKit.id}`}>
-                <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-md transition-all cursor-pointer active:scale-[0.98] min-h-[44px]">
+                <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] bg-white hover:shadow-lg hover:shadow-[#3D3229]/5 transition-all duration-300 cursor-pointer active:scale-[0.98] min-h-[44px]">
                   <p className="text-[10px] sm:text-xs text-[#756A5C] mb-1.5 sm:mb-2 flex items-center gap-1">
-                    <ArrowLeft className="w-3 h-3" />
+                    <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
                     {i18n.kitDetail.prevKit[lang]}
                   </p>
-                  <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#6B5E50] transition-colors">
+                  <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#1a1108] transition-colors">
                     {prevKit.name}
                   </p>
                   <p className="text-xs sm:text-sm text-[#756A5C] mt-0.5 sm:mt-1">
@@ -833,12 +833,12 @@ export default function KitDetail() {
             )}
             {nextKit ? (
               <Link href={`/kit/${nextKit.id}`}>
-                <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-md transition-all text-right cursor-pointer active:scale-[0.98] min-h-[44px]">
+                <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] bg-white hover:shadow-lg hover:shadow-[#3D3229]/5 transition-all duration-300 text-right cursor-pointer active:scale-[0.98] min-h-[44px]">
                   <p className="text-[10px] sm:text-xs text-[#756A5C] mb-1.5 sm:mb-2 flex items-center justify-end gap-1">
                     {i18n.kitDetail.nextKit[lang]}
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </p>
-                  <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#6B5E50] transition-colors">
+                  <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#1a1108] transition-colors">
                     {nextKit.name}
                   </p>
                   <p className="text-xs sm:text-sm text-[#756A5C] mt-0.5 sm:mt-1">
@@ -854,10 +854,11 @@ export default function KitDetail() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#3D3229] text-white py-8 sm:py-12">
+      <footer className="relative bg-[#3D3229] text-white py-8 sm:py-12">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7FB685]/40 to-transparent" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 data-logo-target className="font-['Manrope'] text-lg sm:text-xl mb-2 sm:mb-3 select-none">Lovevery</h3>
-          <p className="text-xs sm:text-sm text-[#6B5E50]">
+          <p className="text-xs sm:text-sm text-[#9A8E82]">
             {i18n.footer.tagline[lang]}
           </p>
           <div data-rainbow-portal className="mt-3 flex justify-center" />

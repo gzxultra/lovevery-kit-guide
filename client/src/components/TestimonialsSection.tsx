@@ -37,11 +37,14 @@ export function TestimonialsSection() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#F5F0EB] via-[#FAF7F2] to-[#F8F3ED]">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#F5F0EB] via-[#FAF7F2] to-[#F8F3ED] relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-20 left-10 w-40 h-40 bg-[#D4A574]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-[#7FB685]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/70 backdrop-blur-sm border border-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
             <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             {lang === "cn" ? "家长真实好评" : "Real Parent Reviews"}
           </div>
@@ -57,7 +60,7 @@ export function TestimonialsSection() {
 
         {/* Testimonial Carousel */}
         <div className="relative">
-          <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 overflow-hidden">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E8DFD3] shadow-lg shadow-[#3D3229]/5 overflow-hidden ring-1 ring-black/3">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}

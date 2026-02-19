@@ -128,7 +128,7 @@ export default function FeedbackForm() {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl sm:rounded-3xl border border-[#E8DFD3] p-6 sm:p-8 shadow-sm"
+          className="bg-white rounded-2xl sm:rounded-3xl border border-[#E8DFD3] p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
         >
           <div className="space-y-5">
             {/* Name field */}
@@ -195,7 +195,7 @@ export default function FeedbackForm() {
             <button
               type="submit"
               disabled={status === "sending" || !name.trim() || !message.trim()}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] hover:shadow-lg hover:shadow-[#3D3229]/20 transition-all duration-300 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px]"
             >
               {status === "sending" ? (
                 <>

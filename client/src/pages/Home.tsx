@@ -130,11 +130,11 @@ export default function Home({ onReady }: { onReady?: () => void }) {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3]">
+      <nav className="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-lg border-b border-[#E8DFD3]/70 shadow-sm shadow-[#3D3229]/3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span data-logo-target className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none">
+              <span data-logo-target className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none hover:opacity-80 transition-opacity">
                 Lovevery
               </span>
             </Link>
@@ -144,7 +144,7 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                 <button
                   key={s.id}
                   onClick={() => scrollToStage(s.id)}
-                  className="text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors"
+                  className="relative text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#7FB685] after:rounded-full after:transition-all hover:after:w-full"
                 >
                   {stageLabel(s.id)}
                 </button>
@@ -393,34 +393,48 @@ export default function Home({ onReady }: { onReady?: () => void }) {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#FFF8F0] via-[#FAF7F2] to-[#F0EBE3]">
+        {/* Decorative background elements */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-[#7FB685]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#E8A87C]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-[#D4B896]/6 rounded-full blur-2xl pointer-events-none animate-float" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text content */}
             <div className="animate-[fadeInUp_0.8s_ease-out_both] order-1 md:order-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/70 backdrop-blur-sm border border-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4A574]" />
                 {i18n.hero.badge[lang]}
               </div>
-              <h1 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] leading-tight mb-4 sm:mb-6">
+              <h1 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] leading-[1.15] tracking-tight mb-4 sm:mb-6">
                 {i18n.hero.title1[lang]}
                 <br />
-                <span className="text-[#5a9e65]">{i18n.hero.title2[lang]}</span>
+                <span className="text-[#5a9e65] relative">
+                  {i18n.hero.title2[lang]}
+                  <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#7FB685]/20 rounded-full" />
+                </span>
               </h1>
               <p className="text-base sm:text-lg text-[#4A3F35] leading-relaxed mb-6 sm:mb-8 max-w-lg">
                 {i18n.hero.subtitle[lang]}
               </p>
-              <button
-                onClick={() => scrollToStage("baby")}
-                className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#3D3229] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#2A231C] transition-colors active:scale-95 min-h-[48px]"
-              >
-                {i18n.hero.cta[lang]}
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <button
+                  onClick={() => scrollToStage("baby")}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 bg-[#3D3229] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#2A231C] hover:shadow-lg hover:shadow-[#3D3229]/20 transition-all duration-300 active:scale-95 min-h-[48px]"
+                >
+                  {i18n.hero.cta[lang]}
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                </button>
+                <span className="text-xs sm:text-sm text-[#756A5C] hidden sm:inline-flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7FB685] animate-[pulse-soft_2s_ease-in-out_infinite]" />
+                  {lang === "cn" ? "免费使用 · 无广告" : "Free & Ad-free"}
+                </span>
+              </div>
             </div>
             {/* Hero image */}
             <div className="relative animate-[fadeIn_1s_ease-out_0.2s_both] order-2 md:order-2">
-              <div data-hero-image className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-[#3D3229]/10">
+              <div data-hero-image className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-[#3D3229]/12 ring-1 ring-black/5">
                 <picture>
                   <source srcSet={HERO_IMG_MOBILE} type="image/webp" media="(max-width: 767px)" />
                   <source srcSet={HERO_IMG} type="image/webp" media="(min-width: 768px)" />
@@ -435,10 +449,11 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                   />
                 </picture>
               </div>
-              <div className="absolute -bottom-3 -left-2 sm:-bottom-4 sm:-left-4 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg shadow-[#3D3229]/10">
+              {/* Floating stat card */}
+              <div className="absolute -bottom-3 -left-2 sm:-bottom-4 sm:-left-4 bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg shadow-[#3D3229]/10 ring-1 ring-black/5 animate-[fadeInUp_0.6s_ease-out_0.5s_both]">
                 <div className="flex items-center gap-2 sm:gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#7FB685]/20 flex items-center justify-center">
-                    <Baby className="w-4 h-4 sm:w-5 sm:h-5 text-[#7FB685]" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#7FB685]/25 to-[#7FB685]/10 flex items-center justify-center">
+                    <Baby className="w-4 h-4 sm:w-5 sm:h-5 text-[#5a9e65]" />
                   </div>
                   <div>
                     <p className="text-xs sm:text-sm font-semibold text-[#3D3229]">{i18n.hero.kitCount[lang]}</p>
@@ -446,6 +461,8 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                   </div>
                 </div>
               </div>
+              {/* Decorative accent */}
+              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-16 h-16 sm:w-20 sm:h-20 bg-[#7FB685]/10 rounded-full blur-xl pointer-events-none" />
             </div>
           </div>
         </div>
@@ -467,19 +484,21 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                 <div className="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-8">
                   <div className="shrink-0">
                     <div
-                      className="inline-block px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 border"
                       style={{
-                        backgroundColor: stage.color + "20",
+                        backgroundColor: stage.color + "12",
                         color: getAccessibleTextColor(stage.color),
+                        borderColor: stage.color + "25",
                       }}
                     >
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: stage.color }} />
                       {stageRange(stage.id)}
                     </div>
-                    <h2 className="font-['Manrope'] text-2xl sm:text-3xl md:text-4xl text-[#1a1108]">
+                    <h2 className="font-['Manrope'] text-2xl sm:text-3xl md:text-4xl text-[#1a1108] tracking-tight">
                       {stageLabel(stage.id)}
                     </h2>
                   </div>
-                  <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-[#E8DFD3] to-transparent" />
+                  <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-[#E8DFD3] via-[#E8DFD3]/50 to-transparent" />
                 </div>
               </div>
 
@@ -489,15 +508,16 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                   const kitHero = getKitHeroImage(kit.id);
                   return (
                     <Link key={kit.id} href={`/kit/${kit.id}`}>
-                      <div className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer h-full active:scale-[0.98]">
+                      <div className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full active:scale-[0.98] card-glow">
+                        {/* Color accent bar with gradient */}
                         <div
                           className="h-1 sm:h-1.5 w-full"
-                          style={{ backgroundColor: kit.color }}
+                          style={{ background: `linear-gradient(90deg, ${kit.color}, ${kit.color}88)` }}
                         />
                         <div className="p-4 sm:p-6">
                           <div className="flex items-start justify-between gap-3 mb-3 sm:mb-4">
                             <div className="min-w-0 flex-1">
-                              <h3 className="font-['Manrope'] text-lg sm:text-xl text-[#1a1108] mb-1 truncate">
+                              <h3 className="font-['Manrope'] text-lg sm:text-xl text-[#1a1108] mb-1 truncate group-hover:text-[#3D3229] transition-colors">
                                 {kit.name}
                               </h3>
                               <p className="text-xs sm:text-sm text-[#5A4E42]">
@@ -505,11 +525,11 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                               </p>
                             </div>
                             {kitHero ? (
-                              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 bg-[#FAF7F2] border border-[#F0EBE3] p-1">
+                              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 bg-[#FAF7F2] border border-[#F0EBE3] p-1 group-hover:border-[#E8DFD3] group-hover:shadow-sm transition-all">
                                 <img
                                   src={getKitCardThumbnailUrl(kitHero)}
                                   alt={`${kit.name} Play Kit - Lovevery educational toys for ${kit.ageRangeEn || kit.ageRange}`}
-                                  className="w-full h-full object-contain"
+                                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                   loading="lazy"
                                   width={128}
                                   height={128}
@@ -530,8 +550,9 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                             {lang === "cn" ? kit.description : (kit.descriptionEn || kit.description)}
                           </p>
 
-                          <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F0EBE3]">
-                            <span className="text-xs text-[#6B5E50]">
+                          <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F0EBE3] group-hover:border-[#E8DFD3] transition-colors">
+                            <span className="text-xs text-[#6B5E50] flex items-center gap-1">
+                              <span className="inline-block w-1 h-1 rounded-full" style={{ backgroundColor: kit.color }} />
                               {kit.toys.length} {i18n.kitCard.toys[lang]}
                             </span>
                             <span
@@ -539,7 +560,7 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                               style={{ color: getAccessibleTextColor(kit.color) }}
                             >
                               {i18n.kitCard.viewDetails[lang]}
-                              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-x-0.5 transition-transform" />
                             </span>
                           </div>
                         </div>
@@ -564,7 +585,9 @@ export default function Home({ onReady }: { onReady?: () => void }) {
       </Suspense>
 
       {/* Footer */}
-      <footer className="bg-[#3D3229] text-white py-10 sm:py-16">
+      <footer className="relative bg-[#3D3229] text-white py-10 sm:py-16">
+        {/* Gradient top border */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7FB685]/40 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
             <div>
@@ -575,13 +598,14 @@ export default function Home({ onReady }: { onReady?: () => void }) {
             </div>
             <div>
               <h4 className="font-semibold mb-3 sm:mb-4 text-[#E8DFD3]">{i18n.footer.devStages[lang]}</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {stages.map((s) => (
                   <li key={s.id}>
                     <button
                       onClick={() => scrollToStage(s.id)}
-                      className="text-sm text-[#B8AFA3] hover:text-white transition-colors min-h-[44px] flex items-center"
+                      className="text-sm text-[#B8AFA3] hover:text-white hover:translate-x-1 transition-all duration-200 min-h-[44px] flex items-center gap-2"
                     >
+                      <span className="w-1 h-1 rounded-full bg-[#6B5E50] group-hover:bg-[#7FB685] transition-colors" />
                       {stageLabel(s.id)} ({stageRange(s.id)})
                     </button>
                   </li>
@@ -594,17 +618,18 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                 {i18n.footer.aboutDesc[lang]}
               </p>
               <Link href="/about">
-                <span className="text-sm text-[#B8AFA3] hover:text-white transition-colors underline underline-offset-2">
+                <span className="inline-flex items-center gap-1.5 text-sm text-[#B8AFA3] hover:text-white transition-colors group">
                   {i18n.nav.aboutUs[lang]}
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </Link>
             </div>
           </div>
-          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#4D4439] text-center">
-            <p className="text-xs sm:text-sm text-[#B8A99A] mb-2">
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#4D4439]/80 text-center">
+            <p className="text-xs sm:text-sm text-[#9A8E82] mb-2">
               {i18n.footer.tagline[lang]}
             </p>
-            <p className="text-xs sm:text-sm text-[#B8A99A] leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xs sm:text-sm text-[#9A8E82] leading-relaxed max-w-4xl mx-auto">
               {i18n.footer.disclaimer[lang]}
             </p>
             <div data-rainbow-portal className="mt-3 flex justify-center" />

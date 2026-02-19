@@ -114,7 +114,7 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3]">
+      <nav className="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-lg border-b border-[#E8DFD3]/70 shadow-sm shadow-[#3D3229]/3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
@@ -318,12 +318,13 @@ export default function AboutUs() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#3D3229] text-white py-8 sm:py-12">
+      <footer className="relative bg-[#3D3229] text-white py-8 sm:py-12">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7FB685]/40 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs sm:text-sm text-[#B8A99A] mb-2">
+          <p className="text-xs sm:text-sm text-[#9A8E82] mb-2">
             {i18n.footer.tagline[lang]}
           </p>
-          <p className="text-xs sm:text-sm text-[#B8A99A] leading-relaxed max-w-4xl mx-auto">
+          <p className="text-xs sm:text-sm text-[#9A8E82] leading-relaxed max-w-4xl mx-auto">
             {i18n.footer.disclaimer[lang]}
           </p>
           <div data-rainbow-portal className="mt-3 flex justify-center" />

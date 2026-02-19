@@ -53,14 +53,14 @@ export default function Lightbox({
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+        className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-3 sm:p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 min-w-[48px] min-h-[48px] flex items-center justify-center backdrop-blur-sm"
         aria-label="Close"
       >
-        <X className="w-6 h-6" />
+        <X className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Image counter */}
-      <div className="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium">
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs sm:text-sm font-medium">
         {currentIndex + 1} / {images.length}
       </div>
 
@@ -71,7 +71,7 @@ export default function Lightbox({
             e.stopPropagation();
             onPrev();
           }}
-          className="absolute left-2 sm:left-4 z-10 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+          className="absolute left-2 sm:left-4 z-10 p-3 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 min-w-[48px] min-h-[48px] flex items-center justify-center backdrop-blur-sm"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -85,7 +85,7 @@ export default function Lightbox({
             e.stopPropagation();
             onNext();
           }}
-          className="absolute right-2 sm:right-4 z-10 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+          className="absolute right-2 sm:right-4 z-10 p-3 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 min-w-[48px] min-h-[48px] flex items-center justify-center backdrop-blur-sm"
           aria-label="Next image"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />

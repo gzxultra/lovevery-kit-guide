@@ -99,7 +99,6 @@ export function AlternativesSection({
                     alt={`${alt.name} - affordable alternative to ${toyName}`}
                     className="w-full h-full object-contain"
                     loading="lazy"
-                    loading="lazy"
                     onError={() => handleImageError(idx)}
                   />
                 </div>
@@ -160,7 +159,7 @@ export function AlternativesSection({
                       });
                     }
                   }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#FF9900] hover:bg-[#E88B00] text-white text-[11px] sm:text-xs font-medium transition-all hover:shadow-md active:scale-[0.98]"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#FF9900] hover:bg-[#E88B00] text-white text-[11px] sm:text-xs font-medium transition-all duration-200 hover:shadow-md hover:shadow-[#FF9900]/20 active:scale-[0.98] min-h-[36px]"
                 >
                   {lang === "cn" ? "去 Amazon 购买" : "Buy on Amazon"}
                   <ExternalLink className="w-3 h-3 opacity-80" />
