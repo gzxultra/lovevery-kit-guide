@@ -24,6 +24,12 @@ function detectInitialLanguage(): Language {
     }
   }
 
+  // Double check if data-lang is present on <html> but not detected yet
+  if (typeof window !== 'undefined' && window.document) {
+    const htmlLang = window.document.documentElement.getAttribute('data-lang');
+    if (htmlLang === 'en' || htmlLang === 'cn') return htmlLang as Language;
+  }
+
   // Fallback to manual detection (same as inline script)
   const savedLang = typeof localStorage !== "undefined" ? localStorage.getItem("lovevery-lang") : null;
   if (savedLang === "en" || savedLang === "cn") {

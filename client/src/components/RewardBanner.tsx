@@ -7,17 +7,17 @@ export function RewardBanner() {
   const t = i18n.reward;
 
   return (
-    <div className="w-full mt-16 pt-8 border-t border-[#F5E6D3]">
-      <div className="bg-gradient-to-r from-[#FFFBF5] to-[#FFF8F0] rounded-2xl px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#F5E6D3]/50 shadow-sm">
+    <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E8DFD3] p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-center md:text-left">
-          <div className="hidden sm:flex p-2 bg-white rounded-xl shadow-sm">
-            <Coffee className="w-5 h-5 text-[#FF5E5B]" strokeWidth={2.5} />
+          <div className="hidden sm:flex p-3 bg-[#FAF7F2] rounded-xl">
+            <Coffee className="w-6 h-6 text-[#E8A87C]" strokeWidth={2} />
           </div>
           <div>
-            <p className="font-display text-[#6B5E50] font-bold text-lg leading-tight">
+            <h3 className="font-display text-[#3D3229] font-bold text-lg sm:text-xl leading-tight">
               {t.bannerTitle[lang]}
-            </p>
-            <p className="text-[#6B5840] text-sm mt-1">
+            </h3>
+            <p className="text-[#6B5E50] text-sm sm:text-base mt-1">
               {t.bannerSubtitle[lang]}
             </p>
           </div>
@@ -27,9 +27,9 @@ export function RewardBanner() {
           href="https://ko-fi.com/ernie92368"
           target="_blank"
           rel="noopener noreferrer"
-          className="whitespace-nowrap inline-flex items-center gap-2 px-6 py-3 bg-[#C43B38] text-white text-sm font-bold rounded-xl shadow-md hover:bg-[#A83230] hover:shadow-lg hover:shadow-[#C43B38]/20 transition-all duration-300 min-h-[48px]"
+          className="whitespace-nowrap inline-flex items-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] hover:shadow-lg hover:shadow-[#3D3229]/20 transition-all duration-300 active:scale-[0.98] min-h-[48px]"
         >
-          <Coffee className="w-4 h-4" strokeWidth={2.5} />
+          <Coffee className="w-4 h-4" />
           <span>{t.kofiButton[lang]}</span>
         </a>
       </div>

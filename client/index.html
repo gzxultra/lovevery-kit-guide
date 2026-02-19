@@ -18,13 +18,17 @@
           }
           document.documentElement.lang = lang === "cn" ? "zh-CN" : "en";
           document.documentElement.setAttribute("data-lang", lang);
+          document.documentElement.setAttribute("data-lang-ready", "true");
         } catch (e) {}
       })();
     </script>
     <style>
       /* Prevent FOUC: hide content until language is determined and React is ready */
-      html:not([data-lang]) body {
-        visibility: hidden;
+      html:not([data-lang-ready]) body {
+        opacity: 0;
+      }
+      body {
+        transition: opacity 0.2s ease-in;
       }
     </style>
 

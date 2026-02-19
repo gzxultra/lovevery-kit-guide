@@ -8,7 +8,7 @@
 import KonamiCode from "./KonamiCode";
 import LogoClickCombo from "./LogoClickCombo";
 import LateNightBanner from "./LateNightBanner";
-import RainbowTrail from "./RainbowTrail";
+import StatisticsEasterEgg from "./StatisticsEasterEgg";
 import ShakeToDiscover from "./ShakeToDiscover";
 import LongPressHero from "./LongPressHero";
 import PinchToReveal from "./PinchToReveal";
@@ -20,7 +20,7 @@ export default function EasterEggs() {
       <KonamiCode />
       <LogoClickCombo />
       <LateNightBanner />
-      <RainbowTrail />
+      <StatisticsEasterEgg />
       
       {/* Mobile-Only Easter Eggs */}
       <ShakeToDiscover />

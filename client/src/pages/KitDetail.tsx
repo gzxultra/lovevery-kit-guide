@@ -352,62 +352,49 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
   const referralUrl = getReferralUrl();
 
   return (
-    <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#E8DFD3] bg-gradient-to-br from-white via-[#FFFCF8] to-[#FFF8F0]">
-      <div
-        className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 rounded-full opacity-[0.04] -translate-y-1/2 translate-x-1/4"
-        style={{ backgroundColor: kitColor }}
-      />
-      <div
-        className="absolute bottom-0 left-0 w-24 h-24 sm:w-36 sm:h-36 rounded-full opacity-[0.04] translate-y-1/2 -translate-x-1/4"
-        style={{ backgroundColor: kitColor }}
-      />
+    <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E8DFD3] p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+        <div
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0"
+          style={{ backgroundColor: kitColor + "12" }}
+        >
+          <Gift className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: kitColor }} />
+        </div>
 
-      <div className="relative p-5 sm:p-8 md:p-10">
-        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-          <div
-            className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0"
-            style={{ backgroundColor: kitColor + "12" }}
-          >
-            <Gift className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: kitColor }} />
+        <div className="flex-1">
+          <h3 className="font-display text-xl sm:text-2xl text-[#3D3229] mb-3">
+            {i18n.referral.title[lang]}
+          </h3>
+          <p className="text-sm sm:text-base text-[#6B5E50] leading-relaxed mb-6">
+            {i18n.referral.desc[lang]}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={purchaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] hover:shadow-lg hover:shadow-[#3D3229]/20 transition-all duration-300 active:scale-[0.98] min-h-[48px]"
+            >
+              <Heart className="w-4 h-4" />
+              {i18n.referral.buyKit[lang]}
+              <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+            </a>
+            <a
+              href={referralUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#3D3229] rounded-full text-sm font-medium border border-[#E8DFD3] hover:bg-[#F5F0E8] transition-all duration-300 active:scale-[0.98] min-h-[48px]"
+            >
+              {i18n.referral.learnReferral[lang]}
+              <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+            </a>
           </div>
 
-          <div className="flex-1">
-            <h3 className="font-['Manrope'] text-lg sm:text-xl md:text-2xl text-[#3D3229] mb-2 sm:mb-3">
-              {i18n.referral.title[lang]}
-            </h3>
-            <p className="text-sm sm:text-base text-[#6B5E50] leading-relaxed mb-4 sm:mb-6">
-              {i18n.referral.desc[lang]}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={purchaseUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-medium text-white transition-all hover:opacity-90 hover:shadow-md active:scale-[0.98]"
-                style={{ backgroundColor: kitColor }}
-              >
-                <Heart className="w-4 h-4" />
-                {i18n.referral.buyKit[lang]}
-                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-              </a>
-              <a
-                href={referralUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-medium border transition-all hover:shadow-sm active:scale-[0.98]"
-                style={{ borderColor: kitColor + "40", color: kitColor }}
-              >
-                {i18n.referral.learnReferral[lang]}
-                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-              </a>
-            </div>
-
-            <p className="text-[10px] sm:text-xs text-[#B0A89E] mt-3 sm:mt-4">
-              {lang === "cn" ? `推荐码：${REFERRAL_CODE} · ` : `Referral code: ${REFERRAL_CODE} · `}
-              {i18n.referral.disclaimer[lang]}
-            </p>
-          </div>
+          <p className="text-[10px] sm:text-xs text-[#B0A89E] mt-4">
+            {lang === "cn" ? `推荐码：${REFERRAL_CODE} · ` : `Referral code: ${REFERRAL_CODE} · `}
+            {i18n.referral.disclaimer[lang]}
+          </p>
         </div>
       </div>
     </div>
@@ -808,7 +795,7 @@ export default function KitDetail() {
 
       {/* Referral Module */}
       <section className="pb-10 sm:pb-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
           <ReferralCard kitId={kit.id} kitColor={kit.color} />
           <RewardBanner />
         </div>
