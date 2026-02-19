@@ -22,13 +22,40 @@
         } catch (e) {}
       })();
     </script>
+    <script>
+      // Update SSR shell content based on language to prevent FOUC
+      (function() {
+        var lang = document.documentElement.getAttribute('data-lang') || 'en';
+        if (lang === 'cn') {
+          // Update SSR shell text content to Chinese
+          window.addEventListener('DOMContentLoaded', function() {
+            var badge = document.querySelector('.ssr-badge');
+            if (badge && badge.childNodes.length > 1) {
+              badge.childNodes[badge.childNodes.length - 1].textContent = ' 蒙特梭利启发的 Play Kits';
+            }
+            var h1 = document.querySelector('.ssr-h1');
+            if (h1) {
+              h1.innerHTML = 'Lovevery Fans<br/><span class="ssr-h1-green">爱好者社区</span>';
+            }
+            var subtitle = document.querySelector('.ssr-subtitle');
+            if (subtitle) {
+              subtitle.textContent = '由热爱 Lovevery 的家长们共同打造的中文指南。这里有真实的家长评价、玩具清洗指南、高性价比平替推荐，帮你更好地陪伴宝宝成长。';
+            }
+            var cta = document.querySelector('.ssr-cta');
+            if (cta && cta.childNodes.length > 0) {
+              cta.childNodes[0].textContent = '开始探索';
+            }
+          });
+        }
+      })();
+    </script>
     <style>
-      /* Prevent FOUC: hide content until language is determined and React is ready */
-      html:not([data-lang-ready]) body {
-        opacity: 0;
+      /* Prevent FOUC: hide SSR shell until language is determined */
+      #ssr-shell {
+        visibility: hidden !important;
       }
-      body {
-        transition: opacity 0.2s ease-in;
+      html[data-lang-ready] #ssr-shell {
+        visibility: visible !important;
       }
     </style>
 

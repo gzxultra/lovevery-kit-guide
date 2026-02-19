@@ -75,6 +75,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.setAttribute("data-lang", lang);
   }, [lang]);
 
+  // Set data-react-ready after first render to show body
+  useEffect(() => {
+    document.documentElement.setAttribute("data-react-ready", "true");
+  }, []);
+
   return (
     <LanguageContext.Provider value={{ lang, toggleLang, t }}>
       {children}
