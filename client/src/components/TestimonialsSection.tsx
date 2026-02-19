@@ -90,7 +90,7 @@ export function TestimonialsSection() {
                 {/* Kit & Toy Info */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pt-6 sm:pt-8 border-t border-[#F0EBE3]">
                   <div>
-                    <p className="text-xs sm:text-sm text-[#9B8E7E] mb-1">
+                    <p className="text-xs sm:text-sm text-[#756A5C] mb-1">
                       {lang === "cn" ? "来自" : "From"}
                     </p>
                     <p className="text-sm sm:text-base font-semibold text-[#3D3229]">
@@ -99,7 +99,7 @@ export function TestimonialsSection() {
                   </div>
                   <div className="hidden sm:block w-px h-8 bg-[#E8DFD3]" />
                   <div className="sm:flex-1">
-                    <p className="text-xs sm:text-sm text-[#9B8E7E] mb-1">
+                    <p className="text-xs sm:text-sm text-[#756A5C] mb-1">
                       {lang === "cn" ? "推荐玩具" : "Toy"}
                     </p>
                     <p className="text-sm sm:text-base font-semibold text-[#3D3229]">
@@ -152,7 +152,7 @@ export function TestimonialsSection() {
 
           {/* Autoplay indicator */}
           <div className="mt-4 text-center">
-            <p className="text-[10px] sm:text-xs text-[#9B8E7E]">
+            <p className="text-[10px] sm:text-xs text-[#756A5C]">
               {currentIndex + 1} / {testimonials.length}
             </p>
           </div>

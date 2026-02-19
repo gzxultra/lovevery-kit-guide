@@ -17,7 +17,7 @@ export function RewardBanner() {
             <p className="text-[#6B5E50] font-bold text-lg leading-tight">
               {t.bannerTitle[lang]}
             </p>
-            <p className="text-[#8B7355] text-sm mt-1">
+            <p className="text-[#6B5840] text-sm mt-1">
               {t.bannerSubtitle[lang]}
             </p>
           </div>
@@ -27,7 +27,7 @@ export function RewardBanner() {
           href="https://ko-fi.com/ernie92368"
           target="_blank"
           rel="noopener noreferrer"
-          className="whitespace-nowrap inline-flex items-center gap-2 px-6 py-3 bg-[#FF5E5B] text-white text-sm font-bold rounded-xl shadow-md hover:bg-[#FF4D4A] transition-all duration-300"
+          className="whitespace-nowrap inline-flex items-center gap-2 px-6 py-3 bg-[#C43B38] text-white text-sm font-bold rounded-xl shadow-md hover:bg-[#A83230] transition-all duration-300"
         >
           <Coffee className="w-4 h-4" strokeWidth={2.5} />
           <span>{t.kofiButton[lang]}</span>

@@ -1,13 +1,26 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function LanguageToggle() {
   const { lang, toggleLang } = useLanguage();
+  const [animating, setAnimating] = useState(false);
+
+  const handleClick = () => {
+    setAnimating(true);
+    toggleLang();
+  };
+
+  useEffect(() => {
+    if (animating) {
+      const timer = setTimeout(() => setAnimating(false), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [animating]);
 
   return (
     <button
-      onClick={toggleLang}
-      className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium border border-[#E8DFD3] bg-white/90 hover:bg-[#E8DFD3]/50 text-[#6B5E50] hover:text-[#3D3229] transition-all duration-300 active:scale-95 shadow-sm hover:shadow-md overflow-hidden group"
+      onClick={handleClick}
+      className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium border border-[#E8DFD3] bg-white/90 hover:bg-[#E8DFD3]/50 text-[#6B5E50] hover:text-[#3D3229] transition-all duration-300 active:scale-95 shadow-sm hover:shadow-md overflow-hidden group min-w-[48px] min-h-[48px] justify-center"
       aria-label="Toggle language"
     >
       {/* Background gradient animation on hover */}
@@ -15,27 +28,27 @@ export default function LanguageToggle() {
       
       {/* Content */}
       <span className="relative flex items-center gap-2">
-        {/* Flag icon with smooth transition */}
-        <motion.span
-          key={lang}
-          initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-base leading-none"
+        {/* Flag icon with CSS transition */}
+        <span
+          className="text-base leading-none transition-all duration-300"
+          style={{
+            transform: animating ? 'scale(0.8) rotate(-10deg)' : 'scale(1) rotate(0)',
+            opacity: animating ? 0.5 : 1,
+          }}
         >
           {lang === "cn" ? "🇺🇸" : "🇨🇳"}
-        </motion.span>
+        </span>
         
-        {/* Language text with slide animation */}
-        <motion.span
-          key={`text-${lang}`}
-          initial={{ x: -5, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="font-semibold text-xs"
+        {/* Language text */}
+        <span
+          className="font-semibold text-xs transition-all duration-300"
+          style={{
+            transform: animating ? 'translateX(-5px)' : 'translateX(0)',
+            opacity: animating ? 0.5 : 1,
+          }}
         >
           {lang === "cn" ? "EN" : "中文"}
-        </motion.span>
+        </span>
       </span>
     </button>
   );

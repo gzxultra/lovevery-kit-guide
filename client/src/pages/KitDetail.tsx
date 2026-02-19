@@ -190,7 +190,7 @@ const ToyCard = memo(function ToyCard({
                 </span>
               )}
             </div>
-            <p className="text-xs sm:text-sm text-[#9B8E7E] mb-1.5 sm:mb-2">{toySubName}</p>
+            <p className="text-xs sm:text-sm text-[#756A5C] mb-1.5 sm:mb-2">{toySubName}</p>
             <span
               className="inline-block px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium"
               style={{ backgroundColor: kitColor + "15", color: kitColor }}
@@ -644,7 +644,7 @@ export default function KitDetail() {
                     {i18n.kitDetail.viewOnLovevery[lang]}
                   </a>
                   {/* Subtle referral hint */}
-                  <p className="mt-2 flex items-center justify-start gap-1.5 text-[10px] sm:text-xs text-[#9B8E7E]/60 opacity-70">
+                  <p className="mt-2 flex items-center justify-start gap-1.5 text-[10px] sm:text-xs text-[#756A5C]/60 opacity-70">
                     <Heart className="w-3 h-3 text-[#D4A574]/50" />
                     <span>
                       {lang === "cn"
@@ -667,7 +667,7 @@ export default function KitDetail() {
                     <p className="text-xl sm:text-2xl font-['Manrope'] text-[#3D3229]">
                       {activeToys.length}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-[#9B8E7E]">{i18n.kitDetail.toyCount[lang]}</p>
+                    <p className="text-[10px] sm:text-xs text-[#756A5C]">{i18n.kitDetail.toyCount[lang]}</p>
                   </div>
                 </div>
                 <div className="w-px h-8 sm:h-10 bg-[#E8DFD3] hidden sm:block" />
@@ -682,7 +682,7 @@ export default function KitDetail() {
                     <p className="text-xl sm:text-2xl font-['Manrope'] text-[#3D3229]">
                       {kitAgeRange}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-[#9B8E7E]">{i18n.kitDetail.ageLabel[lang]}</p>
+                    <p className="text-[10px] sm:text-xs text-[#756A5C]">{i18n.kitDetail.ageLabel[lang]}</p>
                   </div>
                 </div>
                 <div className="w-px h-8 sm:h-10 bg-[#E8DFD3] hidden sm:block" />
@@ -698,7 +698,7 @@ export default function KitDetail() {
                       </span>
                     ))}
                   </div>
-                  <p className="text-[10px] sm:text-xs text-[#9B8E7E] mt-1.5 sm:mt-2">{i18n.kitDetail.devAreas[lang]}</p>
+                  <p className="text-[10px] sm:text-xs text-[#756A5C] mt-1.5 sm:mt-2">{i18n.kitDetail.devAreas[lang]}</p>
                 </div>
               </div>
             </div>
@@ -737,7 +737,7 @@ export default function KitDetail() {
                 {i18n.kitDetail.toyList[lang]}
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-[#9B8E7E] ml-9 sm:ml-11">
+            <p className="text-xs sm:text-sm text-[#756A5C] ml-9 sm:ml-11">
               {i18n.kitDetail.toyListDesc[lang]}
             </p>
           </div>
@@ -811,19 +811,19 @@ export default function KitDetail() {
       {/* Navigation between kits */}
       <section className="border-t border-[#E8DFD3] bg-white/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <p className="text-center text-xs sm:text-sm text-[#9B8E7E] mb-4 sm:mb-6">{i18n.kitDetail.exploreMore[lang]}</p>
+          <p className="text-center text-xs sm:text-sm text-[#756A5C] mb-4 sm:mb-6">{i18n.kitDetail.exploreMore[lang]}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {prevKit ? (
               <Link href={`/kit/${prevKit.id}`}>
                 <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-md transition-all cursor-pointer active:scale-[0.98] min-h-[44px]">
-                  <p className="text-[10px] sm:text-xs text-[#9B8E7E] mb-1.5 sm:mb-2 flex items-center gap-1">
+                  <p className="text-[10px] sm:text-xs text-[#756A5C] mb-1.5 sm:mb-2 flex items-center gap-1">
                     <ArrowLeft className="w-3 h-3" />
                     {i18n.kitDetail.prevKit[lang]}
                   </p>
                   <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#6B5E50] transition-colors">
                     {prevKit.name}
                   </p>
-                  <p className="text-xs sm:text-sm text-[#9B8E7E] mt-0.5 sm:mt-1">
+                  <p className="text-xs sm:text-sm text-[#756A5C] mt-0.5 sm:mt-1">
                     {lang === "en" && prevKit.ageRangeEn ? prevKit.ageRangeEn : prevKit.ageRange}
                   </p>
                 </div>
@@ -834,14 +834,14 @@ export default function KitDetail() {
             {nextKit ? (
               <Link href={`/kit/${nextKit.id}`}>
                 <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-md transition-all text-right cursor-pointer active:scale-[0.98] min-h-[44px]">
-                  <p className="text-[10px] sm:text-xs text-[#9B8E7E] mb-1.5 sm:mb-2 flex items-center justify-end gap-1">
+                  <p className="text-[10px] sm:text-xs text-[#756A5C] mb-1.5 sm:mb-2 flex items-center justify-end gap-1">
                     {i18n.kitDetail.nextKit[lang]}
                     <ArrowRight className="w-3 h-3" />
                   </p>
                   <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#6B5E50] transition-colors">
                     {nextKit.name}
                   </p>
-                  <p className="text-xs sm:text-sm text-[#9B8E7E] mt-0.5 sm:mt-1">
+                  <p className="text-xs sm:text-sm text-[#756A5C] mt-0.5 sm:mt-1">
                     {lang === "en" && nextKit.ageRangeEn ? nextKit.ageRangeEn : nextKit.ageRange}
                   </p>
                 </div>
@@ -857,7 +857,7 @@ export default function KitDetail() {
       <footer className="bg-[#3D3229] text-white py-8 sm:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 data-logo-target className="font-['Manrope'] text-lg sm:text-xl mb-2 sm:mb-3 select-none">Lovevery</h3>
-          <p className="text-xs sm:text-sm text-[#8B7E70]">
+          <p className="text-xs sm:text-sm text-[#6B5E50]">
             {i18n.footer.tagline[lang]}
           </p>
           <div data-rainbow-portal className="mt-3 flex justify-center" />

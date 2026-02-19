@@ -78,7 +78,7 @@ export default function NotFound() {
       <footer className="bg-[#3D3229] text-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h3 className="font-['Manrope'] text-lg font-bold mb-2">Lovevery</h3>
-          <p className="text-xs text-[#8B7E70]">
+          <p className="text-xs text-[#6B5E50]">
             Stage-based play essentials, designed by child development experts.
           </p>
         </div>

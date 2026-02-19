@@ -320,10 +320,10 @@ export default function AboutUs() {
       {/* Footer */}
       <footer className="bg-[#3D3229] text-white py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs sm:text-sm text-[#8B7E70] mb-2">
+          <p className="text-xs sm:text-sm text-[#B8A99A] mb-2">
             {i18n.footer.tagline[lang]}
           </p>
-          <p className="text-xs sm:text-sm text-[#8B7E70] leading-relaxed max-w-4xl mx-auto">
+          <p className="text-xs sm:text-sm text-[#B8A99A] leading-relaxed max-w-4xl mx-auto">
             {i18n.footer.disclaimer[lang]}
           </p>
           <div data-rainbow-portal className="mt-3 flex justify-center" />

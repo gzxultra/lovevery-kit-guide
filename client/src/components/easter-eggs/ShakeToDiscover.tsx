@@ -244,7 +244,7 @@ export default function ShakeToDiscover() {
               <p className="text-sm text-[#6B5E50] mb-2">
                 {randomToy.englishName}
               </p>
-              <div className="inline-flex items-center gap-2 text-xs text-[#9B8E7E]">
+              <div className="inline-flex items-center gap-2 text-xs text-[#756A5C]">
                 <span>From</span>
                 <span
                   className="font-medium"
@@ -256,7 +256,7 @@ export default function ShakeToDiscover() {
             </div>
 
             {/* Hint */}
-            <p className="text-center text-xs text-[#9B8E7E] mt-6 mb-2">
+            <p className="text-center text-xs text-[#756A5C] mt-6 mb-2">
               Shake again to discover more! 🎲
             </p>
           </div>

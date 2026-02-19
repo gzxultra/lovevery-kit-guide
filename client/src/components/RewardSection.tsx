@@ -29,7 +29,7 @@ export function RewardSection() {
             </div>
 
             {/* Subtitle */}
-            <p className="text-base md:text-lg text-[#8B7355] mb-8 leading-relaxed max-w-xl mx-auto">
+            <p className="text-base md:text-lg text-[#6B5840] mb-8 leading-relaxed max-w-xl mx-auto">
               {t.subtitle[lang]}
             </p>
 
@@ -39,13 +39,13 @@ export function RewardSection() {
                 href="https://ko-fi.com/ernie92368"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF5E5B] text-white text-lg font-bold rounded-2xl shadow-lg shadow-[#FF5E5B]/20 hover:bg-[#FF4D4A] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#C43B38] text-white text-lg font-bold rounded-2xl shadow-lg shadow-[#C43B38]/20 hover:bg-[#A83230] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
                 <Coffee className="w-6 h-6" strokeWidth={2.5} />
                 <span>{t.kofiButton[lang]}</span>
               </a>
               
-              <p className="text-xs text-[#A89080] flex items-center gap-1.5">
+              <p className="text-xs text-[#756050] flex items-center gap-1.5">
                 <span>{t.thankYou[lang]}</span>
                 <Heart className="w-3 h-3 text-[#FF5E5B]" fill="currentColor" />
               </p>

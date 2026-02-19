@@ -13,15 +13,6 @@ const KitDetail = lazy(() => import("./pages/KitDetail"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Minimal loading fallback
-function PageLoader() {
-  return (
-    <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center">
-      <div className="w-8 h-8 border-3 border-[#E8DFD3] border-t-[#7FB685] rounded-full animate-spin" />
-    </div>
-  );
-}
-
 // Redirect from old hash URLs to clean URLs for backward compatibility
 function HashRedirect() {
   const [, setLocation] = useLocation();
@@ -35,12 +26,14 @@ function HashRedirect() {
   return null;
 }
 
-function AppRouter() {
+function AppRouter({ onReady }: { onReady?: () => void }) {
   return (
-    <Suspense fallback={<PageLoader />}>
+    <Suspense fallback={null}>
       <HashRedirect />
       <Switch>
-        <Route path={"/"} component={Home} />
+        <Route path={"/"}>
+          {() => <Home onReady={onReady} />}
+        </Route>
         <Route path={"/kit/:id"} component={KitDetail} />
         <Route path={"/about"} component={AboutUs} />
         <Route path={"/404"} component={NotFound} />
@@ -50,11 +43,11 @@ function AppRouter() {
   );
 }
 
-function App() {
+function App({ onReady }: { onReady?: () => void }) {
   return (
     <ErrorBoundary>
       <LanguageProvider>
-        <AppRouter />
+        <AppRouter onReady={onReady} />
         <Suspense fallback={null}>
           <EasterEggs />
         </Suspense>

@@ -83,3 +83,42 @@ export function getAlternativeThumbnailUrl(url: string): string {
 export function getLightboxImageUrl(url: string): string {
   return optimizeImageUrl(url, { width: 1200, format: 'webp', quality: 85 });
 }
+
+/**
+ * Darken a hex color to meet WCAG AA contrast ratio (4.5:1) against white.
+ * Used for kit theme colors when displayed as text on white backgrounds.
+ */
+export function getAccessibleTextColor(hexColor: string): string {
+  const hex = hexColor.replace('#', '');
+  let r = parseInt(hex.substring(0, 2), 16);
+  let g = parseInt(hex.substring(2, 4), 16);
+  let b = parseInt(hex.substring(4, 6), 16);
+
+  // Calculate relative luminance
+  const luminance = (c: number) => {
+    const s = c / 255;
+    return s <= 0.04045 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+  };
+
+  const contrastWithWhite = (r: number, g: number, b: number) => {
+    const l = 0.2126 * luminance(r) + 0.7152 * luminance(g) + 0.0722 * luminance(b);
+    return (1.05) / (l + 0.05); // white luminance = 1.0
+  };
+
+  // Darken until we reach 5.5:1 contrast ratio against white
+  // (higher target to ensure compliance on tinted backgrounds like stage badges)
+  let factor = 1.0;
+  while (factor > 0.4 && contrastWithWhite(
+    Math.round(r * factor),
+    Math.round(g * factor),
+    Math.round(b * factor)
+  ) < 5.5) {
+    factor -= 0.05;
+  }
+
+  const dr = Math.round(r * factor);
+  const dg = Math.round(g * factor);
+  const db = Math.round(b * factor);
+
+  return `#${dr.toString(16).padStart(2, '0')}${dg.toString(16).padStart(2, '0')}${db.toString(16).padStart(2, '0')}`;
+}

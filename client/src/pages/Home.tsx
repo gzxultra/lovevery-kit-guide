@@ -7,19 +7,22 @@
 import { kits, stages } from "@/data/kits";
 import { i18n } from "@/data/i18n";
 import { getKitHeroImage } from "@/data/toyImages";
-import { getKitCardThumbnailUrl } from "@/lib/imageUtils";
+import { getKitCardThumbnailUrl, getAccessibleTextColor } from "@/lib/imageUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
-import FeedbackForm from "@/components/FeedbackForm";
-import { RewardSection } from "@/components/RewardSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect, lazy, Suspense } from "react";
 import { Link, useLocation } from "wouter";
 import { applyHomePageSeo } from "@/lib/seoHelpers";
 
+// Lazy load below-the-fold components
+const FeedbackForm = lazy(() => import("@/components/FeedbackForm"));
+const RewardSection = lazy(() => import("@/components/RewardSectionWrapper"));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSectionWrapper"));
+
 const HERO_IMG = `${import.meta.env.BASE_URL}hero.webp`;
-const HERO_IMG_FALLBACK = `${import.meta.env.BASE_URL}hero.jpg`;
+const HERO_IMG_MOBILE = `${import.meta.env.BASE_URL}hero-mobile.webp`;
+const HERO_IMG_FALLBACK = `${import.meta.env.BASE_URL}hero-mobile.jpg`;
 
 function scrollToStage(stageId: string) {
   const el = document.getElementById(`stage-${stageId}`);
@@ -28,7 +31,7 @@ function scrollToStage(stageId: string) {
   }
 }
 
-export default function Home() {
+export default function Home({ onReady }: { onReady?: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
@@ -117,6 +120,13 @@ export default function Home() {
     applyHomePageSeo();
   }, []);
 
+  // Signal that React has rendered, SSR shell can be hidden
+  useEffect(() => {
+    if (onReady) {
+      onReady();
+    }
+  }, [onReady]);
+
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
       {/* Navigation */}
@@ -149,7 +159,7 @@ export default function Home() {
               {/* Search bar - Desktop */}
               <div ref={searchContainerRef} className="relative">
                 <div className="flex items-center bg-[#F0EBE3] rounded-full px-3 py-1.5 gap-2 focus-within:ring-2 focus-within:ring-[#7FB685]/40 transition-all">
-                  <Search className="w-4 h-4 text-[#9B8E7E] shrink-0" />
+                  <Search className="w-4 h-4 text-[#756A5C] shrink-0" />
                   <input
                     ref={searchInputRef}
                     type="text"
@@ -168,7 +178,7 @@ export default function Home() {
                         setSearchQuery("");
                         setSearchOpen(false);
                       }}
-                      className="text-[#9B8E7E] hover:text-[#3D3229]"
+                      className="text-[#756A5C] hover:text-[#3D3229] min-w-[44px] min-h-[44px] flex items-center justify-center"
                     >
                       <X className="w-3.5 h-3.5" />
                     </button>
@@ -180,7 +190,7 @@ export default function Home() {
                   <div className="absolute top-full right-0 mt-2 w-80 bg-white rounded-xl border border-[#E8DFD3] shadow-xl shadow-[#3D3229]/10 overflow-hidden max-h-[70vh] overflow-y-auto">
                     {searchResults.length > 0 ? (
                       <>
-                        <div className="px-4 py-2.5 border-b border-[#F0EBE3] text-xs text-[#9B8E7E]">
+                        <div className="px-4 py-2.5 border-b border-[#F0EBE3] text-xs text-[#756A5C]">
                           {searchResults.length} {i18n.search.resultCount[lang]}
                         </div>
                         {searchResults.map((result, idx) => (
@@ -191,7 +201,7 @@ export default function Home() {
                               setSearchQuery("");
                               setSearchOpen(false);
                             }}
-                            className="w-full text-left px-4 py-3 hover:bg-[#FAF7F2] transition-colors border-b border-[#F0EBE3] last:border-b-0"
+                            className="w-full text-left px-4 py-3 hover:bg-[#FAF7F2] transition-colors border-b border-[#F0EBE3] last:border-b-0 min-h-[48px]"
                           >
                             {result.matchType === "kit" ? (
                               <div className="flex items-center gap-3">
@@ -203,7 +213,7 @@ export default function Home() {
                                 </div>
                                 <div>
                                   <p className="text-sm font-medium text-[#3D3229]">{result.kitName}</p>
-                                  <p className="text-xs text-[#9B8E7E]">Play Kit</p>
+                                  <p className="text-xs text-[#756A5C]">Play Kit</p>
                                 </div>
                               </div>
                             ) : (
@@ -218,7 +228,7 @@ export default function Home() {
                                   <p className="text-sm font-medium text-[#3D3229] truncate">
                                     {lang === "cn" ? result.toyName : result.toyEnglishName}
                                   </p>
-                                  <p className="text-xs text-[#9B8E7E] truncate">
+                                  <p className="text-xs text-[#756A5C] truncate">
                                     {lang === "cn" ? result.toyEnglishName : result.toyName} · {result.kitName}
                                   </p>
                                 </div>
@@ -228,7 +238,7 @@ export default function Home() {
                         ))}
                       </>
                     ) : (
-                      <div className="px-4 py-8 text-center text-sm text-[#9B8E7E]">
+                      <div className="px-4 py-8 text-center text-sm text-[#756A5C]">
                         {i18n.search.noResults[lang]}
                       </div>
                     )}
@@ -241,7 +251,7 @@ export default function Home() {
             {/* Mobile: search + language toggle + hamburger */}
             <div className="flex md:hidden items-center gap-1">
               <button
-                className="p-2 text-[#6B5E50] hover:text-[#3D3229]"
+                className="p-2 text-[#6B5E50] hover:text-[#3D3229] min-w-[48px] min-h-[48px] flex items-center justify-center"
                 onClick={() => {
                   setSearchOpen(!searchOpen);
                   setMobileMenuOpen(false);
@@ -252,7 +262,7 @@ export default function Home() {
               </button>
               <LanguageToggle />
               <button
-                className="p-2 -mr-2 text-[#3D3229]"
+                className="p-2 text-[#6B5E50] hover:text-[#3D3229] min-w-[48px] min-h-[48px] flex items-center justify-center"
                 onClick={() => {
                   setMobileMenuOpen(!mobileMenuOpen);
                   setSearchOpen(false);
@@ -269,7 +279,7 @@ export default function Home() {
         {searchOpen && (
           <div className="md:hidden bg-[#FAF7F2] border-t border-[#E8DFD3] px-4 py-3">
             <div className="flex items-center bg-[#F0EBE3] rounded-full px-3 py-2 gap-2 focus-within:ring-2 focus-within:ring-[#7FB685]/40">
-              <Search className="w-4 h-4 text-[#9B8E7E] shrink-0" />
+              <Search className="w-4 h-4 text-[#756A5C] shrink-0" />
               <input
                 type="text"
                 value={searchQuery}
@@ -281,7 +291,7 @@ export default function Home() {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="text-[#9B8E7E] hover:text-[#3D3229]"
+                  className="text-[#756A5C] hover:text-[#3D3229] min-w-[44px] min-h-[44px] flex items-center justify-center"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -293,7 +303,7 @@ export default function Home() {
               <div className="mt-2 bg-white rounded-xl border border-[#E8DFD3] shadow-lg overflow-hidden max-h-[60vh] overflow-y-auto">
                 {searchResults.length > 0 ? (
                   <>
-                    <div className="px-4 py-2 border-b border-[#F0EBE3] text-xs text-[#9B8E7E]">
+                    <div className="px-4 py-2 border-b border-[#F0EBE3] text-xs text-[#756A5C]">
                       {searchResults.length} {i18n.search.resultCount[lang]}
                     </div>
                     {searchResults.map((result, idx) => (
@@ -304,7 +314,7 @@ export default function Home() {
                           setSearchQuery("");
                           setSearchOpen(false);
                         }}
-                        className="w-full text-left px-4 py-3 hover:bg-[#FAF7F2] transition-colors border-b border-[#F0EBE3] last:border-b-0"
+                        className="w-full text-left px-4 py-3 hover:bg-[#FAF7F2] transition-colors border-b border-[#F0EBE3] last:border-b-0 min-h-[48px]"
                       >
                         {result.matchType === "kit" ? (
                           <div className="flex items-center gap-3">
@@ -316,7 +326,7 @@ export default function Home() {
                             </div>
                             <div>
                               <p className="text-sm font-medium text-[#3D3229]">{result.kitName}</p>
-                              <p className="text-xs text-[#9B8E7E]">Play Kit</p>
+                              <p className="text-xs text-[#756A5C]">Play Kit</p>
                             </div>
                           </div>
                         ) : (
@@ -331,7 +341,7 @@ export default function Home() {
                               <p className="text-sm font-medium text-[#3D3229] truncate">
                                 {lang === "cn" ? result.toyName : result.toyEnglishName}
                               </p>
-                              <p className="text-xs text-[#9B8E7E] truncate">
+                              <p className="text-xs text-[#756A5C] truncate">
                                 {lang === "cn" ? result.toyEnglishName : result.toyName} · {result.kitName}
                               </p>
                             </div>
@@ -341,7 +351,7 @@ export default function Home() {
                     ))}
                   </>
                 ) : (
-                  <div className="px-4 py-6 text-center text-sm text-[#9B8E7E]">
+                  <div className="px-4 py-6 text-center text-sm text-[#756A5C]">
                     {i18n.search.noResults[lang]}
                   </div>
                 )}
@@ -361,18 +371,18 @@ export default function Home() {
                     scrollToStage(s.id);
                     setMobileMenuOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors"
+                  className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors min-h-[48px]"
                 >
                   <span className="flex items-center justify-between">
                     {stageLabel(s.id)}
-                    <span className="text-xs text-[#9B8E7E]">{stageRange(s.id)}</span>
+                    <span className="text-xs text-[#756A5C]">{stageRange(s.id)}</span>
                   </span>
                 </button>
               ))}
               <Link href="/about">
                 <span
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors"
+                  className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors min-h-[48px] flex items-center"
                 >
                   {i18n.nav.aboutUs[lang]}
                 </span>
@@ -387,7 +397,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text content */}
-            <div className="animate-[fadeInUp_0.8s_ease-out_both] order-2 md:order-1">
+            <div className="animate-[fadeInUp_0.8s_ease-out_both] order-1 md:order-1">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                 <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 {i18n.hero.badge[lang]}
@@ -402,25 +412,26 @@ export default function Home() {
               </p>
               <button
                 onClick={() => scrollToStage("baby")}
-                className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#3D3229] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#2A231C] transition-colors active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#3D3229] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#2A231C] transition-colors active:scale-95 min-h-[48px]"
               >
                 {i18n.hero.cta[lang]}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
             {/* Hero image */}
-            <div className="relative animate-[fadeIn_1s_ease-out_0.2s_both] order-1 md:order-2">
+            <div className="relative animate-[fadeIn_1s_ease-out_0.2s_both] order-2 md:order-2">
               <div data-hero-image className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-[#3D3229]/10">
                 <picture>
-                  <source srcSet={HERO_IMG} type="image/webp" />
+                  <source srcSet={HERO_IMG_MOBILE} type="image/webp" media="(max-width: 767px)" />
+                  <source srcSet={HERO_IMG} type="image/webp" media="(min-width: 768px)" />
                   <img
                     src={HERO_IMG_FALLBACK}
                     alt="Lovevery Play Kit Collection - Complete guide to all 22 Lovevery Play Kits with affordable Amazon alternatives"
                     className="w-full h-full object-cover"
                     fetchPriority="high"
-                    decoding="async"
-                    width={1012}
-                    height={576}
+                    decoding="sync"
+                    width={640}
+                    height={364}
                   />
                 </picture>
               </div>
@@ -440,8 +451,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* Testimonials Section - lazy loaded */}
+      <Suspense fallback={<div className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#F5F0EB] via-[#FAF7F2] to-[#F8F3ED]" />}>
+        <TestimonialsSection />
+      </Suspense>
 
       {/* Stage Sections */}
       {stages.map((stage) => {
@@ -457,7 +470,7 @@ export default function Home() {
                       className="inline-block px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4"
                       style={{
                         backgroundColor: stage.color + "20",
-                        color: stage.color,
+                        color: getAccessibleTextColor(stage.color),
                       }}
                     >
                       {stageRange(stage.id)}
@@ -488,7 +501,7 @@ export default function Home() {
                                 {kit.name}
                               </h3>
                               <p className="text-xs sm:text-sm text-[#5A4E42]">
-                                {lang === "cn" ? kit.ageRange : kit.ageRange.replace("个月", " months").replace("周", " weeks")}
+                                {lang === "cn" ? kit.ageRange : (kit.ageRangeEn || kit.ageRange)}
                               </p>
                             </div>
                             {kitHero ? (
@@ -518,12 +531,12 @@ export default function Home() {
                           </p>
 
                           <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F0EBE3]">
-                            <span className="text-xs text-[#8B7E70]">
+                            <span className="text-xs text-[#6B5E50]">
                               {kit.toys.length} {i18n.kitCard.toys[lang]}
                             </span>
                             <span
-                              className="text-xs sm:text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
-                              style={{ color: kit.color }}
+                              className="text-xs sm:text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all min-h-[48px] min-w-[48px] justify-end"
+                              style={{ color: getAccessibleTextColor(kit.color) }}
                             >
                               {i18n.kitCard.viewDetails[lang]}
                               <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -540,11 +553,15 @@ export default function Home() {
         );
       })}
 
-      {/* Reward Section */}
-      <RewardSection />
+      {/* Reward Section - lazy loaded */}
+      <Suspense fallback={<div className="py-16" />}>
+        <RewardSection />
+      </Suspense>
 
-      {/* Feedback Form */}
-      <FeedbackForm />
+      {/* Feedback Form - lazy loaded */}
+      <Suspense fallback={<div className="py-12 sm:py-20" />}>
+        <FeedbackForm />
+      </Suspense>
 
       {/* Footer */}
       <footer className="bg-[#3D3229] text-white py-10 sm:py-16">
@@ -563,7 +580,7 @@ export default function Home() {
                   <li key={s.id}>
                     <button
                       onClick={() => scrollToStage(s.id)}
-                      className="text-sm text-[#B8AFA3] hover:text-white transition-colors"
+                      className="text-sm text-[#B8AFA3] hover:text-white transition-colors min-h-[44px] flex items-center"
                     >
                       {stageLabel(s.id)} ({stageRange(s.id)})
                     </button>
@@ -584,10 +601,10 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#4D4439] text-center">
-            <p className="text-xs sm:text-sm text-[#8B7E70] mb-2">
+            <p className="text-xs sm:text-sm text-[#B8A99A] mb-2">
               {i18n.footer.tagline[lang]}
             </p>
-            <p className="text-xs sm:text-sm text-[#8B7E70] leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xs sm:text-sm text-[#B8A99A] leading-relaxed max-w-4xl mx-auto">
               {i18n.footer.disclaimer[lang]}
             </p>
             <div data-rainbow-portal className="mt-3 flex justify-center" />

@@ -19,26 +19,57 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
     cssCodeSplit: true,
+    target: 'es2020',
+    minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor chunks - split heavy libraries
-          'vendor-react': ['react', 'react-dom', 'react-dom/client'],
-          'vendor-framer': ['framer-motion'],
-          'vendor-radix': [
-            '@radix-ui/react-tooltip',
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-          ],
-          'vendor-sonner': ['sonner', 'next-themes'],
-          // Data chunks - large data files
-          'data-kits': ['./client/src/data/kits.ts'],
-          'data-alternatives': ['./client/src/data/alternatives.ts'],
-          'data-images': ['./client/src/data/toyImages.ts'],
-          'data-reviews': [
-            './client/src/data/toyCleaningGuide.ts',
-            './client/src/data/toyReviews.ts',
-          ],
+        manualChunks(id) {
+          // IMPORTANT: Check framer-motion FIRST since it also imports from react
+          if (id.includes('framer-motion') || id.includes('motion')) {
+            if (!id.includes('node_modules/react/') && !id.includes('node_modules/react-dom/')) {
+              return 'vendor-framer';
+            }
+          }
+          // Core React
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/') || id.includes('node_modules/scheduler')) {
+            return 'vendor-react';
+          }
+          // Radix UI components
+          if (id.includes('@radix-ui')) {
+            return 'vendor-radix';
+          }
+          // Sonner + next-themes
+          if (id.includes('sonner') || id.includes('next-themes')) {
+            return 'vendor-sonner';
+          }
+          // Wouter router
+          if (id.includes('wouter')) {
+            return 'vendor-router';
+          }
+          // Lucide icons
+          if (id.includes('lucide-react')) {
+            return 'vendor-icons';
+          }
+          // Data chunks
+          if (id.includes('data/kits')) {
+            return 'data-kits';
+          }
+          if (id.includes('data/alternatives') || id.includes('lovevery_alternatives')) {
+            return 'data-alternatives';
+          }
+          if (id.includes('data/toyImages')) {
+            return 'data-images';
+          }
+          if (id.includes('data/toyCleaningGuide') || id.includes('data/toyReviews')) {
+            return 'data-reviews';
+          }
+          if (id.includes('data/seoData') || id.includes('lib/seoHelpers')) {
+            return 'data-seo';
+          }
+          // Recharts (unused but imported by UI component)
+          if (id.includes('recharts') || id.includes('d3-')) {
+            return 'vendor-charts';
+          }
         },
       },
     },

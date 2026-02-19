@@ -298,7 +298,7 @@ export default function LongPressHero() {
               <p className="text-sm text-[#6B5E50]">
                 Long press magic unlocked! ✨
               </p>
-              <p className="text-xs text-[#9B8E7E] mt-3">
+              <p className="text-xs text-[#756A5C] mt-3">
                 Try long-pressing other images too!
               </p>
             </div>
