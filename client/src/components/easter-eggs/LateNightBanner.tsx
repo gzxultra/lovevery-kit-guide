@@ -173,7 +173,7 @@ export default function LateNightBanner() {
             <div className="bg-[#1a1a4e] p-6 text-white flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <Coffee className="w-6 h-6 text-yellow-200" />
-                <h3 className="text-xl font-bold">{lang === "cn" ? "深夜育儿生存指南" : "Late Night Survival Guide"}</h3>
+                <h3 className="font-display text-xl font-bold">{lang === "cn" ? "深夜育儿生存指南" : "Late Night Survival Guide"}</h3>
               </div>
               <button onClick={() => setShowGuide(false)} className="p-1 hover:bg-white/10 rounded-full transition-colors">
                 <X className="w-6 h-6" />

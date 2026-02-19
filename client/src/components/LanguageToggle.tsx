@@ -41,7 +41,7 @@ export default function LanguageToggle() {
         
         {/* Language text */}
         <span
-          className="font-semibold text-xs transition-all duration-300"
+          className="font-display font-bold text-xs transition-all duration-300"
           style={{
             transform: animating ? 'translateX(-5px)' : 'translateX(0)',
             opacity: animating ? 0.5 : 1,

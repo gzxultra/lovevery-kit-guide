@@ -166,7 +166,7 @@ const ToyCard = memo(function ToyCard({
             </div>
           ) : (
             <div
-              className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 text-lg sm:text-xl font-['Manrope'] text-white mx-auto sm:mx-0"
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 text-lg sm:text-xl font-display text-white mx-auto sm:mx-0"
               style={{ backgroundColor: kitColor }}
             >
               {index + 1}
@@ -180,7 +180,7 @@ const ToyCard = memo(function ToyCard({
               >
                 {index + 1}
               </span>
-              <h3 className="font-['Manrope'] text-base sm:text-xl text-[#3D3229] leading-snug">
+              <h3 className="font-display text-base sm:text-xl text-[#3D3229] leading-snug">
                 {toyName}
               </h3>
               {isDiscontinued && (
@@ -605,8 +605,8 @@ export default function KitDetail() {
                 {kitStageLabel} · {kitAgeRange}
               </div>
 
-              <h1 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] mb-4 sm:mb-6 leading-[1.1] tracking-tight">
-                {kit.name}
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] tracking-tight leading-[1.1] mb-6 sm:mb-8">
+                {kit.name[lang]}
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-[#3D3229] leading-relaxed max-w-3xl">
@@ -774,7 +774,7 @@ export default function KitDetail() {
                   <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A0845C]" />
                 </div>
                 <div>
-                  <h3 className="font-['Manrope'] text-base sm:text-lg text-[#6B5E50]">
+                  <h3 className="font-display text-base sm:text-lg text-[#6B5E50]">
                     {i18n.kitDetail.oldToys[lang]}
                   </h3>
                   <p className="text-[10px] sm:text-xs text-[#B0A89E]">
@@ -826,7 +826,7 @@ export default function KitDetail() {
                     <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
                     {i18n.kitDetail.prevKit[lang]}
                   </p>
-                  <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#1a1108] transition-colors">
+                  <p className="font-display text-base sm:text-lg text-[#3D3229] group-hover:text-[#1a1108] transition-colors">
                     {prevKit.name}
                   </p>
                   <p className="text-xs sm:text-sm text-[#756A5C] mt-0.5 sm:mt-1">
@@ -844,7 +844,7 @@ export default function KitDetail() {
                     {i18n.kitDetail.nextKit[lang]}
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </p>
-                  <p className="font-['Manrope'] text-base sm:text-lg text-[#3D3229] group-hover:text-[#1a1108] transition-colors">
+                  <p className="font-display text-base sm:text-lg text-[#3D3229] group-hover:text-[#1a1108] transition-colors">
                     {nextKit.name}
                   </p>
                   <p className="text-xs sm:text-sm text-[#756A5C] mt-0.5 sm:mt-1">
@@ -863,7 +863,7 @@ export default function KitDetail() {
       <footer className="relative bg-[#3D3229] text-white py-8 sm:py-12">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7FB685]/40 to-transparent" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 data-logo-target className="font-['Manrope'] text-lg sm:text-xl mb-2 sm:mb-3 select-none">Lovevery</h3>
+          <h3 data-logo-target className="font-display text-lg sm:text-xl mb-2 sm:mb-3 select-none">Lovevery</h3>
           <p className="text-xs sm:text-sm text-[#9A8E82]">
             {i18n.footer.tagline[lang]}
           </p>

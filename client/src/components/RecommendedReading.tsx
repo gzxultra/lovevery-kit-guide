@@ -131,7 +131,7 @@ function ArticleCard({
         </div>
 
         {/* Title */}
-        <h4 className="text-sm sm:text-base font-semibold text-[#3D3229] leading-snug mb-1.5 sm:mb-2 group-hover:text-[#6B5E50] transition-colors line-clamp-2">
+        <h4 className="font-display text-sm sm:text-base font-semibold text-[#3D3229] leading-snug mb-1.5 sm:mb-2 group-hover:text-[#6B5E50] transition-colors line-clamp-2">
           {article.title}
         </h4>
 
@@ -205,7 +205,7 @@ export function RecommendedReading({
                 style={{ color: kitColor }}
               />
             </div>
-            <h2 className="font-['Manrope'] text-xl sm:text-2xl md:text-3xl text-[#3D3229]">
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#3D3229]">
               {t.sectionTitle[lang]}
             </h2>
           </div>

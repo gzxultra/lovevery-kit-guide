@@ -112,7 +112,7 @@ export function AlternativesSection({
               <div className="flex-1 min-w-0">
                 {/* Top row: Name + Price */}
                 <div className="flex items-start justify-between gap-2 mb-1.5 sm:mb-2">
-                  <h4 className="text-xs sm:text-sm font-semibold text-[#3D3229] line-clamp-2 flex-1">
+                  <h4 className="font-display text-xs sm:text-sm font-semibold text-[#3D3229] line-clamp-2 flex-1">
                     {alt.name}
                   </h4>
                   <span className="text-sm sm:text-base font-bold text-[#D4A574] whitespace-nowrap">

@@ -134,7 +134,7 @@ export default function Home({ onReady }: { onReady?: () => void }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span data-logo-target className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none hover:opacity-80 transition-opacity">
+              <span data-logo-target className="font-display text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none hover:opacity-80 transition-opacity">
                 Lovevery
               </span>
             </Link>
@@ -406,8 +406,7 @@ export default function Home({ onReady }: { onReady?: () => void }) {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/70 backdrop-blur-sm border border-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4A574]" />
                 {i18n.hero.badge[lang]}
-              </div>
-              <h1 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] leading-[1.15] tracking-tight mb-4 sm:mb-6">
+              </div>                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] tracking-tight leading-[1.1] mb-4 sm:mb-6">
                 {i18n.hero.title1[lang]}
                 <br />
                 <span className="text-[#5a9e65] relative">
@@ -494,7 +493,7 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: stage.color }} />
                       {stageRange(stage.id)}
                     </div>
-                    <h2 className="font-['Manrope'] text-2xl sm:text-3xl md:text-4xl text-[#1a1108] tracking-tight">
+                    <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a1108] tracking-tight">
                       {stageLabel(stage.id)}
                     </h2>
                   </div>
@@ -517,7 +516,7 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                         <div className="p-4 sm:p-6">
                           <div className="flex items-start justify-between gap-3 mb-3 sm:mb-4">
                             <div className="min-w-0 flex-1">
-                              <h3 className="font-['Manrope'] text-lg sm:text-xl text-[#1a1108] mb-1 truncate group-hover:text-[#3D3229] transition-colors">
+                              <h3 className="font-display text-lg sm:text-xl text-[#1a1108] mb-1 truncate group-hover:text-[#3D3229] transition-colors">
                                 {kit.name}
                               </h3>
                               <p className="text-xs sm:text-sm text-[#5A4E42]">
@@ -591,7 +590,7 @@ export default function Home({ onReady }: { onReady?: () => void }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
             <div>
-              <h3 data-logo-target className="font-['Manrope'] text-xl sm:text-2xl mb-3 sm:mb-4 select-none">Lovevery</h3>
+              <h3 data-logo-target className="font-display text-xl sm:text-2xl mb-3 sm:mb-4 select-none">Lovevery</h3>
               <p className="text-[#B8AFA3] text-sm leading-relaxed">
                 {i18n.footer.brandDesc[lang]}
               </p>

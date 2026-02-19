@@ -22,7 +22,7 @@ export default function NotFound() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold">
+              <span className="font-display text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold">
                 Lovevery
               </span>
             </Link>
@@ -42,11 +42,11 @@ export default function NotFound() {
             </div>
           </div>
 
-          <h1 className="font-['Manrope'] text-6xl sm:text-7xl font-bold text-[#3D3229] mb-4">
+          <h1 className="font-display text-6xl sm:text-7xl font-bold text-[#3D3229] mb-4">
             404
           </h1>
 
-          <h2 className="font-['Manrope'] text-xl sm:text-2xl font-bold text-[#3D3229] mb-4">
+          <h2 className="font-display text-xl sm:text-2xl font-bold text-[#3D3229] mb-4">
             {lang === "cn" ? "页面未找到" : "Page Not Found"}
           </h2>
 
@@ -77,7 +77,7 @@ export default function NotFound() {
       {/* Footer */}
       <footer className="bg-[#3D3229] text-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h3 className="font-['Manrope'] text-lg font-bold mb-2">Lovevery</h3>
+          <h3 className="font-display text-lg font-bold mb-2">Lovevery</h3>
           <p className="text-xs text-[#6B5E50]">
             Stage-based play essentials, designed by child development experts.
           </p>

@@ -118,7 +118,7 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span data-logo-target className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none">
+              <span data-logo-target className="font-display text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none">
                 Lovevery
               </span>
             </Link>
@@ -162,7 +162,7 @@ export default function AboutUs() {
             animate="visible"
             variants={fadeInUp}
             custom={1}
-            className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl text-[#1a1108] leading-tight mb-6"
+            className="font-display text-3xl sm:text-4xl md:text-5xl text-[#1a1108] leading-tight mb-6"
           >
             {c.pageTitle}
           </motion.h1>
@@ -245,7 +245,7 @@ export default function AboutUs() {
               <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#3D3229]/10">
                 <Globe className="w-4 h-4 text-[#3D3229]" />
               </div>
-              <h2 className="font-['Manrope'] text-lg sm:text-xl font-bold text-[#3D3229]">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-[#3D3229]">
                 {c.siteTitle}
               </h2>
             </div>
@@ -286,7 +286,7 @@ export default function AboutUs() {
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#7FB685]/10 mb-4">
                     <Icon className="w-6 h-6 text-[#5a9e65]" />
                   </div>
-                  <h3 className="font-['Manrope'] text-lg font-bold text-[#3D3229] mb-2">
+                  <h3 className="font-display text-lg font-bold text-[#3D3229] mb-2">
                     {value.title}
                   </h3>
                   <p className="text-sm text-[#6B5E50] leading-relaxed">
@@ -321,6 +321,7 @@ export default function AboutUs() {
       <footer className="relative bg-[#3D3229] text-white py-8 sm:py-12">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7FB685]/40 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 data-logo-target className="font-display text-lg sm:text-xl mb-2 sm:mb-3 select-none">Lovevery</h3>
           <p className="text-xs sm:text-sm text-[#9A8E82] mb-2">
             {i18n.footer.tagline[lang]}
           </p>

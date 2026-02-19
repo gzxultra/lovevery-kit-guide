@@ -16,19 +16,25 @@ const LanguageContext = createContext<LanguageContextType>({
 
 // Detect browser language and determine initial language
 function detectInitialLanguage(): Language {
-  // Priority 1: Check localStorage for user's manual selection
-  const savedLang = localStorage.getItem("lovevery-lang");
-  if (savedLang === "en" || savedLang === "cn") {
-    return savedLang;
+  // Check if we already set the language in the inline script
+  if (typeof document !== "undefined") {
+    const attrLang = document.documentElement.getAttribute("data-lang");
+    if (attrLang === "en" || attrLang === "cn") {
+      return attrLang as Language;
+    }
   }
 
-  // Priority 2: Check browser language
-  const browserLang = navigator.language || (navigator as any).userLanguage;
+  // Fallback to manual detection (same as inline script)
+  const savedLang = typeof localStorage !== "undefined" ? localStorage.getItem("lovevery-lang") : null;
+  if (savedLang === "en" || savedLang === "cn") {
+    return savedLang as Language;
+  }
+
+  const browserLang = typeof navigator !== "undefined" ? (navigator.language || (navigator as any).userLanguage) : null;
   if (browserLang && browserLang.toLowerCase().startsWith("zh")) {
     return "cn";
   }
 
-  // Priority 3: Default to English (US market focus)
   return "en";
 }
 
@@ -60,6 +66,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // Update HTML lang attribute when language changes
   useEffect(() => {
     document.documentElement.lang = lang === "cn" ? "zh-CN" : "en";
+    document.documentElement.setAttribute("data-lang", lang);
   }, [lang]);
 
   return (

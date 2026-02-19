@@ -61,7 +61,7 @@ export default function FeedbackForm() {
             <div className="w-16 h-16 rounded-full bg-[#7FB685]/15 flex items-center justify-center mx-auto mb-5">
               <CheckCircle className="w-8 h-8 text-[#7FB685]" />
             </div>
-            <h3 className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] mb-3">
+            <h3 className="font-display text-xl sm:text-2xl text-[#3D3229] mb-3">
               {i18n.feedback.successTitle[lang]}
             </h3>
             <p className="text-sm sm:text-base text-[#6B5E50] mb-6">
@@ -89,7 +89,7 @@ export default function FeedbackForm() {
             <div className="w-16 h-16 rounded-full bg-[#E8A87C]/15 flex items-center justify-center mx-auto mb-5">
               <AlertCircle className="w-8 h-8 text-[#E8A87C]" />
             </div>
-            <h3 className="font-['Manrope'] text-xl sm:text-2xl text-[#3D3229] mb-3">
+            <h3 className="font-display text-xl sm:text-2xl text-[#3D3229] mb-3">
               {i18n.feedback.errorTitle[lang]}
             </h3>
             <p className="text-sm sm:text-base text-[#6B5E50] mb-6">
@@ -117,7 +117,7 @@ export default function FeedbackForm() {
             <MessageSquare className="w-3.5 h-3.5" />
             {i18n.feedback.title[lang]}
           </div>
-          <h2 className="font-['Manrope'] text-2xl sm:text-3xl text-[#1a1108] mb-3">
+          <h2 className="font-display text-2xl sm:text-3xl text-[#1a1108] mb-3">
             {i18n.feedback.title[lang]}
           </h2>
           <p className="text-sm sm:text-base text-[#6B5E50] max-w-lg mx-auto">

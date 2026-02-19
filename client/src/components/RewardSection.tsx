@@ -20,10 +20,7 @@ export function RewardSection() {
               <div className="p-2 bg-[#FFF5F0] rounded-xl">
                 <Coffee className="w-6 h-6 text-[#FF5E5B]" strokeWidth={2.5} />
               </div>
-              <h2 
-                className="text-2xl md:text-3xl font-bold text-[#6B5E50]" 
-                style={{ fontFamily: "Manrope, sans-serif" }}
-              >
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-[#6B5E50]">
                 {t.title[lang]}
               </h2>
             </div>

@@ -14,7 +14,7 @@ export function RewardBanner() {
             <Coffee className="w-5 h-5 text-[#FF5E5B]" strokeWidth={2.5} />
           </div>
           <div>
-            <p className="text-[#6B5E50] font-bold text-lg leading-tight">
+            <p className="font-display text-[#6B5E50] font-bold text-lg leading-tight">
               {t.bannerTitle[lang]}
             </p>
             <p className="text-[#6B5840] text-sm mt-1">

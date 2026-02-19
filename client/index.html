@@ -3,6 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <script>
+      (function() {
+        try {
+          var savedLang = localStorage.getItem("lovevery-lang");
+          var lang = "en";
+          if (savedLang === "en" || savedLang === "cn") {
+            lang = savedLang;
+          } else {
+            var browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang && browserLang.toLowerCase().startsWith("zh")) {
+              lang = "cn";
+            }
+          }
+          document.documentElement.lang = lang === "cn" ? "zh-CN" : "en";
+          document.documentElement.setAttribute("data-lang", lang);
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      /* Prevent FOUC: hide content until language is determined and React is ready */
+      html:not([data-lang]) body {
+        visibility: hidden;
+      }
+    </style>
 
     <!-- Primary SEO Meta Tags -->
     <title>Lovevery Fans — Complete Play Kit Guide & Affordable Amazon Alternatives</title>
@@ -149,7 +173,7 @@
     <style>
       /* Base reset & body */
       *,*::before,*::after{box-sizing:border-box}
-      body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:#FAF7F2;color:#1a1108;-webkit-font-smoothing:antialiased}
+      body{margin:0;font-family:'Inter', "PingFang SC", "Microsoft YaHei", system-ui,-apple-system,sans-serif;background:#FAF7F2;color:#1a1108;-webkit-font-smoothing:antialiased}
       #root{min-height:100vh}
       img{display:block;max-width:100%}
 

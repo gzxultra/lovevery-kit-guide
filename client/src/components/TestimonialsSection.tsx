@@ -48,7 +48,7 @@ export function TestimonialsSection() {
             <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             {lang === "cn" ? "家长真实好评" : "Real Parent Reviews"}
           </div>
-          <h2 className="font-['Manrope'] text-2xl sm:text-3xl md:text-4xl text-[#1a1108] mb-3 sm:mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a1108] mb-3 sm:mb-4">
             {lang === "cn" ? "看看其他家长怎么说" : "What Parents Love"}
           </h2>
           <p className="text-sm sm:text-base text-[#6B5E50] max-w-2xl mx-auto">
