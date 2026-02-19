@@ -69,7 +69,7 @@ const ToyCard = memo(function ToyCard({
   kitName: string;
   onImageClick?: (index: number) => void;
 }) {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const { lang } = useLanguage();
   const toyImage = getToyImage(kitId, index);
@@ -120,9 +120,15 @@ const ToyCard = memo(function ToyCard({
     const willExpand = !expanded;
     setExpanded(willExpand);
     
-    // Send GA event when expanding to view alternatives
-    if (willExpand && toyAlternatives && toyAlternatives.length > 0) {
-      if (typeof window !== "undefined" && window.gtag) {
+    if (typeof window !== "undefined" && window.gtag) {
+      // 3a. Module expand/collapse event
+      window.gtag("event", willExpand ? "module_expand" : "module_collapse", {
+        toy_name: toy.englishName,
+        kit_name: kitName,
+      });
+
+      // Send GA event when expanding to view alternatives
+      if (willExpand && toyAlternatives && toyAlternatives.length > 0) {
         window.gtag("event", "view_alternatives", {
           toy_name: toy.englishName,
           kit_name: kitName,

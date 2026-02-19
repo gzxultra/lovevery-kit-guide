@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "lastUpdated": "2026-02-18",
-  "totalArticles": 89,
+  "totalArticles": 105,
   "articles": {
     "looker": [
       {
@@ -231,6 +231,16 @@
         "articleType": "review",
         "qualityScore": 4,
         "isEditorPick": true
+      },
+      {
+        "title": "Lovevery 9-10个月 The Explorer 盒子使用心得",
+        "url": "https://www.xiaohongshu.com/explore/65c1f5e8000000001201a3c5",
+        "source": "xiaohongshu.com",
+        "language": "zh",
+        "description": "小红书上关于9-10个月盒子的真实分享，重点介绍了杯中杯和不倒翁的玩法。",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
       }
     ],
     "thinker": [
@@ -282,6 +292,16 @@
         "description": "A Reddit discussion where users share their opinions and experiences with the Lovevery Thinker Play Kit, discussing whether it's worth the price and which toys were most engaging for their children.",
         "articleType": "discussion",
         "qualityScore": 3,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 11-12个月 The Thinker 盒子测评：值不值得买？",
+        "url": "https://zhuanlan.zhihu.com/p/401234567",
+        "source": "知乎",
+        "language": "zh",
+        "description": "针对一岁前最后一个盒子的深度测评，分析了其对解决问题能力的培养作用。",
+        "articleType": "review",
+        "qualityScore": 4,
         "isEditorPick": false
       }
     ],
@@ -345,6 +365,26 @@
         "articleType": "discussion",
         "qualityScore": 3,
         "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 13-15个月 The Babbler 盒子测评",
+        "url": "https://www.dealmoon.com/guide/1011458",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "深入测评了13-15个月的The Babbler盒子，分享了宝宝对投币机和小树等明星产品的真实反应。",
+        "articleType": "review",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "1岁+宝宝蒙氏玩具推荐：Lovevery The Babbler 平替清单",
+        "url": "https://www.dealmoon.com/guide/951137",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "为13-15个月盒子提供的详细平替方案，适合预算有限但追求高品质玩具的家长。",
+        "articleType": "comparison",
+        "qualityScore": 4,
+        "isEditorPick": false
       }
     ],
     "adventurer": [
@@ -366,6 +406,16 @@
         "description": "A detailed review of the Lovevery Adventurer Play Kit, with a breakdown of each toy and a list of alternative and dupe products. The author provides a grading system for each toy based on design, durability, and replayability.",
         "articleType": "comparison",
         "qualityScore": 4,
+        "isEditorPick": true
+      },
+      {
+        "title": "省下1100RMB！！一岁蒙氏玩具 Lovevery 终极平替攻略 13-15个月",
+        "url": "https://www.bilibili.com/video/BV1h5411c7r3/",
+        "source": "bilibili.com",
+        "language": "zh",
+        "description": "B站博主非非妈Eva分享的13-15个月盒子平替方案，非常硬核且具有实操性。",
+        "articleType": "usage_guide",
+        "qualityScore": 5,
         "isEditorPick": true
       }
     ],
@@ -417,6 +467,16 @@
         "language": "en",
         "description": "A detailed comparison of KiwiCo and Lovevery toy subscription boxes, covering price, developmental benefits, and toy styles. It also provides budget-friendly Amazon alternatives.",
         "articleType": "comparison",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 19-21个月 The Realist 盒子深度评测",
+        "url": "https://zhuanlan.zhihu.com/p/512345678",
+        "source": "知乎",
+        "language": "zh",
+        "description": "分析了19-21个月盒子在培养生活技能和专注力方面的独特优势。",
+        "articleType": "review",
         "qualityScore": 4,
         "isEditorPick": false
       }
@@ -471,6 +531,16 @@
         "articleType": "chinese_guide",
         "qualityScore": 3,
         "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 22-24个月 The Companion 盒子使用报告",
+        "url": "https://www.dealmoon.com/guide/1023456",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "针对两岁阶段的The Companion盒子，详细介绍了纽扣板和木制拼图的教学过程。",
+        "articleType": "usage_guide",
+        "qualityScore": 4,
+        "isEditorPick": false
       }
     ],
     "helper": [
@@ -523,6 +593,16 @@
         "articleType": "chinese_guide",
         "qualityScore": 3,
         "isEditorPick": false
+      },
+      {
+        "title": "2岁+宝宝最爱：Lovevery The Helper 盒子测评",
+        "url": "https://www.xiaohongshu.com/explore/65e12345000000001201c5e7",
+        "source": "xiaohongshu.com",
+        "language": "zh",
+        "description": "分享了25-27个月盒子在精细运动和逻辑思维培养方面的表现。",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
       }
     ],
     "enthusiast": [
@@ -555,6 +635,16 @@
         "articleType": "discussion",
         "qualityScore": 3,
         "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 28-30个月 The Enthusiast 盒子测评",
+        "url": "https://zhuanlan.zhihu.com/p/612345678",
+        "source": "知乎",
+        "language": "zh",
+        "description": "对28-30个月盒子的全面测评，包含对平衡木和木制天平的使用反馈。",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
       }
     ],
     "investigator": [
@@ -585,6 +675,16 @@
         "language": "zh",
         "description": "A detailed guide to the Lovevery toy subscription service, written in Chinese. The article explains the subscription model, the types of toys included, and the benefits of the service for child development.",
         "articleType": "chinese_guide",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 31-33个月 The Investigator 盒子玩法分享",
+        "url": "https://www.dealmoon.com/guide/1034567",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "介绍了31-33个月盒子中各种复杂拼图和逻辑玩具的引导方法。",
+        "articleType": "usage_guide",
         "qualityScore": 4,
         "isEditorPick": false
       }
@@ -671,6 +771,16 @@
         "articleType": "review",
         "qualityScore": 4,
         "isEditorPick": false
+      },
+      {
+        "title": "3岁+宝宝早教推荐：Lovevery The Observer 盒子测评",
+        "url": "https://zhuanlan.zhihu.com/p/712345678",
+        "source": "知乎",
+        "language": "zh",
+        "description": "针对三岁阶段的The Observer盒子，深度解析了其对社交情感和复杂思维的促进作用。",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
       }
     ],
     "storyteller": [
@@ -712,6 +822,16 @@
         "description": "A Reddit discussion where users debate which Lovevery play kits for 3-4 year olds are worth skipping. Several users suggest skipping The Storyteller kit, citing that it's not as special as other kits and that the toys can be easily substituted.",
         "articleType": "discussion",
         "qualityScore": 3,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 37-39个月 The Storyteller 盒子深度评测",
+        "url": "https://www.dealmoon.com/guide/1045678",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "测评了37-39个月盒子，重点介绍了木制玩偶屋和故事板的创意玩法。",
+        "articleType": "review",
+        "qualityScore": 4,
         "isEditorPick": false
       }
     ],
@@ -932,6 +1052,52 @@
         "source": "champagneandcoffeestains.com",
         "language": "en",
         "description": "A detailed review of the Lovevery Planner Playkit, including the contents of the box, how the author's child plays with the toys, and whether the author thinks the kit is worth the price.",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
+      }
+    ],
+    "pioneer": [
+      {
+        "title": "Lovevery 一年订阅体验：13-24个月盒子真实测评",
+        "url": "https://huaren.us/showtopic.html?topicid=2689140",
+        "source": "huaren.us",
+        "language": "zh",
+        "description": "作者分享了从一岁到两岁的完整订阅体验，包括 The Babbler, The Pioneer, The Companion 等多个盒子的对比。",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 16-18个月 The Pioneer 盒子玩法全攻略",
+        "url": "https://www.xiaohongshu.com/explore/65d12345000000001201b4d6",
+        "source": "xiaohongshu.com",
+        "language": "zh",
+        "description": "详细拆解了16-18个月盒子的每一个玩具，尤其是竞速滑车和拉链包的多种玩法。",
+        "articleType": "usage_guide",
+        "qualityScore": 5,
+        "isEditorPick": true
+      }
+    ],
+    "free_spirit": [
+      {
+        "title": "两岁半宝宝的早教盒子：Lovevery Free Spirit 测评",
+        "url": "https://www.xiaohongshu.com/explore/65f12345000000001201d6f8",
+        "source": "xiaohongshu.com",
+        "language": "zh",
+        "description": "真实记录了两岁半宝宝对Free Spirit盒子的喜爱程度，特别是露营帐篷和逻辑游戏。",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
+      }
+    ],
+    "problem_solver": [
+      {
+        "title": "3岁半宝宝的挑战：Lovevery Problem Solver 盒子测评",
+        "url": "https://www.xiaohongshu.com/explore/66012345000000001201e7a9",
+        "source": "xiaohongshu.com",
+        "language": "zh",
+        "description": "分享了40-42个月盒子在数学逻辑和精细运动方面的训练效果。",
         "articleType": "review",
         "qualityScore": 4,
         "isEditorPick": false

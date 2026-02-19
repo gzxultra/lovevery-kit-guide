@@ -68,11 +68,22 @@ function ArticleCard({
   const { lang } = useLanguage();
   const colors = typeColors[article.articleType] || typeColors.review;
 
+  const handleClick = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "click_recommended_article", {
+        article_title: article.title,
+        source: article.source,
+        language: article.language,
+      });
+    }
+  };
+
   return (
     <a
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="group block rounded-xl border border-[#E8DFD3] bg-white hover:border-[#C8BFB3] hover:shadow-md hover:shadow-[#3D3229]/5 transition-all duration-300 overflow-hidden"
     >
       {/* Editor pick ribbon */}
