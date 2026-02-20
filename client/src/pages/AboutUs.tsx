@@ -45,9 +45,9 @@ export default function AboutUs() {
       pageTitle: "我们的故事",
       greeting: "你好，欢迎来到这里！",
       para1:
-        "我们是一对住在西雅图的华人爸妈，在迎来第一个宝宝后，开始研究 Lovevery 玩具。和许多华人家庭一样，我们发现中文资料非常少——大部分信息都是英文的，而且很分散。作为工程师，我花了大量时间整理这些信息，也在这个过程中深深爱上了 Lovevery 的教育理念。",
+        "我们是一对住在西雅图的新手爸妈。在给宝宝研究 Lovevery 玩具的过程中，发现相关资料非常分散——价格对比、月龄适配、平替推荐散落在各个角落，要花大量时间才能拼凑出完整的信息。当了父母后才真正体会到时间有多宝贵，于是我用自己的工程师背景和 AI 工具，把这些零散的信息整合到了一起，做成了这个小网站。希望能帮你节省时间，更轻松地为宝宝做出选择。",
       para2:
-        "当了父母之后，才真正体会到时间有多宝贵。我们想，如果有一个中文平台能把这些零散但有价值的信息整合起来，帮助更多华人家庭，那该多好？于是我利用自己的专业技能和 AI 工具，打造了这个小小的网站。希望能帮你节省宝贵的时间，更轻松地为宝宝做出选择。",
+        "",
       para3:
         "我们是 Lovevery 的忠实粉丝，非常欣赏他们对玩具品质和儿童发展的用心。需要说明的是，我们和 Lovevery 官方没有任何关系，只是单纯的爱好者，希望把这份对高质量玩具的热爱分享给你。",
       siteTitle: "关于本站",
@@ -78,9 +78,9 @@ export default function AboutUs() {
       pageTitle: "Our Story",
       greeting: "Hi there, welcome!",
       para1:
-        "We're a Chinese-American couple living in Seattle, and when our first baby arrived, we started researching Lovevery toys. Like many Chinese families, we found that Chinese-language resources were extremely scarce — most information was in English and scattered across different sources. As an engineer, I spent countless hours organizing this information, and in the process, fell in love with Lovevery's educational philosophy.",
+        "We're first-time parents based in Seattle. While researching Lovevery toys for our baby, we found that useful information was scattered everywhere — price comparisons, age recommendations, and alternative suggestions were spread across countless sources, taking hours to piece together. After becoming parents, we truly realized how precious time is. So I used my engineering background and AI tools to bring all this scattered information into one place. We hope this little site saves you time and makes it easier to choose the best for your little one.",
       para2:
-        "After becoming parents, we truly understood how precious time is. We thought — what if there was a Chinese-language platform that could bring all this scattered but valuable information together to help more Chinese families? So I used my engineering skills and AI tools to build this little website, hoping to save you precious time and make it easier to choose the best for your baby.",
+        "",
       para3:
         "We're huge fans of Lovevery and their thoughtful approach to high-quality, developmental toys. To be clear, we are not affiliated with Lovevery in any official way — we're simply enthusiasts who want to share our love for great toys with fellow parents.",
       siteTitle: "About this site",
@@ -203,23 +203,7 @@ export default function AboutUs() {
             </p>
           </motion.div>
 
-          {/* Paragraph 2 - Building the site */}
-          <motion.div
-            variants={fadeInUp}
-            custom={1}
-            className="relative bg-white rounded-2xl p-6 sm:p-8 border border-[#E8DFD3] shadow-sm"
-          >
-            <div className="absolute -top-4 left-6 sm:left-8">
-              <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E8A87C]/15">
-                <Sparkles className="w-4 h-4 text-[#E8A87C]" />
-              </div>
-            </div>
-            <p className="text-[#4A3F35] leading-relaxed text-base sm:text-lg pt-2">
-              {c.para2}
-            </p>
-          </motion.div>
-
-          {/* Paragraph 3 - Lovevery fans */}
+          {/* Paragraph 2 - Disclaimer */}
           <motion.div
             variants={fadeInUp}
             custom={2}
