@@ -71,6 +71,7 @@ const ToyCard = memo(function ToyCard({
 }) {
   const [expanded, setExpanded] = useState(true);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [userInteracted, setUserInteracted] = useState(false); // Track if user manually clicked
   const { lang } = useLanguage();
   const toyImage = getToyImage(kitId, index);
   const isDiscontinued = (toy as any).discontinued;
@@ -87,9 +88,11 @@ const ToyCard = memo(function ToyCard({
   const parentRev = lang === "en" && toy.parentReviewEn ? toy.parentReviewEn : toy.parentReview;
   const category = lang === "en" && toy.categoryEn ? toy.categoryEn : toy.category;
 
-  // Handle hover with debounce for desktop
+  // Handle hover with debounce for desktop only
   const handleMouseEnter = () => {
-    if (!hasDetails) return;
+    if (!hasDetails || userInteracted) return; // Don't auto-expand if user manually interacted
+    // Only enable hover on desktop (screen width > 640px)
+    if (typeof window !== 'undefined' && window.innerWidth <= 640) return;
     const timeout = setTimeout(() => {
       setExpanded(true);
       
@@ -111,12 +114,19 @@ const ToyCard = memo(function ToyCard({
       clearTimeout(hoverTimeout);
       setHoverTimeout(null);
     }
-    setExpanded(false);
+    // Only enable hover on desktop (screen width > 640px)
+    if (typeof window !== 'undefined' && window.innerWidth <= 640) return;
+    if (!userInteracted) {
+      setExpanded(false); // Only auto-collapse if user hasn't manually interacted
+    }
   };
 
   // Handle click for mobile
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (!hasDetails) return;
+    setUserInteracted(true); // Mark that user has manually interacted
     const willExpand = !expanded;
     setExpanded(willExpand);
     
