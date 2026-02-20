@@ -1,10 +1,12 @@
 /**
  * Mobile Easter Egg 2: Long Press Hero
- * Long press (3 seconds) on the hero image to trigger a magical surprise.
- * Magical particles burst from the press point, and a hidden message appears.
+ * Long press (2.5 seconds) on the hero image to trigger a magical surprise.
+ * Magical particles burst from the press point, and an encouraging message appears.
  * Only works on mobile/touch devices.
  */
 import { useEffect, useState, useRef, useCallback } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
+import { encouragingMessages } from "../../data/encouragingMessages";
 
 const LONG_PRESS_DURATION = 2500; // 2.5 seconds
 
@@ -26,7 +28,10 @@ interface Particle {
 const EMOJIS = ["✨", "🌟", "⭐", "💫", "🎨", "🎪", "🎭", "🎨", "🧸", "🎈", "🎁", "🎀"];
 
 export default function LongPressHero() {
+  const { language } = useLanguage();
   const [triggered, setTriggered] = useState(false);
+  const [currentMessage, setCurrentMessage] = useState("");
+  const lastMessageIndexRef = useRef(-1);
   const [pressing, setPressing] = useState(false);
   const [pressProgress, setPressProgress] = useState(0);
   const [pressPosition, setPressPosition] = useState({ x: 0, y: 0 });
@@ -52,6 +57,17 @@ export default function LongPressHero() {
       navigator.vibrate(pattern);
     }
   }, []);
+
+  // Get random message (avoid consecutive repeats)
+  const getRandomMessage = useCallback(() => {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * encouragingMessages.length);
+    } while (randomIndex === lastMessageIndexRef.current && encouragingMessages.length > 1);
+    lastMessageIndexRef.current = randomIndex;
+    const message = encouragingMessages[randomIndex];
+    return language === "en" ? message.en : message.cn;
+  }, [language]);
 
   // Spawn particles
   const spawnParticles = useCallback((x: number, y: number) => {
@@ -116,6 +132,7 @@ export default function LongPressHero() {
         setPressing(false);
         setPressProgress(0);
         setTriggered(true);
+        setCurrentMessage(getRandomMessage());
         spawnParticles(x, y);
         vibrate([50, 30, 50, 30, 100]);
       }, LONG_PRESS_DURATION);
@@ -143,7 +160,7 @@ export default function LongPressHero() {
       if (pressTimerRef.current) clearTimeout(pressTimerRef.current);
       if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     };
-  }, [isMobile, triggered, spawnParticles, vibrate]);
+  }, [isMobile, triggered, spawnParticles, vibrate, getRandomMessage]);
 
   // Particles animation
   useEffect(() => {
@@ -285,21 +302,17 @@ export default function LongPressHero() {
           }`}
         >
           <div
-            className="bg-white/95 backdrop-blur-md rounded-2xl px-8 py-6 shadow-2xl border border-[#E8DFD3] max-w-sm mx-4"
+            className="bg-gradient-to-br from-[#FFF9F0] via-white to-[#FFF5E8] backdrop-blur-md rounded-3xl px-10 py-8 shadow-2xl border-2 border-[#E8DFD3] max-w-md mx-4"
             style={{
               animation: "longPressMessageIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both",
             }}
           >
             <div className="text-center">
-              <p className="text-4xl mb-3">🎉</p>
-              <p className="text-lg font-bold text-[#3D3229] mb-2 font-['Manrope']">
-                You Found the Secret!
+              <p className="text-xl font-display font-bold text-[#3D3229] leading-relaxed">
+                {currentMessage}
               </p>
-              <p className="text-sm text-[#6B5E50]">
-                Long press magic unlocked! ✨
-              </p>
-              <p className="text-xs text-[#756A5C] mt-3">
-                Try long-pressing other images too!
+              <p className="text-xs text-[#8B7E6F] mt-4 opacity-60">
+                {language === "en" ? "Long press to discover more" : "长按图片发现更多"}
               </p>
             </div>
           </div>
