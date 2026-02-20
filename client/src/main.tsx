@@ -5,16 +5,21 @@ import "./index.css";
 // Swap SSR shell with React root when React has fully rendered
 const onReady = () => {
   requestAnimationFrame(() => {
-    // Show React root
+    // Start cross-fade: show React root and hide SSR shell simultaneously
     const rootEl = document.getElementById('root');
+    const shell = document.getElementById('ssr-shell');
+    
     if (rootEl) {
       rootEl.classList.add('ready');
     }
-    // Hide SSR shell
-    const shell = document.getElementById('ssr-shell');
+    
     if (shell) {
       shell.classList.add('hidden');
-      setTimeout(() => shell.remove(), 50);
+      // After fade-out transition completes, remove from DOM
+      setTimeout(() => {
+        shell.classList.add('removed');
+        setTimeout(() => shell.remove(), 50);
+      }, 300); // Match CSS transition duration
     }
   });
 };

@@ -45,9 +45,9 @@ export default function AboutUs() {
       pageTitle: "我们的故事",
       greeting: "你好，欢迎来到这里！",
       para1:
-        "我是一名工程师，和太太一起迎来了我们的第一个宝宝。和许多新手爸妈一样，我们在为孩子挑选玩具时常常感到不知所措——面对海量的信息、不同的推荐和各种育儿理念，我们花了大量时间做研究，只为给宝宝找到最合适的玩具。",
+        "我们是一对住在西雅图的华人爸妈，在迎来第一个宝宝后，开始研究 Lovevery 玩具。和许多华人家庭一样，我们发现中文资料非常少——大部分信息都是英文的，而且很分散。作为工程师，我花了大量时间整理这些信息，也在这个过程中深深爱上了 Lovevery 的教育理念。",
       para2:
-        "当了父母之后，才真正体会到时间有多宝贵。我们想，如果有一个地方能把这些零散但有价值的信息整合起来，那该多好？幸运的是，我们身处一个 AI 技术飞速发展的时代。于是我利用自己的专业技能，打造了这个小小的网站，希望能帮你节省宝贵的时间，更轻松地做出选择。",
+        "当了父母之后，才真正体会到时间有多宝贵。我们想，如果有一个中文平台能把这些零散但有价值的信息整合起来，帮助更多华人家庭，那该多好？于是我利用自己的专业技能和 AI 工具，打造了这个小小的网站。希望能帮你节省宝贵的时间，更轻松地为宝宝做出选择。",
       para3:
         "我们是 Lovevery 的忠实粉丝，非常欣赏他们对玩具品质和儿童发展的用心。需要说明的是，我们和 Lovevery 官方没有任何关系，只是单纯的爱好者，希望把这份对高质量玩具的热爱分享给你。",
       siteTitle: "关于本站",
@@ -78,9 +78,9 @@ export default function AboutUs() {
       pageTitle: "Our Story",
       greeting: "Hi there, welcome!",
       para1:
-        "I'm an engineer, and together with my wife, we recently became first-time parents. Like many new parents, we found ourselves overwhelmed trying to pick the right toys for our little one — sifting through endless information from countless sources, just trying to make the best choice.",
+        "We're a Chinese-American couple living in Seattle, and when our first baby arrived, we started researching Lovevery toys. Like many Chinese families, we found that Chinese-language resources were extremely scarce — most information was in English and scattered across different sources. As an engineer, I spent countless hours organizing this information, and in the process, fell in love with Lovevery's educational philosophy.",
       para2:
-        "After our baby arrived, we realized just how precious time really is. We wished there was a single place that brought all this scattered but valuable information together. With the recent boom in AI, I saw an opportunity. I put my engineering skills to work and built this little website, hoping to save you some of that precious time and make your decisions a little easier.",
+        "After becoming parents, we truly understood how precious time is. We thought — what if there was a Chinese-language platform that could bring all this scattered but valuable information together to help more Chinese families? So I used my engineering skills and AI tools to build this little website, hoping to save you precious time and make it easier to choose the best for your baby.",
       para3:
         "We're huge fans of Lovevery and their thoughtful approach to high-quality, developmental toys. To be clear, we are not affiliated with Lovevery in any official way — we're simply enthusiasts who want to share our love for great toys with fellow parents.",
       siteTitle: "About this site",

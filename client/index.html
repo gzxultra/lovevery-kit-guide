@@ -201,9 +201,11 @@
       @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
       /* SSR shell is hidden via JavaScript when React is ready */
-      #ssr-shell.hidden{display:none}
+      #ssr-shell{transition:opacity 0.3s ease}
+      #ssr-shell.hidden{opacity:0;pointer-events:none}
+      #ssr-shell.removed{display:none}
       /* Hide React root until it's ready to prevent LCP regression */
-      #root{position:absolute;top:0;left:0;width:100%;opacity:0;pointer-events:none;z-index:-1}
+      #root{position:absolute;top:0;left:0;width:100%;opacity:0;pointer-events:none;z-index:-1;transition:opacity 0.3s ease}
       #root.ready{position:static;opacity:1;pointer-events:auto;z-index:auto}
     </style>
   </head>
