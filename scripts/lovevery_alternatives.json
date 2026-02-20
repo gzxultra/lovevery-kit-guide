@@ -275,17 +275,6 @@
             "amazonUrl": "https://www.amazon.com/dp/B08DLR33HG?tag=loveveryfans-20",
             "reasonEn": "This is an excellent alternative, offering a large set of high-contrast cards for a very reasonable price. It has an extremely high rating and a massive number of reviews, and is an Amazon's Choice product.",
             "reasonCn": "这是一个很好的替代品，以非常合理的价格提供一大套高对比度卡片。它的评分极高，评论数量巨大，是亚马逊的选择产品。"
-          },
-          {
-            "name": "High Contrast Baby Flashcards, 96 Pcs Black White Colorful Visual Sensory Stimulation Learning Activity Card",
-            "asin": "B0BF8YJWYW",
-            "price": "$11.",
-            "rating": 3.9,
-            "reviewCount": 5,
-            "imageUrl": "https://m.media-amazon.com/images/I/31NV8DUsZsL.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B0BF8YJWYW?tag=loveveryfans-20",
-            "reasonEn": "This is another great alternative, offering a large number of cards for a low price. It has a high rating and many reviews.",
-            "reasonCn": "这是另一个很棒的替代品，以低廉的价格提供大量的卡片。它的评分很高，评论也很多。"
           }
         ]
       },
@@ -601,17 +590,6 @@
             "amazonUrl": "https://www.amazon.com/dp/B09Z92QT8H?tag=loveveryfans-20",
             "reasonEn": "This ball tracker is a great step up from the Lovevery Wood Ball Set, providing a fun way for babies to track moving objects and develop concentration.",
             "reasonCn": "这款球追踪器是 Lovevery 木球套装的一个很好的升级版，为宝宝提供了一个有趣的方式来追踪移动的物体，培养专注力。"
-          },
-          {
-            "name": "Melissa & Doug Rollables Ocean Slide Wooden Baby Ball Drop Toy",
-            "asin": "B08DLR33HG",
-            "price": "$24.99",
-            "rating": 4.8,
-            "reviewCount": 3487,
-            "imageUrl": "https://m.media-amazon.com/images/I/81m7jJg-JDL._AC_SL1500_.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B08DLR33HG?tag=loveveryfans-20",
-            "reasonEn": "This ocean-themed rollable slide offers a fun and engaging way for babies to explore cause and effect and develop fine motor skills.",
-            "reasonCn": "这款海洋主题的滚珠滑梯为宝宝提供了一种有趣且引人入胜的方式来探索因果关系和发展精细动作技能。"
           }
         ]
       },
@@ -950,19 +928,7 @@
       {
         "toyName": "Montessori Egg Cup",
         "toyNameCn": "蒙氏鸡蛋杯",
-        "alternatives": [
-          {
-            "name": "Hape Wooden Egg and Cup Set",
-            "asin": "B00I0ZGOZM",
-            "price": "$230.",
-            "rating": 4.4,
-            "reviewCount": 9563,
-            "imageUrl": "https://m.media-amazon.com/images/I/71q8Vr7D37L.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B00I0ZGOZM?tag=loveveryfans-20",
-            "reasonEn": "Made from non-toxic, BPA-free wood, this set encourages fine motor skills and imaginative play, similar to the Montessori Egg Cup.",
-            "reasonCn": "采用无毒无BPA的木材制成，促进精细运动技能和想象力发展，类似蒙特梭利蛋杯。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "Stainless Steel Jingle Keys",
@@ -984,19 +950,7 @@
       {
         "toyName": "Pincer Chime Ball",
         "toyNameCn": "夹捏铃铛球",
-        "alternatives": [
-          {
-            "name": "Melissa & Doug Deluxe Pounding Bench Wooden Toy",
-            "asin": "B000GKATU0",
-            "price": "$15.",
-            "rating": 4.7,
-            "reviewCount": 723,
-            "imageUrl": "https://m.media-amazon.com/images/I/81CJric2d0L.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B000GKATU0?tag=loveveryfans-20",
-            "reasonEn": "This wooden pounding bench is made from safe materials and helps develop hand-eye coordination and fine motor skills, similar to the Pincer Chime Ball.",
-            "reasonCn": "采用安全材料，帮助发展手眼协调和精细运动技能，类似于抓握铃球。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "'How I Feel' Board Book",
@@ -1040,19 +994,7 @@
       {
         "toyName": "Roll & Build Cone Set",
         "toyNameCn": "滚动和构建锥体套装",
-        "alternatives": [
-          {
-            "name": "Melissa & Doug Wooden Building Blocks Set - 100-Piece",
-            "asin": "B000GKATU0",
-            "price": "$15.",
-            "rating": 4.7,
-            "reviewCount": 723,
-            "imageUrl": "https://m.media-amazon.com/images/I/81CJric2d0L.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B000GKATU0?tag=loveveryfans-20",
-            "reasonEn": "This wooden block set promotes fine motor skills and cognitive development with safe, non-toxic materials and offers great value with 100 pieces.",
-            "reasonCn": "这款木制积木套装促进精细运动技能和认知发展，采用安全无毒材料，且包含100块积木，性价比高。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "Bright & Light Play Scarf",
@@ -1317,19 +1259,7 @@
       {
         "toyName": "Posting Lid & Trees",
         "toyNameCn": "插入盖和小树",
-        "alternatives": [
-          {
-            "name": "Fisher-Price Baby's First Blocks",
-            "asin": "B00000IZQP",
-            "price": "$9.",
-            "rating": 4.7,
-            "reviewCount": 15008,
-            "imageUrl": "https://m.media-amazon.com/images/I/61oXr6XVSEL.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B00000IZQP?tag=loveveryfans-20",
-            "reasonEn": "Classic block set designed to develop hand-eye coordination and problem-solving skills using safe, BPA-free plastic, making it a great affordable alternative.",
-            "reasonCn": "经典积木套装，旨在通过安全无BPA塑料发展手眼协调和解决问题能力，是一个实惠的好替代品。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "'Bedtime for Zoe' Board Book",
@@ -1577,36 +1507,12 @@
       {
         "toyName": "Wheel Around Town Bus",
         "toyNameCn": "城镇巴士",
-        "alternatives": [
-          {
-            "name": "VTech Drop and Go Dump Truck",
-            "asin": "B00MYT481C",
-            "price": null,
-            "rating": 4.0,
-            "reviewCount": null,
-            "imageUrl": "https://m.media-amazon.com/images/I/71-xdyMNtGL.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B00MYT481C?tag=loveveryfans-20",
-            "reasonEn": "This toy promotes language and cognitive skills with interactive features, made from safe, BPA-free plastic, making it a good developmental alternative.",
-            "reasonCn": "该玩具通过互动功能促进语言和认知技能，采用安全无BPA塑料制成，是良好的发展替代品。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "Geo Shapes Puzzle",
         "toyNameCn": "几何形状拼图",
-        "alternatives": [
-          {
-            "name": "VTech Sort and Discover Activity Cube",
-            "asin": "B00MYT481C",
-            "price": null,
-            "rating": 4.0,
-            "reviewCount": null,
-            "imageUrl": "https://m.media-amazon.com/images/I/71-xdyMNtGL.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B00MYT481C?tag=loveveryfans-20",
-            "reasonEn": "This activity cube offers shape sorting and interactive learning features that support cognitive and fine motor skills development with BPA-free materials.",
-            "reasonCn": "这款活动立方体提供形状分类和互动学习功能，支持认知和精细运动技能发展，采用无BPA材料。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "'Bea Gets a Checkup' Board Book",
@@ -1616,19 +1522,7 @@
       {
         "toyName": "Quilted Critter Pockets",
         "toyNameCn": "棉布动物口袋",
-        "alternatives": [
-          {
-            "name": "Fisher-Price Baby's First Blocks",
-            "asin": "B00000IZQP",
-            "price": "$9.",
-            "rating": 4.7,
-            "reviewCount": 15008,
-            "imageUrl": "https://m.media-amazon.com/images/I/61oXr6XVSEL.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B00000IZQP?tag=loveveryfans-20",
-            "reasonEn": "Classic block set that encourages hand-eye coordination and problem-solving, made from BPA-free, child-safe materials.",
-            "reasonCn": "经典积木套装，促进手眼协调和解决问题能力，采用无BPA安全材料。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "Really Real Flashlight",
@@ -1817,19 +1711,7 @@
       {
         "toyName": "Drop & Match Dot Catcher",
         "toyNameCn": "点点接龙",
-        "alternatives": [
-          {
-            "name": "Fisher-Price Baby's First Blocks",
-            "asin": "B00000IZQP",
-            "price": "$9.",
-            "rating": 4.7,
-            "reviewCount": null,
-            "imageUrl": "https://m.media-amazon.com/images/I/61oXr6XVSEL.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B00000IZQP?tag=loveveryfans-20",
-            "reasonEn": "Fisher-Price Baby's First Blocks encourages shape recognition and fine motor skills using BPA-free, non-toxic plastic, aligning well with the developmental goals of the Drop & Match Dot Catcher.",
-            "reasonCn": "费雪婴儿第一块积木使用无BPA无毒塑料，促进形状识别和精细运动技能，与Drop & Match Dot Catcher的发展目标一致。"
-          }
-        ]
+        "alternatives": []
       },
       {
         "toyName": "Felt Flowers in a Row",
