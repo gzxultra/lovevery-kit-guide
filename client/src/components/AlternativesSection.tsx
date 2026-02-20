@@ -156,6 +156,8 @@ export function AlternativesSection({
                         asin: alt.asin,
                         price: alt.price || "N/A",
                         kit_name: kitName || "Unknown",
+                        toy_name: toyName,
+                        page_url: window.location.href,
                       });
                     }
                   }}
