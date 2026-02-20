@@ -69,7 +69,7 @@ const ToyCard = memo(function ToyCard({
   kitName: string;
   onImageClick?: (index: number) => void;
 }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const [userInteracted, setUserInteracted] = useState(false); // Track if user manually clicked
   const { lang } = useLanguage();

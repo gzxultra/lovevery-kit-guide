@@ -13,6 +13,15 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
 import { useState, useMemo, useRef, useEffect, lazy, Suspense } from "react";
 import { Link, useLocation } from "wouter";
+
+// Prefetch KitDetail chunk on hover for faster navigation
+let kitDetailPrefetched = false;
+function prefetchKitDetail() {
+  if (!kitDetailPrefetched) {
+    kitDetailPrefetched = true;
+    import("./KitDetail");
+  }
+}
 import { applyHomePageSeo } from "@/lib/seoHelpers";
 
 // Lazy load below-the-fold components
@@ -507,7 +516,11 @@ export default function Home({ onReady }: { onReady?: () => void }) {
                   const kitHero = getKitHeroImage(kit.id);
                   return (
                     <Link key={kit.id} href={`/kit/${kit.id}`}>
-                      <div className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full active:scale-[0.98] card-glow">
+                      <div
+                        className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full active:scale-[0.98] card-glow"
+                        onMouseEnter={prefetchKitDetail}
+                        onTouchStart={prefetchKitDetail}
+                      >
                         {/* Color accent bar with gradient */}
                         <div
                           className="h-1 sm:h-1.5 w-full"

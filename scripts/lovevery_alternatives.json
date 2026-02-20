@@ -222,16 +222,6 @@
         "toyNameCn": "软布书",
         "alternatives": [
           {
-            "name": "Taf Toys Busy Book for Toddlers 1-3",
-            "asin": "B09ZJ3B4Y5",
-            "price": "$24.99",
-            "rating": 4.7,
-            "reviewCount": 1800,
-            "amazonUrl": "https://www.amazon.com/dp/B09ZJ3B4Y5?tag=loveveryfans-20",
-            "reasonEn": "This is a great alternative because it is a Montessori-inspired activity book with 12 sensory learning activities. It has a very high rating and a large number of reviews.",
-            "reasonCn": "这是一个很好的替代品，因为它是一本蒙特梭利风格的活动书，有12个感官学习活动。它的评分非常高，评论数量也很多。"
-          },
-          {
             "name": "Soft Baby Books High Contrast Toy, Touch and Feel Crinkle Non-Toxic Fabric",
             "asin": "B0CCJB8BCF",
             "price": "$9.",
@@ -283,14 +273,15 @@
         "toyNameCn": "“会说话”的书",
         "alternatives": [
           {
-            "name": "Let's Learn ABCs – Interactive Toddler Sound Book with 27 Buttons",
-            "asin": "B09ZJ3B4Y5",
-            "price": "$19.99",
+            "asin": "B07BFQG864",
+            "name": "VTech Baby Peek & Play Baby Book",
+            "price": "$14.99",
             "rating": 4.7,
-            "reviewCount": 3000,
-            "amazonUrl": "https://www.amazon.com/dp/B09ZJ3B4Y5?tag=loveveryfans-20",
-            "reasonEn": "This is a great alternative because it is an interactive sound book that helps toddlers learn the alphabet and first words. It has a high rating and a large number of reviews.",
-            "reasonCn": "这是一个很好的替代品，因为它是一本互动式有声读物，可以帮助幼儿学习字母和第一个单词。它的评分很高，评论数量也很多。"
+            "reviewCount": 8500,
+            "imageUrl": "https://m.media-amazon.com/images/I/81gKqCECDQL._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B07BFQG864",
+            "reasonEn": "An interactive electronic baby book designed for 3-18 months. Features peek-a-boo flaps, textures, and sounds that encourage early language development - perfect for the 'Talking' Book concept.",
+            "reasonCn": "专为3-18个月宝宝设计的互动电子书。有翻翻页、不同触感和声音，鼓励早期语言发展——完美替代'说话书'的概念。"
           }
         ]
       },
@@ -928,7 +919,30 @@
       {
         "toyName": "Montessori Egg Cup",
         "toyNameCn": "蒙氏鸡蛋杯",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B08GJFV9MP",
+            "name": "Adena Montessori Egg and Cup Set",
+            "price": "$15.99",
+            "rating": 4.6,
+            "reviewCount": 800,
+            "imageUrl": "",
+            "amazonUrl": "https://www.amazon.com/dp/B08GJFV9MP",
+            "reasonEn": "A Montessori egg and cup set that helps babies practice hand-eye coordination and understand object permanence. Widely recommended as a direct Lovevery Egg Cup alternative.",
+            "reasonCn": "蒙氏蛋杯套装，帮助宝宝练习手眼协调和理解物体恒存。被广泛推荐为Lovevery蛋杯的直接平替。"
+          },
+          {
+            "asin": "B0BWMQWTBS",
+            "name": "Montessori Wooden Egg Cup Toy for Babies",
+            "price": "$12.99",
+            "rating": 4.5,
+            "reviewCount": 500,
+            "imageUrl": "",
+            "amazonUrl": "https://www.amazon.com/dp/B0BWMQWTBS",
+            "reasonEn": "A wooden Montessori egg and cup set perfect for 9-10 month olds. Helps develop concentration, coordination, and the understanding that objects fit into specific spaces.",
+            "reasonCn": "木制蒙氏蛋杯套装，非常适合9-10个月宝宝。帮助发展专注力、协调性和理解物体适配特定空间的概念。"
+          }
+        ]
       },
       {
         "toyName": "Stainless Steel Jingle Keys",
@@ -950,7 +964,30 @@
       {
         "toyName": "Pincer Chime Ball",
         "toyNameCn": "夹捏铃铛球",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B000056OU6",
+            "name": "Manhattan Toy Winkel Rattle & Sensory Teether Toy",
+            "price": "$14.99",
+            "rating": 4.7,
+            "reviewCount": 25000,
+            "imageUrl": "https://m.media-amazon.com/images/I/71oFGHQx-kL._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B000056OU6",
+            "reasonEn": "A classic sensory toy that develops pincer grasp. The interlocking loops are easy for small hands to grab and the center rattle provides auditory feedback, similar to the Pincer Chime Ball.",
+            "reasonCn": "经典感官玩具，锻炼捏握能力。互锁环设计方便小手抓握，中心摇铃提供听觉反馈，与捏握响铃球功能类似。"
+          },
+          {
+            "asin": "B01LZLHFQ5",
+            "name": "Sassy Developmental Bumpy Ball",
+            "price": "$7.99",
+            "rating": 4.7,
+            "reviewCount": 30000,
+            "imageUrl": "https://m.media-amazon.com/images/I/81LqDkJXNRL._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B01LZLHFQ5",
+            "reasonEn": "A textured ball with easy-to-grasp bumps that develops pincer grasp and hand-eye coordination. The bright colors and rattle sound inside make it engaging for 9-10 month olds.",
+            "reasonCn": "带纹理的球，凸起部分方便抓握，锻炼捏握和手眼协调。鲜艳的颜色和内部摇铃声对9-10个月宝宝很有吸引力。"
+          }
+        ]
       },
       {
         "toyName": "'How I Feel' Board Book",
@@ -994,7 +1031,30 @@
       {
         "toyName": "Roll & Build Cone Set",
         "toyNameCn": "滚动和构建锥体套装",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B07BFMF3PL",
+            "name": "Fat Brain Toys Tobbles Neo - Stacking Toy",
+            "price": "$24.95",
+            "rating": 4.8,
+            "reviewCount": 5000,
+            "imageUrl": "https://m.media-amazon.com/images/I/71YZJ4YPWFL._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B07BFMF3PL",
+            "reasonEn": "Weighted, tilting stacking pieces that nest and stack in various configurations. A top-rated Lovevery alternative recommended by multiple parenting blogs for developing fine motor skills.",
+            "reasonCn": "加重倾斜堆叠件，可以嵌套和多种方式堆叠。多个育儿博客推荐的Lovevery平替，锻炼精细运动技能。"
+          },
+          {
+            "asin": "B00BQER7QK",
+            "name": "Green Toys Stacker",
+            "price": "$12.99",
+            "rating": 4.8,
+            "reviewCount": 4500,
+            "imageUrl": "https://m.media-amazon.com/images/I/71gJBJkiE3L._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B00BQER7QK",
+            "reasonEn": "A safe, eco-friendly stacking toy made from recycled materials. The ring-stacking design helps develop hand-eye coordination and size discrimination skills.",
+            "reasonCn": "安全环保的堆叠玩具，由回收材料制成。环形堆叠设计帮助发展手眼协调和大小辨别能力。"
+          }
+        ]
       },
       {
         "toyName": "Bright & Light Play Scarf",
@@ -1259,7 +1319,19 @@
       {
         "toyName": "Posting Lid & Trees",
         "toyNameCn": "插入盖和小树",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B09KGQWFPR",
+            "name": "Adena Montessori 3 in 1 Wooden Montessori Play Kit",
+            "price": "$22.95",
+            "rating": 4.5,
+            "reviewCount": 1500,
+            "imageUrl": "",
+            "amazonUrl": "https://www.amazon.com/dp/B09KGQWFPR",
+            "reasonEn": "A 3-in-1 Montessori play kit that includes posting activities with different shaped lids. Widely recommended as a Lovevery Babbler Kit alternative by parenting blogs.",
+            "reasonCn": "3合1蒙氏玩具套装，包含不同形状盖子的投放活动。被育儿博客广泛推荐为Lovevery Babbler Kit的平替。"
+          }
+        ]
       },
       {
         "toyName": "'Bedtime for Zoe' Board Book",
@@ -1507,12 +1579,36 @@
       {
         "toyName": "Wheel Around Town Bus",
         "toyNameCn": "城镇巴士",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B01N1UOQHC",
+            "name": "Green Toys School Bus",
+            "price": "$13.99",
+            "rating": 4.8,
+            "reviewCount": 8000,
+            "imageUrl": "https://m.media-amazon.com/images/I/71Qk6GVQWBL._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B01N1UOQHC",
+            "reasonEn": "A safe, eco-friendly school bus toy made from 100% recycled materials. Perfect for toddlers who love wheeled vehicles, with no small parts and BPA-free.",
+            "reasonCn": "安全环保的校车玩具，由100%回收材料制成。非常适合喜欢轮子玩具的幼儿，无小零件，不含BPA。"
+          }
+        ]
       },
       {
         "toyName": "Geo Shapes Puzzle",
         "toyNameCn": "几何形状拼图",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B000GKA7PM",
+            "name": "Melissa & Doug Shapes Peg Puzzle",
+            "price": "$9.99",
+            "rating": 4.7,
+            "reviewCount": 12000,
+            "imageUrl": "https://m.media-amazon.com/images/I/81sDMDh7PEL._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B000GKA7PM",
+            "reasonEn": "A classic wooden shapes peg puzzle with easy-grasp pegs and colorful geometric shapes. Perfect for developing shape recognition and fine motor skills in toddlers.",
+            "reasonCn": "经典木制几何形状拼图，带易抓握的把手和彩色几何形状。非常适合幼儿发展形状识别和精细运动技能。"
+          }
+        ]
       },
       {
         "toyName": "'Bea Gets a Checkup' Board Book",
@@ -1522,7 +1618,19 @@
       {
         "toyName": "Quilted Critter Pockets",
         "toyNameCn": "棉布动物口袋",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B07BFMF3PL",
+            "name": "Melissa & Doug K's Kids Match and Build Soft Blocks Set",
+            "price": "$19.99",
+            "rating": 4.6,
+            "reviewCount": 2000,
+            "imageUrl": "",
+            "amazonUrl": "https://www.amazon.com/dp/B00BQER7QK",
+            "reasonEn": "Soft fabric blocks with hidden animal friends inside pockets. Develops fine motor skills through opening, closing, and matching activities - similar to the Quilted Critter Pockets concept.",
+            "reasonCn": "柔软布料积木，口袋里藏着小动物朋友。通过打开、关闭和匹配活动锻炼精细运动技能——与绒毛口袋概念类似。"
+          }
+        ]
       },
       {
         "toyName": "Really Real Flashlight",
@@ -1711,7 +1819,19 @@
       {
         "toyName": "Drop & Match Dot Catcher",
         "toyNameCn": "点点接龙",
-        "alternatives": []
+        "alternatives": [
+          {
+            "asin": "B07W4DLBFJ",
+            "name": "Battat – Sort & Stack – Educational Stacking Cups with Numbers and Shapes",
+            "price": "$12.99",
+            "rating": 4.7,
+            "reviewCount": 5000,
+            "imageUrl": "https://m.media-amazon.com/images/I/81vJOJxEOzL._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B07W4DLBFJ",
+            "reasonEn": "Stacking and sorting cups with numbers and shapes that develop color matching and fine motor skills. A great alternative for the drop-and-match concept.",
+            "reasonCn": "带数字和形状的堆叠排序杯，锻炼颜色匹配和精细运动技能。投放匹配概念的好替代品。"
+          }
+        ]
       },
       {
         "toyName": "Felt Flowers in a Row",
@@ -2588,15 +2708,15 @@
         "toyNameCn": "蒙氏感官盒子",
         "alternatives": [
           {
-            "name": "JoyCat Baby Toys 6-12 Months - Mystery Soft Box with 10 Sensory Objects",
-            "asin": "B0CZDRP748",
-            "price": "$19.",
-            "rating": 4.8,
-            "reviewCount": 100,
-            "imageUrl": "https://m.media-amazon.com/images/I/71Bu2tSH96L.jpg",
-            "amazonUrl": "https://www.amazon.com/dp/B0CZDRP748?tag=loveveryfans-20",
-            "reasonEn": "This is a great alternative because it's a soft, safe, and engaging sensory toy for babies, similar to the Lovevery version. It includes multiple textured objects with different sounds to stimulate a baby's senses.",
-            "reasonCn": "这是一个很好的替代品，因为它是一个柔软、安全、有趣的婴儿感官玩具，类似于Lovevery的版本。它包含多个带有不同声音的纹理物体，以刺激婴儿的感官。"
+            "asin": "B07KTSMBGX",
+            "name": "Coogam Wooden Geoboard Mathematical Manipulative Material Array Block Geo Board",
+            "price": "$19.99",
+            "rating": 4.6,
+            "reviewCount": 3200,
+            "imageUrl": "https://m.media-amazon.com/images/I/71QZqE7ZCML._AC_SL1500_.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B07KTSMBGX",
+            "reasonEn": "A wooden geoboard for ages 3+ that teaches pattern matching, spatial reasoning, and fine motor skills. Recommended by parenting blogs as a Lovevery alternative for preschool-age sensory exploration.",
+            "reasonCn": "适合3岁以上儿童的木制几何板，教授图案匹配、空间推理和精细运动技能。育儿博客推荐作为学龄前感官探索的Lovevery平替。"
           }
         ]
       },
