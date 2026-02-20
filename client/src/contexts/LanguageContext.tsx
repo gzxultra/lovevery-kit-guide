@@ -9,9 +9,9 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  lang: "en",
+  lang: "cn",
   toggleLang: () => {},
-  t: (cn: string, en: string) => en,
+  t: (cn: string, en: string) => cn,
 });
 
 // Detect browser language and determine initial language
@@ -37,11 +37,11 @@ function detectInitialLanguage(): Language {
   }
 
   const browserLang = typeof navigator !== "undefined" ? (navigator.language || (navigator as any).userLanguage) : null;
-  if (browserLang && browserLang.toLowerCase().startsWith("zh")) {
-    return "cn";
+  if (browserLang && browserLang.toLowerCase().startsWith("en")) {
+    return "en";
   }
 
-  return "en";
+  return "cn";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -75,10 +75,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.setAttribute("data-lang", lang);
   }, [lang]);
 
-  // Set data-react-ready after first render to show body
-  useEffect(() => {
-    document.documentElement.setAttribute("data-react-ready", "true");
-  }, []);
+
 
   return (
     <LanguageContext.Provider value={{ lang, toggleLang, t }}>

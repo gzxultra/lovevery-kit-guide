@@ -7,57 +7,12 @@
       (function() {
         try {
           var savedLang = localStorage.getItem("lovevery-lang");
-          var lang = "en";
-          if (savedLang === "en" || savedLang === "cn") {
-            lang = savedLang;
-          } else {
-            var browserLang = navigator.language || navigator.userLanguage;
-            if (browserLang && browserLang.toLowerCase().startsWith("zh")) {
-              lang = "cn";
-            }
-          }
+          var lang = savedLang === "en" ? "en" : "cn"; // Default to Chinese unless explicitly set to English
           document.documentElement.lang = lang === "cn" ? "zh-CN" : "en";
           document.documentElement.setAttribute("data-lang", lang);
-          document.documentElement.setAttribute("data-lang-ready", "true");
         } catch (e) {}
       })();
     </script>
-    <script>
-      // Update SSR shell content based on language to prevent FOUC
-      (function() {
-        var lang = document.documentElement.getAttribute('data-lang') || 'en';
-        if (lang === 'cn') {
-          // Update SSR shell text content to Chinese
-          window.addEventListener('DOMContentLoaded', function() {
-            var badge = document.querySelector('.ssr-badge');
-            if (badge && badge.childNodes.length > 1) {
-              badge.childNodes[badge.childNodes.length - 1].textContent = ' 蒙特梭利启发的 Play Kits';
-            }
-            var h1 = document.querySelector('.ssr-h1');
-            if (h1) {
-              h1.innerHTML = 'Lovevery Fans<br/><span class="ssr-h1-green">爱好者社区</span>';
-            }
-            var subtitle = document.querySelector('.ssr-subtitle');
-            if (subtitle) {
-              subtitle.textContent = '由热爱 Lovevery 的家长们共同打造的中文指南。这里有真实的家长评价、玩具清洗指南、高性价比平替推荐，帮你更好地陪伴宝宝成长。';
-            }
-            var cta = document.querySelector('.ssr-cta');
-            if (cta && cta.childNodes.length > 0) {
-              cta.childNodes[0].textContent = '开始探索';
-            }
-          });
-        }
-      })();
-    </script>
-    <style>
-      /* Prevent FOUC: hide SSR shell until language is determined */
-      #ssr-shell {
-        visibility: hidden !important;
-      }
-      html[data-lang-ready] #ssr-shell {
-        visibility: visible !important;
-      }
-    </style>
 
     <!-- Primary SEO Meta Tags -->
     <title>Lovevery Fans — Complete Play Kit Guide & Affordable Amazon Alternatives</title>
@@ -271,17 +226,17 @@
           <div class="ssr-hero-text">
             <div class="ssr-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-              Montessori-Inspired Play Kits
+              蒙特梭利启发的 Play Kits
             </div>
             <h1 class="ssr-h1">
-              Your Complete Guide to<br/>
-              <span class="ssr-h1-green">Lovevery Play Kits</span>
+              Lovevery Fans<br/>
+              <span class="ssr-h1-green">爱好者社区</span>
             </h1>
             <p class="ssr-subtitle">
-              Explore all 22 Play Kits designed for ages 0–5. Detailed toy guides, real parent reviews, cleaning tips, and affordable Amazon alternatives.
+              由热爱 Lovevery 的家长们共同打造的中文指南。这里有真实的家长评价、玩具清洗指南、高性价比平替推荐，帮你更好地陪伴宝宝成长。
             </p>
             <button class="ssr-cta" onclick="document.getElementById('stage-baby')?.scrollIntoView({behavior:'smooth',block:'start'})">
-              Explore Play Kits
+              开始探索
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </button>
           </div>
