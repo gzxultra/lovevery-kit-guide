@@ -333,7 +333,7 @@ export const standaloneProducts: StandaloneProduct[] = [
     lightColor: "#F5E3EB",
     rating: 5.0,
     reviewCount: 2647,
-    imageUrl: "https://images.ctfassets.net/0sea1vycfyqy/4I7EU6BJJYOCTmFdcjk456/9f7e84842fd73f377b737764b67f94a8/2023_02_21_Play-Gym_ISO_S_1427.png",
+    imageUrl: "https://images.ctfassets.net/0sea1vycfyqy/71rvhDAPU1nlwIWcExgCLZ/10447ca8d7a002949303b70101cd9e91/Play-Gym_MASTER_VS_R4rev2_1.gif",
     toys: [
       {
         name: "高对比度球",
