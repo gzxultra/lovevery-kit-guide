@@ -128,7 +128,7 @@ const ToyCard = memo(function ToyCard({
       {/* Toy Header */}
       <div className="p-4 sm:p-6 pb-3 sm:pb-4">
         <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-5">
-          {/* Number badge (no toy images for standalone products) */}
+          {/* Number badge — matches KitDetail fallback (no toy image) */}
           <div
             className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 text-lg sm:text-xl font-display text-white mx-auto sm:mx-0"
             style={{ backgroundColor: productColor }}
@@ -138,12 +138,6 @@ const ToyCard = memo(function ToyCard({
 
           <div className="flex-1 min-w-0 w-full">
             <div className="flex items-center gap-2 mb-1 flex-wrap">
-              <span
-                className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full text-[10px] sm:text-xs font-bold text-white shrink-0"
-                style={{ backgroundColor: productColor }}
-              >
-                {index + 1}
-              </span>
               <h3 className="font-display text-base sm:text-xl text-[#3D3229] leading-snug">
                 {toyName}
               </h3>
@@ -608,11 +602,9 @@ export default function ProductDetail() {
                   </div>
                   <div>
                     <p className="text-xl sm:text-2xl font-['Manrope'] text-[#3D3229]">
-                      {product.rating}
+                      {productAgeRange}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-[#756A5C]">
-                      {product.reviewCount.toLocaleString()} {t("条评价", "reviews")}
-                    </p>
+                    <p className="text-[10px] sm:text-xs text-[#756A5C]">{i18n.kitDetail.ageLabel[lang]}</p>
                   </div>
                 </div>
                 <div className="w-px h-8 sm:h-10 bg-[#E8DFD3] hidden sm:block" />
