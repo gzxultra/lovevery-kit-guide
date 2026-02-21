@@ -148,145 +148,134 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/7pQYLVYOVRX1KesredJDPk/03c7c0264f9aed3dada1c2ab2726bd2f/Year_2_Playkit_10746_VS_R1_CL_v2.png",
       "https://images.ctfassets.net/0sea1vycfyqy/3J1rcTMywufAhdzKNqcZbB/d331c684731b28660972a38a75626da8/2022_08_12_SEL-Emotions_ISO_0147_v3-EN_2e939bf7-2331-4e1e-8222-b67402866a93.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/54h9EACgGgpBzQO4p0o3ye/a4b7f996c153ca8f1d5f04f904898081/K4_Wood-Balls_BH_V1_web.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/5Zcgy8LaiNTfKroYEBDkZj/c58f1532bf1b03d54fc24f7337419204/k12-1-scale.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/2Iok91KB5xBE6To9Y9PXZ3/20b119be2e72634ce964c9e1694d3fc5/2022_09_09_ISOs_S_0293_v6__1_.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/6NNnY5zCghZSMm8rTplvad/510ee2850ff5fc89bf362e7dd5c1d78c/Year_2_Playkit_10989_VS_R2_CL_web__1__copy.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/WSM9bM0CIabsI9uqMclyB/d00a60ba283b998656026952780daf6a/Year_2_Playkit_11042_VS_R2_CL_NatureBuddy-_1_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3673G1Xp7nO3y5z66mI2p8/9a8a7a2c45c7d61b73dd0f9ec343271a/Year_2_Playkit_10866_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4y0Pz7bNPXXa0jS0ocMauq/47194d50994094e5b73b8ffc40e7d6cc/Year_2_Playkit_11066_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3Q2iNNJoXcoCKkaGXLzYOh/b526051ee057af540155e73b48cb9dd5/Year_2_Playkit_11042_VS_R2_CL_Muffins-_2_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3CPZ9DoI1ty9l4n1RYtuo6/b7cd72751ff82141d413e504c24ac406/Year_2_Playkit_10842_VS_R2_CL.png",
     ],
   },
   "investigator": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/18JiZ4dBlfsDnsAulQlHTn/a9ef140210609d524d6c5fb37863d08d/Lovevery-VKS-Playkit-TheResearcher-ISO_Three_Quarter_v2.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/4VtrirRw4nh0SL9MdwhKI/094d8d00706c649d817d5e0aa33acf04/Lovevery-VKS-Playkit-TheInvestigator-ISO-238-April2021_web_hex.png",
     toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/sPlzr9geaNfXTJi1CPKE4/dfe8af44afd42eb3f4a432796b5bfd32/Year_2_Playkit_10578_v2_VS_R2_CL_CG_v2.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/5KVY7vCFCsQyOSzQ2e49Mh/28d92377eeed2415436796d5a2f7d799/Year_2_Playkit_10645_VS_R2_CL.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/SqeTn2Gz5ZDjmV0PkM2KU/3aa1d01e6492d9ef44d82d1fa7d2a100/TRANSPORTATION__THINGS_THAT_MOVE__MEMORY_GAME_1.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1drMWgkhFZ89jUJgz93f4F/3db9cb9a84fd026da8d7c85e3f9c6cfb/2022_08_05_Countdown-Timer_ISO_S_0056.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/4iBcRhCzoAAKdFdfnUi8b6/12dd18a8a5e9741a8e3f98fd8286b67e/Year_2_Playkit_10925_v4.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/3O9uJNvDh7v9KdehxuFh46/8749e369c0ca8f4ac1b1cdd0818025a1/Year_2_Playkit_10726_VS_R1_CL.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1kN8dsMc8xnxxFEKeiI2Kl/fee7fcb90dcb959e74b2859bcbcac979/Year_2_Playkit_11042_VS_R2_CL_Playdate-_1_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/2Eqfc2kd6LH83SQiitGn2p/6e597b994ec9bf15103ca166db3b228a/Year_3_Playkit_10566_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_3_Playkit_10766_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3J1rcTMywufAhdzKNqcZbB/d331c684731b28660972a38a75626da8/Year_3_Playkit_10866_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4y0Pz7bNPXXa0jS0ocMauq/47194d50994094e5b73b8ffc40e7d6cc/Year_3_Playkit_11066_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3Q2iNNJoXcoCKkaGXLzYOh/b526051ee057af540155e73b48cb9dd5/Year_3_Playkit_11042_VS_R2_CL_Muffins-_2_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3CPZ9DoI1ty9l4n1RYtuo6/b7cd72751ff82141d413e504c24ac406/Year_3_Playkit_10842_VS_R2_CL.png",
     ],
   },
   "freeSpirit": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/5YVz9DXS5hSl2flksdE6tf/734ae0baad2103e043e46cfb99c039dc/Lovevery-VKS-Playkit-TheFreeSpirit-ISO-163-US_April2021_web-_2_.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/5xClG7UVG7RzizKNfSEGwL/814958b45c4e3f171e683e63800aa4ff/Lovevery-VKS-Playkit-TheFreeSpirit-ISO-238-April2021_web_hex.png",
     toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/1R2TGfUlbuM77CyeBMkdzv/e4c6111ae3cb9209f8e1f4a3261fb419/Year_2_Playkit_10633_VS_R2_CL_web.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1ddlF3teMBaItjoG2DIJF1/0524bc8b743fb750df0a45911e1715c2/Year_2_Playkit_11072_VS_R2_CL_BH_V4.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/5f2zAlfUXQHOVeodZQRdsf/dd7b63ae201cec06b15f4efafa04a3be/Year_2_Playkit_10934_VS_R1_CL_US_web__2_.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/70F72UXTV3wTZTFmvPJcTV/cba9cf24e363ca095d6462d76f8739bd/Year_2_Playkit_10817_VS_R1_CL.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/2UHTN4gZjayhOUy1EXLWqu/4f820651d3eaeb41d6e3e53392e300f5/Year_2_Playkit_10705_VS_R1_CL.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/yCv6ObczmHwaMC4olHSlB/9b30144488bf70ac3fed6673e4b5a15e/Products_Overhead_0362_MirrorReflection2_VS_R1b_PU_R1_CL.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/7D4BkKre37S5EjHZh2uVS7/404863289ce059083c0578e8a4385f63/Year_2_Playkit_11042_VS_R2_CL_Im3-_1_.png",
-    ],
-  },
-  "observer": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/3lt1Hm42aaEI7IuNs86Csp/25b6f9bc5c6ba894aa66a99ced8d52cf/Lovevery-VKS-Playkit-3YO-TheObserver-ISO-322-April2021.png",
-    toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/4YezN0EjwWe0YjN9zxnTTK/2b43642107f957201161e11c5fc74850/Lovevery-VisionkitStudio-ISOs-WeatherBoard-056-Dec2020-1.20230607225211403.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1QgVMIaRlzXyc7Hh8BYM1R/f8b6254e2d49462773bbb8205697fa4a/Lovevery-Visionkit-ISOs-ModularHouse-085-Ingredients1-Oct2020-1.20230607222653929.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/64bvJlZeokEzdKdWDetAuk/2f19234bd5c1d44dc97920623728760a/Lovevery-Visionkit-ISOs-ModularHouse-085-Ingredients2-Oct2020-1.20230607221643939.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/3wSxCy6rZ9JbwSrrzuWolm/f5a8f6d5affa8922f6a4431a0c39f937/1699046298000_f0fd4d82-a1e9-427d-841a-28d3df04a1d4_fd3abccd463e4933a32597209982029e.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/3neFn0b4xGr2tO5QUBi3GU/03378a662dc18a9d470d3bf520c973f0/Kit15_LeftandRightShoeStickers-ISOLovevery-Visionkit-ISOs-LeftRightSticker-009-Oct2020-1.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1KbaHzamxyoOSNDz3tTlKG/b9d1e189405af1d1d572ce5447d4a1b0/2022_03_21_Emotion-Dolls_Studio_1834_BH_EDIT.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/2LniBRlM009SHLB1BSQNQJ/ddfce92fff95c64af9d755adc0b6faeb/Kit15_Bookx3-ISO.20240509201738777.png",
-    ],
-  },
-  "storyteller": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/36BH84MybXltLf3g88hYIy/8d6fd2486e9e88f1cb036218644e9333/Kit_16_Playguide-ISO_US.png",
-    toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/59rhBrrV7NRryNmmaEsus6/d5ca7a46e736bb6e9903fe016faf75a4/Lovevery-VisionkitStudio-ISOs-FortFrameDowels-058-Oct2020.20240229155320659.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/714X7WOjKb0lwG7PVY6c6S/7e52e95bdfee9815e81a9ac017476132/Lovevery-VisionkitStudio-Fort-Frame-276-Dec2020_2.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/PKkIr6ci5KVI7hW7vbJ2Z/0f9e35635812299162de2fe12b1ad95d/Lovevery-VisionkitStudio-ISOs-Puppets-NoArms-158-Oct2020-1.20230607202349727.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/443O8EpR0nbhQZT7nHeidn/45fcf5c1bf9b78ca7208af0c6e58d549/Lovevery-Visionkit-ISOs-SprayMop-087-Oct2020-1.20230607221225201.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/5tcqqgXk3qjkHTDzdfHehO/4f023b2b54eccff9cc41d847cbd455fc/2022_05_25_Studio_ECO_5019.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/4VLyjhxEHnOwNKDicCsAtN/4eec32ad6b056b58a0033b036f0b9076/Out-the-Door-Book-ISO.20250131155744519.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4PDeMXYxABm4yq4QmGkYey/5e92c8681e944c0a4a1dc51736ea4505/Year_3_Playkit_10566_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_3_Playkit_10766_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3J1rcTMywufAhdzKNqcZbB/d331c684731b28660972a38a75626da8/Year_3_Playkit_10866_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4y0Pz7bNPXXa0jS0ocMauq/47194d50994094e5b73b8ffc40e7d6cc/Year_3_Playkit_11066_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3Q2iNNJoXcoCKkaGXLzYOh/b526051ee057af540155e73b48cb9dd5/Year_3_Playkit_11042_VS_R2_CL_Muffins-_2_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3CPZ9DoI1ty9l4n1RYtuo6/b7cd72751ff82141d413e504c24ac406/Year_3_Playkit_10842_VS_R2_CL.png",
     ],
   },
   "problemSolver": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/3ID25woRtBLYdFoQbkHdYU/2f7ac83b5f61a98997c234099649e398/Lovevery-VKS-Playkit-3YO-TheProblemSolver-ISO-357-April2021_web.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/69xRjtUrGeOh7r9TjY0kbk/ddca12125ddaeb0f39205ca64fd5f24c/Lovevery-VKS-Playkit-TheProblemSolver-ISO-238-April2021_web_hex.png",
     toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/4ULTslsidQhOs1sNv4ck4Q/413607fdfcff7fceb2f1b28e49e96902/Kit17_TurtleHatchGame-ISO.20230607212857908.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/6TDjZz3AAxvAaQbZzl1Qlo/afabcdddc439b57793fc37b36bc0ea79/Kit17_WoodenUnitBars_NumberTiles-ISO.20230612171740828.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/44vscKQJay2hUqryjWA0Sy/609b475c3a8dd1c1a171810b807f615b/Kit17_NumberSenseNatureCounters.20230612173105976.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/eZHoaRRGFVHZKdgl7A0bn/1f44c979470f35e4be3258df3415d8cc/Kit17-SizeItUpMeasuringTape-ISO_v2_web.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/7gtVS7XabvopDoww8HUMSR/104f40e645daec5444c5dad0eeccd5dd/Kit17_WoodenWobblePuzzle-ISO.20230607174417097.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/295F4w3MYib5jPrPZdHO1W/343733315d1eaf1eb29743a866a82782/Kit17_LiquidColorLab-ISO.20230607205618698.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/5dgO6QKs8b8CARWEJKwOGj/98cf14a72840c4662040c9f8c656a6e8/Kit17_UncleRob-sPizzaParty-ISO.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4oiaF9oH31TEZ0g603sZEd/e5a1cc52fdf2df52613b5636b031eca7/Year_3_Playkit_10566_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_3_Playkit_10766_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3J1rcTMywufAhdzKNqcZbB/d331c684731b28660972a38a75626da8/Year_3_Playkit_10866_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4y0Pz7bNPXXa0jS0ocMauq/47194d50994094e5b73b8ffc40e7d6cc/Year_3_Playkit_11066_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3Q2iNNJoXcoCKkaGXLzYOh/b526051ee057af540155e73b48cb9dd5/Year_3_Playkit_11042_VS_R2_CL_Muffins-_2_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3CPZ9DoI1ty9l4n1RYtuo6/b7cd72751ff82141d413e504c24ac406/Year_3_Playkit_10842_VS_R2_CL.png",
     ],
   },
   "analyst": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/7rjUtdrmjQIGid4dIquAkO/4bf0296a27712ff4ce8293952bf97903/Lovevery-VKS-Playkit-3YO-TheAnalyst-ISO-347-April2021_gray_f159763e-a471-4c76-a316-f9ffe8d0c105.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2tbAWpk47etVGnGoJIRNjv/4a5088277ab27a96ee30a3727da3cd35/Lovevery-VKS-Playkit-TheAnalyst-ISO-238-April2021_web_hex.png",
     toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/1ocW2mY5qyhsxFwg49IFvE/277ff1a9ae598aab170e77208f57d220/Kit18_MontessoriSensoryBox-ISO.20230612173818392.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/2Bg3mIGKIqlgBw47fQq11s/216eb5de4f07095e2635e294af662683/2022_03_28_ECO_S_2192-2_BH_EDIT_278b5042-e2c8-4861-bf6a-fe64ad42d7c6.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/3SPcRoYQw6wLpPij05HevV/05f26621aba23f763db268c24bb67d66/Kit18_StackableFractionCups-ISO.20230612174229928.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/5UqXVMNYzqwQwJyq3uTwnh/520670d7fac9e4d7451eb9e1b2e2ef57/Kit18_VisualRecipeCards-ISO.20240229161047908.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/ytNB14ritsdLyRb5zhkVB/afa2a3d11e9ef42ef7c3cb4d1b0e3214/Kit18_ColorTheoryPuzzle-ISO.20230607202934284.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/5qIDJWfwDCe97SBijcyCbS/1a418140efece1ca2bd7fc49a80f4b51/Kit18_FirstSewingKit-ISO.20230607175218190.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/1uLnoeTps8XejQrd4BJA6a/360bc6aee2a9ce95dba08cc9c1c7af2f/Year_4_Playkit_10566_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_4_Playkit_10766_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3J1rcTMywufAhdzKNqcZbB/d331c684731b28660972a38a75626da8/Year_4_Playkit_10866_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4y0Pz7bNPXXa0jS0ocMauq/47194d50994094e5b73b8ffc40e7d6cc/Year_4_Playkit_11066_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3Q2iNNJoXcoCKkaGXLzYOh/b526051ee057af540155e73b48cb9dd5/Year_4_Playkit_11042_VS_R2_CL_Muffins-_2_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3CPZ9DoI1ty9l4n1RYtuo6/b7cd72751ff82141d413e504c24ac406/Year_4_Playkit_10842_VS_R2_CL.png",
     ],
   },
-  "connector": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/1wjOoJa4f9vlcpFNXCsNt2/fa6b39d6a706f7f7ed236342eb586dc4/605A0139_BH_Edit.square.jpg",
+  "storyteller": {
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/1784oiurLWdIPvJuO7qnWq/60961f628de0aed787d6dd5dabc4cd21/Lovevery-VKS-Playkit-TheStoryteller-ISO-238-April2021_web_hex.png",
     toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/59rkekERfs4maKQibz2mqQ/49a5f1d9522a9f67ffe78806dc3ae977/2022_07_05_Ball-Run_Studio_4-Year-Old_ISOs_12412_v6.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/1RxNFWzTDJqJ6UfuF9GayD/d043d3f8c95605f101e591298b6ce8ec/2022_08_15_Subatizing-Box_14-yr-old_ISO_S_0220_v2.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/1Ej4WVnHxlR6STvER6qXx9/7f75b0202c52752a94ac10a48230afe1/2023_04_13_4YO_Group_ISO_11338_v3.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/2q4BGlMaDDhYLNLmFs0io7/38e129f686b68e0b457bb24f4239a240/2023_04_13_4YO_Group_ISO_11350_v2.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/3FovbFnxRTrNRRo7upvAkl/b23ea95df1d7517394c6f396ff466be3/2022_10_01_ISOs_S_0225_v4_a87014a4-8da0-4cb3-beb7-0eff16d4eb4f.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/7FgCeBKtKTOZ6nNu9Ruk3P/b2ac9d7386857b418651ad4c57192e29/2023_04_13_4YO_Group_ISO_11294_v2.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/1djkg0ageftK9tb6nCrsMB/96e06ed35cad1fd30ef785bb5d0d32ec/Year_4_Playkit_10566_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_4_Playkit_10766_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3J1rcTMywufAhdzKNqcZbB/d331c684731b28660972a38a75626da8/Year_4_Playkit_10866_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/4y0Pz7bNPXXa0jS0ocMauq/47194d50994094e5b73b8ffc40e7d6cc/Year_4_Playkit_11066_VS_R1_CL.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3Q2iNNJoXcoCKkaGXLzYOh/b526051ee057af540155e73b48cb9dd5/Year_4_Playkit_11042_VS_R2_CL_Muffins-_2_.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/3CPZ9DoI1ty9l4n1RYtuo6/b7cd72751ff82141d413e504c24ac406/Year_4_Playkit_10842_VS_R2_CL.png",
     ],
-  },
-  "examiner": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2deShKmiwUEQR5B6PUc94J/323426e1be55bb2cf3a95b6945f100a5/2023_04_13_4YO_Group_ISO_11181_gray_68ef6c33-dfe2-420c-9f6b-a515110d78e6.webp",
-    toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/4Z7sKwhcIN7OmiirrMab4p/ae9ef2687faf8fac712dbd7b9e6a6214/2023_04_13_4YO_Group_ISO_11286_v1.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1midbqhW8AZUyO2KKNeqXz/a9bfb07fa0e21f7b091a800344a6ac8d/2022_08_15_4-yr-old_ISO_S_0259_v2_a408c35f-85fa-4a22-a2fa-b866b945b74e.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/6WTZyHkQGfwGxFOXMyfwXo/73e8f60407f046a5d994217cac8ae8c6/2023_04_13_4YO_Group_ISO_11302_v2.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/171Ez5PYd0nkDAWYV1KJ9o/dde1c6b42e3c32654cf5416157e12b54/I-Love-You-All-the-Time_Three-Quarter-ISO__1_.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/QY9QlsZibs5FZtZVPbYaX/a4a94671233a8f2ffbb60fb49845dad2/2022_08_15_4-yr-old_ISO_S_0306_v3.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/71kB3Kd186YeYBS1Zcw5qR/565c425dea837cd060366a30c4663ab8/2022_07_05_Ball-Run_Studio_4-Year-Old_ISOs_12394_v3_2737e493-0add-4e78-a768-0fee9b2bbc9f.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/3djp4VxhmN8CWte7u5Ou0V/61f3dae7d57ab1bc7e7e5d1e376c7e11/Oct2022_4YO_The-Appropriate-Game_Book-ISO.20240711170211227.png",
-    ],
-  },
-  "persister": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/32l5fuwCxEQ312e45k1qdE/f94e3777e3567809a41888b3f46e3bbf/2023_04_13_4YO_Group_ISO_ThePersister_11241_gray_fa795731-b691-4929-b944-08467c7640c4.webp",
-    toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/41C347poGejE1AlFpR879p/a522cb5f065d7287cb8ebe60786c977b/2022_08_18_4-yr-old_S_1099_v6.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/5P0Bv0DFkrOsjxXOROYFlo/61a5234511373e2d3fe020e029ba144b/2023_04_13_4YO_Group_ISO_11290_v1.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1a6nMXaO1cG1t49iG42gYk/6163867f82bdd8624ce64e3fb8a396a0/2022_06_01_Studio_4-Year-Old_ISOs_5396_v7.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/19zqcgXrNsdDYd24rfzKzX/ac92818823d069150b8958b3fff5931b/2023_04_13_4YO_Group_ISO_11282_v1_web.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/4d9o2GDxlCjzKpdZKsfa0K/909a18602c46a7a4cd194aa2e8ba3cec/2022_06_01_Studio_4-Year-Old_ISOs_5327_v2.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/271pnT9v1tC94Hc8Qo3lFb/d16d37740d325246bb7d6522e6df8aa2/Oct2022_4YO_Calming-Booklet_Book_ISO_b5f57a66-5d12-4040-b260-e45972a33d1c.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/6sb80roZS9Dr8XwlONH5bI/c77d5be6ab89c06212262739808de4c1/Oct2022_4YO_Jilly-and-Jett_Book-ISO.20240711170211269.png",
-    ],
-  },
-  "planner": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/165wPmsVvIAXoo6Zedq6Hf/73e4f2ac765d5e8c9e4c05cc933bd0f6/2023_04_13_4YO_Group_ISO_ThePlanner_11217_v3.png",
-    toyImages: [
-      "https://images.ctfassets.net/0sea1vycfyqy/6v55I0UjwCRdVDyUMML1ga/59959fedfb9864e74d3dd07623763de1/2022_08_18_4-yr-old_S_1138_v8.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/5TnhYjB2cozsRsi1ZvWyqh/98f9b889a2f149074e9a0c1eae2285e2/2022_07_05_Ball-Run_Studio_4-Year-Old_ISOs_12434_v3.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/rcWZ4XD8t2RNM4zY4eqlr/09119d3521ff5f4aa5c6b44256aedecc/2023_04_13_4YO_Group_ISO_11310_v2.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/1ivHSdcIm5bXlXLrOGMfx2/97ba9f55bc3400ffcaddf083b204ca65/2022_08_15_4-yr-old_ISO_S_0298_v4.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/skBDUuQVwXikfokJSmYWv/c575dcc25031969fecfacf92ec7d5d8f/2023_04_13_4YO_Group_ISO_11275_v3_web.webp",
-      "https://images.ctfassets.net/0sea1vycfyqy/6fsyjmmMmluG2mO9bmYn57/4f5f3d96b5e2ad5cbab0e5534cb23013/Oct2022_4YO_Savys-Scavenger-Hunt_Book-ISO.20240711170211643.png",
-    ],
-  },
+  }
 };
 
-export function getToyImage(kitId: string, toyIndex: number): string {
-  const kit = kitImages[kitId];
-  if (!kit) return "";
-  return kit.toyImages[toyIndex] || "";
-}
+export const kitToyImages: Record<string, Record<string, string>> = {
+  "looker": {
+    "The Looker Play Guide": "https://images.ctfassets.net/0sea1vycfyqy/5XbH0CxXu560qHdwH75qWd/0fa7e77c21dfd19f723981df5ef76e2b/SubscriptionBox1_Products_Overhead_23385_Hero_VS_R1_CL_v3.png",
+    "Mobile With Interchangeable Cards": "https://images.ctfassets.net/0sea1vycfyqy/5O7INa0JlqbbRbof4pX6Df/251b7bda8a174bb73b0c8da1b3b9ec3c/Lovevery-VKS-Studio-StrollerToy-364-Sep2020_WEB_616e4d0b-1dbd-445d-895a-a1b0cc13e2e6.png",
+    "Simple Black & White Card Set": "https://images.ctfassets.net/0sea1vycfyqy/5q5OUzlztmBjjmBOiyjqsK/0d057fdf3872b66bd2478f0a057fee21/K1.Simple.BW.Card.Set.png",
+    "Standing Card Holder": "https://images.ctfassets.net/0sea1vycfyqy/31Ucd4iWHQYxGCQLMd7rHg/f86ded3f089521cde7c10cff12b4f96e/SubscriptionBox1_Animation_14411_folded_towel_VS_R1_CLIENTWHITE.png",
+    "Complex Black & White Card Set": "https://images.ctfassets.net/0sea1vycfyqy/76DmYmjEUjpy4OpeLhXkDo/2fda48e93df4d07e36fafb7a2aa8cfb1/K1.Complex.BW.Card.Set.png",
+    "Black & White Mittens": "https://images.ctfassets.net/0sea1vycfyqy/7e4qbnmHweXohOogxPAlbP/77ef6d76784f860e333a8e52f7ad38d2/Lovevery-VKS-Mittens-ISO-139-July2020.png",
+    "Wooden Book": "https://images.ctfassets.net/0sea1vycfyqy/681RySrxtBmSyc1ofR2AjC/172eff0cca15c11daa48e1ffa6b1f21d/K1.Wooden.Book.png",
+    "Silicone Rattle with Removable Ball": "https://images.ctfassets.net/0sea1vycfyqy/6Mo1Ar7U68DoNB1gEjvPdY/8c3675ea8859de3c2d246c9e1bde48e2/K1.Silicone.Rattle.png",
+  },
+  "musicSet": {
+    "Pentatonic Pat Bells": "https://images.ctfassets.net/0sea1vycfyqy/poAi3rV1c92tWY2ZUOM0F/754fd189eca6e8ef19b31bc59e0017df/2022_02_01_Pat-Bells_Studio_ISO_0008_BH_EDIT_CG_v1.20230731204820183.png",
+    "Color Tab Pan Flute": "https://images.ctfassets.net/0sea1vycfyqy/2lEEtxowHRtJfzyHG6k2Ki/658faef60ede02d443073778a41bf957/2022_02_01_Pan-Flute_Studio_ISO_0002_BH_EDIT_CG_v1.20230731204347433.png",
+    "Simple Concertina": "https://images.ctfassets.net/0sea1vycfyqy/2u65JyFnRXTV4C39Gzxfom/d279d4902dbcec0d751c21cd6d57d8e2/2022_02_01_Concertina_Studio_ISO_0002_BH_EDIT_CG_v1.20230731203135994.png",
+    "Jingle Bracelet With Wooden Handle": "https://images.ctfassets.net/0sea1vycfyqy/2byOTm2tmEIdeGLDMdF6Nf/6912f90e50a9f56037738e3bf9186ada/2022_02_01_Bells_Studio_ISO_0001_BH_EDIT.20230731201335067.png",
+    "Loud & Quiet Stackable Shakers": "https://images.ctfassets.net/0sea1vycfyqy/6hA7pvNo1zlqRgRVFK3Qr2/86ac64d8ac9a3f01e7aad2e56ace0324/2022_02_01_Shakers_Studio_ISO_0001_BH_EDIT_CG_v1.20230731205358272.png",
+    "Animal Metronome": "https://images.ctfassets.net/0sea1vycfyqy/68KZ1Qd3m0dtVXXd6YG9Ra/8944a9732bb4ee77a8daa40163cb523f/2022_02_01_Metronome_Studio_ISO_0001_BH_EDIT_CG_v1.20230731203746724.png"
+  },
+  "bathSet": {
+    "In Then Out Bath Tube": "https://images.ctfassets.net/0sea1vycfyqy/CTg3TLAKyYdWu9l80wU4W/68852d565d1ce271af3a202d4b9cb2e0/Tube.png",
+    "Scoop & Spin Bath Cup": "https://images.ctfassets.net/0sea1vycfyqy/4qIqiFBspHhjo1jQYVS5CQ/93ec9d1dc8182995e81d80d5e5541b4d/Cup.png",
+    "Fast & Slow Water Wheel": "https://images.ctfassets.net/0sea1vycfyqy/6vt2YpYugvosLHiCY2cQaA/2bee7d665d91a47455cbf12e31dc77a5/Wheel.png",
+    "I See You Bath Mirror": "https://images.ctfassets.net/0sea1vycfyqy/6qyxf9uuNUHPhxORezwUSn/43b495212fece1b32ace6c801b99d5d9/Mirror.png",
+    "Talk & Play Bath Book": "https://images.ctfassets.net/0sea1vycfyqy/iPmjz2YW6TTxpJwk1E6rl/4783d6214b82ae3b90a52419c00a55a7/Lovevery_Bath_Kit_ISO_In_Then_Out_Bath_Tube_Dec_2024_0221_v2_web.20250815215439212.png",
+    "Big & Little Ducks": "https://images.ctfassets.net/0sea1vycfyqy/4XaN1iJFFVxuX3R3EkbbzO/ac77f4ddb89ee72c871386d06d507638/Lovevery_Bath_Kit_ISO_Big_and_Little_Ducks_Dec_2024_0109_v5.png",
+    "Shake & Splash Bath Ball": "https://images.ctfassets.net/0sea1vycfyqy/5uGIeQkdoQuswJMHTHw9kJ/c4354d38c24616e20a9bda6f0a47a3a6/Ball.png",
+    "Peek-A-Boo Boat": "https://images.ctfassets.net/0sea1vycfyqy/5Iud1ghKt3bwTQsZJhU4UB/227778c25aca4f2bdd8fd95031463897/Boat.png",
+    "Play Guide": "https://images.ctfassets.net/0sea1vycfyqy/6C2fPgpzdt9iSnbgi3DOX2/620b8f31f017dfd62a90d28c709c2045/Bath_Playguide-ISO_v2.20251016193706552.png"
+  },
+  "blockSet": {
+    "Solid Wood Building Blocks": "https://images.ctfassets.net/0sea1vycfyqy/4WV7TfHr7OsseO1W6VOH1M/ad0ce929232cd59935eb07ef3bd07a44/Lovevery-BlockSet-ISO-V1-0109.png",
+    "Half Cylinders": "https://images.ctfassets.net/0sea1vycfyqy/4I7EU6BJJYOCTmFdcjk456/9f7e84842fd73f377b737764b67f94a8/2023_02_21_Play-Gym_ISO_S_1427.png",
+    "Building Planks": "https://images.ctfassets.net/0sea1vycfyqy/dJBUe8PF3TIxUeSq32mSx/b7c497ab3a811a0cde27d123dbb9ba3b/Planks.png",
+    "Assorted Shapes": "https://images.ctfassets.net/0sea1vycfyqy/4WWEYol66KXSQF329hcxv8/51e4cccaa2be78b668f8c14f0d3d5496/Assorted-Shapes.png",
+    "Play People": "https://images.ctfassets.net/0sea1vycfyqy/2tq9k6ul6vTu3znFTRkC17/a417f642d76c3dba94b951b5a4461d57/block-set-product-5-eu-uk.webp",
+    "Wheels and Dowels with a Toggle String": "https://images.ctfassets.net/0sea1vycfyqy/45qXTRcCsfXTbOjpp9uPyq/0df3a6f8bfd4081bd0d2207d54dcf5e4/2024_Refresh_Block-Set_Wheels-Dowels_v3.20241211194139210.png",
+    "Threading Blocks": "https://images.ctfassets.net/0sea1vycfyqy/gWL982sdBn8neEIy3INnA/a7f034f5d314beba7a0527a4b49f61ee/Lovevery-BlockSet-ISO-V1-0108-3.png",
+    "Storage Box with Ramp": "https://images.ctfassets.net/0sea1vycfyqy/47ygZ2qdZsQc0iPEul01Qz/7cb95a851f9af0b746ddeba8e2a1cd29/Box.png",
+    "Cotton Drawstring Bag": "https://images.ctfassets.net/0sea1vycfyqy/1MJPUyJzxYjqYU1x8aRdtZ/06e9ce6f13dce821079ecba77f71b626/Gingham-Bag.png",
+    "Activity Guide": "https://images.ctfassets.net/0sea1vycfyqy/2rBp50Lo5KcmAY75FCCJZM/e81f3e039a73558dea78424a2dd670bf/The_Block_Set-Activity_Guide-1080x1080.png"
+  },
+  "playGym": {
+    "High-Contrast Ball": "https://images.ctfassets.net/0sea1vycfyqy/5xDkVvFNcpjZymaBLf1fxk/403304ae1a02b9fe81e5e884f5d94a96/2023_02_21_Play-Gym_ISO_S_0699_v1.png",
+    "Batting Ring": "https://images.ctfassets.net/0sea1vycfyqy/47vE0X28cVkmATWXgVHtAm/14624aff6c33b28e3d622379814ce2c7/2023_02_21_Play-Gym_ISO_S_0713_v1.png",
+    "Organic Cotton Teether": "https://images.ctfassets.net/0sea1vycfyqy/6wsmnGxAJFaNCLvzEDZVBW/b246e9bff314f5bfdcdb2030d4651c07/2023_02_21_Play-Gym_ISO_S_0710_v1.png",
+    "Teething Ring": "https://images.ctfassets.net/0sea1vycfyqy/6vwaJpivQBKJlpsK8YPaSI/30bd40d8c2fa86279029a52a5aee071d/2023_02_21_Play-Gym_ISO_S_0716_v1.png",
+    "Black & White Card Set": "https://images.ctfassets.net/0sea1vycfyqy/1t3PH93jMaCqMkGoP1hfhn/4894ecac4ea0e33aa38d366a6482d486/play_gym_b_w_card_set_720.png",
+    "Mirror Card Set": "https://images.ctfassets.net/0sea1vycfyqy/7Cv9AUvUVo2rZZLGBqaHOs/c9454e13ae2110b9ecb1f19768f7057f/SubscriptionBox1_Animation_14403_Mirror.png",
+    "Faces Card Set": "https://images.ctfassets.net/0sea1vycfyqy/4DwvZnpZ0gFiOqSbGKhIR4/efad5710cc5a55c8fa7bc0d671bd6227/SubscriptionBox1_Animation_14403_pattern_cards_VS_R2a_Pack1_puR1c_2set_faces_CL.png",
+    "Play Space Cover": "https://images.ctfassets.net/0sea1vycfyqy/4zh2b5KXyO44kZLv8GQHVi/de3dc8d9c14cd2c53e2767a97321ec05/2023_02_21_play-gym_iso_s_0820_v4_720.png",
+    "Sound Squares": "https://images.ctfassets.net/0sea1vycfyqy/42HAP9AvCkO5UUWw0yJI9q/1c9a6e6204ea3cd05709122aca159961/Play-Gym_Sound-Squares2.png",
+    "Card Set Clips": "https://images.ctfassets.net/0sea1vycfyqy/4B3Dgj1ZTQXtIT5PXuzQxn/c766381ce3d633f9599d04c7626afd45/Product_On_White_5565_VS_R1_CL_v2.20240711203903330.png",
+    "The Play Guide": "https://images.ctfassets.net/0sea1vycfyqy/39Urt4o10BkC5twOIFb5wS/128d0b10a6f189517df94989bab36791/2023_02_21_Play-Gym_ISO_S_0707_v1.png"
+  }
+};
 
-export function getKitHeroImage(kitId: string): string {
-  const kit = kitImages[kitId];
-  if (!kit) return "";
-  return kit.heroImage || "";
-}
+export const getToyImage = (kitId: string, toyName: string): string | null => {
+  return kitToyImages[kitId]?.[toyName] || null;
+};
 
-export function getKitToyImages(kitId: string): string[] {
-  const kit = kitImages[kitId];
-  if (!kit) return [];
-  return kit.toyImages;
-}
+export const getKitHeroImage = (kitId: string): string | null => {
+  return kitImages[kitId]?.heroImage || null;
+};
+
+export const getKitToyImages = (kitId: string): string[] => {
+  return kitImages[kitId]?.toyImages || [];
+};

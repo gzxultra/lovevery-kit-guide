@@ -316,6 +316,121 @@ const reviewData: Record<string, ToyReview> = {
     cons: "组装后的占地面积较大，且球撞击底部的声音在安静的室内会显得比较嘈杂。",
   },
 
+  // Music Set (musicSet)
+  "musicSet::Pentatonic Pat Bells": {
+    pros: "True musical instruments with perfect pitch; the pentatonic scale ensures every note combination sounds harmonious, reducing 'noise' frustration for parents. High-quality metal and wood construction.",
+    cons: "Expensive compared to generic toy bells; individual bells can be misplaced if not kept in the tray."
+  },
+  "musicSet::Animal Metronome": {
+    pros: "Excellent introduction to rhythm and tempo; color-coded cards make it easy for toddlers to play their first 'real' songs without reading sheet music.",
+    cons: "Cards are made of cardstock and can be bent or torn by younger toddlers; requires adult supervision for the metronome settings."
+  },
+  "musicSet::Jingle Bracelet With Wooden Handle": {
+    pros: "Beautifully crafted from natural wood; provides a gentle, crisp sound that isn't overwhelming for sensitive ears. Easy for small hands to grip.",
+    cons: "Smaller than a standard tambourine, which some older kids might find less 'impressive'."
+  },
+  "musicSet::Color Tab Pan Flute": {
+    pros: "Color-coded tabs make it intuitive for toddlers to learn which hole produces which sound. Real musical instrument that produces genuine notes.",
+    cons: "Requires a bit of practice to produce clean notes; younger toddlers may need help with proper blowing technique."
+  },
+  "musicSet::Simple Concertina": {
+    pros: "Compact and easy for small hands to hold; the bellows mechanism teaches cause-and-effect while producing real musical notes.",
+    cons: "Bellows can be stiff initially; takes a few uses to loosen up for easier play."
+  },
+  "musicSet::Loud & Quiet Stackable Shakers": {
+    pros: "Dual-sided design teaches volume concepts naturally; the stacking feature adds an extra dimension of play beyond just shaking.",
+    cons: "The smaller shaker can be a choking hazard if the two pieces separate; supervision recommended for younger toddlers."
+  },
+
+  // Bath Set (bathSet)
+  "bathSet::Scoop & Spin Bath Cup": {
+    pros: "The spinning mechanism is endlessly entertaining; helps develop wrist rotation and pouring skills. Easy to clean with no hidden cavities.",
+    cons: "The spinning top can be tricky to reassemble if it comes apart during vigorous play."
+  },
+  "bathSet::Big & Little Ducks": {
+    pros: "Classic bath toy with a developmental twist; the size comparison teaches big/little concepts naturally. Ducks are solid with no holes to trap water and mold.",
+    cons: "Ducks don't squirt water, which some children expect from rubber ducks."
+  },
+  "bathSet::Shake & Splash Bath Ball": {
+    pros: "The rattle sound inside keeps babies engaged; the holes allow water to pour through, creating a sensory experience. Easy to grip for small hands.",
+    cons: "Water can get trapped inside if not dried properly; needs to be shaken out and air-dried after each use."
+  },
+  "bathSet::Peek-A-Boo Boat": {
+    pros: "The hidden compartment teaches object permanence; children love discovering the hidden figure inside. Floats well and is easy to clean.",
+    cons: "The hidden figure can be difficult for younger babies to retrieve independently."
+  },
+  "bathSet::In Then Out Bath Tube": {
+    pros: "Engaging cause-and-effect toy; kids love watching the water flow through the transparent tube. Large size makes it exciting for older toddlers too.",
+    cons: "Can be bulky to store in smaller bathrooms; requires regular rinsing to prevent soap scum buildup."
+  },
+  "bathSet::Fast & Slow Water Wheel": {
+    pros: "Mesmerizing visual effect; helps children understand fluid dynamics and speed. Suction cups are surprisingly strong and stay put on tiles.",
+    cons: "If water flow isn't centered, the wheel might spin inconsistently."
+  },
+  "bathSet::I See You Bath Mirror": {
+    pros: "Floating design is fun for 'peek-a-boo' games in the tub; safe, shatterproof material gives parents peace of mind.",
+    cons: "Fogging can occur during hot baths; needs to be wiped down to maintain clear reflection."
+  },
+
+  // Block Set (blockSet)
+  "blockSet::Solid Wood Building Blocks": {
+    pros: "Heirloom quality wood with non-toxic finishes; the variety of shapes (70+ pieces) allows for endless creative combinations from simple towers to complex cities.",
+    cons: "Heavy box; many pieces to keep track of and clean up after play sessions."
+  },
+  "blockSet::Storage Box with Ramp": {
+    pros: "Brilliant multi-functional design; the box itself becomes part of the play as a shape sorter or a ramp for rolling blocks and cars.",
+    cons: "Wooden lid can be heavy for younger children to slide on and off independently."
+  },
+  "blockSet::Building Planks": {
+    pros: "Versatile flat pieces that allow for more architectural builds; great for bridges and roofs. Smooth finish is safe for all ages.",
+    cons: "Can be harder for toddlers to balance compared to cubes; more suitable for 2+ year olds."
+  },
+  "blockSet::Assorted Shapes": {
+    pros: "Introduces geometric concepts naturally through play; the variety of shapes encourages creative problem-solving and spatial reasoning.",
+    cons: "Smaller pieces require supervision for children under 3 years old."
+  },
+  "blockSet::Play People": {
+    pros: "Encourages imaginative play and storytelling; the simple wooden figures are open-ended and work with any block configuration.",
+    cons: "Minimal detail compared to plastic figures; some children may prefer more realistic-looking play people."
+  },
+  "blockSet::Threading Blocks": {
+    pros: "Develops fine motor skills and concentration; the threading activity provides a different type of challenge from stacking.",
+    cons: "String can fray with heavy use; may need replacement after extended play."
+  },
+  "blockSet::Cotton Drawstring Bag": {
+    pros: "High-quality fabric; makes it easy to transport a subset of blocks for travel or playdates. Helps teach kids to clean up.",
+    cons: "Not large enough to hold the entire 70-piece set comfortably; intended for smaller selections."
+  },
+
+  // Play Gym (playGym)
+  "playGym::Organic Cotton Teether": {
+    pros: "100% organic cotton is safe for mouthing; the varied textures provide sensory stimulation for teething babies. Machine washable for easy cleaning.",
+    cons: "Can become misshapen after multiple washes; air-drying is recommended to maintain shape."
+  },
+  "playGym::Teething Ring": {
+    pros: "Natural rubber provides the right amount of resistance for teething relief; the ring shape is easy for babies to hold and manipulate independently.",
+    cons: "Natural rubber has a slight smell initially; needs to be aired out before first use."
+  },
+  "playGym::Black & White Card Set": {
+    pros: "High-contrast patterns are perfectly designed for newborn vision development; the variety of patterns keeps babies engaged for longer periods.",
+    cons: "Cards can get bent or creased with repeated handling; storing them flat is recommended."
+  },
+  "playGym::Play Space Cover": {
+    pros: "Transforms the gym into a cozy tent for older babies; the enclosed space provides a sense of security and encourages independent play.",
+    cons: "Requires adult assembly each time; some parents find it cumbersome to set up and take down regularly."
+  },
+  "playGym::High-Contrast Ball": {
+    pros: "The absolute favorite for newborns; the black and white patterns are highly engaging for visual development. Soft texture is perfect for early grasping.",
+    cons: "Collects lint easily due to the organic cotton fabric; requires frequent lint-rolling."
+  },
+  "playGym::Batting Ring": {
+    pros: "Encourages reaching and hand-eye coordination; the gentle bell sound provides immediate auditory feedback for the baby's efforts.",
+    cons: "The bell is enclosed and cannot be removed for silent play; might be loud for some parents over time."
+  },
+  "playGym::The Play Guide": {
+    pros: "Invaluable resource for parents; provides month-by-month activity ideas backed by child development research. Helps maximize the gym's value.",
+    cons: "Primarily focused on the first year; less relevant once the child is a toddler (except for tent mode)."
+  }
 };
 
 /**

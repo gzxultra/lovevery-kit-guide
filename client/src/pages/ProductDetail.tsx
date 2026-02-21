@@ -17,6 +17,8 @@ import { AlternativesSection } from "@/components/AlternativesSection";
 import { RewardBanner } from "@/components/RewardBanner";
 import { RecommendedReading } from "@/components/RecommendedReading";
 import { ShareSection } from "@/components/ShareSection";
+import { getToyImage } from "@/data/toyImages";
+import { getToyReview } from "@/data/toyReviews";
 import { trackEvent } from "@/lib/analytics";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -63,6 +65,8 @@ const ToyCard = memo(function ToyCard({
   const i18n = useI18n();
 
   const toyAlternatives = getToyAlternatives(productId, toy.englishName);
+  const toyImage = getToyImage(productId, toy.englishName);
+  const review = getToyReview(productId, toy.englishName);
 
   const toyName = lang === "cn" ? convert(toy.name) : toy.englishName;
   const toySubName = lang === "cn" ? toy.englishName : convert(toy.name);
@@ -71,7 +75,7 @@ const ToyCard = memo(function ToyCard({
   const parentRev = lang === "en" && toy.parentReviewEn ? toy.parentReviewEn : convert(toy.parentReview || "");
   const category = lang === "en" && toy.categoryEn ? toy.categoryEn : convert(toy.category || "");
 
-  const hasDetails = !!(toy.developmentGoal && toy.parentReview);
+  const hasDetails = !!(toy.developmentGoal && (toy.parentReview || review));
 
   // Hover with debounce for desktop only — same as KitDetail
   const handleMouseEnter = () => {
@@ -128,13 +132,30 @@ const ToyCard = memo(function ToyCard({
       {/* Toy Header */}
       <div className="p-4 sm:p-6 pb-3 sm:pb-4">
         <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-5">
-          {/* Number badge — matches KitDetail fallback (no toy image) */}
-          <div
-            className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 text-lg sm:text-xl font-display text-white mx-auto sm:mx-0"
-            style={{ backgroundColor: productColor }}
-          >
-            {index + 1}
-          </div>
+          {/* Toy Image or Number badge — matches KitDetail exactly */}
+          {toyImage ? (
+            <div className="relative w-full sm:w-24 sm:h-24 rounded-lg sm:rounded-xl overflow-hidden bg-[#F9F6F2] group-hover:scale-105 transition-transform duration-500">
+              <img
+                src={toyImage}
+                alt={toyName}
+                className="w-full h-full object-contain p-1"
+                loading="lazy"
+              />
+              <div
+                className="absolute top-1.5 left-1.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold text-white shadow-sm"
+                style={{ backgroundColor: productColor }}
+              >
+                {index + 1}
+              </div>
+            </div>
+          ) : (
+            <div
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 text-lg sm:text-xl font-display text-white mx-auto sm:mx-0"
+              style={{ backgroundColor: productColor }}
+            >
+              {index + 1}
+            </div>
+          )}
 
           <div className="flex-1 min-w-0 w-full">
             <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -214,8 +235,33 @@ const ToyCard = memo(function ToyCard({
                     </div>
                   )}
 
-                  {/* Parent Review — styled as Pros & Cons */}
-                  {parentRev && (
+                  {/* Parent Review — styled as Pros & Cons — matches KitDetail exactly */}
+                  {review ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                      <div className="bg-[#F0F7F1] rounded-lg sm:rounded-xl p-3 sm:p-4 border border-[#E1EDE2]">
+                        <div className="flex items-center gap-2 mb-2">
+                          <ThumbsUp className="w-4 h-4 text-[#7FB685]" />
+                          <h4 className="font-bold text-[#4A6B4E] text-[10px] sm:text-xs uppercase tracking-wider">
+                            {lang === "cn" ? "优点" : "Pros"}
+                          </h4>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">
+                          {lang === "cn" ? convert(review.pros) : review.pros}
+                        </p>
+                      </div>
+                      <div className="bg-[#FFF5F5] rounded-lg sm:rounded-xl p-3 sm:p-4 border border-[#FEE2E2]">
+                        <div className="flex items-center gap-2 mb-2">
+                          <ThumbsDown className="w-4 h-4 text-[#E57373]" />
+                          <h4 className="font-bold text-[#8C4A4A] text-[10px] sm:text-xs uppercase tracking-wider">
+                            {lang === "cn" ? "缺点" : "Cons"}
+                          </h4>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">
+                          {lang === "cn" ? convert(review.cons) : review.cons}
+                        </p>
+                      </div>
+                    </div>
+                  ) : parentRev ? (
                     <div className="rounded-lg sm:rounded-xl border border-[#E8DFD3] overflow-hidden">
                       <div className="px-3 sm:px-4 py-2.5 sm:py-3 bg-gradient-to-r from-[#FAF7F2] to-[#F5F0EB] border-b border-[#E8DFD3]">
                         <p className="text-[10px] sm:text-xs font-semibold text-[#6B5E50] uppercase tracking-wider flex items-center gap-1.5">
@@ -237,7 +283,7 @@ const ToyCard = memo(function ToyCard({
                         </p>
                       </div>
                     </div>
-                  )}
+                  ) : null}
 
                   {/* Amazon Alternatives — same as KitDetail */}
                   {toyAlternatives && toyAlternatives.length > 0 && (
