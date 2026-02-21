@@ -6,7 +6,6 @@
  */
 
 import { getKitById, kits, type Toy } from "@/data/kits";
-import { i18n } from "@/data/i18n";
 import { getToyImage, getKitHeroImage, getKitToyImages } from "@/data/toyImages";
 import { getToyThumbnailUrl, getKitHeroOptimizedUrl, getLightboxImageUrl } from "@/lib/imageUtils";
 import { getToyReview } from "@/data/toyReviews";
@@ -14,6 +13,7 @@ import { getCleaningInfo } from "@/data/toyCleaningGuide";
 import { getKitSeoData } from "@/data/seoData";
 import { applyKitPageSeo, cleanupKitPageSeo } from "@/lib/seoHelpers";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useI18n } from "@/hooks/useI18n";
 import LanguageToggle from "@/components/LanguageToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -73,7 +73,8 @@ const ToyCard = memo(function ToyCard({
   const [expanded, setExpanded] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const [userInteracted, setUserInteracted] = useState(false); // Track if user manually clicked
-  const { lang } = useLanguage();
+  const { lang, t, convert } = useLanguage();
+  const i18n = useI18n();
   const toyImage = getToyImage(kitId, index);
   const isDiscontinued = (toy as any).discontinued;
   const isNew = (toy as any).isNew;
@@ -82,12 +83,12 @@ const ToyCard = memo(function ToyCard({
   const cleaningInfo = getCleaningInfo(kitId, toy.name);
   const toyAlternatives = getToyAlternatives(kitId, toy.englishName);
 
-  const toyName = lang === "cn" ? toy.name : toy.englishName;
-  const toySubName = lang === "cn" ? toy.englishName : toy.name;
-  const howToUse = lang === "en" && toy.howToUseEn ? toy.howToUseEn : toy.howToUse;
-  const devGoal = lang === "en" && toy.developmentGoalEn ? toy.developmentGoalEn : toy.developmentGoal;
-  const parentRev = lang === "en" && toy.parentReviewEn ? toy.parentReviewEn : toy.parentReview;
-  const category = lang === "en" && toy.categoryEn ? toy.categoryEn : toy.category;
+  const toyName = lang === "cn" ? convert(toy.name) : toy.englishName;
+  const toySubName = lang === "cn" ? toy.englishName : convert(toy.name);
+  const howToUse = lang === "en" && toy.howToUseEn ? toy.howToUseEn : convert(toy.howToUse);
+  const devGoal = lang === "en" && toy.developmentGoalEn ? toy.developmentGoalEn : convert(toy.developmentGoal || "");
+  const parentRev = lang === "en" && toy.parentReviewEn ? toy.parentReviewEn : convert(toy.parentReview || "");
+  const category = lang === "en" && toy.categoryEn ? toy.categoryEn : convert(toy.category || "");
 
   // Handle hover with debounce for desktop only
   const handleMouseEnter = () => {
@@ -332,11 +333,11 @@ const ToyCard = memo(function ToyCard({
                             {i18n.kitDetail.cleaningTitle[lang]}
                           </p>
                           <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium bg-[#E3EDF7] text-[#3D6B99] border border-[#C5D9ED]">
-                            {lang === "cn" ? cleaningInfo.materialCn : cleaningInfo.materialEn}
+                            {lang === "cn" ? convert(cleaningInfo.materialCn) : cleaningInfo.materialEn}
                           </span>
                         </div>
                         <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">
-                          {lang === "cn" ? cleaningInfo.cleaningCn : cleaningInfo.cleaningEn}
+                          {lang === "cn" ? convert(cleaningInfo.cleaningCn) : cleaningInfo.cleaningEn}
                         </p>
                       </div>
                     </div>
@@ -354,6 +355,7 @@ const ToyCard = memo(function ToyCard({
 /* Referral Module */
 function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) {
   const { lang } = useLanguage();
+  const i18n = useI18n();
   const purchaseUrl = getKitPurchaseUrl(kitId);
   const referralUrl = getReferralUrl();
 
@@ -414,7 +416,7 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
           </div>
 
           <p className="text-[10px] sm:text-xs text-[#B0A89E] mt-4">
-            {lang === "cn" ? `推荐码：${REFERRAL_CODE} · ` : `Referral code: ${REFERRAL_CODE} · `}
+            {t(`推荐码：${REFERRAL_CODE} · `, `Referral code: ${REFERRAL_CODE} · `)}
             {i18n.referral.disclaimer[lang]}
           </p>
         </div>
@@ -426,7 +428,8 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
 export default function KitDetail() {
   const params = useParams<{ id: string }>();
   const kit = getKitById(params.id || "");
-  const { lang } = useLanguage();
+  const { lang, t, convert } = useLanguage();
+  const i18n = useI18n();
 
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -529,9 +532,9 @@ export default function KitDetail() {
   const activeToys = kit.toys.filter((t) => !(t as any).discontinued);
   const discontinuedToys = kit.toys.filter((t) => (t as any).discontinued);
 
-  const kitDescription = lang === "en" && kit.descriptionEn ? kit.descriptionEn : kit.description;
-  const kitAgeRange = lang === "en" && kit.ageRangeEn ? kit.ageRangeEn : kit.ageRange;
-  const kitStageLabel = lang === "en" && kit.stageLabelEn ? kit.stageLabelEn : kit.stageLabel;
+  const kitDescription = lang === "en" && kit.descriptionEn ? kit.descriptionEn : convert(kit.description);
+  const kitAgeRange = lang === "en" && kit.ageRangeEn ? kit.ageRangeEn : convert(kit.ageRange);
+  const kitStageLabel = lang === "en" && kit.stageLabelEn ? kit.stageLabelEn : convert(kit.stageLabel);
 
   // Lightbox handlers
   const allToyImages = getKitToyImages(kit.id);
@@ -624,7 +627,7 @@ export default function KitDetail() {
               {/* SEO Description - Natural language text for search engines */}
               {seoData && (
                 <p className="text-sm sm:text-base text-[#6B5E50] leading-relaxed max-w-3xl mt-3 sm:mt-4 opacity-90">
-                  {lang === "cn" ? seoData.seoDescriptionCn : seoData.seoDescriptionEn}
+                  {lang === "cn" ? convert(seoData.seoDescriptionCn) : seoData.seoDescriptionEn}
                 </p>
               )}
 
@@ -670,9 +673,7 @@ export default function KitDetail() {
                   <p className="mt-2 flex items-center justify-start gap-1.5 text-[10px] sm:text-xs text-[#756A5C]/60 opacity-70">
                     <Heart className="w-3 h-3 text-[#D4A574]/50" />
                     <span>
-                      {lang === "cn"
-                        ? "通过此链接购买可享折扣，同时支持本站运营"
-                        : "Using this link supports our site & gives you a discount"}
+                      {t("通过此链接购买可享折扣，同时支持本站运营", "Using this link supports our site & gives you a discount")}
                     </span>
                   </p>
                 </div>

@@ -1,9 +1,10 @@
 import { Coffee } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import { i18n } from "../data/i18n";
+import { useI18n } from "../hooks/useI18n";
 
 export function RewardBanner() {
   const { lang } = useLanguage();
+  const i18n = useI18n();
   const t = i18n.reward;
 
   return (

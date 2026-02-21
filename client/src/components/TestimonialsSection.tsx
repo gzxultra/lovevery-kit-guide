@@ -6,7 +6,7 @@ import { getTestimonials } from "@/data/testimonials";
 import type { Testimonial } from "@/data/testimonials";
 
 export function TestimonialsSection() {
-  const { lang } = useLanguage();
+  const { lang, t, convert } = useLanguage();
   const testimonials = getTestimonials();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
@@ -46,15 +46,13 @@ export function TestimonialsSection() {
         <div className="text-center mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/70 backdrop-blur-sm border border-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
             <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            {lang === "cn" ? "家长真实好评" : "Real Parent Reviews"}
+            {t("家长真实好评", "Real Parent Reviews")}
           </div>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a1108] mb-3 sm:mb-4">
-            {lang === "cn" ? "看看其他家长怎么说" : "What Parents Love"}
+            {t("看看其他家长怎么说", "What Parents Love")}
           </h2>
           <p className="text-sm sm:text-base text-[#6B5E50] max-w-2xl mx-auto">
-            {lang === "cn"
-              ? "来自真实用户的评价，帮你了解每个玩具的真实表现和家长体验"
-              : "Authentic feedback from parents who use Lovevery kits every day"}
+            {t("来自真实用户的评价，帮你了解每个玩具的真实表现和家长体验", "Authentic feedback from parents who use Lovevery kits every day")}
           </p>
         </div>
 
@@ -77,7 +75,7 @@ export function TestimonialsSection() {
 
                 {/* Review Text */}
                 <p className="text-base sm:text-lg md:text-xl text-[#3D3229] leading-relaxed mb-6 sm:mb-8 font-medium">
-                  "{lang === "cn" ? current.reviewCn : current.reviewEn}"
+                  "{lang === "cn" ? convert(current.reviewCn) : current.reviewEn}"
                 </p>
 
                 {/* Stars */}
@@ -94,19 +92,19 @@ export function TestimonialsSection() {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pt-6 sm:pt-8 border-t border-[#F0EBE3]">
                   <div>
                     <p className="text-xs sm:text-sm text-[#756A5C] mb-1">
-                      {lang === "cn" ? "来自" : "From"}
+                      {t("来自", "From")}
                     </p>
                     <p className="text-sm sm:text-base font-semibold text-[#3D3229]">
-                      {lang === "cn" ? current.kitName : current.kitName}
+                      {current.kitName}
                     </p>
                   </div>
                   <div className="hidden sm:block w-px h-8 bg-[#E8DFD3]" />
                   <div className="sm:flex-1">
                     <p className="text-xs sm:text-sm text-[#756A5C] mb-1">
-                      {lang === "cn" ? "推荐玩具" : "Toy"}
+                      {t("推荐玩具", "Toy")}
                     </p>
                     <p className="text-sm sm:text-base font-semibold text-[#3D3229]">
-                      {lang === "cn" ? current.toyNameCn : current.toyName}
+                      {lang === "cn" ? convert(current.toyNameCn) : current.toyName}
                     </p>
                   </div>
                 </div>

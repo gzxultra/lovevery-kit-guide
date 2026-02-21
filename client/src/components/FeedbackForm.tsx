@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { i18n } from "@/data/i18n";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useI18n } from "@/hooks/useI18n";
 import { MessageSquare, Send, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqedbdyw";
@@ -9,6 +9,7 @@ type FormStatus = "idle" | "sending" | "success" | "error";
 
 export default function FeedbackForm() {
   const { lang } = useLanguage();
+  const i18n = useI18n();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

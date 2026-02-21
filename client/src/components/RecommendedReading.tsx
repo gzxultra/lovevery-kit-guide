@@ -26,7 +26,7 @@ import { trackEvent } from "@/lib/analytics";
 /* ------------------------------------------------------------------ */
 /*  i18n strings                                                       */
 /* ------------------------------------------------------------------ */
-const t = {
+const i18nStrings = {
   sectionTitle: { cn: "推荐阅读", en: "Recommended Reading" },
   sectionSubtitle: {
     cn: "精心挑选的高质量文章，帮助你更好地使用这套 Play Kit",
@@ -66,7 +66,7 @@ function ArticleCard({
   kitColor: string;
   isEditorPick: boolean;
 }) {
-  const { lang } = useLanguage();
+  const { lang, convert } = useLanguage();
   const colors = typeColors[article.articleType] || typeColors.review;
 
   const handleClick = () => {
@@ -92,7 +92,7 @@ function ArticleCard({
           style={{ backgroundColor: kitColor + "12", color: kitColor }}
         >
           <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-          {t.editorPick[lang]}
+          {lang === "cn" ? convert(i18nStrings.editorPick.cn) : i18nStrings.editorPick.en}
         </div>
       )}
 
@@ -144,7 +144,7 @@ function ArticleCard({
         {/* External link indicator */}
         <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-[#B0A89E] group-hover:text-[#9B8E7E] transition-colors">
           <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          <span>{t.opensExternal[lang]}</span>
+          <span>{lang === "cn" ? convert(i18nStrings.opensExternal.cn) : i18nStrings.opensExternal.en}</span>
         </div>
       </div>
     </a>
@@ -161,7 +161,7 @@ export function RecommendedReading({
   kitId: string;
   kitColor: string;
 }) {
-  const { lang } = useLanguage();
+  const { lang, convert } = useLanguage();
   const allArticles = getKitArticles(kitId);
   const [expanded, setExpanded] = useState(false);
   const [langFilter, setLangFilter] = useState<"all" | "en" | "zh">("all");
@@ -205,11 +205,11 @@ export function RecommendedReading({
               />
             </div>
             <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#3D3229]">
-              {t.sectionTitle[lang]}
+              {lang === "cn" ? convert(i18nStrings.sectionTitle.cn) : i18nStrings.sectionTitle.en}
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#9B8E7E] ml-9 sm:ml-11">
-            {t.sectionSubtitle[lang]}
+            {lang === "cn" ? convert(i18nStrings.sectionSubtitle.cn) : i18nStrings.sectionSubtitle.en}
           </p>
         </div>
 
@@ -236,14 +236,14 @@ export function RecommendedReading({
                 {expanded ? (
                   <>
                     <ChevronUp className="w-4 h-4" />
-                    {t.showLess[lang]}
+                    {lang === "cn" ? convert(i18nStrings.showLess.cn) : i18nStrings.showLess.en}
                   </>
                 ) : (
                   <>
                     <ChevronDown className="w-4 h-4" />
-                    {t.viewMore[lang]}
+                    {lang === "cn" ? convert(i18nStrings.viewMore.cn) : i18nStrings.viewMore.en}
                     <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#E8DFD3] text-[#6B5E50]">
-                      {remaining.length} {t.moreCount[lang]}
+                      {remaining.length} {lang === "cn" ? convert(i18nStrings.moreCount.cn) : i18nStrings.moreCount.en}
                     </span>
                   </>
                 )}
@@ -284,7 +284,7 @@ export function RecommendedReading({
                                 : undefined
                             }
                           >
-                            {label[lang]}
+                            {lang === "cn" ? convert(label.cn) : label.en}
                           </button>
                         ))}
                       </div>
@@ -302,9 +302,7 @@ export function RecommendedReading({
                       ))}
                       {filteredRemaining.length === 0 && (
                         <p className="text-center text-sm text-[#9B8E7E] py-4">
-                          {lang === "cn"
-                            ? "该语言暂无更多文章"
-                            : "No more articles in this language"}
+                          {lang === "cn" ? convert("该语言暂无更多文章") : "No more articles in this language"}
                         </p>
                       )}
                     </div>

@@ -9,7 +9,7 @@ import { alternatives } from "@/data/alternatives";
 export default function StatisticsEasterEgg() {
   const [enabled, setEnabled] = useState(false);
   const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
-  const { lang } = useLanguage();
+  const { lang, t } = useLanguage();
 
   useEffect(() => {
     const findTarget = () => {
@@ -50,7 +50,7 @@ export default function StatisticsEasterEgg() {
         <button
           onClick={() => setEnabled(true)}
           className="w-6 h-6 rounded-full transition-all duration-300 hover:scale-125 opacity-40 hover:opacity-100 flex items-center justify-center bg-[#7FB685] text-white"
-          title={lang === "cn" ? "查看网站统计" : "View Site Statistics"}
+          title={t("查看网站统计", "View Site Statistics")}
         >
           <BarChart3 className="w-3.5 h-3.5" />
         </button>,
@@ -71,7 +71,7 @@ export default function StatisticsEasterEgg() {
                 </div>
                 <div>
                   <h3 className="font-display text-lg sm:text-xl text-[#3D3229]">
-                    {lang === "cn" ? "网站数据统计" : "Site Statistics"}
+                    {t("网站数据统计", "Site Statistics")}
                   </h3>
                   <p className="text-[10px] sm:text-xs text-[#B0A89E] font-medium uppercase tracking-wider">
                     Lovevery Fans Data Center
@@ -90,37 +90,37 @@ export default function StatisticsEasterEgg() {
             <div className="p-6 sm:p-8 grid grid-cols-2 gap-4 sm:gap-6">
               <StatCard 
                 icon={<Box className="w-5 h-5" />}
-                label={lang === "cn" ? "收录 Play Kits" : "Play Kits"}
+                label={t("收录 Play Kits", "Play Kits")}
                 value={stats.totalKits}
                 color="#E8A87C"
               />
               <StatCard 
                 icon={<Zap className="w-5 h-5" />}
-                label={lang === "cn" ? "收录玩具总量" : "Total Toys"}
+                label={t("收录玩具总量", "Total Toys")}
                 value={stats.totalToys}
                 color="#7FB685"
               />
               <StatCard 
                 icon={<BookOpen className="w-5 h-5" />}
-                label={lang === "cn" ? "推荐阅读文章" : "Articles"}
+                label={t("推荐阅读文章", "Articles")}
                 value={stats.totalArticles}
                 color="#C38D9E"
               />
               <StatCard 
                 icon={<Award className="w-5 h-5" />}
-                label={lang === "cn" ? "平替方案推荐" : "Alternatives"}
+                label={t("平替方案推荐", "Alternatives")}
                 value={stats.totalAlternatives}
                 color="#6C8EAD"
               />
               <StatCard 
                 icon={<Baby className="w-5 h-5" />}
-                label={lang === "cn" ? "覆盖月龄段" : "Months Covered"}
+                label={t("覆盖月龄段", "Months Covered")}
                 value={`0-${stats.totalMonths}`}
                 color="#D4A373"
               />
               <StatCard 
                 icon={<ExternalLink className="w-5 h-5" />}
-                label={lang === "cn" ? "成长发展阶段" : "Growth Stages"}
+                label={t("成长发展阶段", "Growth Stages")}
                 value={stats.totalStages}
                 color="#8D99AE"
               />
@@ -129,9 +129,7 @@ export default function StatisticsEasterEgg() {
             {/* Footer */}
             <div className="px-8 py-5 bg-[#FAF7F2] border-t border-[#F5F0E8] text-center">
               <p className="text-xs text-[#6B5E50] leading-relaxed">
-                {lang === "cn" 
-                  ? "感谢你对 Lovevery Fans 的支持！我们致力于为家长提供最全面、最客观的玩具指南。" 
-                  : "Thank you for supporting Lovevery Fans! We are dedicated to providing the most comprehensive and objective toy guides for parents."}
+                {t("感谢你对 Lovevery Fans 的支持！我们致力为家长提供最全面、最客观的玩具指南。", "Thank you for supporting Lovevery Fans! We are dedicated to providing the most comprehensive and objective toy guides for parents.")}
               </p>
             </div>
           </div>

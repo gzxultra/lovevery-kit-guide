@@ -28,7 +28,7 @@ interface Particle {
 const EMOJIS = ["✨", "🌟", "⭐", "💫", "🎨", "🎪", "🎭", "🎨", "🧸", "🎈", "🎁", "🎀"];
 
 export default function LongPressHero() {
-  const { language } = useLanguage();
+  const { lang, convert } = useLanguage();
   const [triggered, setTriggered] = useState(false);
   const [currentMessage, setCurrentMessage] = useState("");
   const lastMessageIndexRef = useRef(-1);
@@ -66,8 +66,8 @@ export default function LongPressHero() {
     } while (randomIndex === lastMessageIndexRef.current && encouragingMessages.length > 1);
     lastMessageIndexRef.current = randomIndex;
     const message = encouragingMessages[randomIndex];
-    return language === "en" ? message.en : message.cn;
-  }, [language]);
+    return lang === "en" ? message.en : convert(message.cn);
+  }, [lang, convert]);
 
   // Spawn particles
   const spawnParticles = useCallback((x: number, y: number) => {
@@ -312,7 +312,7 @@ export default function LongPressHero() {
                 {currentMessage}
               </p>
               <p className="text-xs text-[#8B7E6F] mt-4 opacity-60">
-                {language === "en" ? "Long press to discover more" : "长按图片发现更多"}
+                {lang === "en" ? "Long press to discover more" : convert("长按图片发现更多")}
               </p>
             </div>
           </div>

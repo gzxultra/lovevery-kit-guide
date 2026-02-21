@@ -5,8 +5,8 @@
  */
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useI18n } from "@/hooks/useI18n";
 import LanguageToggle from "@/components/LanguageToggle";
-import { i18n } from "@/data/i18n";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import {
@@ -33,7 +33,8 @@ const fadeInUp = {
 };
 
 export default function AboutUs() {
-  const { lang, t } = useLanguage();
+  const { lang, t, convert } = useLanguage();
+  const i18n = useI18n();
 
   useEffect(() => {
     applyAboutPageSeo(lang);
@@ -109,7 +110,20 @@ export default function AboutUs() {
     },
   };
 
-  const c = content[lang];
+  const rawC = content[lang];
+  const c = lang === "cn" ? {
+    ...rawC,
+    pageTitle: convert(rawC.pageTitle),
+    greeting: convert(rawC.greeting),
+    para1: convert(rawC.para1),
+    para2: convert(rawC.para2),
+    para3: convert(rawC.para3),
+    siteTitle: convert(rawC.siteTitle),
+    siteDesc: convert(rawC.siteDesc),
+    closing: convert(rawC.closing),
+    backHome: convert(rawC.backHome),
+    values: rawC.values.map((v) => ({ ...v, title: convert(v.title), desc: convert(v.desc) })),
+  } : rawC;
 
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
@@ -153,7 +167,7 @@ export default function AboutUs() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#7FB685]/15 text-[#5a9e65] text-sm font-medium mb-6">
               <Heart className="w-4 h-4" />
-              {lang === "cn" ? "关于我们" : "About Us"}
+              {t("关于我们", "About Us")}
             </div>
           </motion.div>
 
@@ -294,7 +308,7 @@ export default function AboutUs() {
         >
           <Link href="/">
             <span className="inline-flex items-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-base font-medium hover:bg-[#2A231C] transition-colors active:scale-95">
-              {lang === "cn" ? "开始探索 Play Kit" : "Explore Play Kits"}
+              {t("开始探索 Play Kit", "Explore Play Kits")}
               <Sparkles className="w-4 h-4" />
             </span>
           </Link>

@@ -5,10 +5,10 @@
  */
 
 import { kits, stages } from "@/data/kits";
-import { i18n } from "@/data/i18n";
 import { getKitHeroImage } from "@/data/toyImages";
 import { getKitCardThumbnailUrl, getAccessibleTextColor } from "@/lib/imageUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useI18n } from "@/hooks/useI18n";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
 import { useState, useMemo, useRef, useEffect, lazy, Suspense } from "react";
@@ -46,15 +46,16 @@ export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
-  const { lang } = useLanguage();
+  const { lang, t } = useLanguage();
+  const i18n = useI18n();
   const [, setLocation] = useLocation();
 
   const stageLabel = (id: string) => {
-    const key = id as keyof typeof i18n.stages;
+    const key = id as string;
     return i18n.stages[key]?.[lang] ?? id;
   };
   const stageRange = (id: string) => {
-    const key = id as keyof typeof i18n.stageRanges;
+    const key = id as string;
     return i18n.stageRanges[key]?.[lang] ?? "";
   };
 
@@ -228,10 +229,10 @@ export default function Home() {
                                 </div>
                                 <div className="min-w-0">
                                   <p className="text-sm font-medium text-[#3D3229] truncate">
-                                    {lang === "cn" ? result.toyName : result.toyEnglishName}
+                                    {lang === "cn" ? t(result.toyName!, result.toyEnglishName!) : result.toyEnglishName}
                                   </p>
                                   <p className="text-xs text-[#756A5C] truncate">
-                                    {lang === "cn" ? result.toyEnglishName : result.toyName} · {result.kitName}
+                                    {lang === "cn" ? result.toyEnglishName : t(result.toyName!, result.toyEnglishName!)} · {result.kitName}
                                   </p>
                                 </div>
                               </div>
@@ -341,10 +342,10 @@ export default function Home() {
                             </div>
                             <div className="min-w-0">
                               <p className="text-sm font-medium text-[#3D3229] truncate">
-                                {lang === "cn" ? result.toyName : result.toyEnglishName}
+                                {lang === "cn" ? t(result.toyName!, result.toyEnglishName!) : result.toyEnglishName}
                               </p>
                               <p className="text-xs text-[#756A5C] truncate">
-                                {lang === "cn" ? result.toyEnglishName : result.toyName} · {result.kitName}
+                                {lang === "cn" ? result.toyEnglishName : t(result.toyName!, result.toyEnglishName!)} · {result.kitName}
                               </p>
                             </div>
                           </div>
@@ -429,7 +430,7 @@ export default function Home() {
                 </button>
                 <span className="text-xs sm:text-sm text-[#756A5C] hidden sm:inline-flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#7FB685] animate-[pulse-soft_2s_ease-in-out_infinite]" />
-                  {lang === "cn" ? "免费使用 · 无广告" : "Free & Ad-free"}
+                  {t("免费使用 · 无广告", "Free & Ad-free")}
                 </span>
               </div>
             </div>
@@ -526,7 +527,7 @@ export default function Home() {
                                 {kit.name}
                               </h3>
                               <p className="text-xs sm:text-sm text-[#5A4E42]">
-                                {lang === "cn" ? kit.ageRange : (kit.ageRangeEn || kit.ageRange)}
+                                {lang === "cn" ? t(kit.ageRange, kit.ageRangeEn || kit.ageRange) : (kit.ageRangeEn || kit.ageRange)}
                               </p>
                             </div>
                             {kitHero ? (
@@ -552,7 +553,7 @@ export default function Home() {
                           </div>
 
                           <p className="text-xs sm:text-sm text-[#5A4E42] leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
-                            {lang === "cn" ? kit.description : (kit.descriptionEn || kit.description)}
+                            {lang === "cn" ? t(kit.description, kit.descriptionEn || kit.description) : (kit.descriptionEn || kit.description)}
                           </p>
 
                           <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F0EBE3] group-hover:border-[#E8DFD3] transition-colors">
