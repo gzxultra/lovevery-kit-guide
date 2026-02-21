@@ -82,8 +82,19 @@ export interface KitSeoParams {
       rating: number | null;
       reviewCount: number | null;
       amazonUrl: string;
+      imageUrl?: string;
     }>;
   }>;
+}
+
+/**
+ * Build a priceValidUntil date string (1 year from today) for schema.org Product offers.
+ * This satisfies the Google Search Console "priceValidUntil" recommendation.
+ */
+function getPriceValidUntil(): string {
+  const d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  return d.toISOString().split("T")[0]; // e.g. "2026-02-21"
 }
 
 /**
@@ -135,32 +146,86 @@ export function applyKitPageSeo(params: KitSeoParams) {
 
   // 8. JSON-LD for alternatives as Product offers (if available)
   if (params.alternatives && params.alternatives.length > 0) {
+    const priceValidUntil = getPriceValidUntil();
     const allAlts: any[] = [];
+
     params.alternatives.forEach((toyAlt) => {
       toyAlt.alternatives.forEach((alt) => {
-        allAlts.push({
+        const priceStr = alt.price ? alt.price.replace(/[^0-9.]/g, "") || "0" : null;
+
+        const product: any = {
           "@type": "Product",
           "name": alt.name,
           "description": `Affordable alternative to Lovevery ${toyAlt.toyName}`,
           "url": alt.amazonUrl,
-          ...(alt.price ? {
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "USD",
-              "price": alt.price.replace(/[^0-9.]/g, "") || "0",
-              "availability": "https://schema.org/InStock",
-              "url": alt.amazonUrl,
+        };
+
+        // image — critical for Merchant listings; use imageUrl when available
+        if (alt.imageUrl) {
+          product["image"] = alt.imageUrl;
+        }
+
+        // aggregateRating
+        if (alt.rating != null) {
+          product["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": alt.rating.toString(),
+            "bestRating": "5",
+            "reviewCount": (alt.reviewCount || 0).toString(),
+          };
+        }
+
+        // offers — only add when price is available
+        if (priceStr) {
+          product["offers"] = {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": priceStr,
+            // priceValidUntil — recommended by Google Search Console
+            "priceValidUntil": priceValidUntil,
+            "availability": "https://schema.org/InStock",
+            "url": alt.amazonUrl,
+            // shippingDetails — recommended by Google Merchant listings
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "USD",
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "US",
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "DAY",
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 7,
+                  "unitCode": "DAY",
+                },
+              },
             },
-          } : {}),
-          ...(alt.rating != null ? {
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": alt.rating.toString(),
-              "bestRating": "5",
-              "reviewCount": (alt.reviewCount || 0).toString(),
+            // hasMerchantReturnPolicy — recommended by Google Merchant listings
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "US",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn",
             },
-          } : {}),
-        });
+          };
+        }
+
+        allAlts.push(product);
       });
     });
 

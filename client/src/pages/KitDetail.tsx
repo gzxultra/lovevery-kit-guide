@@ -478,6 +478,7 @@ export default function KitDetail() {
             rating: a.rating,
             reviewCount: a.reviewCount,
             amazonUrl: a.amazonUrl,
+            imageUrl: a.imageUrl,
           })),
         })),
       });
