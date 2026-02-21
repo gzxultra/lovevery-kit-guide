@@ -4,6 +4,8 @@
 export interface ToyReview {
   pros: string;
   cons: string;
+  prosEn?: string;
+  consEn?: string;
 }
 
 // Key format: "kitId::toyName" (toyName is the Chinese name from the toy_name field)
@@ -318,118 +320,172 @@ const reviewData: Record<string, ToyReview> = {
 
   // Music Set (musicSet)
   "musicSet::Pentatonic Pat Bells": {
-    pros: "True musical instruments with perfect pitch; the pentatonic scale ensures every note combination sounds harmonious, reducing 'noise' frustration for parents. High-quality metal and wood construction.",
-    cons: "Expensive compared to generic toy bells; individual bells can be misplaced if not kept in the tray."
+    pros: "真正的乐器，音准完美；五声音阶确保每个音符组合都和谐悦耳，减少了家长对'噪音'的烦恼。高品质金属和木材制作。",
+    prosEn: "True musical instruments with perfect pitch; the pentatonic scale ensures every note combination sounds harmonious, reducing 'noise' frustration for parents. High-quality metal and wood construction.",
+    cons: "与普通玩具铃铛相比价格较高；单个铃铛如果不放在托盘上容易丢失。",
+    consEn: "Expensive compared to generic toy bells; individual bells can be misplaced if not kept in the tray."
   },
   "musicSet::Animal Metronome": {
-    pros: "Excellent introduction to rhythm and tempo; color-coded cards make it easy for toddlers to play their first 'real' songs without reading sheet music.",
-    cons: "Cards are made of cardstock and can be bent or torn by younger toddlers; requires adult supervision for the metronome settings."
+    pros: "节奏和节拍的绝佳入门工具；彩色编码卡片让幼儿无需识谱就能演奏第一首'真正的'歌曲。",
+    prosEn: "Excellent introduction to rhythm and tempo; color-coded cards make it easy for toddlers to play their first 'real' songs without reading sheet music.",
+    cons: "卡片是纸质的，容易被较小的幼儿弯折或撕破；节拍器设置需要成人监督。",
+    consEn: "Cards are made of cardstock and can be bent or torn by younger toddlers; requires adult supervision for the metronome settings."
   },
   "musicSet::Jingle Bracelet With Wooden Handle": {
-    pros: "Beautifully crafted from natural wood; provides a gentle, crisp sound that isn't overwhelming for sensitive ears. Easy for small hands to grip.",
-    cons: "Smaller than a standard tambourine, which some older kids might find less 'impressive'."
+    pros: "天然木材精美制作；声音清脆柔和，不会让敏感的耳朵感到不适。小手容易抓握。",
+    prosEn: "Beautifully crafted from natural wood; provides a gentle, crisp sound that isn't overwhelming for sensitive ears. Easy for small hands to grip.",
+    cons: "比标准手鼓小，一些大一点的孩子可能觉得不够'气派'。",
+    consEn: "Smaller than a standard tambourine, which some older kids might find less 'impressive'."
   },
   "musicSet::Color Tab Pan Flute": {
-    pros: "Color-coded tabs make it intuitive for toddlers to learn which hole produces which sound. Real musical instrument that produces genuine notes.",
-    cons: "Requires a bit of practice to produce clean notes; younger toddlers may need help with proper blowing technique."
+    pros: "彩色标签让幼儿直观地学习哪个孔发出哪个声音。真正的乐器，能发出真实的音符。",
+    prosEn: "Color-coded tabs make it intuitive for toddlers to learn which hole produces which sound. Real musical instrument that produces genuine notes.",
+    cons: "需要一些练习才能吹出清晰的音符；较小的幼儿可能需要帮助掌握正确的吹奏技巧。",
+    consEn: "Requires a bit of practice to produce clean notes; younger toddlers may need help with proper blowing technique."
   },
   "musicSet::Simple Concertina": {
-    pros: "Compact and easy for small hands to hold; the bellows mechanism teaches cause-and-effect while producing real musical notes.",
-    cons: "Bellows can be stiff initially; takes a few uses to loosen up for easier play."
+    pros: "小巧轻便，小手容易握持；风箱机制在发出真实音符的同时教会因果关系。",
+    prosEn: "Compact and easy for small hands to hold; the bellows mechanism teaches cause-and-effect while producing real musical notes.",
+    cons: "风箱初期可能比较僵硬；需要使用几次才能变得更容易操作。",
+    consEn: "Bellows can be stiff initially; takes a few uses to loosen up for easier play."
   },
   "musicSet::Loud & Quiet Stackable Shakers": {
-    pros: "Dual-sided design teaches volume concepts naturally; the stacking feature adds an extra dimension of play beyond just shaking.",
-    cons: "The smaller shaker can be a choking hazard if the two pieces separate; supervision recommended for younger toddlers."
+    pros: "双面设计自然地教会音量概念；叠放功能在摇晃之外增加了额外的玩法维度。",
+    prosEn: "Dual-sided design teaches volume concepts naturally; the stacking feature adds an extra dimension of play beyond just shaking.",
+    cons: "如果两个部分分离，较小的摇铃可能成为窒息隐患；建议较小的幼儿在监督下使用。",
+    consEn: "The smaller shaker can be a choking hazard if the two pieces separate; supervision recommended for younger toddlers."
   },
 
   // Bath Set (bathSet)
   "bathSet::Scoop & Spin Bath Cup": {
-    pros: "The spinning mechanism is endlessly entertaining; helps develop wrist rotation and pouring skills. Easy to clean with no hidden cavities.",
-    cons: "The spinning top can be tricky to reassemble if it comes apart during vigorous play."
+    pros: "旋转机制让宝宝百玩不厌；有助于发展手腕旋转和倒水技能。没有隐藏凹槽，容易清洁。",
+    prosEn: "The spinning mechanism is endlessly entertaining; helps develop wrist rotation and pouring skills. Easy to clean with no hidden cavities.",
+    cons: "旋转顶部在剧烈玩耍时可能脱落，重新组装有一定难度。",
+    consEn: "The spinning top can be tricky to reassemble if it comes apart during vigorous play."
   },
   "bathSet::Big & Little Ducks": {
-    pros: "Classic bath toy with a developmental twist; the size comparison teaches big/little concepts naturally. Ducks are solid with no holes to trap water and mold.",
-    cons: "Ducks don't squirt water, which some children expect from rubber ducks."
+    pros: "经典洗澡玩具加入了发育启蒙元素；大小对比自然地教会大/小概念。鸭子是实心的，没有孔洞，不会积水发霉。",
+    prosEn: "Classic bath toy with a developmental twist; the size comparison teaches big/little concepts naturally. Ducks are solid with no holes to trap water and mold.",
+    cons: "鸭子不会喷水，一些孩子对橡皮鸭有喷水的期待。",
+    consEn: "Ducks don't squirt water, which some children expect from rubber ducks."
   },
   "bathSet::Shake & Splash Bath Ball": {
-    pros: "The rattle sound inside keeps babies engaged; the holes allow water to pour through, creating a sensory experience. Easy to grip for small hands.",
-    cons: "Water can get trapped inside if not dried properly; needs to be shaken out and air-dried after each use."
+    pros: "内部的摇铃声让宝宝保持兴趣；孔洞让水流过，创造感官体验。小手容易抓握。",
+    prosEn: "The rattle sound inside keeps babies engaged; the holes allow water to pour through, creating a sensory experience. Easy to grip for small hands.",
+    cons: "如果不及时晾干，水可能会滞留在内部；每次使用后需要甩干并风干。",
+    consEn: "Water can get trapped inside if not dried properly; needs to be shaken out and air-dried after each use."
   },
   "bathSet::Peek-A-Boo Boat": {
-    pros: "The hidden compartment teaches object permanence; children love discovering the hidden figure inside. Floats well and is easy to clean.",
-    cons: "The hidden figure can be difficult for younger babies to retrieve independently."
+    pros: "隐藏隔间教会物体恒存概念；孩子们喜欢发现里面隐藏的小人偶。浮力好，容易清洁。",
+    prosEn: "The hidden compartment teaches object permanence; children love discovering the hidden figure inside. Floats well and is easy to clean.",
+    cons: "较小的宝宝可能难以独立取出隐藏的小人偶。",
+    consEn: "The hidden figure can be difficult for younger babies to retrieve independently."
   },
   "bathSet::In Then Out Bath Tube": {
-    pros: "Engaging cause-and-effect toy; kids love watching the water flow through the transparent tube. Large size makes it exciting for older toddlers too.",
-    cons: "Can be bulky to store in smaller bathrooms; requires regular rinsing to prevent soap scum buildup."
+    pros: "有趣的因果关系玩具；孩子们喜欢看水流过透明管道。大尺寸对大一点的幼儿也很有吸引力。",
+    prosEn: "Engaging cause-and-effect toy; kids love watching the water flow through the transparent tube. Large size makes it exciting for older toddlers too.",
+    cons: "在较小的浴室中存放可能比较占空间；需要定期冲洗以防止肥皂垢积累。",
+    consEn: "Can be bulky to store in smaller bathrooms; requires regular rinsing to prevent soap scum buildup."
   },
   "bathSet::Fast & Slow Water Wheel": {
-    pros: "Mesmerizing visual effect; helps children understand fluid dynamics and speed. Suction cups are surprisingly strong and stay put on tiles.",
-    cons: "If water flow isn't centered, the wheel might spin inconsistently."
+    pros: "视觉效果令人着迷；帮助孩子理解流体动力学和速度。吸盘出奇地牢固，能稳稳吸附在瓷砖上。",
+    prosEn: "Mesmerizing visual effect; helps children understand fluid dynamics and speed. Suction cups are surprisingly strong and stay put on tiles.",
+    cons: "如果水流没有对准中心，水车可能转动不均匀。",
+    consEn: "If water flow isn't centered, the wheel might spin inconsistently."
   },
   "bathSet::I See You Bath Mirror": {
-    pros: "Floating design is fun for 'peek-a-boo' games in the tub; safe, shatterproof material gives parents peace of mind.",
-    cons: "Fogging can occur during hot baths; needs to be wiped down to maintain clear reflection."
+    pros: "浮动设计让浴缸里的'躲猫猫'游戏更有趣；安全防碎材质让家长放心。",
+    prosEn: "Floating design is fun for 'peek-a-boo' games in the tub; safe, shatterproof material gives parents peace of mind.",
+    cons: "热水洗澡时可能起雾；需要擦拭才能保持清晰的反射。",
+    consEn: "Fogging can occur during hot baths; needs to be wiped down to maintain clear reflection."
   },
 
   // Block Set (blockSet)
   "blockSet::Solid Wood Building Blocks": {
-    pros: "Heirloom quality wood with non-toxic finishes; the variety of shapes (70+ pieces) allows for endless creative combinations from simple towers to complex cities.",
-    cons: "Heavy box; many pieces to keep track of and clean up after play sessions."
+    pros: "传家宝级别的木质品质，无毒涂层；70多种形状的积木可以无限创意组合，从简单的塔到复杂的城市。",
+    prosEn: "Heirloom quality wood with non-toxic finishes; the variety of shapes (70+ pieces) allows for endless creative combinations from simple towers to complex cities.",
+    cons: "箱子很重；积木数量多，玩完后需要花时间整理和收纳。",
+    consEn: "Heavy box; many pieces to keep track of and clean up after play sessions."
   },
   "blockSet::Storage Box with Ramp": {
-    pros: "Brilliant multi-functional design; the box itself becomes part of the play as a shape sorter or a ramp for rolling blocks and cars.",
-    cons: "Wooden lid can be heavy for younger children to slide on and off independently."
+    pros: "出色的多功能设计；收纳箱本身可以作为形状分类器或滚动积木和小车的斜坡，成为游戏的一部分。",
+    prosEn: "Brilliant multi-functional design; the box itself becomes part of the play as a shape sorter or a ramp for rolling blocks and cars.",
+    cons: "木质盖子对较小的孩子来说可能太重，难以独立推拉。",
+    consEn: "Wooden lid can be heavy for younger children to slide on and off independently."
   },
   "blockSet::Building Planks": {
-    pros: "Versatile flat pieces that allow for more architectural builds; great for bridges and roofs. Smooth finish is safe for all ages.",
-    cons: "Can be harder for toddlers to balance compared to cubes; more suitable for 2+ year olds."
+    pros: "多功能的扁平积木，可以搭建更具建筑感的作品；非常适合搭桥和屋顶。光滑的表面对所有年龄段都安全。",
+    prosEn: "Versatile flat pieces that allow for more architectural builds; great for bridges and roofs. Smooth finish is safe for all ages.",
+    cons: "与方块相比，幼儿可能更难保持平衡；更适合2岁以上的孩子。",
+    consEn: "Can be harder for toddlers to balance compared to cubes; more suitable for 2+ year olds."
   },
   "blockSet::Assorted Shapes": {
-    pros: "Introduces geometric concepts naturally through play; the variety of shapes encourages creative problem-solving and spatial reasoning.",
-    cons: "Smaller pieces require supervision for children under 3 years old."
+    pros: "通过游戏自然地引入几何概念；多样的形状鼓励创造性问题解决和空间推理能力。",
+    prosEn: "Introduces geometric concepts naturally through play; the variety of shapes encourages creative problem-solving and spatial reasoning.",
+    cons: "较小的积木需要3岁以下儿童在监督下使用。",
+    consEn: "Smaller pieces require supervision for children under 3 years old."
   },
   "blockSet::Play People": {
-    pros: "Encourages imaginative play and storytelling; the simple wooden figures are open-ended and work with any block configuration.",
-    cons: "Minimal detail compared to plastic figures; some children may prefer more realistic-looking play people."
+    pros: "鼓励想象力游戏和讲故事；简单的木质人偶是开放式的，可以与任何积木配置搭配使用。",
+    prosEn: "Encourages imaginative play and storytelling; the simple wooden figures are open-ended and work with any block configuration.",
+    cons: "与塑料人偶相比细节较少；一些孩子可能更喜欢看起来更逼真的玩偶。",
+    consEn: "Minimal detail compared to plastic figures; some children may prefer more realistic-looking play people."
   },
   "blockSet::Threading Blocks": {
-    pros: "Develops fine motor skills and concentration; the threading activity provides a different type of challenge from stacking.",
-    cons: "String can fray with heavy use; may need replacement after extended play."
+    pros: "发展精细运动技能和专注力；穿线活动提供了与堆叠不同类型的挑战。",
+    prosEn: "Develops fine motor skills and concentration; the threading activity provides a different type of challenge from stacking.",
+    cons: "绳子在频繁使用后可能磨损；长时间使用后可能需要更换。",
+    consEn: "String can fray with heavy use; may need replacement after extended play."
   },
   "blockSet::Cotton Drawstring Bag": {
-    pros: "High-quality fabric; makes it easy to transport a subset of blocks for travel or playdates. Helps teach kids to clean up.",
-    cons: "Not large enough to hold the entire 70-piece set comfortably; intended for smaller selections."
+    pros: "高品质面料；方便携带部分积木外出旅行或参加玩伴聚会。帮助教孩子学会收拾。",
+    prosEn: "High-quality fabric; makes it easy to transport a subset of blocks for travel or playdates. Helps teach kids to clean up.",
+    cons: "不够大，无法舒适地装下全部70块积木；适合携带部分积木。",
+    consEn: "Not large enough to hold the entire 70-piece set comfortably; intended for smaller selections."
   },
 
   // Play Gym (playGym)
   "playGym::Organic Cotton Teether": {
-    pros: "100% organic cotton is safe for mouthing; the varied textures provide sensory stimulation for teething babies. Machine washable for easy cleaning.",
-    cons: "Can become misshapen after multiple washes; air-drying is recommended to maintain shape."
+    pros: "100%有机棉材质，放入口中安全；多种纹理为出牙期宝宝提供感官刺激。可机洗，清洁方便。",
+    prosEn: "100% organic cotton is safe for mouthing; the varied textures provide sensory stimulation for teething babies. Machine washable for easy cleaning.",
+    cons: "多次洗涤后可能变形；建议风干以保持形状。",
+    consEn: "Can become misshapen after multiple washes; air-drying is recommended to maintain shape."
   },
   "playGym::Teething Ring": {
-    pros: "Natural rubber provides the right amount of resistance for teething relief; the ring shape is easy for babies to hold and manipulate independently.",
-    cons: "Natural rubber has a slight smell initially; needs to be aired out before first use."
+    pros: "天然橡胶提供恰到好处的咬合阻力，缓解出牙不适；环形设计方便宝宝独立抓握和操作。",
+    prosEn: "Natural rubber provides the right amount of resistance for teething relief; the ring shape is easy for babies to hold and manipulate independently.",
+    cons: "天然橡胶初期可能有轻微气味；首次使用前需要通风散味。",
+    consEn: "Natural rubber has a slight smell initially; needs to be aired out before first use."
   },
   "playGym::Black & White Card Set": {
-    pros: "High-contrast patterns are perfectly designed for newborn vision development; the variety of patterns keeps babies engaged for longer periods.",
-    cons: "Cards can get bent or creased with repeated handling; storing them flat is recommended."
+    pros: "高对比度图案完美适合新生儿视觉发育；多样的图案能让宝宝保持更长时间的注意力。",
+    prosEn: "High-contrast patterns are perfectly designed for newborn vision development; the variety of patterns keeps babies engaged for longer periods.",
+    cons: "卡片在反复使用后可能弯折或起皱；建议平放存储。",
+    consEn: "Cards can get bent or creased with repeated handling; storing them flat is recommended."
   },
   "playGym::Play Space Cover": {
-    pros: "Transforms the gym into a cozy tent for older babies; the enclosed space provides a sense of security and encourages independent play.",
-    cons: "Requires adult assembly each time; some parents find it cumbersome to set up and take down regularly."
+    pros: "将游戏垫变成温馨的帐篷，适合大一点的宝宝；封闭空间提供安全感，鼓励独立玩耍。",
+    prosEn: "Transforms the gym into a cozy tent for older babies; the enclosed space provides a sense of security and encourages independent play.",
+    cons: "每次都需要成人组装；一些家长觉得频繁搭建和拆卸比较麻烦。",
+    consEn: "Requires adult assembly each time; some parents find it cumbersome to set up and take down regularly."
   },
   "playGym::High-Contrast Ball": {
-    pros: "The absolute favorite for newborns; the black and white patterns are highly engaging for visual development. Soft texture is perfect for early grasping.",
-    cons: "Collects lint easily due to the organic cotton fabric; requires frequent lint-rolling."
+    pros: "新生儿的绝对最爱；黑白图案对视觉发育非常有吸引力。柔软的质地非常适合早期抓握练习。",
+    prosEn: "The absolute favorite for newborns; the black and white patterns are highly engaging for visual development. Soft texture is perfect for early grasping.",
+    cons: "有机棉面料容易吸附毛絮；需要经常用粘毛器清理。",
+    consEn: "Collects lint easily due to the organic cotton fabric; requires frequent lint-rolling."
   },
   "playGym::Batting Ring": {
-    pros: "Encourages reaching and hand-eye coordination; the gentle bell sound provides immediate auditory feedback for the baby's efforts.",
-    cons: "The bell is enclosed and cannot be removed for silent play; might be loud for some parents over time."
+    pros: "鼓励伸手够取和手眼协调；柔和的铃铛声为宝宝的努力提供即时的听觉反馈。",
+    prosEn: "Encourages reaching and hand-eye coordination; the gentle bell sound provides immediate auditory feedback for the baby's efforts.",
+    cons: "铃铛是封闭的，无法取出实现静音玩耍；长期使用后声音可能让一些家长觉得吵。",
+    consEn: "The bell is enclosed and cannot be removed for silent play; might be loud for some parents over time."
   },
   "playGym::The Play Guide": {
-    pros: "Invaluable resource for parents; provides month-by-month activity ideas backed by child development research. Helps maximize the gym's value.",
-    cons: "Primarily focused on the first year; less relevant once the child is a toddler (except for tent mode)."
+    pros: "对家长来说是无价的资源；提供基于儿童发展研究的逐月活动建议。帮助最大化游戏垫的价值。",
+    prosEn: "Invaluable resource for parents; provides month-by-month activity ideas backed by child development research. Helps maximize the gym's value.",
+    cons: "主要聚焦第一年；宝宝成为幼儿后相关性降低（帐篷模式除外）。",
+    consEn: "Primarily focused on the first year; less relevant once the child is a toddler (except for tent mode)."
   }
 };
 

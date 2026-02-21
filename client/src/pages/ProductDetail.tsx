@@ -69,7 +69,6 @@ const ToyCard = memo(function ToyCard({
   const review = getToyReview(productId, toy.englishName);
 
   const toyName = lang === "cn" ? convert(toy.name) : toy.englishName;
-  const toySubName = lang === "cn" ? toy.englishName : convert(toy.name);
   const howToUse = lang === "en" && toy.howToUseEn ? toy.howToUseEn : convert(toy.howToUse);
   const devGoal = lang === "en" && toy.developmentGoalEn ? toy.developmentGoalEn : convert(toy.developmentGoal || "");
   const parentRev = lang === "en" && toy.parentReviewEn ? toy.parentReviewEn : convert(toy.parentReview || "");
@@ -169,7 +168,7 @@ const ToyCard = memo(function ToyCard({
                 </span>
               )}
             </div>
-            <p className="text-xs sm:text-sm text-[#756A5C] mb-1.5 sm:mb-2">{toySubName}</p>
+
             <span
               className="inline-block px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium"
               style={{ backgroundColor: productColor + "15", color: productColor }}
@@ -246,7 +245,7 @@ const ToyCard = memo(function ToyCard({
                           </h4>
                         </div>
                         <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">
-                          {lang === "cn" ? convert(review.pros) : review.pros}
+                          {lang === "en" && review.prosEn ? review.prosEn : convert(review.pros)}
                         </p>
                       </div>
                       <div className="bg-[#FFF5F5] rounded-lg sm:rounded-xl p-3 sm:p-4 border border-[#FEE2E2]">
@@ -257,7 +256,7 @@ const ToyCard = memo(function ToyCard({
                           </h4>
                         </div>
                         <p className="text-xs sm:text-sm text-[#4A3F35] leading-relaxed">
-                          {lang === "cn" ? convert(review.cons) : review.cons}
+                          {lang === "en" && review.consEn ? review.consEn : convert(review.cons)}
                         </p>
                       </div>
                     </div>

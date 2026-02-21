@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-18",
-  "totalArticles": 105,
+  "lastUpdated": "2026-02-21",
+  "totalArticles": 126,
   "articles": {
     "looker": [
       {
@@ -1101,6 +1101,224 @@
         "articleType": "review",
         "qualityScore": 4,
         "isEditorPick": false
+      }
+    ],
+    "musicSet": [
+      {
+        "title": "New Lovevery music set : r/ScienceBasedParenting",
+        "url": "https://www.reddit.com/r/ScienceBasedParenting/comments/1651p0r/new_lovevery_music_set/",
+        "source": "reddit.com",
+        "language": "en",
+        "description": "A Reddit thread where parents, including some with music education backgrounds, discuss the pros and cons of the Lovevery Music Set.",
+        "articleType": "discussion",
+        "qualityScore": 4,
+        "isEditorPick": true
+      },
+      {
+        "title": "Lovevery Music Set Review: Is It Worth the Money?",
+        "url": "https://twomamabears.com/lovevery-music-set-review/",
+        "source": "twomamabears.com",
+        "language": "en",
+        "description": "A detailed review from a parenting blog that breaks down the pros and cons of the Lovevery Music Set, ultimately concluding that it's a high-quality and worthwhile purchase.",
+        "articleType": "review",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "The Music Set | Instrumental Toys for Kids",
+        "url": "https://lovevery.com/products/the-music-set",
+        "source": "lovevery.com",
+        "language": "en",
+        "description": "The official product page for the Lovevery Music Set, providing details about the instruments, learning benefits, and materials.",
+        "articleType": "usage_guide",
+        "qualityScore": 5,
+        "isEditorPick": false
+      },
+      {
+        "title": "启蒙从“玩”音乐开始！Lovevery 音乐启蒙套装",
+        "url": "https://www.dealmoon.com/product/-lovevery-the-music-set/7736983",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "A Dealmoon article introducing the Lovevery Music Set and highlighting a deal on Amazon.",
+        "articleType": "chinese_guide",
+        "qualityScore": 3,
+        "isEditorPick": false
+      },
+      {
+        "title": "lovevery music set音乐盒子超长测评",
+        "url": "https://post.smzdm.com/p/an5rvgkp/",
+        "source": "smzdm.com",
+        "language": "zh",
+        "description": "A detailed review of the Lovevery Music set on the Chinese platform SMZDM.",
+        "articleType": "chinese_guide",
+        "qualityScore": 4,
+        "isEditorPick": false
+      }
+    ],
+    "bathSet": [
+      {
+        "title": "Big Kid Bath Set Review!",
+        "url": "https://www.reddit.com/r/lovevery/comments/1mkv6c9/big_kid_bath_set_review/",
+        "source": "reddit.com",
+        "language": "en",
+        "description": "A detailed review of the Lovevery Bath Set by a parent of a 3 and 5-year-old, with follow-up discussion in the comments. The reviewer finds the set to be surprisingly engaging for older children.",
+        "articleType": "discussion",
+        "qualityScore": 4,
+        "isEditorPick": true
+      },
+      {
+        "title": "Best Bath Toys for Toddlers | The Bath Set",
+        "url": "https://lovevery.com/products/the-bath-set",
+        "source": "lovevery.com",
+        "language": "en",
+        "description": "The official product page for the Lovevery Bath Set, including a description of each toy and its developmental benefits. It also includes a play guide with tips for parents.",
+        "articleType": "usage_guide",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "Lovevery’s New Baby Bath Set Makes a Splash",
+        "url": "https://thetoyinsider.com/lovevery-bath-set-launch/",
+        "source": "thetoyinsider.com",
+        "language": "en",
+        "description": "A news article from The Toy Insider announcing the launch of the Lovevery Bath Set. It provides a good overview of the set's contents and intended purpose.",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Non sponsored review of the lovevery bath set! #bathset",
+        "url": "https://www.youtube.com/shorts/rscNzIlE22Y",
+        "source": "youtube.com",
+        "language": "en",
+        "description": "A short, non-sponsored video review of the Lovevery Bath Set. The reviewer is enthusiastic about the product and highlights the features of each toy.",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "蒙特梭利式玩具Lovevery介绍及平价替代 (0-1岁）",
+        "url": "https://www.dealmoon.com/guide/932696",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "A detailed guide in Chinese that introduces Lovevery toys and provides suggestions for more affordable alternatives available on Amazon. It explains the Montessori principles behind the toys.",
+        "articleType": "chinese_guide",
+        "qualityScore": 4,
+        "isEditorPick": false
+      }
+    ],
+    "blockSet": [
+      {
+        "title": "Lovevery Block Set Review: I’m Confident That This Block Set Will Stand the Test of Time",
+        "url": "https://www.thequalityedit.com/articles/lovevery-block-set-review",
+        "source": "thequalityedit.com",
+        "language": "en",
+        "description": "A detailed review of the Lovevery Block Set, highlighting its durability, versatility, and developmental benefits for toddlers.",
+        "articleType": "review",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "Lovevery Block Set Review: Is it worth it?",
+        "url": "https://www.reviewed.com/parenting/features/lovevery-block-set-review-is-it-worth-it",
+        "source": "reviewed.com",
+        "language": "en",
+        "description": "A comprehensive review of the Lovevery Block Set, discussing its features, pros, and cons, and whether it's a worthwhile investment for families.",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery Block Set",
+        "url": "https://www.reddit.com/r/beyondthebump/comments/hxfi7d/lovevery_block_set/",
+        "source": "reddit.com",
+        "language": "en",
+        "description": "A Reddit discussion where parents share their opinions and experiences with the Lovevery Block Set, debating its value and comparing it to other options.",
+        "articleType": "discussion",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery积木盒🎁开箱测评➕20种玩法合集💡",
+        "url": "https://www.dealmoon.com/post/1692889",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "A Chinese-language unboxing and review of the Lovevery Block Set, showcasing over 20 different ways to play with the blocks.",
+        "articleType": "chinese_guide",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "Lovevery block set or magnatiles",
+        "url": "https://community.whattoexpect.com/forums/october-2020-babies/topic/lovevery-block-set-or-magnatiles-138527858.html",
+        "source": "community.whattoexpect.com",
+        "language": "en",
+        "description": "A forum discussion where parents compare the Lovevery Block Set to Magnatiles, sharing their experiences and preferences.",
+        "articleType": "comparison",
+        "qualityScore": 4,
+        "isEditorPick": false
+      }
+    ],
+    "playGym": [
+      {
+        "title": "Lovevery Play Gym - is it worth it?",
+        "url": "https://www.reddit.com/r/NewParents/comments/1ajs4l0/lovevery_play_gym_is_it_worth_it/",
+        "source": "reddit.com",
+        "language": "en",
+        "description": "A Reddit discussion where parents share their experiences and opinions on whether the Lovevery Play Gym is worth the price. It offers a variety of viewpoints, both positive and negative.",
+        "articleType": "discussion",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Unsponsored Lovevery Play Gym Review {July 2020 Update)",
+        "url": "https://fairlycurated.com/blog/2019/6/26/unsponsored-lovevery-play-gym-mat-review-promo-code",
+        "source": "fairlycurated.com",
+        "language": "en",
+        "description": "An in-depth, unsponsored review of the Lovevery Play Gym, updated over a year of use. The author discusses the pros and cons, and ultimately concludes that it's a worthwhile purchase.",
+        "articleType": "review",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "The One-and-Done Toy for Baby—Lovevery Play Gym Review",
+        "url": "https://projectnursery.com/2018/11/lovevery-play-gym-review/",
+        "source": "projectnursery.com",
+        "language": "en",
+        "description": "A positive review of the Lovevery Play Gym, highlighting its design, developmental benefits, and the included activity guide. The author considers it a great gift for new parents.",
+        "articleType": "review",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "I Used the Lovevery Play Gym for a Year – Here's What I Think",
+        "url": "https://twomamabears.com/i-used-the-lovevery-play-gym-for-a-year-heres-what-i-think/",
+        "source": "twomamabears.com",
+        "language": "en",
+        "description": "A comprehensive review based on a year of using the Lovevery Play Gym. The author provides a detailed breakdown of the pros and cons and concludes that it is worth it if purchased early in a baby's life.",
+        "articleType": "review",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "Lovevery宝宝健身垫，买了不吃亏，买了不上当",
+        "url": "https://www.dealmoon.com/guide/945997",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "A detailed guide and review of the Lovevery Play Gym in Chinese. The author explains the Montessori principles behind the toy and how to use it at different stages of a baby's development.",
+        "articleType": "chinese_guide",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "The Play Gym | Baby Activity & Tummy Time Mat",
+        "url": "https://lovevery.com/products/the-play-gym",
+        "source": "lovevery.com",
+        "language": "en",
+        "description": "The official product page for the Lovevery Play Gym. It provides a comprehensive overview of the product's features, developmental zones, and included accessories, along with a play guide.",
+        "articleType": "usage_guide",
+        "qualityScore": 5,
+        "isEditorPick": true
       }
     ]
   }
