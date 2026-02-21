@@ -227,11 +227,11 @@ const reviewData: Record<string, ToyReview> = {
   },
 
   // The Free Spirit (free-spirit)
-  "free-spirit::带锁的木制露营车": {
+  "freeSpirit::带锁的木制露营车": {
     pros: "假装游戏的高级进阶。内部空间设计合理，结合了锁扣和场景模拟，耐玩度极高。",
     cons: "体积较大，且木制露营车边缘较硬，孩子在玩耍时如果不小心磕碰到会比较疼。",
   },
-  "free-spirit::实木堆叠鹅卵石": {
+  "freeSpirit::实木堆叠鹅卵石": {
     pros: "不规则形状增加了堆叠难度，极度考验专注力和手部平衡。视觉上具有天然美感。",
     cons: "实木块较重，如果堆叠过高倒塌，砸到脚会很疼，且声音巨大。",
   },
@@ -257,11 +257,11 @@ const reviewData: Record<string, ToyReview> = {
   },
 
   // The Problem Solver (problem-solver)
-  "problem-solver::蒙氏数学棒和数字卡片": {
+  "problemSolver::蒙氏数学棒和数字卡片": {
     pros: "将抽象的数字与长度具象化，是理解“数与量”关系的黄金教具。打磨精良。",
     cons: "内容相对枯燥，如果家长不参与互动，孩子可能很快会将其当成普通积木玩。",
   },
-  "problem-solver::液体颜色实验室": {
+  "problemSolver::液体颜色实验室": {
     pros: "视觉冲击力强，通过混合三原色创造新颜色，科学原理一目了然。孩子非常着迷。",
     cons: "需要准备大量清水和色素（虽然自带，但消耗快），且清理色水的过程比较繁琐。",
   },

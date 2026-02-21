@@ -416,11 +416,6 @@ export default function ProductDetail() {
           "returnFees": "https://schema.org/FreeReturn",
         },
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": product.rating,
-        "reviewCount": product.reviewCount,
-      },
     };
 
     let script = document.querySelector('script[data-seo-id="product-jsonld"]') as HTMLScriptElement | null;
@@ -681,7 +676,7 @@ export default function ProductDetail() {
       </section>
 
       {/* Recommended Reading — same position as KitDetail (before Referral) */}
-      <RecommendedReading />
+      <RecommendedReading kitId={product.id} kitColor={product.color} />
 
       {/* Referral + Reward — same as KitDetail */}
       <section className="pb-10 sm:pb-16">

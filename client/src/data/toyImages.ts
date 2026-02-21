@@ -223,11 +223,10 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
       "https://images.ctfassets.net/0sea1vycfyqy/5UqXVMNYzqwQwJyq3uTwnh/520670d7fac9e4d7451eb9e1b2e2ef57/Kit18_VisualRecipeCards-ISO.20240229161047908.png",
       "https://images.ctfassets.net/0sea1vycfyqy/ytNB14ritsdLyRb5zhkVB/afa2a3d11e9ef42ef7c3cb4d1b0e3214/Kit18_ColorTheoryPuzzle-ISO.20230607202934284.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5qIDJWfwDCe97SBijcyCbS/1a418140efece1ca2bd7fc49a80f4b51/Kit18_FirstSewingKit-ISO.20230607175218190.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/5UqXVMNYzqwQwJyq3uTwnh/520670d7fac9e4d7451eb9e1b2e2ef57/Kit18_VisualRecipeCards-ISO.20240229161047908.png",
     ],
   },
   "connector": {
-    heroImage: "https://lovevery.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2F0sea1vycfyqy%2F1wjOoJa4f9vlcpFNXCsNt2%2Ffa6b39d6a706f7f7ed236342eb586dc4%2F605A0139_BH_Edit.square.jpg&w=3840&q=75&dpl=dpl_2uLX9CcVr4kk6cNSn5gFnHzSGLaj",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/1wjOoJa4f9vlcpFNXCsNt2/fa6b39d6a706f7f7ed236342eb586dc4/605A0139_BH_Edit.square.jpg",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/59rkekERfs4maKQibz2mqQ/49a5f1d9522a9f67ffe78806dc3ae977/2022_07_05_Ball-Run_Studio_4-Year-Old_ISOs_12412_v6.webp",
       "https://images.ctfassets.net/0sea1vycfyqy/1RxNFWzTDJqJ6UfuF9GayD/d043d3f8c95605f101e591298b6ce8ec/2022_08_15_Subatizing-Box_14-yr-old_ISO_S_0220_v2.webp",
@@ -235,7 +234,6 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
       "https://images.ctfassets.net/0sea1vycfyqy/2q4BGlMaDDhYLNLmFs0io7/38e129f686b68e0b457bb24f4239a240/2023_04_13_4YO_Group_ISO_11350_v2.png",
       "https://images.ctfassets.net/0sea1vycfyqy/3FovbFnxRTrNRRo7upvAkl/b23ea95df1d7517394c6f396ff466be3/2022_10_01_ISOs_S_0225_v4_a87014a4-8da0-4cb3-beb7-0eff16d4eb4f.webp",
       "https://images.ctfassets.net/0sea1vycfyqy/7FgCeBKtKTOZ6nNu9Ruk3P/b2ac9d7386857b418651ad4c57192e29/2023_04_13_4YO_Group_ISO_11294_v2.png",
-      "https://images.ctfassets.net/0sea1vycfyqy/3FovbFnxRTrNRRo7upvAkl/b23ea95df1d7517394c6f396ff466be3/2022_10_01_ISOs_S_0225_v4_a87014a4-8da0-4cb3-beb7-0eff16d4eb4f.webp",
     ],
   },
   "examiner": {
@@ -263,7 +261,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "planner": {
-    heroImage: "https://downloads.ctfassets.net/0sea1vycfyqy/165wPmsVvIAXoo6Zedq6Hf/73e4f2ac765d5e8c9e4c05cc933bd0f6/2023_04_13_4YO_Group_ISO_ThePlanner_11217_v3.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/165wPmsVvIAXoo6Zedq6Hf/73e4f2ac765d5e8c9e4c05cc933bd0f6/2023_04_13_4YO_Group_ISO_ThePlanner_11217_v3.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/6v55I0UjwCRdVDyUMML1ga/59959fedfb9864e74d3dd07623763de1/2022_08_18_4-yr-old_S_1138_v8.webp",
       "https://images.ctfassets.net/0sea1vycfyqy/5TnhYjB2cozsRsi1ZvWyqh/98f9b889a2f149074e9a0c1eae2285e2/2022_07_05_Ball-Run_Studio_4-Year-Old_ISOs_12434_v3.webp",

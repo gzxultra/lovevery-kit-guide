@@ -618,7 +618,7 @@ export default function KitDetail() {
               </div>
 
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1108] tracking-tight leading-[1.1] mb-6 sm:mb-8">
-                {kit.name[lang]}
+                {kit.name}
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-[#3D3229] leading-relaxed max-w-3xl">
@@ -633,7 +633,7 @@ export default function KitDetail() {
               )}
 
               {/* View on Lovevery Official Site Button */}
-              {(kit.officialUrl || true) && (
+              {kit.officialUrl && (
                 <div className="mt-5 sm:mt-6">
                   <a
                     href={(() => {
