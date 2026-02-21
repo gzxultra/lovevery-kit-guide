@@ -138,12 +138,6 @@ const ToyCard = memo(function ToyCard({
 
           <div className="flex-1 min-w-0 w-full">
             <div className="flex items-center gap-2 mb-1 flex-wrap">
-              <span
-                className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full text-[10px] sm:text-xs font-bold text-white shrink-0"
-                style={{ backgroundColor: productColor }}
-              >
-                {index + 1}
-              </span>
               <h3 className="font-display text-base sm:text-xl text-[#3D3229] leading-snug">
                 {toyName}
               </h3>
