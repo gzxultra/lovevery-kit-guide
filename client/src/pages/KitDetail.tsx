@@ -354,7 +354,7 @@ const ToyCard = memo(function ToyCard({
 
 /* Referral Module */
 function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) {
-  const { lang } = useLanguage();
+  const { lang, t } = useLanguage();
   const i18n = useI18n();
   const purchaseUrl = getKitPurchaseUrl(kitId);
   const referralUrl = getReferralUrl();
@@ -645,8 +645,8 @@ export default function KitDetail() {
                     rel="noopener noreferrer"
                     onClick={() => {
                       trackEvent("lovevery_referral_click", {
-                        kit_name: kitId,
-                        kit_id: kitId,
+                        kit_name: kit.id,
+                        kit_id: kit.id,
                         page_url: typeof window !== "undefined" ? window.location.href : "",
                         link_type: "kit_header"
                       });
