@@ -542,16 +542,6 @@
         "toyNameCn": "第一个拼图",
         "alternatives": [
           {
-            "name": "Melissa & Doug First Shapes Jumbo Knob Puzzle",
-            "asin": "B00005R56D",
-            "price": null,
-            "rating": 4.8,
-            "reviewCount": 25000,
-            "amazonUrl": "https://www.amazon.com/dp/B00005R56D?tag=loveveryfans-20",
-            "reasonEn": "A classic wooden peg puzzle with jumbo knobs, great for developing fine motor skills and shape recognition.",
-            "reasonCn": "经典的木制钉子拼图，带有超大旋钮，非常适合发展精细运动技能和形状识别能力。"
-          },
-          {
             "name": "HEADU Montessori First Puzzle The Farm",
             "asin": "B0769Z8NTQ",
             "price": "$38.",
@@ -764,7 +754,7 @@
             "price": "$15.99",
             "rating": 4.6,
             "reviewCount": 800,
-            "imageUrl": "",
+            "imageUrl": "https://m.media-amazon.com/images/I/51HlaRD8bNL.jpg",
             "amazonUrl": "https://www.amazon.com/dp/B08GJFV9MP",
             "reasonEn": "A Montessori egg and cup set that helps babies practice hand-eye coordination and understand object permanence. Widely recommended as a direct Lovevery Egg Cup alternative.",
             "reasonCn": "蒙氏蛋杯套装，帮助宝宝练习手眼协调和理解物体恒存。被广泛推荐为Lovevery蛋杯的直接平替。"
@@ -775,7 +765,7 @@
             "price": "$12.99",
             "rating": 4.5,
             "reviewCount": 500,
-            "imageUrl": "",
+            "imageUrl": "https://m.media-amazon.com/images/I/71tSNqm68vL.jpg",
             "amazonUrl": "https://www.amazon.com/dp/B0BWMQWTBS",
             "reasonEn": "A wooden Montessori egg and cup set perfect for 9-10 month olds. Helps develop concentration, coordination, and the understanding that objects fit into specific spaces.",
             "reasonCn": "木制蒙氏蛋杯套装，非常适合9-10个月宝宝。帮助发展专注力、协调性和理解物体适配特定空间的概念。"
@@ -900,7 +890,8 @@
             "reviewCount": 100,
             "amazonUrl": "https://www.amazon.com/dp/B0BWMQWTBS?tag=loveveryfans-20",
             "reasonEn": "This is a good alternative because it is a Montessori toy that helps with counting and fine motor skills.",
-            "reasonCn": "这是一个很好的替代品，因为它是一款蒙特梭利玩具，有助于学习计数和精细运动技能。"
+            "reasonCn": "这是一个很好的替代品，因为它是一款蒙特梭利玩具，有助于学习计数和精细运动技能。",
+            "imageUrl": "https://m.media-amazon.com/images/I/71tSNqm68vL.jpg"
           }
         ]
       },
@@ -955,7 +946,8 @@
             "reviewCount": 91,
             "amazonUrl": "https://www.amazon.com/dp/B08P4D4CY4?tag=loveveryfans-20",
             "reasonEn": "This is a good alternative because it is a Montessori toy that helps develop the pincer grasp and fine motor skills.",
-            "reasonCn": "这是一个很好的替代品，因为它是一款蒙特梭利玩具，有助于锻炼捏握和精细运动技能。"
+            "reasonCn": "这是一个很好的替代品，因为它是一款蒙特梭利玩具，有助于锻炼捏握和精细运动技能。",
+            "imageUrl": "https://m.media-amazon.com/images/I/513yuoG0MmL.jpg"
           }
         ]
       },
@@ -971,7 +963,8 @@
             "reviewCount": 724,
             "amazonUrl": "https://www.amazon.com/dp/B0BB21RL9W?tag=loveveryfans-20",
             "reasonEn": "This is a good alternative because it provides a variety of textures for sensory exploration, similar to the concept of opposites.",
-            "reasonCn": "这是一个很好的替代品，因为它提供了多种纹理，可用于感官探索，类似于相反的概念。"
+            "reasonCn": "这是一个很好的替代品，因为它提供了多种纹理，可用于感官探索，类似于相反的概念。",
+            "imageUrl": "https://m.media-amazon.com/images/I/51Mti+wSRgL.jpg"
           }
         ]
       }
@@ -1044,7 +1037,8 @@
             "reviewCount": 1321,
             "amazonUrl": "https://www.amazon.com/dp/B07PG83R8H?tag=loveveryfans-20",
             "reasonEn": "This is a good alternative because it is a wooden circle puzzle with knobs, which helps with fine motor skills and shape recognition.",
-            "reasonCn": "这是一个很好的替代品，因为它是一个带把手的木制圆形拼图，有助于精细运动技能和形状识别。"
+            "reasonCn": "这是一个很好的替代品，因为它是一个带把手的木制圆形拼图，有助于精细运动技能和形状识别。",
+            "imageUrl": "https://m.media-amazon.com/images/I/81pxcxQoGLL.jpg"
           }
         ]
       },
@@ -1060,7 +1054,8 @@
             "reviewCount": 853,
             "amazonUrl": "https://www.amazon.com/dp/B09KGQWFPR?tag=loveveryfans-20",
             "reasonEn": "This is a great alternative as it includes a coin box, carrot harvesting, and a matchstick drop game, covering all the play patterns of the Lovevery toy.",
-            "reasonCn": "这是一个很棒的替代品，因为它包括一个投币盒、胡萝卜收获和火柴棒掉落游戏，涵盖了Lovevery玩具的所有玩法。"
+            "reasonCn": "这是一个很棒的替代品，因为它包括一个投币盒、胡萝卜收获和火柴棒掉落游戏，涵盖了Lovevery玩具的所有玩法。",
+            "imageUrl": "https://m.media-amazon.com/images/I/513yuoG0MmL.jpg"
           }
         ]
       },
@@ -1118,7 +1113,7 @@
             "price": "$22.95",
             "rating": 4.5,
             "reviewCount": 1500,
-            "imageUrl": "",
+            "imageUrl": "https://m.media-amazon.com/images/I/513yuoG0MmL.jpg",
             "amazonUrl": "https://www.amazon.com/dp/B09KGQWFPR",
             "reasonEn": "A 3-in-1 Montessori play kit that includes posting activities with different shaped lids. Widely recommended as a Lovevery Babbler Kit alternative by parenting blogs.",
             "reasonCn": "3合1蒙氏玩具套装，包含不同形状盖子的投放活动。被育儿博客广泛推荐为Lovevery Babbler Kit的平替。"
@@ -1209,7 +1204,8 @@
             "reviewCount": 3000,
             "amazonUrl": "https://www.amazon.com/dp/B08DKLRYTD?tag=loveveryfans-20",
             "reasonEn": "A more affordable option with a large number of beads and various shapes, including animals and fruits.",
-            "reasonCn": "一个更实惠的选择，有大量的珠子和各种形状，包括动物和水果。"
+            "reasonCn": "一个更实惠的选择，有大量的珠子和各种形状，包括动物和水果。",
+            "imageUrl": "https://m.media-amazon.com/images/I/81zUc-HYouL.jpg"
           },
           {
             "name": "Melissa & Doug Primary Lacing Beads",
@@ -1236,7 +1232,8 @@
             "reviewCount": 2,
             "amazonUrl": "https://www.amazon.com/dp/B0BHY3LDGF?tag=loveveryfans-20",
             "reasonEn": "A set of 3 Montessori stereognostic bags with a silky interior lining, which is ideal for sensory exploration.",
-            "reasonCn": "一套 3 个蒙特梭利立体感应袋，内有丝滑衬里，非常适合感官探索。"
+            "reasonCn": "一套 3 个蒙特梭利立体感应袋，内有丝滑衬里，非常适合感官探索。",
+            "imageUrl": "https://m.media-amazon.com/images/I/41jEPQs+UIL.jpg"
           },
           {
             "name": "Adena Montessori 3D Geometry Miniature Set in Mystery Bag",
@@ -1246,7 +1243,8 @@
             "reviewCount": 100,
             "amazonUrl": "https://www.amazon.com/dp/B075GGFSL4?tag=loveveryfans-20",
             "reasonEn": "This set includes a mystery bag and 10 pairs of wooden geometric shapes, providing a complete stereognostic activity.",
-            "reasonCn": "该套装包括一个神秘袋和 10 对木制几何形状，提供完整的立体感应活动。"
+            "reasonCn": "该套装包括一个神秘袋和 10 对木制几何形状，提供完整的立体感应活动。",
+            "imageUrl": "https://m.media-amazon.com/images/I/71CKHwutZGL.jpg"
           }
         ]
       },
@@ -1390,13 +1388,13 @@
         "toyNameCn": "棉布动物口袋",
         "alternatives": [
           {
-            "asin": "B07BFMF3PL",
+            "asin": "B00F1UPFF4",
             "name": "Melissa & Doug K's Kids Match and Build Soft Blocks Set",
             "price": "$19.99",
             "rating": 4.6,
             "reviewCount": 2000,
-            "imageUrl": "",
-            "amazonUrl": "https://www.amazon.com/dp/B00BQER7QK",
+            "imageUrl": "https://m.media-amazon.com/images/I/71-wp6V4h4L.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B00F1UPFF4?tag=loveveryfans-20",
             "reasonEn": "Soft fabric blocks with hidden animal friends inside pockets. Develops fine motor skills through opening, closing, and matching activities - similar to the Quilted Critter Pockets concept.",
             "reasonCn": "柔软布料积木，口袋里藏着小动物朋友。通过打开、关闭和匹配活动锻炼精细运动技能——与绒毛口袋概念类似。"
           }
@@ -1497,7 +1495,8 @@
             "reviewCount": 100,
             "amazonUrl": "https://www.amazon.com/dp/B0CYK34ZTF?tag=loveveryfans-20",
             "reasonEn": "A set of colorful felt stars, similar to the ones in the Lovevery kit, perfect for sorting and other activities.",
-            "reasonCn": "一套彩色毛毡星星，类似于Lovevery套件中的星星，非常适合分类和其他活动。"
+            "reasonCn": "一套彩色毛毡星星，类似于Lovevery套件中的星星，非常适合分类和其他活动。",
+            "imageUrl": "https://m.media-amazon.com/images/I/31fkM86QV3L.jpg"
           }
         ]
       },
@@ -1530,7 +1529,8 @@
             "reviewCount": 50,
             "amazonUrl": "https://www.amazon.com/dp/B0BHY3LDGF?tag=loveveryfans-20",
             "reasonEn": "A Montessori-style mystery bag with a drawstring, perfect for sensory activities and storing small toys.",
-            "reasonCn": "一款蒙特梭利风格的神秘抽绳袋，非常适合感官活动和存放小玩具。"
+            "reasonCn": "一款蒙特梭利风格的神秘抽绳袋，非常适合感官活动和存放小玩具。",
+            "imageUrl": "https://m.media-amazon.com/images/I/41jEPQs+UIL.jpg"
           }
         ]
       },
@@ -2373,7 +2373,8 @@
             "reviewCount": 4000,
             "amazonUrl": "https://www.amazon.com/dp/B08B4G38SK?tag=loveveryfans-20",
             "reasonEn": "This is a highly-rated and popular beginner's sewing kit for kids. It comes with everything needed to create several cute projects, making it a great alternative to the Lovevery sewing kit.",
-            "reasonCn": "这是一个评价很高且受欢迎的儿童初学者缝纫套件。它配备了创建几个可爱项目所需的一切，使其成为Lovevery缝纫套件的绝佳替代品。"
+            "reasonCn": "这是一个评价很高且受欢迎的儿童初学者缝纫套件。它配备了创建几个可爱项目所需的一切，使其成为Lovevery缝纫套件的绝佳替代品。",
+            "imageUrl": "https://m.media-amazon.com/images/I/814CNbCR9WL.jpg"
           }
         ]
       },
@@ -2400,7 +2401,8 @@
             "reviewCount": 48000,
             "amazonUrl": "https://www.amazon.com/dp/B00LAX52IQ?tag=loveveryfans-20",
             "reasonEn": "This is a highly-rated and affordable pocket microscope with a strong zoom, making it a great alternative for scientific exploration.",
-            "reasonCn": "这是一款评价很高且价格实惠的袖珍显微镜，具有强大的变焦功能，是科学探索的绝佳替代品。"
+            "reasonCn": "这是一款评价很高且价格实惠的袖珍显微镜，具有强大的变焦功能，是科学探索的绝佳替代品。",
+            "imageUrl": "https://m.media-amazon.com/images/I/81O1wy5CxTL.jpg"
           }
         ]
       },
@@ -2416,7 +2418,8 @@
             "reviewCount": 5000,
             "amazonUrl": "https://www.amazon.com/dp/B079JXMZHM?tag=loveveryfans-20",
             "reasonEn": "This set of prepared slides provides a variety of specimens for kids to explore with a microscope, offering a similar experience to the Lovevery slide wheels.",
-            "reasonCn": "这套预制幻灯片为孩子们提供了多种标本，供他们用显微镜探索，提供了与Lovevery幻灯片轮类似的体验。"
+            "reasonCn": "这套预制幻灯片为孩子们提供了多种标本，供他们用显微镜探索，提供了与Lovevery幻灯片轮类似的体验。",
+            "imageUrl": "https://m.media-amazon.com/images/I/51db7olsZ3L.jpg"
           }
         ]
       },
@@ -2527,7 +2530,8 @@
             "reviewCount": 2000,
             "amazonUrl": "https://www.amazon.com/dp/B07W6L442V?tag=loveveryfans-20",
             "reasonEn": "This magnetic visual schedule is a great alternative to the Daily Helper Board. It helps children visualize their daily routines and chores, promoting responsibility and independence.",
-            "reasonCn": "这款磁性可视化日程表是每日帮手板的绝佳替代品。它可以帮助孩子们将日常事务和家务活可视化，培养责任感和独立性。"
+            "reasonCn": "这款磁性可视化日程表是每日帮手板的绝佳替代品。它可以帮助孩子们将日常事务和家务活可视化，培养责任感和独立性。",
+            "imageUrl": "https://m.media-amazon.com/images/I/81gXxDiDvOL.jpg"
           }
         ]
       },
@@ -2554,7 +2558,8 @@
             "reviewCount": 92,
             "amazonUrl": "https://www.amazon.com/dp/B0DM4CQ5RB?tag=loveveryfans-20",
             "reasonEn": "This is a great alternative to the Lovevery Plan Ahead Week Board. It is a magnetic weekly planner that comes with 237 magnets, a storage box, easels, hooks, a cord, and a pen. It is a great way to help kids learn about planning and organization. It is also a great tool for helping kids with their daily routines.",
-            "reasonCn": "这是 Lovevery 一周计划板的一个很好的替代品。它是一个磁性周计划表，配有 237 个磁铁、一个储物盒、画架、挂钩、一根绳子和一支笔。这是帮助孩子学习计划和组织的好方法。它也是帮助孩子完成日常事务的好工具。"
+            "reasonCn": "这是 Lovevery 一周计划板的一个很好的替代品。它是一个磁性周计划表，配有 237 个磁铁、一个储物盒、画架、挂钩、一根绳子和一支笔。这是帮助孩子学习计划和组织的好方法。它也是帮助孩子完成日常事务的好工具。",
+            "imageUrl": "https://m.media-amazon.com/images/I/71x5DenKXnL.jpg"
           }
         ]
       },
@@ -2642,7 +2647,8 @@
             "reviewCount": 150,
             "amazonUrl": "https://www.amazon.com/dp/B0B9HYP969?tag=loveveryfans-20",
             "reasonEn": "A complete movable alphabet set with a wooden box, perfect for learning letters and spelling.",
-            "reasonCn": "一套完整的可移动字母套装，配有木盒，非常适合学习字母和拼写。"
+            "reasonCn": "一套完整的可移动字母套装，配有木盒，非常适合学习字母和拼写。",
+            "imageUrl": "https://m.media-amazon.com/images/I/8109LnuUpPL.jpg"
           }
         ]
       },
@@ -2658,7 +2664,8 @@
             "reviewCount": 80,
             "amazonUrl": "https://www.amazon.com/dp/B0C9Y311W8?tag=loveveryfans-20",
             "reasonEn": "A set of miniature objects and matching cards to build vocabulary and language skills.",
-            "reasonCn": "一套微型物体和匹配卡片，用于建立词汇和语言技能。"
+            "reasonCn": "一套微型物体和匹配卡片，用于建立词汇和语言技能。",
+            "imageUrl": "https://m.media-amazon.com/images/I/71wcz+3vZhL.jpg"
           }
         ]
       },
@@ -2691,7 +2698,8 @@
             "reviewCount": 12000,
             "amazonUrl": "https://www.amazon.com/dp/B07F13J28C?tag=loveveryfans-20",
             "reasonEn": "A popular and highly-rated light pad for tracing and drawing.",
-            "reasonCn": "一款广受欢迎且评价很高的用于描摹和绘画的灯箱。"
+            "reasonCn": "一款广受欢迎且评价很高的用于描摹和绘画的灯箱。",
+            "imageUrl": "https://m.media-amazon.com/images/I/71jQUtk-tvL.jpg"
           }
         ]
       },
@@ -2707,7 +2715,8 @@
             "reviewCount": 150,
             "amazonUrl": "https://www.amazon.com/dp/B09X2Y8J6B?tag=loveveryfans-20",
             "reasonEn": "A set of textured sensory discs that can be used for calming activities.",
-            "reasonCn": "一套有纹理的感官盘，可用于镇静活动。"
+            "reasonCn": "一套有纹理的感官盘，可用于镇静活动。",
+            "imageUrl": "https://m.media-amazon.com/images/I/71q8RgHjTdL.jpg"
           }
         ]
       },
@@ -2762,7 +2771,8 @@
             "reviewCount": 45000,
             "amazonUrl": "https://www.amazon.com/dp/B00005BW9R?tag=loveveryfans-20",
             "reasonEn": "A classic wooden shape sorting clock that teaches time-telling, shape and color recognition. It's a durable and affordable option.",
-            "reasonCn": "一款经典的木制形状分类时钟，可以教授时间、形状和颜色认知。这是一个耐用且价格实惠的选择。"
+            "reasonCn": "一款经典的木制形状分类时钟，可以教授时间、形状和颜色认知。这是一个耐用且价格实惠的选择。",
+            "imageUrl": "https://m.media-amazon.com/images/I/81AoJy2V3JL.jpg"
           }
         ]
       },
@@ -2778,7 +2788,8 @@
             "reviewCount": 2000,
             "amazonUrl": "https://www.amazon.com/dp/B00IHZZKTG?tag=loveveryfans-20",
             "reasonEn": "A high-quality wooden marble run that encourages 3-dimensional thinking and STEM skills. It's a great alternative for building and creating complex marble runs.",
-            "reasonCn": "一款高品质的木制弹珠轨道，鼓励三维思维和STEM技能。这是搭建复杂弹珠轨道的绝佳替代品。"
+            "reasonCn": "一款高品质的木制弹珠轨道，鼓励三维思维和STEM技能。这是搭建复杂弹珠轨道的绝佳替代品。",
+            "imageUrl": "https://m.media-amazon.com/images/I/81bBRCldTQL.jpg"
           },
           {
             "name": "Marble Genius Marble Run Super Set",
@@ -2788,7 +2799,8 @@
             "reviewCount": 25000,
             "amazonUrl": "https://www.amazon.com/dp/B01BE1642O?tag=loveveryfans-20",
             "reasonEn": "A large marble run set with 150 pieces, including 85 translucent pieces and 65 glass marbles. It offers endless building possibilities and is compatible with other Marble Genius products.",
-            "reasonCn": "一个大型弹珠轨道套装，包含150个零件，其中包括85个半透明零件和65个玻璃弹珠。它提供了无限的搭建可能性，并与其他Marble Genius产品兼容。"
+            "reasonCn": "一个大型弹珠轨道套装，包含150个零件，其中包括85个半透明零件和65个玻璃弹珠。它提供了无限的搭建可能性，并与其他Marble Genius产品兼容。",
+            "imageUrl": "https://m.media-amazon.com/images/I/81b-CQwit3L.jpg"
           }
         ]
       },
