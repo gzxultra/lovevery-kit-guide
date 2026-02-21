@@ -37,21 +37,21 @@ export function TestimonialsSection() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#F5F0EB] via-[#FAF7F2] to-[#F8F3ED] relative overflow-hidden">
+    <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-br from-[#F5F0EB] via-[#FAF7F2] to-[#F8F3ED] relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-20 left-10 w-40 h-40 bg-[#D4A574]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-[#7FB685]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/70 backdrop-blur-sm border border-[#E8DFD3]/60 text-[#6B5E50] text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-sm">
-            <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 backdrop-blur-sm border border-[#E8DFD3]/60 text-[#6B5E50] text-xs font-medium mb-3 sm:mb-4 shadow-sm">
+            <Star className="w-3 h-3" />
             {t("家长真实好评", "Real Parent Reviews")}
           </div>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a1108] mb-3 sm:mb-4">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#1a1108] mb-2 sm:mb-3">
             {t("看看其他家长怎么说", "What Parents Love")}
           </h2>
-          <p className="text-sm sm:text-base text-[#6B5E50] max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-[#6B5E50] max-w-2xl mx-auto">
             {t("来自真实用户的评价，帮你了解每个玩具的真实表现和家长体验", "Authentic feedback from parents who use Lovevery kits every day")}
           </p>
         </div>
@@ -66,44 +66,44 @@ export function TestimonialsSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="p-6 sm:p-8 md:p-10"
+                className="p-4 sm:p-6 md:p-7"
               >
                 {/* Quote Icon */}
-                <div className="mb-4 sm:mb-6">
-                  <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-[#D4A574] opacity-60" />
+                <div className="mb-3 sm:mb-4">
+                  <Quote className="w-6 h-6 sm:w-7 sm:h-7 text-[#D4A574] opacity-60" />
                 </div>
 
                 {/* Review Text */}
-                <p className="text-base sm:text-lg md:text-xl text-[#3D3229] leading-relaxed mb-6 sm:mb-8 font-medium">
+                <p className="text-sm sm:text-base md:text-lg text-[#3D3229] leading-relaxed mb-4 sm:mb-5 font-medium">
                   "{lang === "cn" ? convert(current.reviewCn) : current.reviewEn}"
                 </p>
 
                 {/* Stars */}
-                <div className="flex gap-1 mb-6 sm:mb-8">
+                <div className="flex gap-0.5 mb-4 sm:mb-5">
                   {Array.from({ length: current.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 sm:w-6 sm:h-6 fill-[#FFB81C] text-[#FFB81C]"
+                      className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-[#FFB81C] text-[#FFB81C]"
                     />
                   ))}
                 </div>
 
                 {/* Kit & Toy Info */}
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pt-6 sm:pt-8 border-t border-[#F0EBE3]">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-[#F0EBE3]">
                   <div>
-                    <p className="text-xs sm:text-sm text-[#756A5C] mb-1">
+                    <p className="text-[10px] sm:text-xs text-[#756A5C] mb-0.5">
                       {t("来自", "From")}
                     </p>
-                    <p className="text-sm sm:text-base font-semibold text-[#3D3229]">
+                    <p className="text-xs sm:text-sm font-semibold text-[#3D3229]">
                       {current.kitName}
                     </p>
                   </div>
                   <div className="hidden sm:block w-px h-8 bg-[#E8DFD3]" />
                   <div className="sm:flex-1">
-                    <p className="text-xs sm:text-sm text-[#756A5C] mb-1">
+                    <p className="text-[10px] sm:text-xs text-[#756A5C] mb-0.5">
                       {t("推荐玩具", "Toy")}
                     </p>
-                    <p className="text-sm sm:text-base font-semibold text-[#3D3229]">
+                    <p className="text-xs sm:text-sm font-semibold text-[#3D3229]">
                       {lang === "cn" ? convert(current.toyNameCn) : current.toyName}
                     </p>
                   </div>
@@ -113,15 +113,15 @@ export function TestimonialsSection() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex items-center justify-between mt-6 sm:mt-8">
+          <div className="flex items-center justify-between mt-4 sm:mt-5">
             <button
               onClick={goToPrevious}
               onMouseEnter={() => setAutoplay(false)}
               onMouseLeave={() => setAutoplay(true)}
-              className="p-2 sm:p-3 rounded-full bg-white border border-[#E8DFD3] hover:border-[#D4A574] hover:shadow-md transition-all text-[#6B5E50] hover:text-[#3D3229] active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="p-2 rounded-full bg-white border border-[#E8DFD3] hover:border-[#D4A574] hover:shadow-md transition-all text-[#6B5E50] hover:text-[#3D3229] active:scale-95 min-h-[36px] min-w-[36px] flex items-center justify-center"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             {/* Dots */}
@@ -144,10 +144,10 @@ export function TestimonialsSection() {
               onClick={goToNext}
               onMouseEnter={() => setAutoplay(false)}
               onMouseLeave={() => setAutoplay(true)}
-              className="p-2 sm:p-3 rounded-full bg-white border border-[#E8DFD3] hover:border-[#D4A574] hover:shadow-md transition-all text-[#6B5E50] hover:text-[#3D3229] active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="p-2 rounded-full bg-white border border-[#E8DFD3] hover:border-[#D4A574] hover:shadow-md transition-all text-[#6B5E50] hover:text-[#3D3229] active:scale-95 min-h-[36px] min-w-[36px] flex items-center justify-center"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
 
