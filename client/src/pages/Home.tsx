@@ -40,7 +40,7 @@ function scrollToStage(stageId: string) {
   }
 }
 
-export default function Home({ onReady }: { onReady?: () => void }) {
+export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
@@ -128,13 +128,6 @@ export default function Home({ onReady }: { onReady?: () => void }) {
   useEffect(() => {
     applyHomePageSeo();
   }, []);
-
-  // Signal that React has rendered, SSR shell can be hidden
-  useEffect(() => {
-    if (onReady) {
-      onReady();
-    }
-  }, [onReady]);
 
   return (
     <div className="min-h-screen bg-[#FAF7F2]">

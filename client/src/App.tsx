@@ -63,14 +63,20 @@ function PageLoadingSkeleton() {
   );
 }
 
+function ReadySignal({ onReady }: { onReady?: () => void }) {
+  useEffect(() => {
+    if (onReady) onReady();
+  }, [onReady]);
+  return null;
+}
+
 function AppRouter({ onReady }: { onReady?: () => void }) {
   return (
     <Suspense fallback={<PageLoadingSkeleton />}>
+      <ReadySignal onReady={onReady} />
       <HashRedirect />
       <Switch>
-        <Route path={"/"}>
-          {() => <Home onReady={onReady} />}
-        </Route>
+        <Route path={"/"} component={Home} />
         <Route path={"/kit/:id"} component={KitDetail} />
         <Route path={"/about"} component={AboutUs} />
         <Route path={"/404"} component={NotFound} />

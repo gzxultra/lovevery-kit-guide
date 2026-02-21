@@ -54,6 +54,11 @@ function renderStars(rating: number | null) {
   return stars;
 }
 
+function formatPrice(price: string | null, lang: string): string {
+  if (!price) return lang === "cn" ? "查看价格" : "Check Price";
+  return price.replace(/\.$/, "");
+}
+
 export function AlternativesSection({
   alternatives,
   toyName,
@@ -116,7 +121,7 @@ export function AlternativesSection({
                     {alt.name}
                   </h4>
                   <span className="text-sm sm:text-base font-bold text-[#D4A574] whitespace-nowrap">
-                    {alt.price || (lang === "cn" ? "查看价格" : "Check Price")}
+                    {formatPrice(alt.price, lang)}
                   </span>
                 </div>
 
