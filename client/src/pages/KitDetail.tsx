@@ -47,11 +47,11 @@ import { getToyAlternatives, alternatives as allAlternatives } from "@/data/alte
 const REFERRAL_CODE = "REF-6AA44A5A";
 
 function getKitPurchaseUrl(kitSlug: string) {
-  return `https://lovevery.com/products/the-play-kits-the-${kitSlug}?discount_code=${REFERRAL_CODE}`;
+  return `https://lovevery.com/products/the-play-kits-the-${kitSlug}?discount_code=${REFERRAL_CODE}&utm_source=loveveryfans&utm_medium=referral&utm_campaign=kit_${kitSlug}`;
 }
 
 function getReferralUrl() {
-  return `https://lovevery.com/pages/refer-a-friend?discount_code=${REFERRAL_CODE}`;
+  return `https://lovevery.com/pages/refer-a-friend?discount_code=${REFERRAL_CODE}&utm_source=loveveryfans&utm_medium=referral&utm_campaign=refer_friend`;
 }
 
 const ToyCard = memo(function ToyCard({
@@ -385,6 +385,16 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] hover:shadow-lg hover:shadow-[#3D3229]/20 transition-all duration-300 active:scale-[0.98] min-h-[48px]"
+              onClick={() => {
+                if (typeof window !== "undefined" && window.gtag) {
+                  window.gtag("event", "lovevery_referral_click", {
+                    kit_name: kitId,
+                    kit_id: kitId,
+                    page_url: window.location.href,
+                    link_type: "buy_kit_button"
+                  });
+                }
+              }}
             >
               <Heart className="w-4 h-4" />
               {i18n.referral.buyKit[lang]}
@@ -395,6 +405,16 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#3D3229] rounded-full text-sm font-medium border border-[#E8DFD3] hover:bg-[#F5F0E8] transition-all duration-300 active:scale-[0.98] min-h-[48px]"
+              onClick={() => {
+                if (typeof window !== "undefined" && window.gtag) {
+                  window.gtag("event", "lovevery_referral_click", {
+                    kit_name: kitId,
+                    kit_id: kitId,
+                    page_url: window.location.href,
+                    link_type: "learn_referral_button"
+                  });
+                }
+              }}
             >
               {i18n.referral.learnReferral[lang]}
               <ExternalLink className="w-3.5 h-3.5 opacity-70" />
@@ -624,10 +644,21 @@ export default function KitDetail() {
                     href={(() => {
                       const url = kit.officialUrl || "https://lovevery.com/products/the-play-kits";
                       const separator = url.includes("?") ? "&" : "?";
-                      return `${url}${separator}discount_code=${REFERRAL_CODE}`;
+                      const kitSlug = kit.id.toLowerCase().replace(/\s+/g, '_');
+                      return `${url}${separator}discount_code=${REFERRAL_CODE}&utm_source=loveveryfans&utm_medium=referral&utm_campaign=kit_${kitSlug}`;
                     })()}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && window.gtag) {
+                        window.gtag("event", "lovevery_referral_click", {
+                          kit_name: kit.name,
+                          kit_id: kit.id,
+                          page_url: window.location.href,
+                          link_type: "kit_header"
+                        });
+                      }
+                    }}
                     className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl text-sm font-medium border-2 transition-all hover:shadow-md active:scale-[0.98] group"
                     style={{
                       borderColor: kit.color,
