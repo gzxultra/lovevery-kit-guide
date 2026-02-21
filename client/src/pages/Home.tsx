@@ -5,12 +5,13 @@
  */
 
 import { kits, stages } from "@/data/kits";
+import { standaloneProducts, productCategories } from "@/data/standaloneProducts";
 import { getKitHeroImage } from "@/data/toyImages";
 import { getKitCardThumbnailUrl, getAccessibleTextColor } from "@/lib/imageUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useI18n } from "@/hooks/useI18n";
 import LanguageToggle from "@/components/LanguageToggle";
-import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search } from "lucide-react";
+import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search, Music, Droplets, Box, Star } from "lucide-react";
 import { useState, useMemo, useRef, useEffect, lazy, Suspense } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -33,10 +34,35 @@ const HERO_IMG = `${import.meta.env.BASE_URL}hero.webp`;
 const HERO_IMG_MOBILE = `${import.meta.env.BASE_URL}hero-mobile.webp`;
 const HERO_IMG_FALLBACK = `${import.meta.env.BASE_URL}hero-mobile.jpg`;
 
+let productDetailPrefetched = false;
+function prefetchProductDetail() {
+  if (!productDetailPrefetched) {
+    productDetailPrefetched = true;
+    import("./ProductDetail");
+  }
+}
+
 function scrollToStage(stageId: string) {
   const el = document.getElementById(`stage-${stageId}`);
   if (el) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function scrollToProducts() {
+  const el = document.getElementById("standalone-products");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function getProductCategoryIcon(iconName: string) {
+  switch (iconName) {
+    case "music": return Music;
+    case "bath": return Droplets;
+    case "blocks": return Box;
+    case "gym": return Baby;
+    default: return BookOpen;
   }
 }
 
@@ -70,6 +96,7 @@ export default function Home() {
       toyName?: string;
       toyEnglishName?: string;
       kitColor: string;
+      isProduct?: boolean;
     }> = [];
 
     for (const kit of kits) {
@@ -102,7 +129,38 @@ export default function Home() {
         }
       }
     }
-    return results.slice(0, 15); // Limit results
+    // Search standalone products
+    for (const product of standaloneProducts) {
+      if (
+        product.name.toLowerCase().includes(q) ||
+        product.id.toLowerCase().includes(q)
+      ) {
+        results.push({
+          kitId: product.id,
+          kitName: product.name,
+          matchType: "kit",
+          kitColor: product.color,
+          isProduct: true,
+        });
+      }
+      for (const toy of product.toys) {
+        if (
+          toy.name.toLowerCase().includes(q) ||
+          toy.englishName.toLowerCase().includes(q)
+        ) {
+          results.push({
+            kitId: product.id,
+            kitName: product.name,
+            matchType: "toy",
+            toyName: toy.name,
+            toyEnglishName: toy.englishName,
+            kitColor: product.color,
+            isProduct: true,
+          });
+        }
+      }
+    }
+    return results.slice(0, 20); // Limit results
   }, [searchQuery]);
 
   // Close search dropdown when clicking outside
@@ -153,6 +211,12 @@ export default function Home() {
                 </button>
               ))}
 
+              <button
+                onClick={scrollToProducts}
+                className="relative text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#7FB685] after:rounded-full after:transition-all hover:after:w-full"
+              >
+                {i18n.nav.products[lang]}
+              </button>
               <Link href="/about">
                 <span className="text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors">
                   {i18n.nav.aboutUs[lang]}
@@ -200,7 +264,7 @@ export default function Home() {
                           <button
                             key={`${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
                             onClick={() => {
-                              setLocation(`/kit/${result.kitId}`);
+                              setLocation(result.isProduct ? `/product/${result.kitId}` : `/kit/${result.kitId}`);
                               setSearchQuery("");
                               setSearchOpen(false);
                             }}
@@ -313,7 +377,7 @@ export default function Home() {
                       <button
                         key={`m-${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
                         onClick={() => {
-                          setLocation(`/kit/${result.kitId}`);
+                          setLocation(result.isProduct ? `/product/${result.kitId}` : `/kit/${result.kitId}`);
                           setSearchQuery("");
                           setSearchOpen(false);
                         }}
@@ -382,6 +446,18 @@ export default function Home() {
                   </span>
                 </button>
               ))}
+              <button
+                onClick={() => {
+                  scrollToProducts();
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors min-h-[48px]"
+              >
+                <span className="flex items-center justify-between">
+                  {i18n.nav.products[lang]}
+                  <span className="text-xs text-[#756A5C]">{t("4 款产品", "4 Products")}</span>
+                </span>
+              </button>
               <Link href="/about">
                 <span
                   onClick={() => setMobileMenuOpen(false)}
@@ -580,6 +656,92 @@ export default function Home() {
         );
       })}
 
+      {/* Standalone Products Section */}
+      <section id="standalone-products" className="py-10 sm:py-16 md:py-24 scroll-mt-16 sm:scroll-mt-20 bg-gradient-to-br from-[#F8F3ED] via-[#FAF7F2] to-[#F5F0EB]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mb-8 sm:mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-8">
+              <div className="shrink-0">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 border bg-[#7FB685]/10 text-[#4a8a54] border-[#7FB685]/25">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  {t("4 款独立产品", "4 Standalone Products")}
+                </div>
+                <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a1108] tracking-tight">
+                  {i18n.products.sectionTitle[lang]}
+                </h2>
+                <p className="text-sm text-[#6B5E50] mt-2">
+                  {i18n.products.sectionSubtitle[lang]}
+                </p>
+              </div>
+              <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-[#E8DFD3] via-[#E8DFD3]/50 to-transparent" />
+            </div>
+          </div>
+
+          {/* Product Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {standaloneProducts.map((product) => {
+              const catInfo = productCategories.find((c) => c.id === product.category);
+              const CategoryIcon = getProductCategoryIcon(catInfo?.icon || "blocks");
+              return (
+                <Link key={product.id} href={`/product/${product.id}`}>
+                  <div
+                    className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full active:scale-[0.98] card-glow"
+                    onMouseEnter={prefetchProductDetail}
+                    onTouchStart={prefetchProductDetail}
+                  >
+                    {/* Color accent bar */}
+                    <div
+                      className="h-1 sm:h-1.5 w-full"
+                      style={{ background: `linear-gradient(90deg, ${product.color}, ${product.color}88)` }}
+                    />
+                    <div className="p-4 sm:p-6">
+                      <div className="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-display text-lg sm:text-xl text-[#1a1108] mb-1 truncate group-hover:text-[#3D3229] transition-colors">
+                            {product.name}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-[#5A4E42]">
+                            {lang === "cn" ? t(product.ageRange, product.ageRangeEn || product.ageRange) : (product.ageRangeEn || product.ageRange)}
+                          </p>
+                        </div>
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                          style={{ backgroundColor: product.color + "15" }}
+                        >
+                          <CategoryIcon className="w-5 h-5" style={{ color: product.color }} />
+                        </div>
+                      </div>
+
+                      <p className="text-xs sm:text-sm text-[#5A4E42] leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
+                        {lang === "cn" ? t(product.description, product.descriptionEn || product.description) : (product.descriptionEn || product.description)}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F0EBE3] group-hover:border-[#E8DFD3] transition-colors">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-semibold" style={{ color: product.color }}>{product.price}</span>
+                          <span className="flex items-center gap-0.5 text-xs text-amber-600">
+                            <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                            {product.rating}
+                          </span>
+                        </div>
+                        <span
+                          className="text-xs sm:text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all min-h-[48px] min-w-[48px] justify-end"
+                          style={{ color: getAccessibleTextColor(product.color) }}
+                        >
+                          {i18n.products.viewProduct[lang]}
+                          <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Reward Section - lazy loaded */}
       <Suspense fallback={<div className="py-16" />}>
         <RewardSection />
@@ -595,7 +757,7 @@ export default function Home() {
         {/* Gradient top border */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7FB685]/40 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
             <div>
               <h3 data-logo-target className="font-display text-xl sm:text-2xl mb-3 sm:mb-4 select-none">Lovevery</h3>
               <p className="text-[#B8AFA3] text-sm leading-relaxed">
@@ -614,6 +776,21 @@ export default function Home() {
                       <span className="w-1 h-1 rounded-full bg-[#6B5E50] group-hover:bg-[#7FB685] transition-colors" />
                       {stageLabel(s.id)} ({stageRange(s.id)})
                     </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-[#E8DFD3]">{i18n.nav.products[lang]}</h4>
+              <ul className="space-y-1">
+                {standaloneProducts.map((p) => (
+                  <li key={p.id}>
+                    <Link href={`/product/${p.id}`}>
+                      <span className="text-sm text-[#B8AFA3] hover:text-white hover:translate-x-1 transition-all duration-200 min-h-[44px] flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[#6B5E50]" />
+                        {p.name}
+                      </span>
+                    </Link>
                   </li>
                 ))}
               </ul>

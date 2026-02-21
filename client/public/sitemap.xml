@@ -228,4 +228,42 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/kit/planner/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/kit/planner/"/>
   </url>
+
+  <!-- Standalone Products -->
+  <url>
+    <loc>https://loveveryfans.com/product/music-set/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/product/music-set/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/product/music-set/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/product/music-set/"/>
+  </url>
+  <url>
+    <loc>https://loveveryfans.com/product/bath-set/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/product/bath-set/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/product/bath-set/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/product/bath-set/"/>
+  </url>
+  <url>
+    <loc>https://loveveryfans.com/product/block-set/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/product/block-set/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/product/block-set/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/product/block-set/"/>
+  </url>
+  <url>
+    <loc>https://loveveryfans.com/product/play-gym/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loveveryfans.com/product/play-gym/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://loveveryfans.com/product/play-gym/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loveveryfans.com/product/play-gym/"/>
+  </url>
 </urlset>

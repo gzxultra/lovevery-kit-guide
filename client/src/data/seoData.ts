@@ -218,3 +218,47 @@ export const kitSeoDataMap: Record<string, KitSeoData> = {
 export function getKitSeoData(kitId: string): KitSeoData | undefined {
   return kitSeoDataMap[kitId];
 }
+
+// SEO data for standalone products
+export const productSeoDataMap: Record<string, KitSeoData> = {
+  "music-set": {
+    kitId: "music-set",
+    metaTitleEn: "The Music Set | Lovevery Alternatives & Dupes | Lovevery Fans",
+    metaTitleCn: "The Music Set 音乐玩具套装 | Lovevery 平替推荐 | Lovevery Fans",
+    metaDescriptionEn: "Discover the best affordable alternatives to the Lovevery Music Set. Compare real Amazon prices, ratings, and find musical toy dupes for your baby.",
+    metaDescriptionCn: "Lovevery Music Set 音乐玩具套装完整指南：沙锤、木琴、手鼓等乐器的使用方法、家长评价，以及 Amazon 高性价比平替推荐。",
+    seoDescriptionEn: "The Lovevery Music Set includes 5 child-sized instruments designed for babies and toddlers. This guide covers the egg shakers, xylophone, tambourine, rain stick, and claves with real parent reviews and affordable Amazon alternatives.",
+    seoDescriptionCn: "Lovevery 音乐玩具套装包含 5 件适合婴幼儿尺寸的乐器。本指南涵盖沙蛋、木琴、手鼓、雨声棒和响板的详细使用方法、家长评价和 Amazon 平替推荐。",
+  },
+  "bath-set": {
+    kitId: "bath-set",
+    metaTitleEn: "The Bath Set | Lovevery Alternatives & Dupes | Lovevery Fans",
+    metaTitleCn: "The Bath Set 洗澡玩具套装 | Lovevery 平替推荐 | Lovevery Fans",
+    metaDescriptionEn: "Find the best Lovevery Bath Set alternatives. Compare Amazon dupes with real prices, ratings, and parent reviews for bath time learning toys.",
+    metaDescriptionCn: "Lovevery Bath Set 洗澡玩具套装完整指南：倒水杯、吸盘玩具等洗澡玩具的使用方法、家长评价，以及 Amazon 高性价比平替推荐。",
+    seoDescriptionEn: "The Lovevery Bath Set turns bath time into learning time with pouring cups, suction toys, and more. Find detailed guides, parent reviews, and budget-friendly Amazon alternatives with real prices and ratings.",
+    seoDescriptionCn: "Lovevery 洗澡玩具套装让洗澡时间变成学习时间，包含倒水杯、吸盘玩具等。查看详细指南、家长评价和 Amazon 上的平替推荐。",
+  },
+  "block-set": {
+    kitId: "block-set",
+    metaTitleEn: "The Block Set | Lovevery Alternatives & Dupes | Lovevery Fans",
+    metaTitleCn: "The Block Set 积木套装 | Lovevery 平替推荐 | Lovevery Fans",
+    metaDescriptionEn: "Explore affordable alternatives to the Lovevery Block Set. Solid wood blocks with real Amazon prices, ratings, and parent reviews.",
+    metaDescriptionCn: "Lovevery Block Set 积木套装完整指南：70 块实木积木的使用方法、家长评价，以及 Amazon 高性价比平替推荐。",
+    seoDescriptionEn: "The Lovevery Block Set features 70 solid wood pieces in 18 colors, 8 shapes, and 20+ activities. Find detailed guides, parent reviews, and the best affordable wooden block alternatives on Amazon.",
+    seoDescriptionCn: "Lovevery 积木套装包含 70 块实木积木，18 种颜色、8 种形状和 20+ 种活动。查看详细指南、家长评价和 Amazon 上最佳的木制积木平替推荐。",
+  },
+  "play-gym": {
+    kitId: "play-gym",
+    metaTitleEn: "The Play Gym | Lovevery Alternatives & Dupes | Lovevery Fans",
+    metaTitleCn: "The Play Gym 游戏垫 | Lovevery 平替推荐 | Lovevery Fans",
+    metaDescriptionEn: "Best Lovevery Play Gym alternatives. Compare activity gym dupes with real Amazon prices, ratings, and parent reviews for newborn development.",
+    metaDescriptionCn: "Lovevery Play Gym 游戏垫完整指南：5 个发展区域的使用方法、家长评价，以及 Amazon 高性价比平替推荐。",
+    seoDescriptionEn: "The Lovevery Play Gym is an award-winning activity gym with 5 developmental zones designed by child development experts. Find detailed guides, parent reviews, and affordable Amazon alternatives for baby play gyms.",
+    seoDescriptionCn: "Lovevery 游戏垫是获奖的活动健身架，由儿童发展专家设计，包含 5 个发展区域。查看详细指南、家长评价和 Amazon 上的平替推荐。",
+  },
+};
+
+export function getProductSeoData(productId: string): KitSeoData | undefined {
+  return productSeoDataMap[productId];
+}

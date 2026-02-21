@@ -14,6 +14,7 @@ const Home = lazy(() => import("./pages/Home"));
 const KitDetail = lazy(() => import("./pages/KitDetail"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 
 // Redirect from old hash URLs to clean URLs for backward compatibility
 function HashRedirect() {
@@ -79,6 +80,7 @@ function AppRouter({ onReady }: { onReady?: () => void }) {
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/kit/:id"} component={KitDetail} />
+        <Route path={"/product/:id"} component={ProductDetail} />
         <Route path={"/about"} component={AboutUs} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />

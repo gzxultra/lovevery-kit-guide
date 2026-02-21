@@ -299,6 +299,186 @@ export function applyHomePageSeo() {
 }
 
 /**
+ * Apply all SEO tags for a standalone Product detail page
+ */
+export function applyProductPageSeo(params: KitSeoParams) {
+  const pageUrl = `${SITE_URL}/product/${params.kitId}`;
+
+  // 1. Set document title
+  document.title = params.metaTitle;
+
+  // 2. Meta description
+  setMetaTag("name", "description", params.metaDescription);
+
+  // 3. Open Graph tags
+  setMetaTag("property", "og:title", params.metaTitle);
+  setMetaTag("property", "og:description", params.metaDescription);
+  setMetaTag("property", "og:url", pageUrl);
+  setMetaTag("property", "og:type", "website");
+
+  // 4. Twitter Card tags
+  setMetaTag("name", "twitter:title", params.metaTitle);
+  setMetaTag("name", "twitter:description", params.metaDescription);
+
+  // 5. Canonical URL
+  setLinkTag("canonical", pageUrl);
+
+  // 6. Hreflang tags
+  setLinkTag("alternate", pageUrl, "zh");
+  setLinkTag("alternate", pageUrl, "en");
+  setLinkTag("alternate", pageUrl, "x-default");
+
+  // 7. JSON-LD Structured Data - ItemList for the product
+  const itemListData: any = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${params.kitName} - Affordable Alternatives`,
+    "description": `Best affordable Amazon alternatives and dupes for the Lovevery ${params.kitName} (${params.ageRangeEn}). Compare prices, ratings, and reviews.`,
+    "url": pageUrl,
+    "numberOfItems": params.toyCount,
+    "itemListElement": params.toys.map((toy, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": toy.englishName,
+      "description": `${toy.englishName} - ${toy.category}`,
+    })),
+  };
+  setJsonLd("product-itemlist", itemListData);
+
+  // 8. JSON-LD for alternatives as Product offers
+  if (params.alternatives && params.alternatives.length > 0) {
+    const priceValidUntil = getPriceValidUntil();
+    const allAlts: any[] = [];
+
+    params.alternatives.forEach((toyAlt) => {
+      toyAlt.alternatives.forEach((alt) => {
+        const priceStr = alt.price ? alt.price.replace(/[^0-9.]/g, "") || "0" : null;
+
+        const product: any = {
+          "@type": "Product",
+          "name": alt.name,
+          "description": `Affordable alternative to Lovevery ${toyAlt.toyName}`,
+          "url": alt.amazonUrl,
+        };
+
+        if (alt.imageUrl) {
+          product["image"] = alt.imageUrl;
+        }
+
+        if (alt.rating != null) {
+          product["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": alt.rating.toString(),
+            "bestRating": "5",
+            "reviewCount": (alt.reviewCount || 0).toString(),
+          };
+        }
+
+        if (priceStr) {
+          product["offers"] = {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": priceStr,
+            "priceValidUntil": priceValidUntil,
+            "availability": "https://schema.org/InStock",
+            "url": alt.amazonUrl,
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "USD",
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "US",
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "DAY",
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 7,
+                  "unitCode": "DAY",
+                },
+              },
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "US",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn",
+            },
+          };
+        }
+
+        allAlts.push(product);
+      });
+    });
+
+    if (allAlts.length > 0) {
+      setJsonLd("product-products", {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": `Amazon Alternatives for ${params.kitName}`,
+        "description": `Curated list of affordable Amazon alternatives for the Lovevery ${params.kitName} (${params.ageRangeEn})`,
+        "url": pageUrl,
+        "numberOfItems": allAlts.length,
+        "itemListElement": allAlts.slice(0, 20).map((alt, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "item": alt,
+        })),
+      });
+    }
+  }
+
+  // 9. BreadcrumbList structured data
+  setJsonLd("product-breadcrumb", {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": params.kitName,
+        "item": pageUrl,
+      },
+    ],
+  });
+}
+
+/**
+ * Clean up product page SEO tags (call on unmount)
+ */
+export function cleanupProductPageSeo() {
+  removeJsonLd("product-itemlist");
+  removeJsonLd("product-products");
+  removeJsonLd("product-breadcrumb");
+
+  document.title = "Lovevery Fans";
+  setMetaTag("name", "description", "Lovevery Fans — A comprehensive bilingual guide to all Lovevery Play Kits with parent reviews, cleaning guides, and affordable Amazon alternatives.");
+  setLinkTag("canonical", `${SITE_URL}/`);
+  setLinkTag("alternate", `${SITE_URL}/`, "zh");
+  setLinkTag("alternate", `${SITE_URL}/`, "en");
+  setLinkTag("alternate", `${SITE_URL}/`, "x-default");
+}
+
+/**
  * Apply SEO for the About page
  */
 export function applyAboutPageSeo(lang: "cn" | "en") {

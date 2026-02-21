@@ -166,6 +166,72 @@ function generateAboutHtml() {
 </html>`;
 }
 
+// Standalone product IDs and SEO data
+const PRODUCT_IDS = ['music-set', 'bath-set', 'block-set', 'play-gym'];
+
+const productSeoData = {
+  'music-set': { title: 'The Music Set | Lovevery Alternatives & Dupes | Lovevery Fans', desc: 'Discover the best affordable alternatives to the Lovevery Music Set. Compare real Amazon prices, ratings, and find musical toy dupes for your baby.', subtitle: 'Music Set' },
+  'bath-set': { title: 'The Bath Set | Lovevery Alternatives & Dupes | Lovevery Fans', desc: 'Find the best Lovevery Bath Set alternatives. Compare Amazon dupes with real prices, ratings, and parent reviews for bath time learning toys.', subtitle: 'Bath Set' },
+  'block-set': { title: 'The Block Set | Lovevery Alternatives & Dupes | Lovevery Fans', desc: 'Explore affordable alternatives to the Lovevery Block Set. Solid wood blocks with real Amazon prices, ratings, and parent reviews.', subtitle: 'Block Set' },
+  'play-gym': { title: 'The Play Gym | Lovevery Alternatives & Dupes | Lovevery Fans', desc: 'Best Lovevery Play Gym alternatives. Compare activity gym dupes with real Amazon prices, ratings, and parent reviews for newborn development.', subtitle: 'Play Gym' },
+};
+
+function generateProductHtml(productId) {
+  const seo = productSeoData[productId];
+  const pageUrl = `${SITE_URL}/product/${productId}/`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <title>${seo.title}</title>
+    <meta name="description" content="${seo.desc}" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="${pageUrl}" />
+    <link rel="alternate" hreflang="zh" href="${pageUrl}" />
+    <link rel="alternate" hreflang="en" href="${pageUrl}" />
+    <link rel="alternate" hreflang="x-default" href="${pageUrl}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${pageUrl}" />
+    <meta property="og:title" content="${seo.title}" />
+    <meta property="og:description" content="${seo.desc}" />
+    <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/MNPxTRzCbxWVkhFf.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Lovevery Fans" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${seo.title}" />
+    <meta name="twitter:description" content="${seo.desc}" />
+    <meta name="twitter:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/MNPxTRzCbxWVkhFf.jpg" />
+    <meta name="theme-color" content="#FAF7F2" />
+    ${assetTags}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"},
+        {"@type": "ListItem", "position": 2, "name": "The ${seo.subtitle}", "item": "${pageUrl}"}
+      ]
+    }
+    </script>
+    ${scriptTagsStr}
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:system-ui,sans-serif;">
+        <h1>The ${seo.subtitle}</h1>
+        <p>${seo.desc}</p>
+        <p><a href="/">\u2190 Back to Lovevery Fans Homepage</a></p>
+        <p><a href="/about">About Us</a></p>
+      </div>
+    </noscript>
+  </body>
+</html>`;
+}
+
 // Generate kit pages
 let count = 0;
 for (const kitId of KIT_IDS) {
@@ -182,5 +248,14 @@ fs.mkdirSync(aboutDir, { recursive: true });
 fs.writeFileSync(path.join(aboutDir, 'index.html'), generateAboutHtml());
 count++;
 console.log(`  ✓ /about/index.html`);
+
+// Generate standalone product pages
+for (const productId of PRODUCT_IDS) {
+  const dir = path.join(DIST_DIR, 'product', productId);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), generateProductHtml(productId));
+  count++;
+  console.log(`  ✓ /product/${productId}/index.html`);
+}
 
 console.log(`\n✅ Prerendered ${count} pages successfully!`);

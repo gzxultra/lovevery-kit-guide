@@ -23,13 +23,13 @@ export const i18n = {
       en: "A warm community guide built by parents who love Lovevery. Discover real reviews, cleaning tips, and high-quality Amazon alternatives to help your little one thrive.",
     },
     cta: { cn: "开始探索", en: "Start Exploring" },
-    kitCount: { cn: "22 个 Play Kit", en: "22 Play Kits" },
+    kitCount: { cn: "22 个 Play Kit + 4 款独立产品", en: "22 Play Kits + 4 Products" },
     coverRange: { cn: "覆盖 0-60 个月", en: "Covering 0-60 months" },
   },
 
   // Search
   search: {
-    placeholder: { cn: "搜索 Kit 或玩具名称...", en: "Search kits or toys..." },
+    placeholder: { cn: "搜索 Kit、产品或玩具名称...", en: "Search kits, products or toys..." },
     noResults: { cn: "未找到匹配结果", en: "No results found" },
     resultCount: { cn: "个匹配结果", en: "results" },
   },
@@ -156,9 +156,24 @@ export const i18n = {
     },
   },
 
+  // Standalone Products section
+  products: {
+    sectionTitle: { cn: "更多 Lovevery 产品", en: "More Lovevery Products" },
+    sectionSubtitle: {
+      cn: "除了 Play Kit 订阅盒，Lovevery 还有这些独立产品值得关注",
+      en: "Beyond Play Kit subscriptions, Lovevery also offers these standalone products",
+    },
+    music: { cn: "音乐玩具", en: "Music" },
+    bath: { cn: "洗澡玩具", en: "Bath" },
+    blockSet: { cn: "积木套装", en: "Block Set" },
+    playGym: { cn: "游戏垫", en: "Play Gym" },
+    viewProduct: { cn: "查看详情", en: "View Details" },
+  },
+
   // Navigation
   nav: {
     aboutUs: { cn: "关于我们", en: "About Us" },
+    products: { cn: "独立产品", en: "Products" },
   },
 
   // Footer
@@ -166,16 +181,16 @@ export const i18n = {
     devStages: { cn: "发展阶段", en: "Development Stages" },
     aboutGuide: { cn: "关于本指南", en: "About This Guide" },
     aboutDesc: {
-      cn: "本指南整理了 Lovevery 全部 22 个 Play Kit 的详细信息，包括每个玩具的使用方法、发展目标和家长真实评价，帮助您更好地使用这些精心设计的教育玩具。",
-      en: "This guide covers all 22 Lovevery Play Kits in detail, including how to use each toy, developmental goals, and real parent reviews, helping you get the most out of these expertly designed educational toys.",
+      cn: "本指南整理了 Lovevery 全部 22 个 Play Kit 和 4 款独立产品的详细信息，包括每个玩具的使用方法、发展目标和家长真实评价，帮助您更好地使用这些精心设计的教育玩具。",
+      en: "This guide covers all 22 Lovevery Play Kits and 4 standalone products in detail, including how to use each toy, developmental goals, and real parent reviews, helping you get the most out of these expertly designed educational toys.",
     },
     brandDesc: {
       cn: "基于蒙特梭利教育理念的订阅制玩具品牌，按月龄段提供经过儿童发展专家设计的玩具套装。",
       en: "A Montessori-based subscription toy brand offering age-appropriate play kits designed by child development experts.",
     },
     tagline: {
-      cn: "Lovevery Fans — Play Kit 完整指南",
-      en: "Lovevery Fans — Complete Play Kit Guide",
+      cn: "Lovevery Fans — Play Kit 与产品完整指南",
+      en: "Lovevery Fans — Complete Play Kit & Product Guide",
     },
     disclaimer: {
       cn: "本网站由 Lovevery 爱好者自发创建，非官方网站。本站部分链接为 Amazon 联盟营销链接，通过这些链接购买不会增加您的费用，但我们会获得少量佣金以支持网站运营。",
