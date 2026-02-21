@@ -42,6 +42,7 @@ import Lightbox from "@/components/Lightbox";
 import { RewardBanner } from "@/components/RewardBanner";
 import { RecommendedReading } from "@/components/RecommendedReading";
 import { AlternativesSection } from "@/components/AlternativesSection";
+import { ShareSection } from "@/components/ShareSection";
 import { getToyAlternatives, alternatives as allAlternatives } from "@/data/alternatives";
 import { trackEvent } from "@/lib/analytics";
 
@@ -876,6 +877,13 @@ export default function KitDetail() {
           </div>
         </div>
       </section>
+
+      {/* Share — elegant, subtle */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="border-t border-[#E8DFD3]/60">
+          <ShareSection />
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="relative bg-[#3D3229] text-white py-8 sm:py-12">

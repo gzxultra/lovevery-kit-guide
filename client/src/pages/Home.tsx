@@ -12,6 +12,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useI18n } from "@/hooks/useI18n";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ArrowRight, BookOpen, Baby, Sparkles, Menu, X, Search, Music, Droplets, Box, Star } from "lucide-react";
+import { FooterShareMessage } from "@/components/ShareSection";
 import { useState, useMemo, useRef, useEffect, lazy, Suspense } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -719,7 +720,6 @@ export default function Home() {
 
                       <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#F0EBE3] group-hover:border-[#E8DFD3] transition-colors">
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-semibold" style={{ color: product.color }}>{product.price}</span>
                           <span className="flex items-center gap-0.5 text-xs text-amber-600">
                             <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                             {product.rating}
@@ -815,6 +815,7 @@ export default function Home() {
             <p className="text-xs sm:text-sm text-[#9A8E82] leading-relaxed max-w-4xl mx-auto">
               {i18n.footer.disclaimer[lang]}
             </p>
+            <FooterShareMessage />
             <div data-rainbow-portal className="mt-3 flex justify-center" />
           </div>
         </div>

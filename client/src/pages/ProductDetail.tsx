@@ -16,6 +16,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { AlternativesSection } from "@/components/AlternativesSection";
 import { RewardBanner } from "@/components/RewardBanner";
 import { RecommendedReading } from "@/components/RecommendedReading";
+import { ShareSection } from "@/components/ShareSection";
 import { trackEvent } from "@/lib/analytics";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -695,6 +696,9 @@ export default function ProductDetail() {
         </div>
       </section>
 
+      {/* Recommended Reading — same as KitDetail */}
+      <RecommendedReading />
+
       {/* Navigation between products — same as KitDetail kit navigation */}
       <section className="border-t border-[#E8DFD3] bg-gradient-to-b from-white to-[#FAF7F2]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -741,6 +745,13 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
+
+      {/* Share — elegant, subtle */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="border-t border-[#E8DFD3]/60">
+          <ShareSection />
+        </div>
+      </div>
 
       {/* Footer — same as KitDetail */}
       <footer className="relative bg-[#3D3229] text-white py-8 sm:py-12">

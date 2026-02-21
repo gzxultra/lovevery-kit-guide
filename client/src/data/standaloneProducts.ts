@@ -37,7 +37,7 @@ export const standaloneProducts: StandaloneProduct[] = [
     id: "musicSet",
     name: "The Music Set",
     category: "music",
-    price: "$120.00",
+    price: "$130.00",
     ageRange: "12 个月以上",
     ageRangeEn: "12+ months",
     description: "用 6 件真正的乐器培养宝宝的音乐感知力。每件乐器都经过精心调音，采用安全的木质和金属材料，让孩子在敲打、吹奏和摇晃中探索节奏、音高和旋律。",
@@ -48,7 +48,7 @@ export const standaloneProducts: StandaloneProduct[] = [
     lightColor: "#FDEEE3",
     rating: 4.9,
     reviewCount: 1183,
-    imageUrl: "https://cdn.lovevery.com/images/products/music-set-hero.jpg",
+    imageUrl: "https://images.ctfassets.net/0sea1vycfyqy/1gQ7WL8dagt25VwN36Yrte/3a429d6e0acbc40d0c689fd33e3cf5d1/MusicSet_FlayLay.png",
     toys: [
       {
         name: "五音拍打铃",
@@ -128,9 +128,9 @@ export const standaloneProducts: StandaloneProduct[] = [
     id: "bathSet",
     name: "The Bath Set",
     category: "bath",
-    price: "$48.00",
-    ageRange: "12 个月以上",
-    ageRangeEn: "12+ months",
+    price: "$60.00",
+    ageRange: "9 个月以上",
+    ageRangeEn: "9+ months",
     description: "把洗澡时间变成科学探索时间！7 件浴室玩具让宝宝在水中探索沉浮、旋转、容纳等物理概念，每一件都经过安全认证，防霉设计让家长更放心。",
     descriptionEn: "Turn bath time into science exploration! 7 bath toys let your child explore physics concepts like sinking, floating, spinning, and containment in water. Each piece is safety certified with anti-mold design for parents' peace of mind.",
     officialUrl: "https://lovevery.com/products/the-bath-set",
@@ -139,7 +139,7 @@ export const standaloneProducts: StandaloneProduct[] = [
     lightColor: "#E3F0F7",
     rating: 4.9,
     reviewCount: 419,
-    imageUrl: "https://cdn.lovevery.com/images/products/bath-set-hero.jpg",
+    imageUrl: "https://images.ctfassets.net/0sea1vycfyqy/Qtaj63BCkTZp1Z6pH8DGr/9230e122e3602edfb9b125ff6037c5bb/AU_UK_EU_1.png",
     toys: [
       {
         name: "进出浴管",
@@ -241,8 +241,8 @@ export const standaloneProducts: StandaloneProduct[] = [
     bgColor: "#F0F7F2",
     lightColor: "#E3F0E6",
     rating: 5.0,
-    reviewCount: 1599,
-    imageUrl: "https://cdn.lovevery.com/images/products/block-set-hero.jpg",
+    reviewCount: 1604,
+    imageUrl: "https://images.ctfassets.net/0sea1vycfyqy/4AY7pDjsc7Cc0fN9cu4ZLP/3c357285054962fac64e5f4dd482fb48/Bea_6028_R3_VK_Updated-6-2020_VS_R2_Baby__CL-5_v2-2.png",
     toys: [
       {
         name: "实木积木块",
@@ -333,7 +333,7 @@ export const standaloneProducts: StandaloneProduct[] = [
     lightColor: "#F5E3EB",
     rating: 5.0,
     reviewCount: 2647,
-    imageUrl: "https://cdn.lovevery.com/images/products/play-gym-hero.jpg",
+    imageUrl: "https://images.ctfassets.net/0sea1vycfyqy/4I7EU6BJJYOCTmFdcjk456/9f7e84842fd73f377b737764b67f94a8/2023_02_21_Play-Gym_ISO_S_1427.png",
     toys: [
       {
         name: "高对比度球",
