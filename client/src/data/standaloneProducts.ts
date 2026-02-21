@@ -411,8 +411,29 @@ export const standaloneProducts: StandaloneProduct[] = [
   },
 ];
 
+// Slug mapping: kebab-case URL slug → camelCase product ID
+const slugToId: Record<string, string> = {
+  "music-set": "musicSet",
+  "bath-set": "bathSet",
+  "block-set": "blockSet",
+  "play-gym": "playGym",
+};
+
+// Reverse mapping: camelCase product ID → kebab-case URL slug
+export const idToSlug: Record<string, string> = {
+  "musicSet": "music-set",
+  "bathSet": "bath-set",
+  "blockSet": "block-set",
+  "playGym": "play-gym",
+};
+
 export function getProductById(id: string): StandaloneProduct | undefined {
-  return standaloneProducts.find((p) => p.id === id);
+  // Try direct match first (camelCase), then try slug-to-id mapping (kebab-case)
+  return standaloneProducts.find((p) => p.id === id) || standaloneProducts.find((p) => p.id === slugToId[id]);
+}
+
+export function getProductSlug(productId: string): string {
+  return idToSlug[productId] || productId;
 }
 
 export function getProductsByCategory(category: string): StandaloneProduct[] {

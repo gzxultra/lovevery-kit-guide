@@ -5,7 +5,7 @@
  */
 
 import { kits, stages } from "@/data/kits";
-import { standaloneProducts, productCategories } from "@/data/standaloneProducts";
+import { standaloneProducts, productCategories, getProductSlug } from "@/data/standaloneProducts";
 import { getKitHeroImage } from "@/data/toyImages";
 import { getKitCardThumbnailUrl, getAccessibleTextColor } from "@/lib/imageUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -265,7 +265,7 @@ export default function Home() {
                           <button
                             key={`${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
                             onClick={() => {
-                              setLocation(result.isProduct ? `/product/${result.kitId}` : `/kit/${result.kitId}`);
+                              setLocation(result.isProduct ? `/product/${getProductSlug(result.kitId)}` : `/kit/${result.kitId}`);
                               setSearchQuery("");
                               setSearchOpen(false);
                             }}
@@ -378,7 +378,7 @@ export default function Home() {
                       <button
                         key={`m-${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
                         onClick={() => {
-                          setLocation(result.isProduct ? `/product/${result.kitId}` : `/kit/${result.kitId}`);
+                          setLocation(result.isProduct ? `/product/${getProductSlug(result.kitId)}` : `/kit/${result.kitId}`);
                           setSearchQuery("");
                           setSearchOpen(false);
                         }}
@@ -685,7 +685,7 @@ export default function Home() {
               const catInfo = productCategories.find((c) => c.id === product.category);
               const CategoryIcon = getProductCategoryIcon(catInfo?.icon || "blocks");
               return (
-                <Link key={product.id} href={`/product/${product.id}`}>
+                <Link key={product.id} href={`/product/${getProductSlug(product.id)}`}>
                   <div
                     className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full active:scale-[0.98] card-glow"
                     onMouseEnter={prefetchProductDetail}
@@ -785,7 +785,7 @@ export default function Home() {
               <ul className="space-y-1">
                 {standaloneProducts.map((p) => (
                   <li key={p.id}>
-                    <Link href={`/product/${p.id}`}>
+                    <Link href={`/product/${getProductSlug(p.id)}`}>
                       <span className="text-sm text-[#B8AFA3] hover:text-white hover:translate-x-1 transition-all duration-200 min-h-[44px] flex items-center gap-2">
                         <span className="w-1 h-1 rounded-full bg-[#6B5E50]" />
                         {p.name}
