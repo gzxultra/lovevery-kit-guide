@@ -4,6 +4,7 @@
  * with a parenting guide and "Night Owl Mama Club" interaction.
  */
 import { useEffect, useState, useRef, useCallback } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Moon, Sparkles, BookOpen, Coffee, X, Heart } from "lucide-react";
 
@@ -56,9 +57,7 @@ export default function LateNightBanner() {
     setHeartCount(newCount);
     localStorage.setItem("nightOwlHearts", newCount.toString());
     
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "night_owl_heart", { count: newCount });
-    }
+    trackEvent("night_owl_heart", { count: newCount });
   };
 
   // Stars animation (same as before)

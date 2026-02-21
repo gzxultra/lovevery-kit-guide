@@ -1,7 +1,8 @@
-import { Star, ExternalLink, ShoppingCart } from "lucide-react";
+import { ShoppingCart, Star, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { Alternative } from "@/data/alternatives";
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface AlternativesSectionProps {
   alternatives: Alternative[];
@@ -155,16 +156,14 @@ export function AlternativesSection({
                   rel="noopener noreferrer sponsored"
                   onClick={() => {
                     // Send Google Analytics event
-                    if (typeof window !== "undefined" && window.gtag) {
-                      window.gtag("event", "click_amazon_link", {
-                        product_name: alt.name,
-                        asin: alt.asin,
-                        price: alt.price || "N/A",
-                        kit_name: kitName || "Unknown",
-                        toy_name: toyName,
-                        page_url: window.location.href,
-                      });
-                    }
+                    trackEvent("click_amazon_link", {
+                      product_name: alt.name,
+                      asin: alt.asin,
+                      price: alt.price || "N/A",
+                      kit_name: kitName || "Unknown",
+                      toy_name: toyName,
+                      page_url: typeof window !== "undefined" ? window.location.href : "",
+                    });
                   }}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#FF9900] hover:bg-[#E88B00] text-white text-[11px] sm:text-xs font-medium transition-all duration-200 hover:shadow-md hover:shadow-[#FF9900]/20 active:scale-[0.98] min-h-[36px]"
                 >

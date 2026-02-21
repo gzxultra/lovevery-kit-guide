@@ -3,6 +3,7 @@
  * Click the site logo/title 5 times rapidly to trigger a "Lovevery Trivia" popup.
  */
 import { useEffect, useRef, useState, useCallback } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { X, Info, Sparkles, RefreshCw } from "lucide-react";
 
@@ -59,9 +60,7 @@ export default function LogoClickCombo() {
       setCurrentTrivia(triviaList[Math.floor(Math.random() * triviaList.length)]);
       setShowTrivia(true);
       
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "unlock_trivia", { method: "logo_click" });
-      }
+      trackEvent("unlock_trivia", { method: "logo_click" });
     } else {
       clickTimerRef.current = setTimeout(() => {
         clickCountRef.current = 0;

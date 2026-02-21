@@ -4,6 +4,7 @@
  * and unlocks a secret discount code or parenting tip.
  */
 import { useEffect, useState, useCallback, useRef } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { X, Sparkles, Gift, Lightbulb, Copy, Check } from "lucide-react";
 
@@ -103,11 +104,9 @@ export default function KonamiCode() {
       setRandomTip(tips[Math.floor(Math.random() * tips.length)]);
       
       // Send GA event
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "unlock_konami", {
-          method: "konami_code"
-        });
-      }
+      trackEvent("unlock_konami", {
+        method: "konami_code"
+      });
     }
   }, [triggered, lang]);
 
@@ -261,9 +260,7 @@ export default function KonamiCode() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
     
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "copy_konami_code", { code: DISCOUNT_CODE });
-    }
+    trackEvent("copy_konami_code", { code: DISCOUNT_CODE });
   };
 
   if (!triggered && !showModal) return null;

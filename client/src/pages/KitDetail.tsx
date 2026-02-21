@@ -43,6 +43,7 @@ import { RewardBanner } from "@/components/RewardBanner";
 import { RecommendedReading } from "@/components/RecommendedReading";
 import { AlternativesSection } from "@/components/AlternativesSection";
 import { getToyAlternatives, alternatives as allAlternatives } from "@/data/alternatives";
+import { trackEvent } from "@/lib/analytics";
 
 const REFERRAL_CODE = "REF-6AA44A5A";
 
@@ -98,12 +99,10 @@ const ToyCard = memo(function ToyCard({
       
       // Send GA event when expanding to view alternatives
       if (toyAlternatives && toyAlternatives.length > 0) {
-        if (typeof window !== "undefined" && window.gtag) {
-          window.gtag("event", "view_alternatives", {
-            toy_name: toy.englishName,
-            kit_name: kitName,
-          });
-        }
+        trackEvent("view_alternatives", {
+          toy_name: toy.englishName,
+          kit_name: kitName,
+        });
       }
     }, 250); // 250ms debounce
     setHoverTimeout(timeout);
@@ -130,20 +129,17 @@ const ToyCard = memo(function ToyCard({
     const willExpand = !expanded;
     setExpanded(willExpand);
     
-    if (typeof window !== "undefined" && window.gtag) {
-      // 3a. Module expand/collapse event
-      window.gtag("event", willExpand ? "module_expand" : "module_collapse", {
+    // Track module expand/collapse
+    trackEvent(willExpand ? "module_expand" : "module_collapse", {
+      module_name: "alternatives",
+      toy_name: toy.englishName,
+    });
+    // Also track view_alternatives when expanding
+    if (willExpand && toyAlternatives && toyAlternatives.length > 0) {
+      trackEvent("view_alternatives", {
         toy_name: toy.englishName,
         kit_name: kitName,
       });
-
-      // Send GA event when expanding to view alternatives
-      if (willExpand && toyAlternatives && toyAlternatives.length > 0) {
-        window.gtag("event", "view_alternatives", {
-          toy_name: toy.englishName,
-          kit_name: kitName,
-        });
-      }
     }
   };
 
@@ -386,14 +382,12 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3D3229] text-white rounded-full text-sm font-medium hover:bg-[#2A231C] hover:shadow-lg hover:shadow-[#3D3229]/20 transition-all duration-300 active:scale-[0.98] min-h-[48px]"
               onClick={() => {
-                if (typeof window !== "undefined" && window.gtag) {
-                  window.gtag("event", "lovevery_referral_click", {
-                    kit_name: kitId,
-                    kit_id: kitId,
-                    page_url: window.location.href,
-                    link_type: "buy_kit_button"
-                  });
-                }
+                trackEvent("lovevery_referral_click", {
+                  kit_name: kitId,
+                  kit_id: kitId,
+                  page_url: typeof window !== "undefined" ? window.location.href : "",
+                  link_type: "buy_kit_button"
+                });
               }}
             >
               <Heart className="w-4 h-4" />
@@ -406,14 +400,12 @@ function ReferralCard({ kitId, kitColor }: { kitId: string; kitColor: string }) 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#3D3229] rounded-full text-sm font-medium border border-[#E8DFD3] hover:bg-[#F5F0E8] transition-all duration-300 active:scale-[0.98] min-h-[48px]"
               onClick={() => {
-                if (typeof window !== "undefined" && window.gtag) {
-                  window.gtag("event", "lovevery_referral_click", {
-                    kit_name: kitId,
-                    kit_id: kitId,
-                    page_url: window.location.href,
-                    link_type: "learn_referral_button"
-                  });
-                }
+                trackEvent("lovevery_referral_click", {
+                  kit_name: kitId,
+                  kit_id: kitId,
+                  page_url: typeof window !== "undefined" ? window.location.href : "",
+                  link_type: "learn_referral_button"
+                });
               }}
             >
               {i18n.referral.learnReferral[lang]}
@@ -491,12 +483,10 @@ export default function KitDetail() {
       });
 
       // Send Google Analytics event for kit view
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "view_kit", {
-          kit_name: kit.name,
-          kit_age_range: kit.ageRange,
-        });
-      }
+      trackEvent("view_kit", {
+        kit_name: kitName,
+        kit_id: kitId,
+      });
     }
     return () => {
       cleanupKitPageSeo();
@@ -650,14 +640,12 @@ export default function KitDetail() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      if (typeof window !== "undefined" && window.gtag) {
-                        window.gtag("event", "lovevery_referral_click", {
-                          kit_name: kit.name,
-                          kit_id: kit.id,
-                          page_url: window.location.href,
-                          link_type: "kit_header"
-                        });
-                      }
+                      trackEvent("lovevery_referral_click", {
+                        kit_name: kitId,
+                        kit_id: kitId,
+                        page_url: typeof window !== "undefined" ? window.location.href : "",
+                        link_type: "kit_header"
+                      });
                     }}
                     className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl text-sm font-medium border-2 transition-all hover:shadow-md active:scale-[0.98] group"
                     style={{

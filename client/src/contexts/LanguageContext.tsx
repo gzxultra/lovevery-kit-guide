@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export type Language = "cn" | "en";
 
@@ -53,12 +54,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("lovevery-lang", next);
       
       // Send Google Analytics event for language switch
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "switch_language", {
-          from_lang: prev,
-          to_lang: next,
-        });
-      }
+      trackEvent("switch_language", {
+        from_lang: prev,
+        to_lang: next,
+      });
       
       return next;
     });

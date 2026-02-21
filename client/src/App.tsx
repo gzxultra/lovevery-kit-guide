@@ -3,6 +3,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { lazy, Suspense, useEffect } from "react";
 import TrafficSourceTracker from "./components/TrafficSourceTracker";
+import { trackEvent } from "./lib/analytics";
 
 // Lazy load easter eggs so they don't affect initial bundle
 const EasterEggs = lazy(() => import("./components/easter-eggs"));
@@ -102,9 +103,7 @@ function App({ onReady }: { onReady?: () => void }) {
       thresholds.forEach(t => {
         if (percent >= t && !reached.has(t)) {
           reached.add(t);
-          if (typeof window !== "undefined" && window.gtag) {
-            window.gtag('event', 'scroll_depth', { 'percent': t });
-          }
+          trackEvent('scroll_depth', { 'percent': t });
         }
       });
     };

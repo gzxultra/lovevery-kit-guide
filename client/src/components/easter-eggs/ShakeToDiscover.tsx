@@ -4,6 +4,7 @@
  * Higher threshold and sensitivity for better UX.
  */
 import { useEffect, useState, useRef, useCallback } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { kits } from "@/data/kits";
 import { getToyImage } from "@/data/toyImages";
@@ -89,9 +90,7 @@ export default function ShakeToDiscover() {
             vibrate([50, 50, 100]);
             setTimeout(() => setFlipping(false), 600);
             
-            if (typeof window !== "undefined" && window.gtag) {
-              window.gtag("event", "shake_discovery", { toy_name: toy.englishName });
-            }
+            trackEvent("shake_discovery", { toy_name: toy.englishName });
           }
         } else {
           vibrate(20);

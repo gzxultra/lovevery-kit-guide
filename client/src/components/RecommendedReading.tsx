@@ -21,6 +21,7 @@ import {
   getArticleTypeLabel,
   type RecommendedArticle,
 } from "@/data/recommendedArticles";
+import { trackEvent } from "@/lib/analytics";
 
 /* ------------------------------------------------------------------ */
 /*  i18n strings                                                       */
@@ -69,13 +70,11 @@ function ArticleCard({
   const colors = typeColors[article.articleType] || typeColors.review;
 
   const handleClick = () => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "click_recommended_article", {
-        article_title: article.title,
-        source: article.source,
-        language: article.language,
-      });
-    }
+    trackEvent("click_recommended_article", {
+      article_title: article.title,
+      source: article.source,
+      language: article.language,
+    });
   };
 
   return (

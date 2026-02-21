@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { trackEvent, setUserProperties } from "@/lib/analytics";
 
 export default function TrafficSourceTracker() {
   useEffect(() => {
@@ -21,17 +22,15 @@ export default function TrafficSourceTracker() {
     const userType = detectUserType();
 
     // Set GA4 Custom Dimension
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag('set', 'user_properties', {
-        'user_type': userType
-      });
-      
-      // Also send an event to ensure it's captured
-      window.gtag('event', 'user_type_detected', {
-        'user_type': userType,
-        'non_interaction': true
-      });
-    }
+    setUserProperties({
+      'user_type': userType
+    });
+    
+    // Also send an event to ensure it's captured
+    trackEvent('user_type_detected', {
+      'user_type': userType,
+      'non_interaction': true
+    });
 
     // Triple-click listener for site owner activation
     const handleTripleClick = (e: MouseEvent) => {
