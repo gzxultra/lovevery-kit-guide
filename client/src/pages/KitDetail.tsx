@@ -484,8 +484,8 @@ export default function KitDetail() {
 
       // Send Google Analytics event for kit view
       trackEvent("view_kit", {
-        kit_name: kitName,
-        kit_id: kitId,
+        kit_name: kit.name,
+        kit_id: kit.id,
       });
     }
     return () => {
