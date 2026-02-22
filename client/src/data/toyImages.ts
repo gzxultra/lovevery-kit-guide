@@ -155,7 +155,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "investigator": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/4VtrirRw4nh0SL9MdwhKI/094d8d00706c649d817d5e0aa33acf04/Lovevery-VKS-Playkit-TheInvestigator-ISO-238-April2021_web_hex.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/1AMaoibEALzlbFwQmehfUh/b759046187b2b1a6da2aae6cd932d4c6/Lovevery-VKS-Playkit-TheResearcher-ISO_Three_Quarter_v2_gray.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/2Eqfc2kd6LH83SQiitGn2p/6e597b994ec9bf15103ca166db3b228a/Year_3_Playkit_10566_VS_R1_CL.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_3_Playkit_10766_VS_R1_CL.png",
@@ -166,7 +166,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "freeSpirit": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/5xClG7UVG7RzizKNfSEGwL/814958b45c4e3f171e683e63800aa4ff/Lovevery-VKS-Playkit-TheFreeSpirit-ISO-238-April2021_web_hex.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/3LjeUhQq1s13KVjAt1bnoG/9088463886929927a6f2e5a43d304bea/Lovevery-VKS-Playkit-TheFreeSpirit-ISO-163-US_April2021_web_hex-_1_.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/4PDeMXYxABm4yq4QmGkYey/5e92c8681e944c0a4a1dc51736ea4505/Year_3_Playkit_10566_VS_R1_CL.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_3_Playkit_10766_VS_R1_CL.png",
@@ -177,7 +177,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "problemSolver": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/69xRjtUrGeOh7r9TjY0kbk/ddca12125ddaeb0f39205ca64fd5f24c/Lovevery-VKS-Playkit-TheProblemSolver-ISO-238-April2021_web_hex.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/4al3AH2xQfV2QQXj2QDuc9/39755b75003f3074a405c29c9538c838/Lovevery-VKS-Playkit-3YO-TheProblemSolver-ISO-357-April2021_web_gray.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/4oiaF9oH31TEZ0g603sZEd/e5a1cc52fdf2df52613b5636b031eca7/Year_3_Playkit_10566_VS_R1_CL.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_3_Playkit_10766_VS_R1_CL.png",
@@ -188,7 +188,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
     ],
   },
   "analyst": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2tbAWpk47etVGnGoJIRNjv/4a5088277ab27a96ee30a3727da3cd35/Lovevery-VKS-Playkit-TheAnalyst-ISO-238-April2021_web_hex.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/7rjUtdrmjQIGid4dIquAkO/4bf0296a27712ff4ce8293952bf97903/Lovevery-VKS-Playkit-3YO-TheAnalyst-ISO-347-April2021_gray_f159763e-a471-4c76-a316-f9ffe8d0c105.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/1uLnoeTps8XejQrd4BJA6a/360bc6aee2a9ce95dba08cc9c1c7af2f/Year_4_Playkit_10566_VS_R1_CL.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_4_Playkit_10766_VS_R1_CL.png",
@@ -259,7 +259,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
   },
 
   "storyteller": {
-    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/1784oiurLWdIPvJuO7qnWq/60961f628de0aed787d6dd5dabc4cd21/Lovevery-VKS-Playkit-TheStoryteller-ISO-238-April2021_web_hex.png",
+    heroImage: "https://images.ctfassets.net/0sea1vycfyqy/UIuDQ5G6bzKNkvYkGGXhN/ff839959bcd04423d1f9f2927ae347fe/Lovevery-VKS-Playkit-3YO-TheStoryteller-ISO-339-April2021_v2_gray.png",
     toyImages: [
       "https://images.ctfassets.net/0sea1vycfyqy/1djkg0ageftK9tb6nCrsMB/96e06ed35cad1fd30ef785bb5d0d32ec/Year_4_Playkit_10566_VS_R1_CL.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5qsJEOAWBpMKFUMEoCE3if/a6695932232def8d119d0c7ac48d2a72/Year_4_Playkit_10766_VS_R1_CL.png",
