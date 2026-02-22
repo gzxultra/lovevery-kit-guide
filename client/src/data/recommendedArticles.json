@@ -647,48 +647,6 @@
         "isEditorPick": false
       }
     ],
-    "investigator": [
-      {
-        "title": "Lovevery Review 13: The Investigator Play Kit (Months 31-33)",
-        "url": "https://thismomthingblog.com/?p=8312",
-        "source": "thismomthingblog.com",
-        "language": "en",
-        "description": "A detailed review of each toy in The Investigator play kit, with photos and a comparison to Amazon dupes. The author also discusses the educational value of the toys and whether the kit is worth the price.",
-        "articleType": "review",
-        "qualityScore": 5,
-        "isEditorPick": true
-      },
-      {
-        "title": "Lovevery The Investigator Play Kit Review For 31, 32, 33 Months: Worth It?",
-        "url": "https://confidentlymom.com/lovevery-the-investigator-play-kit-review/",
-        "source": "confidentlymom.com",
-        "language": "en",
-        "description": "An in-depth review of The Investigator play kit, including a video review, a cost analysis, and a discussion of the pros and cons of the kit. The author also provides links to alternative toys.",
-        "articleType": "review",
-        "qualityScore": 5,
-        "isEditorPick": true
-      },
-      {
-        "title": "【经验分享】LOVEVERY玩具订阅，给你看得见的成长",
-        "url": "https://www.usmama.com/featured/31538/",
-        "source": "usmama.com",
-        "language": "zh",
-        "description": "A detailed guide to the Lovevery toy subscription service, written in Chinese. The article explains the subscription model, the types of toys included, and the benefits of the service for child development.",
-        "articleType": "chinese_guide",
-        "qualityScore": 4,
-        "isEditorPick": false
-      },
-      {
-        "title": "Lovevery 31-33个月 The Investigator 盒子玩法分享",
-        "url": "https://www.dealmoon.com/guide/1034567",
-        "source": "dealmoon.com",
-        "language": "zh",
-        "description": "介绍了31-33个月盒子中各种复杂拼图和逻辑玩具的引导方法。",
-        "articleType": "usage_guide",
-        "qualityScore": 4,
-        "isEditorPick": false
-      }
-    ],
     "freeSpirit": [
       {
         "title": "Lovevery Review 14: The Free Spirit Play Kit (Months 32-34)",
@@ -1319,6 +1277,48 @@
         "articleType": "usage_guide",
         "qualityScore": 5,
         "isEditorPick": true
+      }
+    ],
+    "researcher": [
+      {
+        "title": "Lovevery Review 13: The Researcher Play Kit (Months 31-33)",
+        "url": "https://thismomthingblog.com/?p=8312",
+        "source": "thismomthingblog.com",
+        "language": "en",
+        "description": "A detailed review of each toy in The Researcher play kit, with photos and a comparison to Amazon dupes. The author also discusses the educational value of the toys and whether the kit is worth the price.",
+        "articleType": "review",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "Lovevery The Researcher Play Kit Review For 31, 32, 33 Months: Worth It?",
+        "url": "https://confidentlymom.com/lovevery-the-investigator-play-kit-review/",
+        "source": "confidentlymom.com",
+        "language": "en",
+        "description": "An in-depth review of The Researcher play kit, including a video review, a cost analysis, and a discussion of the pros and cons of the kit. The author also provides links to alternative toys.",
+        "articleType": "review",
+        "qualityScore": 5,
+        "isEditorPick": true
+      },
+      {
+        "title": "【经验分享】LOVEVERY玩具订阅，给你看得见的成长",
+        "url": "https://www.usmama.com/featured/31538/",
+        "source": "usmama.com",
+        "language": "zh",
+        "description": "A detailed guide to the Lovevery toy subscription service, written in Chinese. The article explains the subscription model, the types of toys included, and the benefits of the service for child development.",
+        "articleType": "chinese_guide",
+        "qualityScore": 4,
+        "isEditorPick": false
+      },
+      {
+        "title": "Lovevery 31-33个月 The Researcher 盒子玩法分享",
+        "url": "https://www.dealmoon.com/guide/1034567",
+        "source": "dealmoon.com",
+        "language": "zh",
+        "description": "介绍了31-33个月盒子中各种复杂拼图和逻辑玩具的引导方法。",
+        "articleType": "usage_guide",
+        "qualityScore": 4,
+        "isEditorPick": false
       }
     ]
   }

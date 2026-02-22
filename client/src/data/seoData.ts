@@ -123,14 +123,14 @@ export const kitSeoDataMap: Record<string, KitSeoData> = {
     seoDescriptionEn: "The Enthusiast Play Kit is designed for energetic 28-30 month old toddlers bursting with enthusiasm. Explore every toy with real parent reviews and find the best affordable Lovevery dupes and alternatives on Amazon.",
     seoDescriptionCn: "The Enthusiast 玩具盒专为精力充沛的 28-30 个月大幼儿设计。探索每个玩具的真实家长评价，以及 Amazon 上最佳的 Lovevery 平替推荐。",
   },
-  investigator: {
-    kitId: "investigator",
-    metaTitleEn: "The Investigator Play Kit (31-33 Months) | Lovevery Alternatives & Dupes | Lovevery Fans",
-    metaTitleCn: "The Investigator 玩具盒 (31-33个月) | Lovevery 平替推荐 | Lovevery Fans",
-    metaDescriptionEn: "Discover affordable Lovevery Investigator Play Kit alternatives for 31-33 month old toddlers. STEM toys, science kits, and more with real Amazon prices and ratings.",
-    metaDescriptionCn: "Lovevery Investigator 玩具盒 (31-33个月) 完整指南：STEM 玩具、科学套装等使用方法、家长评价，以及 Amazon 平替推荐。",
-    seoDescriptionEn: "The Investigator Play Kit is designed for 31-33 month old toddlers who love to ask 'why?' and investigate how things work. Find detailed toy guides, parent reviews, and the best Lovevery alternatives on Amazon.",
-    seoDescriptionCn: "The Investigator 玩具盒专为 31-33 个月大幼儿设计，这是宝宝喜欢问「为什么」并探究事物运作原理的阶段。查看详细的玩具指南，以及 Amazon 上的 Lovevery 平替推荐。",
+  researcher: {
+    kitId: "researcher",
+    metaTitleEn: "The Researcher Play Kit (31-33 Months) | Lovevery Alternatives & Dupes | Lovevery Fans",
+    metaTitleCn: "The Researcher 玩具盒 (31-33个月) | Lovevery 平替推荐 | Lovevery Fans",
+    metaDescriptionEn: "Discover affordable Lovevery Researcher Play Kit alternatives for 31-33 month old toddlers. STEM toys, science kits, and more with real Amazon prices and ratings.",
+    metaDescriptionCn: "Lovevery Researcher 玩具盒 (31-33个月) 完整指南：STEM 玩具、科学套装等使用方法、家长评价，以及 Amazon 平替推荐。",
+    seoDescriptionEn: "The Researcher Play Kit is designed for 31-33 month old toddlers who love to ask 'why?' and investigate how things work. Find detailed toy guides, parent reviews, and the best Lovevery alternatives on Amazon.",
+    seoDescriptionCn: "The Researcher 玩具盒专为 31-33 个月大幼儿设计，这是宝宝喜欢问「为什么」并探究事物运作原理的阶段。查看详细的玩具指南，以及 Amazon 上的 Lovevery 平替推荐。",
   },
   freeSpirit: {
     kitId: "freeSpirit",

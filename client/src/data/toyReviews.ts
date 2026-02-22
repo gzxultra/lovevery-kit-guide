@@ -218,12 +218,12 @@ const reviewData: Record<string, ToyReview> = {
     cons: "盖子较小，容易丢失。且木质茶杯不建议真的盛装液体，限制了玩法的真实性。",
   },
 
-  // The Investigator (investigator)
-  "investigator::配对敲击小锤盒": {
+  // The Researcher (researcher)
+  "researcher::配对敲击小锤盒": {
     pros: "发泄情绪和锻炼精准发力的好工具。颜色匹配增加了认知维度，敲击感非常解压。",
     cons: "噪音较大，且如果孩子拿小锤去敲击家具或其他人，会造成破坏或伤害。",
   },
-  "investigator::液体实验室": {
+  "researcher::液体实验室": {
     pros: "极佳的科学启蒙玩具。滴管、烧杯等工具质量上乘，能让孩子在玩水中学习容量和混合。",
     cons: "同样存在弄湿环境的问题，且滴管的橡胶头在长期使用后可能会老化开裂。",
   },
@@ -233,7 +233,7 @@ const reviewData: Record<string, ToyReview> = {
     pros: "假装游戏的高级进阶。内部空间设计合理，结合了锁扣和场景模拟，耐玩度极高。",
     cons: "体积较大，且木制露营车边缘较硬，孩子在玩耍时如果不小心磕碰到会比较疼。",
   },
-  "freeSpirit::实木堆叠鹅卵石": {
+  "freeSpirit::实木堆叠“鹅卵石”": {
     pros: "不规则形状增加了堆叠难度，极度考验专注力和手部平衡。视觉上具有天然美感。",
     cons: "实木块较重，如果堆叠过高倒塌，砸到脚会很疼，且声音巨大。",
   },

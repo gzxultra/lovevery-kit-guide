@@ -588,49 +588,49 @@ const cleaningData: Record<string, CleaningInfo> = {
     cleaningCn: "用湿布擦拭即可，避免浸泡在水中。",
     cleaningEn: "Wipe clean with a damp cloth. Do not expose to excess water.",
   },
-  "investigator::扭转旋转叠叠乐": {
+  "researcher::扭转旋转叠叠乐": {
     material: "木质/Wood",
     materialCn: "木质",
     materialEn: "Wood",
     cleaningCn: "用湿布单独擦拭每个拼图块和底座，避免浸泡在水中。",
     cleaningEn: "Wipe each puzzle piece and the base individually with a damp cloth. Do not expose to excess water.",
   },
-  "investigator::配对敲击小锤盒": {
+  "researcher::配对敲击小锤盒": {
     material: "木质/Wood",
     materialCn: "木质",
     materialEn: "Wood",
     cleaningCn: "用湿布擦拭锤子、圆柱体和盒子，避免浸泡在水中。",
     cleaningEn: "Wipe the hammer, cylinders, and box with a damp cloth. Do not expose to excess water.",
   },
-  "investigator::液体实验室": {
+  "researcher::液体实验室": {
     material: "塑料/Plastic",
     materialCn: "塑料",
     materialEn: "Plastic",
     cleaningCn: "用温和的肥皂水手洗滴管和试管。不可消毒，不可放入洗碗机。",
     cleaningEn: "Hand wash the dropper and test tubes in mild soapy water. Do not sanitize or put in dishwasher.",
   },
-  "investigator::倒计时颜色沙漏": {
+  "researcher::倒计时颜色沙漏": {
     material: "塑料/Plastic",
     materialCn: "塑料",
     materialEn: "Plastic",
     cleaningCn: "用湿布擦拭计时器外壳，注意避免让水进入内部机械装置。",
     cleaningEn: "Wipe the timer's outer casing with a damp cloth. Be careful to keep water away from the internal mechanism.",
   },
-  "investigator::交通工具记忆翻翻乐": {
+  "researcher::交通工具记忆翻翻乐": {
     material: "印刷品(卡片)/Printed Cards",
     materialCn: "印刷品(卡片)",
     materialEn: "Printed Cards",
     cleaningCn: "用干布或微湿布轻轻擦拭每张卡片。",
     cleaningEn: "Wipe each card clean with a dry or lightly damp cloth.",
   },
-  "investigator::跳圈圈和沙包": {
+  "researcher::跳圈圈和沙包": {
     material: "塑料+布质/Plastic+Fabric",
     materialCn: "塑料+布质",
     materialEn: "Plastic+Fabric",
     cleaningCn: "圈圈：用湿布擦拭。沙包：冷水机洗，温和洗涤剂，柔和模式，不可漂白，晾干。",
     cleaningEn: "Hoops: Wipe clean with a damp cloth. Bean Bags: Machine wash cold water, mild detergent, gentle cycle, no bleach. Air dry.",
   },
-  "investigator::《游戏日》纸板书": {
+  "researcher::《游戏日》纸板书": {
     material: "纸板/Cardboard",
     materialCn: "纸板",
     materialEn: "Cardboard",

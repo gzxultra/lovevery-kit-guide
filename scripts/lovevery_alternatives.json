@@ -1767,8 +1767,8 @@
     ]
   },
   {
-    "kitId": "investigator",
-    "kitName": "The Investigator",
+    "kitId": "researcher",
+    "kitName": "The Researcher",
     "toys": [
       {
         "toyName": "Twist & Pivot Pattern Puzzle",
