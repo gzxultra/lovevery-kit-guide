@@ -55,9 +55,9 @@ function renderStars(rating: number | null) {
   return stars;
 }
 
-function formatPrice(price: string | null, lang: string, convert: (s: string) => string): string {
-  if (!price) return lang === "cn" ? convert("查看价格") : "Check Price";
-  return price.replace(/\.$/, "");
+function formatPrice(price: string | null | number, lang: string, convert: (s: string) => string): string {
+  if (price === null || price === undefined || price === "") return lang === "cn" ? convert("查看价格") : "Check Price";
+  return String(price).replace(/\.$/, "");
 }
 
 export function AlternativesSection({
