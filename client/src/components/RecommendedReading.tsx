@@ -265,9 +265,9 @@ export function RecommendedReading({
                       <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-5 overflow-x-auto pb-1">
                         {(
                           [
-                            { key: "all", label: t.allLang },
-                            { key: "en", label: t.enLang },
-                            { key: "zh", label: t.zhLang },
+                            { key: "all", label: i18nStrings.allLang },
+                            { key: "en", label: i18nStrings.enLang },
+                            { key: "zh", label: i18nStrings.zhLang },
                           ] as const
                         ).map(({ key, label }) => (
                           <button
