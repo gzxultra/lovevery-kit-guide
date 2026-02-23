@@ -114,21 +114,18 @@ export function applyKitPageSeo(params: KitSeoParams) {
   setMetaTag("property", "og:description", params.metaDescription);
   setMetaTag("property", "og:url", pageUrl);
   setMetaTag("property", "og:type", "website");
-
+  setMetaTag("property", "og:locale", "en_US");
   // 4. Twitter Card tags
   setMetaTag("name", "twitter:title", params.metaTitle);
   setMetaTag("name", "twitter:description", params.metaDescription);
-
   // 5. Canonical URL
   setLinkTag("canonical", pageUrl);
-
   // 6. Hreflang tags — only x-default since the site uses client-side language toggle
   //    (no separate /en/ or /zh/ URL paths)
   setLinkTag("alternate", pageUrl, "x-default");
   // Remove stale zh/en hreflang tags if they exist from SSR
   document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
   document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
-
   // 7. JSON-LD Structured Data - Product/ItemList for the kit
   const itemListData: any = {
     "@context": "https://schema.org",
@@ -290,9 +287,10 @@ export function cleanupKitPageSeo() {
  * Apply SEO for the Home page
  */
 export function applyHomePageSeo() {
-  document.title = "Lovevery Fans — Complete Play Kit Guide & Affordable Alternatives";
+  document.title = "Lovevery Fans — Complete Play Kit Guide & Affordable Alternatives"; // Matches index.html <title>
   setMetaTag("name", "description", "Lovevery Fans — Complete bilingual guide to all 22 Lovevery Play Kits (0-60 months). Real parent reviews, toy cleaning guides, and curated affordable Amazon alternatives with prices and ratings.");
   setMetaTag("property", "og:title", "Lovevery Fans — Complete Play Kit Guide & Affordable Alternatives");
+  setMetaTag("name", "twitter:title", "Lovevery Fans — Complete Play Kit Guide & Affordable Alternatives");
   setMetaTag("property", "og:url", `${SITE_URL}/`);
   setLinkTag("canonical", `${SITE_URL}/`);
   setLinkTag("alternate", `${SITE_URL}/`, "x-default");
@@ -318,19 +316,16 @@ export function applyProductPageSeo(params: KitSeoParams) {
   setMetaTag("property", "og:description", params.metaDescription);
   setMetaTag("property", "og:url", pageUrl);
   setMetaTag("property", "og:type", "website");
-
+  setMetaTag("property", "og:locale", "en_US");
   // 4. Twitter Card tags
   setMetaTag("name", "twitter:title", params.metaTitle);
   setMetaTag("name", "twitter:description", params.metaDescription);
-
   // 5. Canonical URL
   setLinkTag("canonical", pageUrl);
-
   // 6. Hreflang tags — only x-default since the site uses client-side language toggle
   setLinkTag("alternate", pageUrl, "x-default");
   document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
   document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
-
   // 7. JSON-LD Structured Data - ItemList for the product
   const itemListData: any = {
     "@context": "https://schema.org",
@@ -498,6 +493,8 @@ export function applyAboutPageSeo(lang: "cn" | "en") {
   setMetaTag("property", "og:title", title);
   setMetaTag("property", "og:description", desc);
   setMetaTag("property", "og:url", pageUrl);
+  setMetaTag("property", "og:type", "website");
+  setMetaTag("property", "og:locale", "en_US");
   setLinkTag("canonical", pageUrl);
   setLinkTag("alternate", pageUrl, "x-default");
   document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();

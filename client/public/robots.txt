@@ -12,8 +12,3 @@ Sitemap: https://loveveryfans.com/sitemap.xml
 User-agent: Bingbot
 Crawl-delay: 1
 
-User-agent: Googlebot
-Allow: /
-
-# Host directive
-Host: https://loveveryfans.com

@@ -89,6 +89,7 @@ function generateKitHtml(kitId) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Lovevery Fans" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${seo.title}" />
     <meta name="twitter:description" content="${seo.desc}" />
@@ -141,10 +142,14 @@ function generateAboutHtml() {
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${desc}" />
     <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/MNPxTRzCbxWVkhFf.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Lovevery Fans" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${desc}" />
+    <meta name="twitter:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663324967219/MNPxTRzCbxWVkhFf.jpg" />
     <meta name="theme-color" content="#FAF7F2" />
     ${assetTags}
     ${scriptTagsStr}
@@ -194,6 +199,7 @@ function generateProductHtml(productId) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Lovevery Fans" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${seo.title}" />
     <meta name="twitter:description" content="${seo.desc}" />
