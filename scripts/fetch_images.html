@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazon Image Fetcher - Lovevery Fans</title>
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; max-width: 900px; margin: 20px auto; padding: 0 20px; }
+    h1 { color: #333; }
+    .item { border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin: 8px 0; display: flex; gap: 12px; align-items: center; }
+    .item img { width: 80px; height: 80px; object-fit: contain; border: 1px solid #eee; border-radius: 4px; }
+    .item .info { flex: 1; }
+    .item .name { font-weight: 600; font-size: 14px; }
+    .item .asin { color: #666; font-size: 12px; }
+    .item a { color: #0066c0; text-decoration: none; font-size: 13px; }
+    .item a:hover { text-decoration: underline; }
+    .item input { width: 100%; font-size: 12px; padding: 4px; border: 1px solid #ccc; border-radius: 4px; margin-top: 4px; }
+    .status { font-size: 12px; padding: 2px 6px; border-radius: 4px; }
+    .status.ok { background: #d4edda; color: #155724; }
+    .status.missing { background: #f8d7da; color: #721c24; }
+    button { background: #ff9900; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 16px; margin: 10px 0; }
+    button:hover { background: #e88b00; }
+    #output { background: #f5f5f5; padding: 12px; border-radius: 8px; white-space: pre-wrap; font-family: monospace; font-size: 12px; max-height: 400px; overflow-y: auto; display: none; }
+    .instructions { background: #fff3cd; padding: 12px; border-radius: 8px; margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <h1>🔍 Amazon Image Fetcher</h1>
+  <div class="instructions">
+    <strong>Instructions:</strong> For each item below, click the Amazon link, right-click the main product image, select "Copy Image Address", then paste it into the input field. When done, click "Generate JSON Fixes" to get the fix data.
+  </div>
+  <div id="items"></div>
+  <button onclick="generateFixes()">Generate JSON Fixes</button>
+  <button onclick="copyFixes()">Copy to Clipboard</button>
+  <pre id="output"></pre>
+
+  <script>
+    const ITEMS = [
+      {asin: "B0040B1JYQ", name: "Melissa & Doug Deluxe Wooden Stamp Set: Animals"},
+      {asin: "B0D77BQNVM", name: "Quiggly Toy Spray Mop"},
+      {asin: "B078J5JP34", name: "Play22 Kids Cleaning Set 4 Piece"},
+      {asin: "B0CR1TK5VX", name: "Lasoba Animal Alphabet Puzzle"},
+      {asin: "B091GXM2Y6", name: "KRAFUN My First Sewing Kit"},
+      {asin: "B099DRS8W7", name: "Reward Chore Chart for Kids"},
+      {asin: "B01N1UUHP4", name: "Tiny Polka Dot"},
+      {asin: "B00I00NIDS", name: "Learning Resources I Sea 10! Game"},
+      {asin: "B079GFQ56B", name: "Schylling Pan Flute"},
+      {asin: "B00R0V7PUU", name: "Boon Pipes Toddler Bath Toys"},
+      {asin: "B001QCIG16", name: "Yookidoo Stack N Spray Bath Toy"},
+      {asin: "B004P5PD9O", name: "KEVA Structures 200 Plank Set"},
+      {asin: "B0D53V7BNX", name: "Complex Black and White Card Set"},
+      {asin: "B00712O2D6", name: "Hape Pound & Tap Bench"},
+      {asin: "B092DSWW6N", name: "Kids Accordion"},
+      {asin: "B000EENAGS", name: "Hohner Kids Handle Sleigh Bells"},
+      {asin: "B07YNKJ2HQ", name: "Wood Egg Shakers Set"},
+      {asin: "B0CB1PRJZ4", name: "Wooden Floral Fruit-Sensing Metronome"},
+      {asin: "B0DQPXVRQ8", name: "iPlay iLearn Baby Bath Toys"},
+      {asin: "B00DJPK8PA", name: "Infantino Textured Multi Ball Set"},
+      {asin: "B019ICFYNI", name: "VTech Baby Rattle and Sing Puppy"},
+      {asin: "B00913DY3W", name: "Comotomo Silicone Baby Teether Orange"},
+      {asin: "B0BQMHJ2W6", name: "Montessori Treasure Basket Discovery Toys"},
+      {asin: "B0C2DXQJHG", name: "Pidoko Kids Wooden Building Blocks"},
+      {asin: "B092ZZNRVN", name: "Tender Leaf Toys Bear Tales"},
+      {asin: "B00712O2A2", name: "Hape Doll Family Grandparents"},
+      {asin: "B000IMQ40U", name: "Melissa & Doug Multi-Activity Play Table"},
+      {asin: "B0BHX8KW3X", name: "Nuby Reversible Baby Floor Mat"},
+    ];
+
+    const container = document.getElementById('items');
+    ITEMS.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.innerHTML = `
+        <img id="preview-${item.asin}" src="" onerror="this.style.display='none'">
+        <div class="info">
+          <div class="name">${i+1}. ${item.name}</div>
+          <div class="asin">${item.asin} — <a href="https://www.amazon.com/dp/${item.asin}" target="_blank">Open on Amazon ↗</a></div>
+          <input id="url-${item.asin}" placeholder="Paste Amazon image URL here..." oninput="previewImage('${item.asin}')">
+        </div>
+      `;
+      container.appendChild(div);
+    });
+
+    function previewImage(asin) {
+      const url = document.getElementById('url-' + asin).value.trim();
+      const img = document.getElementById('preview-' + asin);
+      if (url && url.includes('media-amazon.com')) {
+        img.src = url;
+        img.style.display = 'block';
+      }
+    }
+
+    function generateFixes() {
+      const fixes = {};
+      ITEMS.forEach(item => {
+        let url = document.getElementById('url-' + item.asin).value.trim();
+        if (url && url.includes('media-amazon.com')) {
+          const match = url.match(/(https:\/\/m\.media-amazon\.com\/images\/I\/[A-Za-z0-9_+%-]+)/);
+          if (match) url = match[1] + '.jpg';
+          fixes[item.asin] = url;
+        }
+      });
+      const output = document.getElementById('output');
+      output.style.display = 'block';
+      output.textContent = JSON.stringify(fixes, null, 2);
+    }
+
+    function copyFixes() {
+      const output = document.getElementById('output');
+      navigator.clipboard.writeText(output.textContent);
+      alert('Copied to clipboard!');
+    }
+  </script>
+</body>
+</html>
