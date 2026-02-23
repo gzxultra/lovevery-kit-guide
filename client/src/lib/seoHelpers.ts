@@ -101,7 +101,7 @@ function getPriceValidUntil(): string {
  * Apply all SEO tags for a Kit detail page
  */
 export function applyKitPageSeo(params: KitSeoParams) {
-  const pageUrl = `${SITE_URL}/kit/${params.kitId}`;
+  const pageUrl = `${SITE_URL}/kit/${params.kitId}/`;
 
   // 1. Set document title
   document.title = params.metaTitle;
@@ -122,10 +122,12 @@ export function applyKitPageSeo(params: KitSeoParams) {
   // 5. Canonical URL
   setLinkTag("canonical", pageUrl);
 
-  // 6. Hreflang tags
-  setLinkTag("alternate", pageUrl, "zh");
-  setLinkTag("alternate", pageUrl, "en");
+  // 6. Hreflang tags — only x-default since the site uses client-side language toggle
+  //    (no separate /en/ or /zh/ URL paths)
   setLinkTag("alternate", pageUrl, "x-default");
+  // Remove stale zh/en hreflang tags if they exist from SSR
+  document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
+  document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
 
   // 7. JSON-LD Structured Data - Product/ItemList for the kit
   const itemListData: any = {
@@ -279,9 +281,9 @@ export function cleanupKitPageSeo() {
   document.title = "Lovevery Fans";
   setMetaTag("name", "description", "Lovevery Fans — A comprehensive bilingual guide to all Lovevery Play Kits with parent reviews, cleaning guides, and affordable Amazon alternatives.");
   setLinkTag("canonical", `${SITE_URL}/`);
-  setLinkTag("alternate", `${SITE_URL}/`, "zh");
-  setLinkTag("alternate", `${SITE_URL}/`, "en");
   setLinkTag("alternate", `${SITE_URL}/`, "x-default");
+  document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
+  document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
 }
 
 /**
@@ -293,16 +295,17 @@ export function applyHomePageSeo() {
   setMetaTag("property", "og:title", "Lovevery Fans — Complete Play Kit Guide & Affordable Alternatives");
   setMetaTag("property", "og:url", `${SITE_URL}/`);
   setLinkTag("canonical", `${SITE_URL}/`);
-  setLinkTag("alternate", `${SITE_URL}/`, "zh");
-  setLinkTag("alternate", `${SITE_URL}/`, "en");
   setLinkTag("alternate", `${SITE_URL}/`, "x-default");
+  // Remove stale zh/en hreflang tags if they exist from SSR
+  document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
+  document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
 }
 
 /**
  * Apply all SEO tags for a standalone Product detail page
  */
 export function applyProductPageSeo(params: KitSeoParams) {
-  const pageUrl = `${SITE_URL}/product/${params.kitId}`;
+  const pageUrl = `${SITE_URL}/product/${params.kitId}/`;
 
   // 1. Set document title
   document.title = params.metaTitle;
@@ -323,10 +326,10 @@ export function applyProductPageSeo(params: KitSeoParams) {
   // 5. Canonical URL
   setLinkTag("canonical", pageUrl);
 
-  // 6. Hreflang tags
-  setLinkTag("alternate", pageUrl, "zh");
-  setLinkTag("alternate", pageUrl, "en");
+  // 6. Hreflang tags — only x-default since the site uses client-side language toggle
   setLinkTag("alternate", pageUrl, "x-default");
+  document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
+  document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
 
   // 7. JSON-LD Structured Data - ItemList for the product
   const itemListData: any = {
@@ -473,16 +476,16 @@ export function cleanupProductPageSeo() {
   document.title = "Lovevery Fans";
   setMetaTag("name", "description", "Lovevery Fans — A comprehensive bilingual guide to all Lovevery Play Kits with parent reviews, cleaning guides, and affordable Amazon alternatives.");
   setLinkTag("canonical", `${SITE_URL}/`);
-  setLinkTag("alternate", `${SITE_URL}/`, "zh");
-  setLinkTag("alternate", `${SITE_URL}/`, "en");
   setLinkTag("alternate", `${SITE_URL}/`, "x-default");
+  document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
+  document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
 }
 
 /**
  * Apply SEO for the About page
  */
 export function applyAboutPageSeo(lang: "cn" | "en") {
-  const pageUrl = `${SITE_URL}/about`;
+  const pageUrl = `${SITE_URL}/about/`;
   const title = lang === "cn"
     ? "关于我们 | Lovevery Fans"
     : "About Us | Lovevery Fans";
@@ -496,7 +499,7 @@ export function applyAboutPageSeo(lang: "cn" | "en") {
   setMetaTag("property", "og:description", desc);
   setMetaTag("property", "og:url", pageUrl);
   setLinkTag("canonical", pageUrl);
-  setLinkTag("alternate", pageUrl, "zh");
-  setLinkTag("alternate", pageUrl, "en");
   setLinkTag("alternate", pageUrl, "x-default");
+  document.querySelector('link[rel="alternate"][hreflang="zh"]')?.remove();
+  document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
 }

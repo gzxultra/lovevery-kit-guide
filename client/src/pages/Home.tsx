@@ -218,7 +218,7 @@ export default function Home() {
               >
                 {i18n.nav.products[lang]}
               </button>
-              <Link href="/about">
+              <Link href="/about/">
                 <span className="text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors">
                   {i18n.nav.aboutUs[lang]}
                 </span>
@@ -265,7 +265,7 @@ export default function Home() {
                           <button
                             key={`${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
                             onClick={() => {
-                              setLocation(result.isProduct ? `/product/${getProductSlug(result.kitId)}` : `/kit/${result.kitId}`);
+                              setLocation(result.isProduct ? `/product/${getProductSlug(result.kitId)}/` : `/kit/${result.kitId}/`);
                               setSearchQuery("");
                               setSearchOpen(false);
                             }}
@@ -378,7 +378,7 @@ export default function Home() {
                       <button
                         key={`m-${result.kitId}-${result.toyEnglishName || "kit"}-${idx}`}
                         onClick={() => {
-                          setLocation(result.isProduct ? `/product/${getProductSlug(result.kitId)}` : `/kit/${result.kitId}`);
+                          setLocation(result.isProduct ? `/product/${getProductSlug(result.kitId)}/` : `/kit/${result.kitId}/`);
                           setSearchQuery("");
                           setSearchOpen(false);
                         }}
@@ -459,7 +459,7 @@ export default function Home() {
                   <span className="text-xs text-[#756A5C]">{t("4 款产品", "4 Products")}</span>
                 </span>
               </button>
-              <Link href="/about">
+              <Link href="/about/">
                 <span
                   onClick={() => setMobileMenuOpen(false)}
                   className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors min-h-[48px] flex items-center"
@@ -586,7 +586,7 @@ export default function Home() {
                 {stageKits.map((kit) => {
                   const kitHero = getKitHeroImage(kit.id);
                   return (
-                    <Link key={kit.id} href={`/kit/${kit.id}`}>
+                    <Link key={kit.id} href={`/kit/${kit.id}/`}>
                       <div
                         className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full active:scale-[0.98] card-glow"
                         onMouseEnter={prefetchKitDetail}
@@ -685,7 +685,7 @@ export default function Home() {
               const catInfo = productCategories.find((c) => c.id === product.category);
               const CategoryIcon = getProductCategoryIcon(catInfo?.icon || "blocks");
               return (
-                <Link key={product.id} href={`/product/${getProductSlug(product.id)}`}>
+                <Link key={product.id} href={`/product/${getProductSlug(product.id)}/`}>
                   <div
                     className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-[#E8DFD3] hover:border-[#C8BFB3] hover:shadow-2xl hover:shadow-[#3D3229]/12 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full active:scale-[0.98] card-glow"
                     onMouseEnter={prefetchProductDetail}
@@ -785,7 +785,7 @@ export default function Home() {
               <ul className="space-y-1">
                 {standaloneProducts.map((p) => (
                   <li key={p.id}>
-                    <Link href={`/product/${getProductSlug(p.id)}`}>
+                    <Link href={`/product/${getProductSlug(p.id)}/`}>
                       <span className="text-sm text-[#B8AFA3] hover:text-white hover:translate-x-1 transition-all duration-200 min-h-[44px] flex items-center gap-2">
                         <span className="w-1 h-1 rounded-full bg-[#6B5E50]" />
                         {p.name}
@@ -800,7 +800,7 @@ export default function Home() {
               <p className="text-sm text-[#B8AFA3] leading-relaxed mb-4">
                 {i18n.footer.aboutDesc[lang]}
               </p>
-              <Link href="/about">
+              <Link href="/about/">
                 <span className="inline-flex items-center gap-1.5 text-sm text-[#B8AFA3] hover:text-white transition-colors group">
                   {i18n.nav.aboutUs[lang]}
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />

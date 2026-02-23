@@ -739,7 +739,7 @@ export default function ProductDetail() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {prevProduct ? (
-              <Link href={`/product/${getProductSlug(prevProduct.id)}`}>
+              <Link href={`/product/${getProductSlug(prevProduct.id)}/`}>
                 <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] bg-white hover:shadow-lg hover:shadow-[#3D3229]/5 transition-all duration-300 cursor-pointer active:scale-[0.98] min-h-[44px]">
                   <p className="text-[10px] sm:text-xs text-[#756A5C] mb-1.5 sm:mb-2 flex items-center gap-1">
                     <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
@@ -757,7 +757,7 @@ export default function ProductDetail() {
               <div className="hidden sm:block" />
             )}
             {nextProduct ? (
-              <Link href={`/product/${getProductSlug(nextProduct.id)}`}>
+              <Link href={`/product/${getProductSlug(nextProduct.id)}/`}>
                 <div className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#E8DFD3] hover:border-[#C8BFB3] bg-white hover:shadow-lg hover:shadow-[#3D3229]/5 transition-all duration-300 text-right cursor-pointer active:scale-[0.98] min-h-[44px]">
                   <p className="text-[10px] sm:text-xs text-[#756A5C] mb-1.5 sm:mb-2 flex items-center justify-end gap-1">
                     {i18n.kitDetail.nextKit[lang]}

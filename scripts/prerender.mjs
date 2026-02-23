@@ -80,8 +80,6 @@ function generateKitHtml(kitId) {
     <meta name="description" content="${seo.desc}" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="${pageUrl}" />
-    <link rel="alternate" hreflang="zh" href="${pageUrl}" />
-    <link rel="alternate" hreflang="en" href="${pageUrl}" />
     <link rel="alternate" hreflang="x-default" href="${pageUrl}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${pageUrl}" />
@@ -116,7 +114,7 @@ function generateKitHtml(kitId) {
         <h1>The ${kitName} Play Kit (${seo.age})</h1>
         <p>${seo.desc}</p>
         <p><a href="/">← Back to Lovevery Fans Homepage</a></p>
-        <p><a href="/about">About Us</a></p>
+        <p><a href="/about/">About Us</a></p>
       </div>
     </noscript>
   </body>
@@ -137,8 +135,6 @@ function generateAboutHtml() {
     <meta name="description" content="${desc}" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="${pageUrl}" />
-    <link rel="alternate" hreflang="zh" href="${pageUrl}" />
-    <link rel="alternate" hreflang="en" href="${pageUrl}" />
     <link rel="alternate" hreflang="x-default" href="${pageUrl}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${pageUrl}" />
@@ -189,8 +185,6 @@ function generateProductHtml(productId) {
     <meta name="description" content="${seo.desc}" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="${pageUrl}" />
-    <link rel="alternate" hreflang="zh" href="${pageUrl}" />
-    <link rel="alternate" hreflang="en" href="${pageUrl}" />
     <link rel="alternate" hreflang="x-default" href="${pageUrl}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${pageUrl}" />
@@ -224,8 +218,8 @@ function generateProductHtml(productId) {
       <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:system-ui,sans-serif;">
         <h1>The ${seo.subtitle}</h1>
         <p>${seo.desc}</p>
-        <p><a href="/">\u2190 Back to Lovevery Fans Homepage</a></p>
-        <p><a href="/about">About Us</a></p>
+        <p><a href="/">← Back to Lovevery Fans Homepage</a></p>
+        <p><a href="/about/">About Us</a></p>
       </div>
     </noscript>
   </body>
