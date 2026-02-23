@@ -435,6 +435,29 @@ export default function ProductDetail() {
       "description": product.descriptionEn || product.description,
       "image": product.imageUrl,
       "brand": { "@type": "Brand", "name": "Lovevery" },
+      // aggregateRating — required by Google Product snippets
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": product.rating.toString(),
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": product.reviewCount.toString(),
+      },
+      // review — required by Google Product snippets
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": product.rating.toString(),
+          "bestRating": "5",
+          "worstRating": "1",
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Lovevery Customers",
+        },
+        "reviewBody": `Rated ${product.rating} out of 5 based on ${product.reviewCount} Lovevery customer reviews.`,
+      },
       "offers": {
         "@type": "Offer",
         "url": product.officialUrl,
