@@ -19,9 +19,12 @@ import {
   ShieldCheck,
   Globe,
   Star,
+  Menu,
+  X,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { applyAboutPageSeo } from "@/lib/seoHelpers";
+import { stages } from "@/data/kits";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
@@ -35,6 +38,16 @@ const fadeInUp = {
 export default function AboutUs() {
   const { lang, t, convert } = useLanguage();
   const i18n = useI18n();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const stageLabel = (id: string) => {
+    const key = id as string;
+    return i18n.stages[key]?.[lang] ?? id;
+  };
+  const stageRange = (id: string) => {
+    const key = id as string;
+    return i18n.stageRanges[key]?.[lang] ?? "";
+  };
 
   useEffect(() => {
     applyAboutPageSeo(lang);
@@ -132,21 +145,72 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link href="/">
-              <span data-logo-target className="font-display text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none">
+              <span data-logo-target className="font-display text-xl sm:text-2xl text-[#3D3229] tracking-tight font-bold select-none hover:opacity-80 transition-opacity">
                 Lovevery
               </span>
             </Link>
-            <div className="flex items-center gap-3">
-              <LanguageToggle />
-              <Link href="/">
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors">
-                  <ArrowLeft className="w-4 h-4" />
-                  {c.backHome}
+            {/* Desktop nav: stage links + About Us (active) */}
+            <div className="hidden md:flex items-center gap-4 lg:gap-6">
+              {stages.map((s) => (
+                <Link key={s.id} href={`/#stage-${s.id}`}>
+                  <span className="relative text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#7FB685] after:rounded-full after:transition-all hover:after:w-full">
+                    {stageLabel(s.id)}
+                  </span>
+                </Link>
+              ))}
+              <Link href="/#standalone-products">
+                <span className="relative text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#7FB685] after:rounded-full after:transition-all hover:after:w-full">
+                  {i18n.nav.products[lang]}
                 </span>
               </Link>
+              <span className="text-sm font-medium text-[#3D3229] border-b-2 border-[#7FB685] pb-0.5">
+                {i18n.nav.aboutUs[lang]}
+              </span>
+              <LanguageToggle />
+            </div>
+            {/* Mobile: language toggle + hamburger */}
+            <div className="flex md:hidden items-center gap-1">
+              <LanguageToggle />
+              <button
+                className="p-2 text-[#6B5E50] hover:text-[#3D3229] min-w-[48px] min-h-[48px] flex items-center justify-center"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
             </div>
           </div>
         </div>
+        {/* Mobile menu dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-[#FAF7F2] border-t border-[#E8DFD3] shadow-lg">
+            <div className="px-4 py-3 space-y-1">
+              {stages.map((s) => (
+                <Link key={s.id} href={`/#stage-${s.id}`}>
+                  <span
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors min-h-[48px] flex items-center justify-between"
+                  >
+                    {stageLabel(s.id)}
+                    <span className="text-xs text-[#756A5C]">{stageRange(s.id)}</span>
+                  </span>
+                </Link>
+              ))}
+              <Link href="/#standalone-products">
+                <span
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-left px-3 py-3 rounded-xl text-sm font-medium text-[#6B5E50] hover:text-[#3D3229] hover:bg-[#E8DFD3]/40 transition-colors min-h-[48px] flex items-center justify-between"
+                >
+                  {i18n.nav.products[lang]}
+                  <span className="text-xs text-[#756A5C]">{t("4 款产品", "4 Products")}</span>
+                </span>
+              </Link>
+              <span className="block px-3 py-3 rounded-xl text-sm font-medium text-[#3D3229] bg-[#E8DFD3]/40 min-h-[48px] flex items-center">
+                {i18n.nav.aboutUs[lang]}
+              </span>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
