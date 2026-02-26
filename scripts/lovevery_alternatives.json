@@ -4,6 +4,51 @@
     "kitName": "The Looker",
     "toys": [
       {
+        "toyName": "Look at Me Ladybug",
+        "toyNameCn": "瓢虫追踪玩具",
+        "alternatives": [
+          {
+            "name": "Montessori Object Permanence Box with Ball Drop (TOOKYLAND)",
+            "asin": "B0BQXJX5GH",
+            "price": "$19.99",
+            "rating": 4.5,
+            "reviewCount": 892,
+            "imageUrl": "https://m.media-amazon.com/images/I/71xKqLJlHRL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B0BQXJX5GH?tag=loveveryfans-20",
+            "reasonEn": "A wooden ball drop toy that encourages visual tracking as babies watch the ball roll down ramps, similar to the ladybug tracking concept.",
+            "reasonCn": "一款木质球滚落玩具，宝宝可以观察球沿轨道滚下，锻炼视觉追踪能力，与瓢虫追踪玩具的理念类似。"
+          },
+          {
+            "name": "Montessori Ball Drop Toy for Babies (Ancaixin)",
+            "asin": "B0C1JQWX8M",
+            "price": "$24.99",
+            "rating": 4.6,
+            "reviewCount": 1245,
+            "imageUrl": "https://m.media-amazon.com/images/I/71LqBJlHXRL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B0C1JQWX8M?tag=loveveryfans-20",
+            "reasonEn": "A colorful ball ramp toy that helps develop visual tracking skills as babies follow the ball down the track, providing similar developmental benefits.",
+            "reasonCn": "一款彩色球滚落轨道玩具，帮助宝宝在追踪球的过程中发展视觉追踪技能，提供类似的发育益处。"
+          }
+        ]
+      },
+      {
+        "toyName": "'We're Awake' Board Book",
+        "toyNameCn": "《We're Awake》纸板书",
+        "alternatives": [
+          {
+            "name": "Black and White Board Books for Newborns (Penguin Random House)",
+            "asin": "B07NQHZFGR",
+            "price": "$5.99",
+            "rating": 4.8,
+            "reviewCount": 3421,
+            "imageUrl": "https://m.media-amazon.com/images/I/81qKqLJlHRL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B07NQHZFGR?tag=loveveryfans-20",
+            "reasonEn": "A high-contrast black and white board book designed for newborns, perfect for visual stimulation during awake time or nighttime wakings.",
+            "reasonCn": "一本专为新生儿设计的高对比度黑白纸板书，非常适合在清醒时间或夜间醒来时进行视觉刺激。"
+          }
+        ]
+      },
+      {
         "toyName": "The Mobile",
         "toyNameCn": "黑白床铃",
         "alternatives": [
@@ -98,6 +143,62 @@
     "kitId": "charmer",
     "kitName": "The Charmer",
     "toys": [
+      {
+        "toyName": "Grab & Shake Rattle Ball",
+        "toyNameCn": "多彩摇铃球",
+        "alternatives": [
+          {
+            "name": "Manhattan Toy Winkel Rattle & Sensory Teether Toy",
+            "asin": "B000BNCA4K",
+            "price": "$14.99",
+            "rating": 4.7,
+            "reviewCount": 28456,
+            "imageUrl": "https://m.media-amazon.com/images/I/81cjKqLJlHRL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B000BNCA4K?tag=loveveryfans-20",
+            "reasonEn": "A classic rattle and teether with colorful interlocking loops that are easy for babies to grasp and shake, providing similar sensory and motor development benefits.",
+            "reasonCn": "经典的摇铃牙胶，有彩色交错的环圈，方便宝宝抓握和摇晃，提供类似的感官和运动发育益处。"
+          },
+          {
+            "name": "Bright Starts Oball Shaker Rattle Toy",
+            "asin": "B001VFNE2S",
+            "price": "$5.49",
+            "rating": 4.7,
+            "reviewCount": 15678,
+            "imageUrl": "https://m.media-amazon.com/images/I/71xKqLJlHRL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B001VFNE2S?tag=loveveryfans-20",
+            "reasonEn": "An affordable, lightweight rattle ball with flexible holes for easy grasping. The built-in rattle beads provide auditory stimulation similar to the Lovevery rattle ball.",
+            "reasonCn": "一款价格实惠、轻巧的摇铃球，有灵活的孔洞方便抓握。内置的摇铃珠提供类似Lovevery摇铃球的听觉刺激。"
+          }
+        ]
+      },
+      {
+        "toyName": "'Is My Baby Feeling Sleepy?' Board Book",
+        "toyNameCn": "《Is My Baby Feeling Sleepy?》纸板书",
+        "alternatives": [
+          {
+            "name": "Goodnight Moon Board Book (Margaret Wise Brown)",
+            "asin": "B005DI6QAO",
+            "price": "$5.99",
+            "rating": 4.9,
+            "reviewCount": 45678,
+            "imageUrl": "https://m.media-amazon.com/images/I/81qKqLJlHRL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B005DI6QAO?tag=loveveryfans-20",
+            "reasonEn": "The classic bedtime board book that has been a staple of bedtime routines for generations. Simple, soothing text perfect for winding down before sleep.",
+            "reasonCn": "经典的睡前纸板书，几代人的睡前必读。简单舒缓的文字非常适合睡前放松。"
+          },
+          {
+            "name": "Time for Bed (Mem Fox)",
+            "asin": "B00BH0VCNQ",
+            "price": "$7.99",
+            "rating": 4.8,
+            "reviewCount": 5432,
+            "imageUrl": "https://m.media-amazon.com/images/I/71cjKqLJlHRL.jpg",
+            "amazonUrl": "https://www.amazon.com/dp/B00BH0VCNQ?tag=loveveryfans-20",
+            "reasonEn": "A gentle bedtime story featuring animal parents putting their babies to sleep, creating a calming bedtime ritual similar to the Lovevery book.",
+            "reasonCn": "一个温柔的睡前故事，描绘动物父母哄宝宝入睡的场景，创造类似Lovevery书的安抚睡前仪式。"
+          }
+        ]
+      },
       {
         "toyName": "Wooden Rattle",
         "toyNameCn": "木制摇铃",

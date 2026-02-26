@@ -2,6 +2,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
   "looker": {
     heroImage: "https://images.ctfassets.net/0sea1vycfyqy/2Eqfc2kd6LH83SQiitGn2p/6e597b994ec9bf15103ca166db3b228a/Looker_Image_1_Neutral_BG.png",
     toyImages: [
+      "https://images.ctfassets.net/0sea1vycfyqy/2k0qvgTwFz9Fgmrv2qzJYo/55781216ecfef55f1fb3fc86f1bfb9c6/Lovevery_Play_Kit_The_Looker_Eye_Tracking_Ramp_Three_Quarter_0061_v1.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5XbH0CxXu560qHdwH75qWd/0fa7e77c21dfd19f723981df5ef76e2b/SubscriptionBox1_Products_Overhead_23385_Hero_VS_R1_CL_v3.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5O7INa0JlqbbRbof4pX6Df/251b7bda8a174bb73b0c8da1b3b9ec3c/Lovevery-VKS-Studio-StrollerToy-364-Sep2020_WEB_616e4d0b-1dbd-445d-895a-a1b0cc13e2e6.png",
       "https://images.ctfassets.net/0sea1vycfyqy/5q5OUzlztmBjjmBOiyjqsK/0d057fdf3872b66bd2478f0a057fee21/K1.Simple.BW.Card.Set.png",
@@ -9,12 +10,14 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
       "https://images.ctfassets.net/0sea1vycfyqy/76DmYmjEUjpy4OpeLhXkDo/2fda48e93df4d07e36fafb7a2aa8cfb1/K1.Complex.BW.Card.Set.png",
       "https://images.ctfassets.net/0sea1vycfyqy/7e4qbnmHweXohOogxPAlbP/77ef6d76784f860e333a8e52f7ad38d2/Lovevery-VKS-Mittens-ISO-139-July2020.png",
       "https://images.ctfassets.net/0sea1vycfyqy/681RySrxtBmSyc1ofR2AjC/172eff0cca15c11daa48e1ffa6b1f21d/K1.Wooden.Book.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/6ScvDh3V62JxEXMIBFIKNb/df42c300e2a90cb2213bf62504f1f2a2/We-re-Awake-Book-Flat-Lay-2.png",
       "https://images.ctfassets.net/0sea1vycfyqy/6Mo1Ar7U68DoNB1gEjvPdY/8c3675ea8859de3c2d246c9e1bde48e2/K1.Silicone.Rattle.png",
     ],
   },
   "charmer": {
     heroImage: "https://images.ctfassets.net/0sea1vycfyqy/4sVtrirRw4nh0SL9MdwhKI/094d8d00706c649d817d5e0aa33acf04/Charmer_Slide_1_age_band__2_.png",
     toyImages: [
+      "https://images.ctfassets.net/0sea1vycfyqy/7qtmR7q9Cctxtis3klYMeN/2b0114d06538aeb20726b0658a723527/Lovevery_Play_Kit_The_Charmer_Banded_Rattle_Ball_With_a_Soft_Ball_Overhead_0167_v2.png",
       "https://images.ctfassets.net/0sea1vycfyqy/1h7x06YxrGmG5lRTS21Fae/eaa1a31fa37e96982627c018b3228ca0/SubscriptionBox2_Lovevery-VKS-WoodenRattle-ISO-0111-June2020-1.png",
       "https://images.ctfassets.net/0sea1vycfyqy/2cXKUCnKqUz4UkPoioj9au/de146c1574aa6927bec841d15b6e1ce7/triple-teether_2.png",
       "https://images.ctfassets.net/0sea1vycfyqy/4T4t9c34Iws4CzKXgomSDq/87c282c112732752b99dedfec3a7759e/The_Charmer_-_Rolling_Bell.png",
@@ -25,6 +28,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
       "https://images.ctfassets.net/0sea1vycfyqy/2adxpwIMHfKq3vs9mIBkWn/558c3cd3a00d741447fa89a9cb2a5cce/K2.Crinkle.Bag.png",
       "https://images.ctfassets.net/0sea1vycfyqy/2Xm4ZQfYCbgNLpOxkYMOdX/ca88ca64ed65761074652b58194f722e/teether.png",
       "https://images.ctfassets.net/0sea1vycfyqy/6tyn0sOb5wEcwCDzN3ZoLw/5054cb8ca1174d3958d8489664ebfb84/2022_11_22_ISO_S_3850_BH_V1_web.png",
+      "https://images.ctfassets.net/0sea1vycfyqy/2H0CfTkhd1i7VJNXXd5wqB/0ce9d0f79341ff6086e566031471a257/output-onlinepngtools__1_.png",
       "https://images.ctfassets.net/0sea1vycfyqy/1fUr5n3hgpDcYCm03q9d3s/fb1e6554e93783fb319346fd5aa960b4/SubscriptionBox2_Animation_14494_large_mirror_VS_R2_PU_R1_transWHITE_BH_V4.webp",
     ],
   },
@@ -278,6 +282,7 @@ export const kitImages: Record<string, { heroImage: string; toyImages: string[] 
 
 export const kitToyImages: Record<string, Record<string, string>> = {
   "looker": {
+    "Look at Me Ladybug": "https://images.ctfassets.net/0sea1vycfyqy/2k0qvgTwFz9Fgmrv2qzJYo/55781216ecfef55f1fb3fc86f1bfb9c6/Lovevery_Play_Kit_The_Looker_Eye_Tracking_Ramp_Three_Quarter_0061_v1.png",
     "The Mobile": "https://images.ctfassets.net/0sea1vycfyqy/5XbH0CxXu560qHdwH75qWd/0fa7e77c21dfd19f723981df5ef76e2b/SubscriptionBox1_Products_Overhead_23385_Hero_VS_R1_CL_v3.png",
     "Sensory Links": "https://images.ctfassets.net/0sea1vycfyqy/5O7INa0JlqbbRbof4pX6Df/251b7bda8a174bb73b0c8da1b3b9ec3c/Lovevery-VKS-Studio-StrollerToy-364-Sep2020_WEB_616e4d0b-1dbd-445d-895a-a1b0cc13e2e6.png",
     "Simple Black & White Card Set": "https://images.ctfassets.net/0sea1vycfyqy/5q5OUzlztmBjjmBOiyjqsK/0d057fdf3872b66bd2478f0a057fee21/K1.Simple.BW.Card.Set.png",
@@ -285,9 +290,11 @@ export const kitToyImages: Record<string, Record<string, string>> = {
     "Complex Black & White Card Set": "https://images.ctfassets.net/0sea1vycfyqy/76DmYmjEUjpy4OpeLhXkDo/2fda48e93df4d07e36fafb7a2aa8cfb1/K1.Complex.BW.Card.Set.png",
     "Black & White Mittens": "https://images.ctfassets.net/0sea1vycfyqy/7e4qbnmHweXohOogxPAlbP/77ef6d76784f860e333a8e52f7ad38d2/Lovevery-VKS-Mittens-ISO-139-July2020.png",
     "Wooden Book": "https://images.ctfassets.net/0sea1vycfyqy/681RySrxtBmSyc1ofR2AjC/172eff0cca15c11daa48e1ffa6b1f21d/K1.Wooden.Book.png",
+    "'We're Awake' Board Book": "https://images.ctfassets.net/0sea1vycfyqy/6ScvDh3V62JxEXMIBFIKNb/df42c300e2a90cb2213bf62504f1f2a2/We-re-Awake-Book-Flat-Lay-2.png",
     "Silicone Rattle With Removable Ball": "https://images.ctfassets.net/0sea1vycfyqy/6Mo1Ar7U68DoNB1gEjvPdY/8c3675ea8859de3c2d246c9e1bde48e2/K1.Silicone.Rattle.png",
   },
   "charmer": {
+    "Grab & Shake Rattle Ball": "https://images.ctfassets.net/0sea1vycfyqy/7qtmR7q9Cctxtis3klYMeN/2b0114d06538aeb20726b0658a723527/Lovevery_Play_Kit_The_Charmer_Banded_Rattle_Ball_With_a_Soft_Ball_Overhead_0167_v2.png",
     "Wooden Rattle": "https://images.ctfassets.net/0sea1vycfyqy/1h7x06YxrGmG5lRTS21Fae/eaa1a31fa37e96982627c018b3228ca0/SubscriptionBox2_Lovevery-VKS-WoodenRattle-ISO-0111-June2020-1.png",
     "Silicone Triple Teether & Organic Teething Cloth": "https://images.ctfassets.net/0sea1vycfyqy/2cXKUCnKqUz4UkPoioj9au/de146c1574aa6927bec841d15b6e1ce7/triple-teether_2.png",
     "Rolling Bell": "https://images.ctfassets.net/0sea1vycfyqy/4T4t9c34Iws4CzKXgomSDq/87c282c112732752b99dedfec3a7759e/The_Charmer_-_Rolling_Bell.png",
@@ -298,6 +305,7 @@ export const kitToyImages: Record<string, Record<string, string>> = {
     "Crinkle Bag": "https://images.ctfassets.net/0sea1vycfyqy/2adxpwIMHfKq3vs9mIBkWn/558c3cd3a00d741447fa89a9cb2a5cce/K2.Crinkle.Bag.png",
     "Rubber Triangle Teether": "https://images.ctfassets.net/0sea1vycfyqy/2Xm4ZQfYCbgNLpOxkYMOdX/ca88ca64ed65761074652b58194f722e/teether.png",
     "Hand-to-Hand Discs": "https://images.ctfassets.net/0sea1vycfyqy/6tyn0sOb5wEcwCDzN3ZoLw/5054cb8ca1174d3958d8489664ebfb84/2022_11_22_ISO_S_3850_BH_V1_web.png",
+    "'Is My Baby Feeling Sleepy?' Board Book": "https://images.ctfassets.net/0sea1vycfyqy/2H0CfTkhd1i7VJNXXd5wqB/0ce9d0f79341ff6086e566031471a257/output-onlinepngtools__1_.png",
     "Framed Mirror": "https://images.ctfassets.net/0sea1vycfyqy/1fUr5n3hgpDcYCm03q9d3s/fb1e6554e93783fb319346fd5aa960b4/SubscriptionBox2_Animation_14494_large_mirror_VS_R2_PU_R1_transWHITE_BH_V4.webp",
   },
   "senser": {

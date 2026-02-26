@@ -44,7 +44,26 @@ const reviewData: Record<string, ToyReview> = {
     cons: "小球拆卸后容易滚入家具缝隙，且硅胶表面容易吸附灰尘，需要频繁清洗。",
   },
 
+  "looker::瓢虫追踪玩具": {
+    pros: "全新设计，缓慢的滑动和咔哒声非常吸引新生儿注意力。木质材料安全温润，做工精致。是俯卧时间的绝佳伴侣，能有效鼓励宝宝抬头和视觉追踪。",
+    cons: "价格偏高，使用场景相对单一。对于已经有类似视觉追踪玩具的家庭来说，可能会觉得重复。",
+    prosEn: "Brand-new design with slow sliding motion and click-clack sounds that effectively capture a newborn's attention. The wooden material is safe, warm to the touch, and beautifully crafted. An excellent tummy time companion that encourages head lifting and visual tracking.",
+    consEn: "Price is on the higher side and the use case is somewhat limited. Families who already own similar visual tracking toys may find it redundant.",
+  },
+  "looker::《We're Awake》纸板书": {
+    pros: "黑白高对比度设计非常适合新生儿视觉发育。配套摇篮曲让夜间醒来时光更温馨。纸板材质耐用，不怕宝宝啰咬。",
+    cons: "内容相对简单，吸引力不如套装中的其他玩具。部分家长觉得实用性有限，更像是一个补充而非必需品。",
+    prosEn: "High-contrast black and white design is ideal for newborn visual development. The accompanying lullaby makes nighttime wakings more soothing. Board book material is durable and withstands baby chewing.",
+    consEn: "Content is relatively simple and less engaging compared to other toys in the kit. Some parents feel it has limited practical use and is more of a supplement than a necessity.",
+  },
+
   // The Charmer (charmer)
+  "charmer::多彩摇铃球": {
+    pros: "轻巧设计非常适合小月龄宝宝抓握，多彩配色刺激视觉发育。摇晃声音柔和不刺耳，宝宝很快就能学会自己摇。",
+    cons: "市面上有很多类似的摇铃球产品，性价比不是特别突出。随着宝宝长大，可能很快就会失去兴趣。",
+    prosEn: "Lightweight design is perfect for young babies to grasp. Colorful palette stimulates visual development. The gentle rattle sound is not overwhelming, and babies quickly learn to shake it on their own.",
+    consEn: "There are many similar rattle ball products on the market, so the value proposition isn't particularly strong. Babies may lose interest relatively quickly as they grow.",
+  },
   "charmer::木制摇铃": {
     pros: "经典蒙氏设计，声音清脆，木质手感极佳。非常适合练习抓握和手眼协调。",
     cons: "对于力气较小的宝宝来说，木质摇铃略显沉重，挥动时容易砸到自己。",
@@ -88,6 +107,13 @@ const reviewData: Record<string, ToyReview> = {
   "charmer::带框镜子": {
     pros: "落地设计非常稳固，是趴趴时间的利器。镜面安全防碎，边框触感舒适。",
     cons: "体积较大，收纳不便，且如果放置不当容易倾倒。",
+  },
+
+  "charmer::《Is My Baby Feeling Sleepy?》纸板书": {
+    pros: "非常适合作为睡前仪式的一部分，故事简单温馨，描绘的睡前流程贴近真实生活。纸板材质耐用，宝宝容易产生共鸣。",
+    cons: "内容较为简单，对于已经有很多纸板书的家庭来说，可能觉得新鲜感不足。主题较为局限，主要适用于睡前场景。",
+    prosEn: "Perfect as part of a bedtime routine, with a simple and loving story that depicts real-life bedtime activities. Board book material is durable, and babies easily connect with the content.",
+    consEn: "Content is relatively simple, and families with many board books already may find it less novel. The theme is somewhat limited, primarily suited for bedtime use.",
   },
 
   // The Senser (senser)

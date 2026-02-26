@@ -119,6 +119,13 @@ const cleaningData: Record<string, CleaningInfo> = {
     cleaningCn: "用干布或微湿布轻轻擦拭",
     cleaningEn: "Wipe clean with a dry or lightly damp cloth.",
   },
+  "charmer::多彩摇铃球": {
+    material: "塑料/Plastic",
+    materialCn: "塑料",
+    materialEn: "Plastic",
+    cleaningCn: "用温和肥皂水手洗，不可消毒，不可放入洗碗机",
+    cleaningEn: "Hand wash in mild soapy water. Do not sanitize or put in dishwasher.",
+  },
   "charmer::木制摇铃": {
     material: "木质/Wood",
     materialCn: "木质",
@@ -167,6 +174,13 @@ const cleaningData: Record<string, CleaningInfo> = {
     materialEn: "Rubber",
     cleaningCn: "用温和肥皂水清洗，不可煮沸或消毒",
     cleaningEn: "Wash in mild soapy water. Do not boil or sanitize.",
+  },
+  "charmer::《Is My Baby Feeling Sleepy?》纸板书": {
+    material: "印刷品/Printed Material",
+    materialCn: "印刷品",
+    materialEn: "Printed Material",
+    cleaningCn: "用干布或微湿布轻轻擦拭",
+    cleaningEn: "Wipe clean with a dry or lightly damp cloth.",
   },
   "companion::马赛克纽扣板": {
     material: "塑料/Plastic",
@@ -685,6 +699,20 @@ const cleaningData: Record<string, CleaningInfo> = {
     materialEn: "Wood",
     cleaningCn: "用湿布擦拭即可，避免浸泡在水中",
     cleaningEn: "Wipe clean with a damp cloth. Do not expose to excess water.",
+  },
+  "looker::瓢虫追踪玩具": {
+    material: "木质/Wood",
+    materialCn: "木质",
+    materialEn: "Wood",
+    cleaningCn: "用湿布擦拭即可，避免浸泡在水中",
+    cleaningEn: "Wipe clean with a damp cloth. Do not expose to excess water.",
+  },
+  "looker::《We're Awake》纸板书": {
+    material: "印刷品/Printed Material",
+    materialCn: "印刷品",
+    materialEn: "Printed Material",
+    cleaningCn: "用干布或微湿布轻轻擦拭",
+    cleaningEn: "Wipe clean with a dry or lightly damp cloth.",
   },
   "looker::带可拆卸球的硅胶摇铃": {
     material: "硅胶/Silicone",
